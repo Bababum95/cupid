@@ -9,16 +9,25 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@shopify/storefront-api-client": "^1.0.2",
+    "framer-motion": "^11.3.2",
+    "next": "14.2.15",
+    "next-intl": "^3.21.1",
     "react": "^18",
     "react-dom": "^18",
-    "next": "14.2.15"
+    "react-i18next": "^15.0.3",
+    "winston": "^3.15.0",
+    "winston-daily-rotate-file": "^5.0.0"
   },
   "devDependencies": {
-    "typescript": "^5",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
+    "@types/winston": "^2.4.4",
+    "classnames": "^2.5.1",
     "eslint": "^8",
-    "eslint-config-next": "14.2.15"
+    "eslint-config-next": "14.2.15",
+    "sass": "^1.79.2",
+    "typescript": "^5"
   }
 }

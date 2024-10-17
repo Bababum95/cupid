@@ -1,0 +1,16 @@
+{
+  "HomePage": {
+    "title": "Start"
+  },
+  "SexChocolate": {
+    "title": "How Many Boxes Would You Like?",
+    "box": "Box",
+    "boxes": "Boxes",
+    "next": "Nexts step",
+    "total": "Total",
+    "bage-1": "New Formula",
+    "bage-2": "Free Shipping",
+    "free-gift": "Free gift",
+    "save": "Save"
+  }
+}

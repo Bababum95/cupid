@@ -1,0 +1,1 @@
+export { CollectionQuery } from "./collectionQuery";

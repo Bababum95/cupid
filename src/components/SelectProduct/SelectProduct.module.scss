@@ -1,0 +1,79 @@
+.wrapper {
+  @include flex-layout(space-between);
+  margin-top: 120px;
+}
+
+.summary {
+  max-width: 434px;
+}
+
+.h2 {
+  font-size: clamp(1.5rem, 0.9429rem + 2.2857vw, 3rem);
+  margin: 0;
+}
+
+.list {
+  @include flex-layout;
+  gap: 10px;
+  list-style: none;
+  padding: 0;
+  margin: 52px 0 12px;
+}
+
+.prewiew {
+  position: relative;
+
+  img {
+    clip-path: path(
+      "M518 0H305.5C304.107 0 303.411 0 302.823 0.0346878C292.704 0.631424 284.631 8.70379 284.035 18.8226C284 19.4108 284 20.1072 284 21.5C284 22.8928 284 23.5892 283.965 24.1774C283.369 34.2962 275.296 42.3686 265.177 42.9653C264.589 43 263.893 43 262.5 43H32C20.799 43 15.1984 43 10.9202 45.1799C7.15695 47.0973 4.09734 50.1569 2.17987 53.9202C0 58.1984 0 63.7989 0 75V488.002C0 499.203 0 504.803 2.17987 509.082C4.09734 512.845 7.15695 515.904 10.9202 517.822C15.1984 520.002 20.799 520.002 32 520.002H518C529.201 520.002 534.802 520.002 539.08 517.822C542.843 515.904 545.903 512.845 547.82 509.082C550 504.803 550 499.203 550 488.002V32C550 20.799 550 15.1984 547.82 10.9202C545.903 7.15695 542.843 4.09734 539.08 2.17987C534.802 0 529.201 0 518 0Z"
+    );
+  }
+}
+
+.bages {
+  @include flex-layout;
+  gap: 4px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 0 8px 8px 0;
+  border-radius: 0 0 20px 0;
+  background-color: $page-bg;
+}
+
+.bage {
+  @include flex-center;
+  padding: 10px 16px;
+  color: $text;
+  background-color: $accent;
+  border-radius: 20px;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 100%;
+  letter-spacing: -0.15px;
+  gap: 6px;
+}
+
+.button {
+  @include flex-center;
+  color: $text;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  padding: 20px 28px;
+  height: 60px;
+  border-radius: 18px;
+  background-color: $accent;
+  border: none;
+  width: 100%;
+  margin-top: 28px;
+}
+
+.total {
+  font-size: 17px;
+  font-weight: 700;
+  display: block;
+  margin-left: auto;
+}

@@ -1,0 +1,26 @@
+.item {
+  border-radius: 18px;
+  border: 2px solid #1a1a1a;
+  backdrop-filter: blur(12.5px);
+  padding: 16px;
+  cursor: pointer;
+  flex: 1;
+}
+
+.top {
+  @include flex-layout(flex-start, center);
+  gap: 6px;
+  color: $text;
+  font-size: clamp(0.9375rem, 0.7982rem + 0.5714vw, 1.3125rem);
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  margin-bottom: 2px;
+}
+
+.price {
+  font-size: clamp(0.8125rem, 0.7893rem + 0.0952vw, 0.875rem);
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
