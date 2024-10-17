@@ -50,8 +50,7 @@ export default async function Page({ params }: Props) {
     namespace: "SexChocolate",
   });
 
-  if (!t) {
-  }
+  if (!t) {}
 
   const products = await getProducts();
 

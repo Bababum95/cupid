@@ -52,6 +52,7 @@ export const SelectProduct: FC<Props> = ({ products }) => {
           alt={products[0].title}
           width={550}
           height={520}
+          priority
         />
       </div>
       <div className={styles.summary}>

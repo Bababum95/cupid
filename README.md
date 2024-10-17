@@ -12,7 +12,7 @@
 │   ├── /components                # React components
 │   ├── /graphql                   # GraphQL queries and mutations
 │   ├── /i18n                      # Internationalization (i18n)
-│   │   ├── /locales               # Localized messages
+│   │   ├── /messages              # Localized messages
 │   │   ├── config.ts              # i18n configuration
 │   │   ├── request.ts             # i18n request functions (might need a more specific name)
 │   │   └── routing.ts             # Localized routing
