@@ -8,17 +8,19 @@
 }
 
 html,
-body {
+.body {
   max-width: 100vw;
   overflow-x: hidden;
 }
 
-body {
+.body {
+  @include flex-column;
   background: $page-bg;
   color: $secondary-text;
   font-family: "VelaSans", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  min-height: 100vh;
 }
 
 * {
@@ -36,4 +38,17 @@ pre {
   font-weight: 400;
   font-size: 16px;
   color: $text;
+}
+
+img {
+  display: block;
+}
+
+svg {
+  flex-shrink: 0;
+}
+
+ul,
+ol {
+  list-style: none;
 }

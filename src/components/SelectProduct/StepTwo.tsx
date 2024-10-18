@@ -1,0 +1,203 @@
+import { FC, useState } from "react";
+import { useTranslations } from "next-intl";
+import { AnimatePresence, motion } from "framer-motion";
+import classNames from "classnames";
+
+import type { Product } from "@/types";
+import { SubmitButton, Price } from "@/components";
+import { formatPrice } from "@/utils";
+import { default as CheckMarkIcon } from "@/icons/checkmark.svg";
+
+import type { SellingPlanGroupType, GiftType } from "./types";
+import { Variant } from "./Variant";
+import styles from "./StepTwo.module.scss";
+
+type Props = {
+  mainProduct: Product;
+  selectedVariant: Product;
+  sellingPlans: SellingPlanGroupType[];
+  gifts: GiftType[];
+};
+
+export const StepTwo: FC<Props> = ({
+  selectedVariant,
+  mainProduct,
+  sellingPlans,
+  gifts,
+}) => {
+  const [sellingPlanIndex, setSellingPlanIndex] = useState(0);
+  const [selected, setSelected] = useState<"subscribe" | "one-time" | null>(
+    null
+  );
+  const t = useTranslations("SexChocolate");
+
+  const quantity: number = selectedVariant.components
+    ? selectedVariant.components[0][0].quantity || 1
+    : 1;
+
+  const sellingPlan = quantity === 3 ? sellingPlans[1] : sellingPlans[0];
+  const subscribePrice =
+    mainProduct.price.amount - (sellingPlan?.discount || 5);
+
+  return (
+    <form className={styles.form}>
+      <ul className={styles.list}>
+        <Variant
+          active={selected === "subscribe"}
+          onSelect={() => setSelected("subscribe")}
+          top={
+            <VariantTop
+              label={t("subscribe-and-save")}
+              price={`${formatPrice({
+                amount: subscribePrice,
+                currencyCode: mainProduct.price.currencyCode,
+              })}
+              /${t("box")}`}
+              total={{
+                amount: formatPrice({
+                  amount: subscribePrice * quantity,
+                  currencyCode: mainProduct.price.currencyCode,
+                }),
+                old: formatPrice({
+                  amount: mainProduct.price.amount * quantity,
+                  currencyCode: mainProduct.price.currencyCode,
+                }),
+              }}
+            />
+          }
+        >
+          <div>
+            <div className={styles.badges}>
+              <span className={styles.badge}>
+                {t("save")}{" "}
+                {formatPrice({
+                  amount: sellingPlan?.discount | 5,
+                  currencyCode: mainProduct.price.currencyCode,
+                })}
+              </span>
+              <span className={styles.badge}>{t("best-value")}</span>
+            </div>
+            <ul className={styles.benefits}>
+              <li className={styles.benefit}>
+                <CheckMarkIcon />
+                <p>
+                  <strong>
+                    {t("free-gift")}: {gifts[1]?.title} (
+                    {t("limited-time-offer")})
+                  </strong>
+                </p>
+              </li>
+              <li className={styles.benefit}>
+                <CheckMarkIcon />
+                <p>
+                  <strong>{t("guaranteed-delivery")} </strong>
+                  {t("during-sell-outs")}
+                </p>
+              </li>
+              <li className={styles.benefit}>
+                <CheckMarkIcon />
+                <p>
+                  {t("pause-update-frequency-or")}
+                  <strong> {t("cancel-anytime")}</strong>
+                </p>
+              </li>
+              <li className={styles.benefit}>
+                <CheckMarkIcon />
+                <p>
+                  <strong>{t("priority-support")}</strong>
+                </p>
+              </li>
+            </ul>
+            <AnimatePresence initial={false}>
+              {selected === "subscribe" && (
+                <motion.div
+                  key="content"
+                  initial="collapsed"
+                  animate="open"
+                  exit="collapsed"
+                  className={styles.time}
+                  variants={{
+                    open: { opacity: 1, height: "auto", margin: '24px 0 8px' },
+                    collapsed: { opacity: 0, height: 0, margin: 0 },
+                  }}
+                  transition={{ duration: 0.4, ease: [0.04, 0.62, 0.23, 0.98] }}
+                >
+                  <p className={styles["time-title"]}>{t("deliver-every")}</p>
+                  <ul className={styles["time-list"]}>
+                    {sellingPlan?.sellingPlans.map((item, index) => (
+                      <li
+                        className={classNames(styles["time-item"], {
+                          [styles.active]: sellingPlanIndex === index,
+                        })}
+                        key={item.id}
+                        onClick={() => setSellingPlanIndex(index)}
+                      >
+                        {item.options[0].value.match(/\d+/)} {t("weeks")}
+                      </li>
+                    ))}
+                  </ul>
+                </motion.div>
+              )}
+            </AnimatePresence>
+          </div>
+        </Variant>
+        <Variant
+          active={selected === "one-time"}
+          onSelect={() => setSelected("one-time")}
+          top={
+            <VariantTop
+              label={t("one-time-purchase")}
+              price={`${formatPrice({
+                amount: selectedVariant.price.amount / quantity,
+                currencyCode: selectedVariant.price.currencyCode,
+              })}
+              /${t("box")}`}
+              total={{
+                amount: formatPrice({
+                  amount: selectedVariant.price.amount,
+                  currencyCode: selectedVariant.price.currencyCode,
+                }),
+              }}
+            />
+          }
+        />
+      </ul>
+      <SubmitButton
+        label={t("add-to-cart")}
+        isActive={!!selected}
+        total={
+          selected
+            ? formatPrice({
+                amount:
+                  selected === "subscribe"
+                    ? subscribePrice * quantity
+                    : selectedVariant.price.amount,
+                currencyCode: selectedVariant.price.currencyCode,
+              })
+            : undefined
+        }
+      />
+    </form>
+  );
+};
+
+type VariantTopProps = {
+  label: string;
+  price: string;
+  total: {
+    amount: string;
+    old?: string;
+  };
+};
+
+const VariantTop: FC<VariantTopProps> = ({ label, price, total }) => {
+  return (
+    <div className={styles.top}>
+      <div>
+        <p className={styles.label}>{label}</p>
+        <p className={styles.price}>{price}</p>
+      </div>
+      <Price price={total.amount} old={total.old} />
+    </div>
+  );
+};

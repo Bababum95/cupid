@@ -1,25 +1,122 @@
 "use client";
 
-import { FC, useState } from "react";
+import { FC, useState, useEffect } from "react";
 import { useTranslations } from "next-intl";
+import { useSearchParams, useRouter } from "next/navigation";
 import Image from "next/image";
 
 import type { Product } from "@/types";
+import { BackButton } from "@/components";
+import { buildProductsQuery, sellingPlansQuery } from "@/graphql";
+import { fetchShopify } from "@/lib/shopify";
 import { formatPrice } from "@/utils";
 
-import { Variant } from "./Variant";
+import { StepOne } from "./StepOne";
+import { StepTwo } from "./StepTwo";
+import type { InitialDataType, GiftType, SellingPlanGroupType } from "./types";
 import styles from "./SelectProduct.module.scss";
 
 type Props = {
   products: Product[];
+  gifts: string[];
 };
 
-export const SelectProduct: FC<Props> = ({ products }) => {
-  const [selectedVariant, setSelectedVariant] = useState<Product | null>(null);
+export const SelectProduct: FC<Props> = ({ products, gifts }) => {
+  const searchParams = useSearchParams();
+  const router = useRouter();
   const t = useTranslations("SexChocolate");
+  const [selectedVariant, setSelectedVariant] = useState<Product | null>(null);
+  const [step, setStep] = useState<string | null>(searchParams.get("step"));
+  const [giftsData, setGiftsData] = useState<GiftType[]>([]);
+  const [sellingPlans, setSellingPlans] = useState<SellingPlanGroupType[]>([]);
 
-  const handleSelectVariant = (product: Product) => {
-    setSelectedVariant(product);
+  const getInitialData = async () => {
+    const giftsQuery = buildProductsQuery(gifts);
+    try {
+      const [giftsResponse, sellingPlansResponse] = (await Promise.all([
+        fetchShopify({ query: giftsQuery }),
+        fetchShopify({
+          query: sellingPlansQuery,
+          variables: { handle: "cupid-chocolate" },
+        }),
+      ])) as InitialDataType;
+
+      const data = Object.values(giftsResponse).map((item) => {
+        const price = formatPrice({
+          amount: parseFloat(item.priceRange.maxVariantPrice.amount),
+          currencyCode: item.priceRange.maxVariantPrice.currencyCode,
+        });
+
+        return {
+          id: item.id,
+          title: item.title,
+          price,
+        };
+      });
+
+      const sellingPlansData =
+        sellingPlansResponse.product.sellingPlanGroups.nodes
+          .map((group) => {
+            const sellingPlans = group.sellingPlans.nodes;
+            const discount = sellingPlans[0].name.match(/€(\d+(\.\d{1,2})?)/);
+
+            return {
+              sellingPlans,
+              name: group.name,
+              discount: discount ? parseFloat(discount[1]) : 0,
+            };
+          })
+          .sort((a, b) => a.discount - b.discount);
+
+      setSellingPlans(sellingPlansData);
+      setGiftsData(data);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  useEffect(() => {
+    getInitialData();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+  useEffect(() => {
+    if (searchParams.get("step") === "2") {
+      setStep("2");
+      if (!selectedVariant) {
+        const quantity = parseFloat(searchParams.get("quantity") || "1");
+        if (quantity === 1) {
+          setSelectedVariant(products[0]);
+        } else {
+          const selectedProduct = products.find(
+            (product) =>
+              product.components &&
+              product.components[0][0].quantity === quantity
+          );
+
+          if (selectedProduct) setSelectedVariant(selectedProduct);
+        }
+      }
+    } else {
+      setStep("1");
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [searchParams]);
+
+  const nextStep = (evt: React.FormEvent) => {
+    evt.preventDefault();
+    if (!selectedVariant) return;
+    setStep("2");
+    const params = new URLSearchParams();
+    params.set("step", "2");
+    if (selectedVariant.isBundle) {
+      params.set(
+        "quantity",
+        selectedVariant.components![0][0].quantity!.toString()
+      );
+    }
+
+    router.push(`/sex-chocolate?${params.toString()}`);
   };
 
   return (
@@ -49,6 +146,7 @@ export const SelectProduct: FC<Props> = ({ products }) => {
               ? selectedVariant.images![0].url
               : products[0].images![0].url
           }
+          className={styles.image}
           alt={products[0].title}
           width={550}
           height={520}
@@ -56,30 +154,30 @@ export const SelectProduct: FC<Props> = ({ products }) => {
         />
       </div>
       <div className={styles.summary}>
-        <h2 className={styles.h2}>{t("title")}</h2>
-        <form className={styles.form}>
-          <ul className={styles.list}>
-            {products.map((product) => (
-              <Variant
-                key={product.id}
-                active={selectedVariant?.id === product.id}
-                onSelect={() => handleSelectVariant(product)}
-                price={product.price}
-                count={
-                  product.isBundle ? product.components![0][0].quantity! : 1
-                }
-              />
-            ))}
-          </ul>
-          <button className={styles.button}>
-            <span>{t("next")}</span>
-            {selectedVariant && (
-              <span className={styles.total}>
-                {t("total")}: {formatPrice(selectedVariant.price)}
-              </span>
-            )}
-          </button>
-        </form>
+        {step === "2" && (
+          <div className={styles.back}>
+            <BackButton />
+          </div>
+        )}
+        <h2 className={styles.h2}>
+          {step === "2" ? t("title-2") : t("title-1")}
+        </h2>
+        {step === "2" ? (
+          <StepTwo
+            mainProduct={products[0]}
+            selectedVariant={selectedVariant || products[0]}
+            sellingPlans={sellingPlans}
+            gifts={giftsData}
+          />
+        ) : (
+          <StepOne
+            products={products}
+            gifts={giftsData}
+            setSelectedVariant={(data) => setSelectedVariant(data)}
+            selectedVariant={selectedVariant}
+            nextStep={nextStep}
+          />
+        )}
       </div>
     </div>
   );

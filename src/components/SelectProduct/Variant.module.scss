@@ -16,11 +16,6 @@
   font-weight: 700;
   line-height: normal;
   margin-bottom: 2px;
+  white-space: nowrap;
 }
 
-.price {
-  font-size: clamp(0.8125rem, 0.7893rem + 0.0952vw, 0.875rem);
-  font-style: normal;
-  font-weight: 500;
-  line-height: normal;
-}

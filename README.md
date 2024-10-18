@@ -10,6 +10,7 @@
 │   │   └── /[locale]              # Localized pages
 │   │       └── layout.tsx         # Common layout for all pages
 │   ├── /components                # React components
+│   ├── /icons                     # Icons for the project
 │   ├── /graphql                   # GraphQL queries and mutations
 │   ├── /i18n                      # Internationalization (i18n)
 │   │   ├── /messages              # Localized messages

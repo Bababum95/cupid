@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   description: "Cupid Chocolate",
 };
 
-export default async function LocaleLayout({
+export default async function RootLayout({
   children,
   params: { locale },
 }: {
@@ -21,7 +21,7 @@ export default async function LocaleLayout({
 
   return (
     <html lang={locale}>
-      <body>
+      <body className="body">
         <NextIntlClientProvider messages={messages} locale={locale}>
           {children}
         </NextIntlClientProvider>

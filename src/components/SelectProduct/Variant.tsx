@@ -1,10 +1,5 @@
-import { FC } from "react";
+import React, { FC } from "react";
 import { motion } from "framer-motion";
-import { useTranslations } from "next-intl";
-import classNames from "classnames";
-
-import type { Price } from "@/types";
-import { formatPrice } from "@/utils";
 
 import {
   CIRCLE_INITIAL,
@@ -18,20 +13,16 @@ import styles from "./Variant.module.scss";
 type Props = {
   active: boolean;
   onSelect: () => void;
-  price: Price;
-  count: number;
+  top?: React.ReactNode;
+  children?: React.ReactNode;
 };
 
-export const Variant: FC<Props> = ({ active, onSelect, price, count }) => {
-  const t = useTranslations("SexChocolate");
-
+export const Variant: FC<Props> = ({ active, onSelect, top, children }) => {
   return (
     <motion.li
-      className={classNames(styles.item, {
-        [styles.selected]: active,
-      })}
+      className={styles.item}
       onClick={onSelect}
-      whileHover={ITEM_HOVER}
+      whileHover={active ? {} : ITEM_HOVER}
       initial={ITEM_INITIAL}
       animate={active ? ITEM_ACTIVE : ITEM_INITIAL}
       transition={{ duration: 0.25 }}
@@ -61,17 +52,9 @@ export const Variant: FC<Props> = ({ active, onSelect, price, count }) => {
             transition={{ duration: 0.35 }}
           />
         </svg>
-        <span>
-          {count} {count > 1 ? t("boxes") : t("box")}
-        </span>
+        {top}
       </div>
-      <span className={styles.price}>
-        {formatPrice({
-          amount: price.amount / count,
-          currencyCode: price.currencyCode,
-        })}
-        /{t("box")}
-      </span>
+      {children}
     </motion.li>
   );
 };

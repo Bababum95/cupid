@@ -21,6 +21,14 @@ const nextConfig = {
     includePaths: [path.join(process.cwd(), "styles")],
     prependData: `@import "/src/styles/mixins", "/src/styles/variables";`,
   },
+  webpack(config) {
+    config.module.rules.push({
+      test: /\.svg$/,
+      use: ["@svgr/webpack"],
+    });
+
+    return config;
+  },
 };
 
 export default withNextIntl(nextConfig);

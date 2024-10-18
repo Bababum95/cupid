@@ -1,0 +1,108 @@
+.list {
+  @include flex-column;
+  gap: 8px;
+  margin-top: 52px;
+}
+
+.top {
+  @include flex-layout(space-between, center);
+  width: 100%;
+}
+
+.label {
+  color: $text;
+  font-size: 17px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+
+.price {
+  color: $secondary-text;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+
+.badges {
+  @include flex-layout;
+  gap: 4px;
+  margin-top: 12px;
+}
+
+.badge {
+  @include flex-center;
+  color: $text;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  border-radius: 12px;
+  background: $accent;
+  padding: 6px 12px;
+  height: 23px;
+}
+
+.benefits {
+  margin: 16px 0 0;
+}
+
+.benefit {
+  @include flex-layout;
+  gap: 8px;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  margin-bottom: 8px;
+
+  strong {
+    color: $text;
+    font-weight: 500;
+  }
+}
+
+.time {
+  margin-top: 24px;
+
+  &-title {
+    color: $text;
+    font-size: 17px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+  }
+
+  &-list {
+    @include flex-layout;
+    gap: 8px;
+    margin-top: 12px;
+  }
+
+  &-item {
+    @include flex-center;
+    border: 2px solid #1a1a1a;
+    backdrop-filter: blur(12.5px);
+    border-radius: 16px;
+    cursor: pointer;
+    flex: 1;
+    background-color: $page-bg;
+    transition: $transition;
+    color: $text;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 700;
+    padding: 12px;
+
+    @include hover {
+      border-color: #333;
+      background-color: rgba(51, 51, 51, 0.1);
+    }
+
+    &.active {
+      border-color: $accent;
+      background: rgba(124, 51, 51, 0.1);
+    }
+  }
+}

@@ -3,15 +3,43 @@
     "title": "Start",
     "by-now": "Buy now"
   },
+  "Common": {
+    "back": "Back",
+    "total": "Total",
+    "add-to-cart": "Add to Cart"
+  },
   "SexChocolate": {
-    "title": "How Many Boxes Would You Like?",
+    "title-1": "How Many Boxes Would You Like?",
+    "title-2": "Choose Your Delivery Option",
     "box": "Box",
     "boxes": "Boxes",
     "next": "Nexts step",
-    "total": "Total",
     "bage-1": "New Formula",
     "bage-2": "Free Shipping",
     "free-gift": "Free gift",
-    "save": "Save"
+    "save": "Save",
+    "why-cupid": "Why Cupid?",
+    "product-benefits": "Product benefits",
+    "supplemen-facts": "Supplement Facts",
+    "works-in-30-min": "Works in 30 Minutes",
+    "works-in-30-min-text": "Quick-release formula for spontaneous moments.",
+    "finest-ingredients": "Finest Ingredients",
+    "finest-ingredients-text": "Made with premium ingredients in Germany.",
+    "discreet-packaging": "Discreet Packaging",
+    "discreet-packaging-text": "Delivered in unmarked packages for your privacy.",
+    "delicious-flavor": "Delicious Flavor",
+    "delicious-flavor-text": "Rich taste that enhances your experience.",
+    "subscribe-and-save": "Subscribe & Save",
+    "one-time-purchase": "One-time Purchase",
+    "limited-time-offer": "Limited-Time Offer",
+    "guaranteed-delivery": "Guaranteed delivery",
+    "during-sell-outs": "during sell-outs",
+    "pause-update-frequency-or": "Pause, update frequency or",
+    "cancel-anytime": "cancel anytime",
+    "priority-support": "Priority Support",
+    "best-value": "Best Value",
+    "add-to-cart": "Add to Cart",
+    "deliver-every": "Deliver every",
+    "weeks": "weeks"
   }
 }

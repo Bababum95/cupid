@@ -23,62 +23,47 @@ query ProductQuery($handle: String) {
 }
 `;
 
-
-
-export const IntrospectionQuery = `
-query IntrospectionQuery {
-  __schema {
-    queryType { name }
-    mutationType { name }
-    subscriptionType { name }
-    types {
-      name
-      fields {
+export const sellingPlansQuery = `
+query ProductQuery($handle: String) {
+  product(handle: $handle) {
+    sellingPlanGroups(first: 3) {
+      nodes {
         name
-        type {
-          name
-          kind
-          ofType {
+        sellingPlans(first: 5) {
+          nodes {
             name
-            kind
-          }
-        }
-      }
-    }
-  }
-}`;
-export const productComponentsQuery = `
-query ProductComponentsQuery($productId: ID) {
-  product(id: $productId) {
-    id
-    productComponents(first: 10) {
-      totalCount
-      edges {
-        cursor
-        node {
-          product {
             id
-            title
-            featuredImage {
-              id
-              url
-              altText
+            options {
+              value
+              name
             }
-            totalVariants
-          }
-          componentVariantsCount {
-            count
-          }
-          nonComponentVariantsCount {
-            count
           }
         }
-      }
-      pageInfo {
-        hasNextPage
-        hasPreviousPage
       }
     }
   }
 }
 `;
+
+export const buildProductsQuery = (ids: string[]): string => {
+  return `
+    query getProducts {
+      ${ids
+        .map((id, index) => {
+          return `
+        product_${index}: product(id: "${id}") {
+          id
+          title
+          priceRange {
+            maxVariantPrice {
+              amount
+              currencyCode
+            }
+          }
+        }
+      `;
+        })
+        .join("\n")}
+    }
+  `;
+};

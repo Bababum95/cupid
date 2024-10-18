@@ -36,5 +36,8 @@ query collectionQuery($handle: String) {
         }
       }
     }
+    metafield(key: "gifts", namespace: "collection") {
+      value
+    }
   }
 }`;

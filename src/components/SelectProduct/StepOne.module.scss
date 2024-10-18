@@ -1,0 +1,13 @@
+.list {
+  @include flex-layout;
+  gap: 10px;
+  padding: 0;
+  margin: 52px 0 12px;
+}
+
+.price {
+  font-size: clamp(0.8125rem, 0.7893rem + 0.0952vw, 0.875rem);
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
