@@ -116,7 +116,9 @@ export const SelectProduct: FC<Props> = ({ products, gifts }) => {
       );
     }
 
-    router.push(`/sex-chocolate?${params.toString()}`);
+    router.push(`/sex-chocolate?${params.toString()}`, {
+      scroll: false,
+    });
   };
 
   return (
