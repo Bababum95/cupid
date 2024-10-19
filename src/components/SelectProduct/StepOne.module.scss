@@ -11,3 +11,19 @@
   font-weight: 500;
   line-height: normal;
 }
+
+.bage {
+  @include flex-center;
+  right: 8px;
+  top: -11px;
+  position: absolute;
+  color: $text;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  border-radius: 12px;
+  background: $accent;
+  padding: 6px 12px;
+  height: 23px;
+}

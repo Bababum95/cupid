@@ -70,10 +70,13 @@ export const StepTwo: FC<Props> = ({
             <div className={styles.badges}>
               <span className={styles.badge}>
                 {t("save")}{" "}
-                {formatPrice({
-                  amount: sellingPlan?.discount | 5,
-                  currencyCode: mainProduct.price.currencyCode,
-                })}
+                {formatPrice(
+                  {
+                    amount: sellingPlan?.discount | 5,
+                    currencyCode: mainProduct.price.currencyCode,
+                  },
+                  0
+                )}
               </span>
               <span className={styles.badge}>{t("best-value")}</span>
             </div>
@@ -117,7 +120,7 @@ export const StepTwo: FC<Props> = ({
                   exit="collapsed"
                   className={styles.time}
                   variants={{
-                    open: { opacity: 1, height: "auto", margin: '24px 0 8px' },
+                    open: { opacity: 1, height: "auto", margin: "24px 0 8px" },
                     collapsed: { opacity: 0, height: 0, margin: 0 },
                   }}
                   transition={{ duration: 0.4, ease: [0.04, 0.62, 0.23, 0.98] }}

@@ -52,6 +52,23 @@ export const StepOne: FC<Props> = ({
                 </span>
               }
             >
+              {quantity === 2 && (
+                <span className={styles.bage}>{t("free-gift")}</span>
+              )}
+              {quantity === 3 && (
+                <span className={styles.bage}>
+                  {t("save")}{" "}
+                  {formatPrice(
+                    {
+                      amount:
+                        products[0].price.amount * quantity -
+                        product.price.amount,
+                      currencyCode: product.price.currencyCode,
+                    },
+                    0
+                  )}
+                </span>
+              )}
               <span className={styles.price}>
                 {formatPrice({
                   amount: product.price.amount / quantity,

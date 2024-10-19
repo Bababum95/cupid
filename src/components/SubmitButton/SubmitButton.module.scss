@@ -9,11 +9,13 @@
   height: 60px;
   border-radius: 18px;
   background-color: $accent;
-  border: none;
   width: 100%;
   margin-top: 16px;
   transition: $transition;
-  cursor: pointer;
+
+  position: relative;
+  mask-image: -webkit-radial-gradient(center, white, black);
+  overflow: hidden;
 
   @include hover {
     background-color: #590d12;
@@ -25,10 +27,32 @@
     color: #4d4d4d;
     cursor: not-allowed;
   }
+
+  &:not(:disabled):after {
+    content: "";
+    background: linear-gradient(95deg, transparent 0, #774d4d 40%, transparent 60%);
+    filter: blur(32px);
+    position: absolute;
+    translate: -200% 0;
+    inset: 0px;
+    animation: 3.6s linear 0.55s infinite normal none running animation-skeleton;
+  }
 }
 
 .total {
   font-size: 17px;
   font-weight: 700;
   display: block;
+}
+
+@keyframes animation-skeleton {
+  0% {
+    translate: -200% 0;
+  }
+  50% {
+    translate: 200% 0;
+  }
+  100% {
+    translate: 200% 0;
+  }
 }

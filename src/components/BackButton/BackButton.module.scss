@@ -3,12 +3,10 @@
   gap: 8px;
   color: $secondary-text;
   background-color: transparent;
-  border: none;
   font-size: 17px;
   font-style: normal;
   font-weight: 500;
   line-height: 110%;
-  cursor: pointer;
   transition: $transition;
 
   @include hover {
