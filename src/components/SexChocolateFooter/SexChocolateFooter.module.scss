@@ -49,6 +49,7 @@
   @include flex-layout(space-between);
   list-style: none;
   margin-top: 40px;
+  gap: 28px;
 }
 
 .detail {
@@ -70,5 +71,39 @@
     font-style: normal;
     font-weight: 500;
     line-height: normal;
+  }
+}
+
+@include media("desktop") {
+  .wrapper {
+    border-radius: 0;
+    padding: 24px 20px;
+  }
+
+  .details {
+    flex-wrap: wrap;
+  }
+}
+
+@include media("tablet-small") {
+  .container {
+    @include flex-column;
+  }
+
+  .header {
+    display: contents;
+  }
+
+  .actions {
+    order: 3;
+  }
+
+  .details {
+    margin-top: 32px;
+    margin-bottom: 36px;
+  }
+
+  .detail {
+    max-width: none;
   }
 }

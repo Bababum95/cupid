@@ -5,19 +5,17 @@ import { useTranslations } from "next-intl";
 import { useSearchParams, useRouter } from "next/navigation";
 import Image from "next/image";
 
-import type { Product } from "@/types";
-import { BackButton } from "@/components";
-import { buildProductsQuery, sellingPlansQuery } from "@/graphql";
-import { fetchShopify } from "@/lib/shopify";
-import { formatPrice } from "@/utils";
+import type { ProductType, VariantProductType } from "@/types";
+// import { BackButton } from "@/components";
 
+import type { GiftType, SellingPlanGroupType } from "./types";
 import { StepOne } from "./StepOne";
 import { StepTwo } from "./StepTwo";
-import type { InitialDataType, GiftType, SellingPlanGroupType } from "./types";
+import { fetchInitialData } from "./fetchInitialData";
 import styles from "./SelectProduct.module.scss";
 
 type Props = {
-  products: Product[];
+  products: ProductType[];
   gifts: string[];
 };
 
@@ -25,54 +23,20 @@ export const SelectProduct: FC<Props> = ({ products, gifts }) => {
   const searchParams = useSearchParams();
   const router = useRouter();
   const t = useTranslations("SexChocolate");
-  const [selectedVariant, setSelectedVariant] = useState<Product | null>(null);
+  const [selectedVariant, setSelectedVariant] =
+    useState<VariantProductType | null>(null);
   const [step, setStep] = useState<string | null>(searchParams.get("step"));
   const [giftsData, setGiftsData] = useState<GiftType[]>([]);
   const [sellingPlans, setSellingPlans] = useState<SellingPlanGroupType[]>([]);
+  const mainVariant = products[0].variants[0];
 
   const getInitialData = async () => {
-    const giftsQuery = buildProductsQuery(gifts);
-    try {
-      const [giftsResponse, sellingPlansResponse] = (await Promise.all([
-        fetchShopify({ query: giftsQuery }),
-        fetchShopify({
-          query: sellingPlansQuery,
-          variables: { handle: "cupid-chocolate" },
-        }),
-      ])) as InitialDataType;
+    const initialData = await fetchInitialData({ gifts });
 
-      const data = Object.values(giftsResponse).map((item) => {
-        const price = formatPrice({
-          amount: parseFloat(item.priceRange.maxVariantPrice.amount),
-          currencyCode: item.priceRange.maxVariantPrice.currencyCode,
-        });
+    if (!initialData) return;
 
-        return {
-          id: item.id,
-          title: item.title,
-          price,
-        };
-      });
-
-      const sellingPlansData =
-        sellingPlansResponse.product.sellingPlanGroups.nodes
-          .map((group) => {
-            const sellingPlans = group.sellingPlans.nodes;
-            const discount = sellingPlans[0].name.match(/€(\d+(\.\d{1,2})?)/);
-
-            return {
-              sellingPlans,
-              name: group.name,
-              discount: discount ? parseFloat(discount[1]) : 0,
-            };
-          })
-          .sort((a, b) => a.discount - b.discount);
-
-      setSellingPlans(sellingPlansData);
-      setGiftsData(data);
-    } catch (error) {
-      console.log(error);
-    }
+    setGiftsData(initialData.gifts);
+    setSellingPlans(initialData.sellingPlans);
   };
 
   useEffect(() => {
@@ -86,15 +50,15 @@ export const SelectProduct: FC<Props> = ({ products, gifts }) => {
       if (!selectedVariant) {
         const quantity = parseFloat(searchParams.get("quantity") || "1");
         if (quantity === 1) {
-          setSelectedVariant(products[0]);
+          setSelectedVariant(mainVariant);
         } else {
           const selectedProduct = products.find(
             (product) =>
-              product.components &&
-              product.components[0][0].quantity === quantity
+              product.variants[0].components.length &&
+              product.variants[0].components[0].quantity === quantity
           );
 
-          if (selectedProduct) setSelectedVariant(selectedProduct);
+          if (selectedProduct) setSelectedVariant(selectedProduct.variants[0]);
         }
       }
     } else {
@@ -109,10 +73,10 @@ export const SelectProduct: FC<Props> = ({ products, gifts }) => {
     setStep("2");
     const params = new URLSearchParams();
     params.set("step", "2");
-    if (selectedVariant.isBundle) {
+    if (selectedVariant.components.length) {
       params.set(
         "quantity",
-        selectedVariant.components![0][0].quantity!.toString()
+        selectedVariant.components[0].quantity!.toString()
       );
     }
 
@@ -144,9 +108,7 @@ export const SelectProduct: FC<Props> = ({ products, gifts }) => {
         </div>
         <Image
           src={
-            selectedVariant
-              ? selectedVariant.images![0].url
-              : products[0].images![0].url
+            selectedVariant ? selectedVariant.image.url : mainVariant.image.url
           }
           className={styles.image}
           alt={products[0].title}
@@ -156,18 +118,18 @@ export const SelectProduct: FC<Props> = ({ products, gifts }) => {
         />
       </div>
       <div className={styles.summary}>
-        {step === "2" && (
+        {/* {step === "2" && (
           <div className={styles.back}>
             <BackButton />
           </div>
-        )}
+        )} */}
         <h2 className={styles.h2}>
           {step === "2" ? t("title-2") : t("title-1")}
         </h2>
         {step === "2" ? (
           <StepTwo
-            mainProduct={products[0]}
-            selectedVariant={selectedVariant || products[0]}
+            mainProduct={mainVariant}
+            selectedVariant={selectedVariant || mainVariant}
             sellingPlans={sellingPlans}
             gifts={giftsData}
           />

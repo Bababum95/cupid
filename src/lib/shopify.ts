@@ -8,11 +8,14 @@ export const client = createStorefrontApiClient({
 
 type FetchShopifyParams = {
   query: string;
-  variables?: Record<string, string>;
+  variables?: Record<string, unknown>;
 };
 
 export async function fetchShopify({ query, variables }: FetchShopifyParams) {
-  const response = await client.request(query, { variables });
+  const cleanQuery = query.replace(/\s+/g, " ").trim();
+  const response = await client.request(cleanQuery, {
+    variables,
+  });
 
   return response.data;
 }

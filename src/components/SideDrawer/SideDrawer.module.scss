@@ -59,3 +59,10 @@
     transition: $transition;
   }
 }
+
+@include media("tablet-small") {
+  .wrapper {
+    border-radius: 0 !important;
+    padding: 20px;
+  }
+}

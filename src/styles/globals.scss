@@ -47,6 +47,7 @@ pre {
 
 img {
   display: block;
+  max-width: 100%;
 }
 
 svg {
@@ -61,4 +62,25 @@ ol {
 button {
   border: none;
   cursor: pointer;
+}
+
+@keyframes animation-skeleton {
+  0% {
+    translate: -200% 0;
+  }
+  50% {
+    translate: 200% 0;
+  }
+  100% {
+    translate: 200% 0;
+  }
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0) translate(-50%, -50%);
+  }
+  to {
+    transform: rotate(360deg) translate(-50%, -50%);
+  }
 }

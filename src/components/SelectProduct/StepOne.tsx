@@ -3,9 +3,9 @@
 import { FC } from "react";
 import { useTranslations } from "next-intl";
 
-import { formatPrice } from "@/utils";
+import { dataUtils } from "@/utils";
 import { SubmitButton } from "@/components";
-import type { Product } from "@/types";
+import type { ProductType, VariantProductType } from "@/types";
 
 import { Gift } from "./Gift";
 import { Variant } from "./Variant";
@@ -13,10 +13,10 @@ import type { GiftType } from "./types";
 import styles from "./StepOne.module.scss";
 
 type Props = {
-  products: Product[];
+  products: ProductType[];
   gifts: GiftType[];
-  setSelectedVariant: (data: Product) => void;
-  selectedVariant: Product | null;
+  setSelectedVariant: (data: VariantProductType) => void;
+  selectedVariant: VariantProductType | null;
   nextStep: (evt: React.FormEvent) => void;
 };
 
@@ -29,7 +29,7 @@ export const StepOne: FC<Props> = ({
 }) => {
   const t = useTranslations("SexChocolate");
 
-  const handleSelectVariant = (product: Product) => {
+  const handleSelectVariant = (product: VariantProductType) => {
     setSelectedVariant(product);
   };
 
@@ -37,15 +37,15 @@ export const StepOne: FC<Props> = ({
     <form onSubmit={nextStep}>
       <ul className={styles.list}>
         {products.map((product) => {
-          const quantity: number = product.components
-            ? product.components[0][0].quantity || 1
+          const quantity: number = product.variants[0].components.length
+            ? product.variants[0].components[0].quantity || 1
             : 1;
 
           return (
             <Variant
-              key={product.id}
-              active={selectedVariant?.id === product.id}
-              onSelect={() => handleSelectVariant(product)}
+              key={product.variants[0].id}
+              active={selectedVariant?.id === product.variants[0].id}
+              onSelect={() => handleSelectVariant(product.variants[0])}
               top={
                 <span>
                   {quantity} {quantity > 1 ? t("boxes") : t("box")}
@@ -58,21 +58,21 @@ export const StepOne: FC<Props> = ({
               {quantity === 3 && (
                 <span className={styles.bage}>
                   {t("save")}{" "}
-                  {formatPrice(
+                  {dataUtils.formatPrice(
                     {
                       amount:
-                        products[0].price.amount * quantity -
-                        product.price.amount,
-                      currencyCode: product.price.currencyCode,
+                        products[0].variants[0].price.amount * quantity -
+                        product.variants[0].price.amount,
+                      currencyCode: product.variants[0].price.currencyCode,
                     },
                     0
                   )}
                 </span>
               )}
               <span className={styles.price}>
-                {formatPrice({
-                  amount: product.price.amount / quantity,
-                  currencyCode: product.price.currencyCode,
+                {dataUtils.formatPrice({
+                  amount: product.variants[0].price.amount / quantity,
+                  currencyCode: product.variants[0].price.currencyCode,
                 })}
                 /{t("box")}
               </span>
@@ -80,11 +80,11 @@ export const StepOne: FC<Props> = ({
           );
         })}
       </ul>
-      <Gift gifts={gifts} isActive={!!selectedVariant?.isBundle} />
+      <Gift gifts={gifts} isActive={!!selectedVariant?.components.length} />
       <SubmitButton
         label={t("next")}
         isActive={!!selectedVariant}
-        total={selectedVariant ? formatPrice(selectedVariant.price) : undefined}
+        total={selectedVariant ? dataUtils.formatPrice(selectedVariant.price) : null}
       />
     </form>
   );

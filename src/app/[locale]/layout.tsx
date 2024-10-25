@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { NextIntlClientProvider } from "next-intl";
 import { getMessages } from "next-intl/server";
 import "@/styles/globals.scss";
+import StoreProvider from "./StoreProvider";
 
 export const metadata: Metadata = {
   title: "Cupid Chocolate",
@@ -23,7 +24,7 @@ export default async function RootLayout({
     <html lang={locale}>
       <body className="body">
         <NextIntlClientProvider messages={messages} locale={locale}>
-          {children}
+          <StoreProvider>{children}</StoreProvider>
         </NextIntlClientProvider>
       </body>
     </html>

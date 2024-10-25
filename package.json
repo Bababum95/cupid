@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@reduxjs/toolkit": "^2.3.0",
     "@shopify/storefront-api-client": "^1.0.2",
     "framer-motion": "^11.3.2",
     "next": "14.2.15",
@@ -16,6 +17,7 @@
     "react": "^18",
     "react-dom": "^18",
     "react-i18next": "^15.0.3",
+    "react-redux": "^9.1.2",
     "winston": "^3.15.0",
     "winston-daily-rotate-file": "^5.0.0"
   },

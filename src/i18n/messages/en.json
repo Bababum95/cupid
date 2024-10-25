@@ -6,7 +6,13 @@
   "Common": {
     "back": "Back",
     "total": "Total",
-    "add-to-cart": "Add to Cart"
+    "add-to-cart": "Add to Cart",
+    "weight-of-product": "Weight of product",
+    "price-per": "Price per",
+    "inkl": "inkl. MwSt",
+    "ingredients": "Ingredients",
+    "how-to-use": "How to Use",
+    "product-details": "Product Details"
   },
   "SexChocolate": {
     "title-1": "How Many Boxes Would You Like?",
@@ -83,5 +89,11 @@
     "fiber": "Fiber",
     "protein": "Protein",
     "salt": "Salt"
+  },
+  "Cart": {
+    "your-cart": "Your Cart",
+    "total": "Total",
+    "checkout": "Checkout",
+    "complete-your-experience": "Complete Your Experience"
   }
 }

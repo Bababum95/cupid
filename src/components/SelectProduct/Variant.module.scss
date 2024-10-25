@@ -20,3 +20,13 @@
   white-space: nowrap;
 }
 
+@include media("tablet-small") {
+  .item {
+    padding: 14px 13px;
+
+    svg {
+      width: 16px;
+      height: 16px;
+    }
+  }
+}

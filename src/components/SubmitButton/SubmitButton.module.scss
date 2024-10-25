@@ -1,41 +1,8 @@
 .button {
-  @include flex-layout(space-between, center);
-  color: $text;
-  font-size: 15px;
-  font-style: normal;
-  font-weight: 600;
-  line-height: normal;
-  padding: 20px 28px;
-  height: 60px;
-  border-radius: 18px;
-  background-color: $accent;
-  width: 100%;
-  margin-top: 16px;
-  transition: $transition;
+  @include primary-button;
 
-  position: relative;
-  mask-image: -webkit-radial-gradient(center, white, black);
-  overflow: hidden;
-
-  @include hover {
-    background-color: #590d12;
-  }
-
-  &:disabled {
-    justify-content: center;
-    background-color: #1a1a1a;
-    color: #4d4d4d;
-    cursor: not-allowed;
-  }
-
-  &:not(:disabled):after {
-    content: "";
-    background: linear-gradient(95deg, transparent 0, #774d4d 40%, transparent 60%);
-    filter: blur(32px);
-    position: absolute;
-    translate: -200% 0;
-    inset: 0px;
-    animation: 3.6s linear 0.55s infinite normal none running animation-skeleton;
+  &.loading {
+    @include button-loading;
   }
 }
 
@@ -43,16 +10,5 @@
   font-size: 17px;
   font-weight: 700;
   display: block;
-}
-
-@keyframes animation-skeleton {
-  0% {
-    translate: -200% 0;
-  }
-  50% {
-    translate: 200% 0;
-  }
-  100% {
-    translate: 200% 0;
-  }
+  margin-left: auto;
 }

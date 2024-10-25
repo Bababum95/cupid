@@ -1,7 +1,7 @@
 .list {
   @include flex-column;
   gap: 8px;
-  margin-top: 52px;
+  margin: 52px 0 28px;
 }
 
 .top {

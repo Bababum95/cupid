@@ -1,2 +1,2 @@
-export { normalizeProductData } from "./normalizeProductData";
-export { formatPrice } from "./formatPrice";
+export { buildProductsByIdsQuery } from "./buildProductsByIdsQuery";
+export { dataUtils } from './dataUtils'

@@ -18,7 +18,7 @@
   top: -11px;
   position: absolute;
   color: $text;
-  font-size: 12px;
+  font-size: clamp(0.6875rem, 0.6643rem + 0.0952vw, 0.75rem);
   font-style: normal;
   font-weight: 700;
   line-height: normal;
@@ -27,3 +27,11 @@
   padding: 6px 12px;
   height: 23px;
 }
+
+@include media("tablet-small") {
+  .list {
+    margin-top: 32px;
+    gap: 8px;
+  }
+}
+
