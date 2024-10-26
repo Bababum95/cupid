@@ -87,7 +87,7 @@ export const SelectProduct: FC<Props> = ({ products, gifts }) => {
 
   return (
     <div className={styles.wrapper}>
-      <div className={styles.prewiew}>
+      <div className={styles.preview}>
         <div className={styles.bages}>
           <span className={styles.bage}>
             <svg

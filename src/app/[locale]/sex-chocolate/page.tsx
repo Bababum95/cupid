@@ -1,7 +1,6 @@
-import { SelectProduct } from "@/components";
+import { SelectProduct } from "@/components/sex-chocolate";
 
 import { getCollection } from "./getCollection";
-
 import styles from "./page.module.scss";
 
 export const dynamic = "force-dynamic";

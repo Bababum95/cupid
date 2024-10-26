@@ -5,12 +5,13 @@ import { useEffect, useState } from "react";
 import Image from "next/image";
 
 import { useAppDispatch, useAppSelector } from "@/hooks";
-import { BackButton, Price, SubmitButton, Catalog } from "@/components";
+import { BackButton, Price, SubmitButton } from "@/components";
 import { dataUtils } from "@/utils";
 import { crossSellsQuery } from "@/graphql";
-import { fetchShopify } from "@/lib/shopify";
-import { get as getCart } from "@/lib/slices/cart";
 import { ProductNode, ProductType } from "@/types";
+import { fetchShopify } from "@/lib/shopify";
+import { Catalog } from "@/components/cart";
+import { get as getCart } from "@/lib/slices/cart";
 
 import styles from "./page.module.scss";
 

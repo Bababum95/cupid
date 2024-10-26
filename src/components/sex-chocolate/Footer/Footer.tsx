@@ -9,9 +9,9 @@ import { useScrollbarWidth } from "@/hooks";
 import { details } from "./config";
 import { BenefitsDrawerContent } from "./BenefitsDrawerContent";
 import { NutritionalDrawerContent } from "./NutritionalDrawerContent";
-import styles from "./SexChocolateFooter.module.scss";
+import styles from "./Footer.module.scss";
 
-export const SexChocolateFooter: FC = () => {
+export const Footer: FC = () => {
   const [drawer, setDrawer] = useState<
     "product-benefits" | "nutritional-information" | null
   >(null);

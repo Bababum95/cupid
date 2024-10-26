@@ -1,7 +1,10 @@
 {
   "HomePage": {
     "title": "Start",
-    "by-now": "Buy now"
+    "by-now": "Buy now",
+    "ingredients": "Ingredients",
+    "reviews": "Reviews",
+    "faq": "FAQ"
   },
   "Common": {
     "back": "Back",

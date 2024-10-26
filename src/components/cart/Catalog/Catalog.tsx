@@ -25,12 +25,12 @@ export const Catalog: FC<Props> = ({ products }) => {
   };
 
   const openPopup = (product: ProductType) => {
-    document.body.classList.add("no-scroll");
+    document.body.style.overflow = "hidden";
     setSelectedProduct(product);
   };
 
   const closePopup = () => {
-    document.body.classList.remove("no-scroll");
+    document.body.style.overflow = "auto";
     setSelectedProduct(null);
   };
 

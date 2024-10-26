@@ -1,0 +1,19 @@
+.header {
+  @include flex-layout(flex-start, center);
+  padding: 12px 20px;
+  gap: 40px;
+}
+
+.logo {
+  display: block;
+  height: 26px;
+}
+
+.nav {
+  @include flex-layout(flex-start, center);
+  gap: 24px;
+}
+
+.end {
+  margin-left: auto;
+}
