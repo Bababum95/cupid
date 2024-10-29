@@ -1,7 +1,10 @@
 .header {
   @include flex-layout(flex-start, center);
+  max-width: $home-mw;
   padding: 12px 20px;
   gap: 40px;
+  width: 100%;
+  margin: 0 auto;
 }
 
 .logo {

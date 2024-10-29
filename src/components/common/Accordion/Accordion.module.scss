@@ -1,0 +1,52 @@
+.item {
+  user-select: none;
+
+  &:not(:last-child) {
+    margin-bottom: 24px;
+  }
+
+  &.open {
+    .top {
+      @include hover {
+        svg {
+          rotate: 90deg;
+        }
+      }
+    }
+  }
+}
+
+.top {
+  @include flex-layout(space-between, center);
+  width: 100%;
+  cursor: pointer;
+  color: $text;
+  transition: $transition;
+  gap: 24px;
+
+  svg {
+    transition: $transition;
+  }
+
+  @include hover {
+    color: #4d4d4d;
+
+    svg {
+      rotate: -90deg;
+    }
+  }
+}
+
+.text {
+  font-style: normal;
+  font-weight: 400;
+  line-height: 150%;
+  overflow: hidden;
+}
+
+.label {
+  color: inherit;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 150%;
+}

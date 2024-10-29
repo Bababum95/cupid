@@ -1,12 +1,26 @@
 .wrapper {
   margin-top: 40px;
+
+  :global {
+    .list {
+      margin-top: 60px;
+    }
+
+    .opener p {
+      font-size: 17px;
+    }
+
+    .content {
+      font-size: 15px;
+    }
+  }
 }
 
 .text {
   font-size: 15px;
   font-style: normal;
   font-weight: 400;
-  line-height: 150%; /* 22.5px */
+  line-height: 150%;
 }
 
 .label {
@@ -14,55 +28,5 @@
   font-size: 17px;
   font-style: normal;
   font-weight: 700;
-  line-height: 150%; /* 25.5px */
-}
-
-.list {
-  margin-top: 60px;
-}
-
-.item {
-  user-select: none;
-
-  &:not(:last-child) {
-    margin-bottom: 24px;
-  }
-
-  .text {
-    overflow: hidden;
-  }
-
-  .top {
-    @include flex-layout(space-between, center);
-    width: 100%;
-    cursor: pointer;
-    color: $text;
-    transition: $transition;
-
-    .label {
-      color: inherit;
-    }
-
-    svg {
-      transition: $transition;
-    }
-
-    @include hover {
-      color: #4d4d4d;
-
-      svg {
-        rotate: -90deg;
-      }
-    }
-  }
-
-  &.open {
-    .top {
-      @include hover {
-        svg {
-          rotate: 90deg;
-        }
-      }
-    }
-  }
+  line-height: 150%;
 }
