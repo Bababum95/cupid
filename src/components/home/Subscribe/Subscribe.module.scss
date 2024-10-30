@@ -1,0 +1,42 @@
+.block {
+  margin: 100px auto;
+  padding: 40px 0;
+  border-top: $grey-line;
+  border-bottom: $grey-line;
+}
+
+.wrapper {
+  @include flex-layout(flex-start, center);
+  max-width: $home-mw;
+  margin: 0 auto;
+  padding: 0 20px;
+  gap: 98px;
+}
+
+.image {
+  object-fit: cover;
+  border-radius: 32px;
+}
+
+.title {
+  color: $text;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  margin-bottom: 20px;
+}
+
+.description {
+  font-size: clamp(0.8125rem, 0.7661rem + 0.1905vw, 0.9375rem);
+  font-style: normal;
+  font-weight: 500;
+  line-height: 140%;
+  max-width: 473px;
+  margin-top: 24px;
+
+  a {
+    color: $text;
+    text-decoration: underline;
+  }
+}

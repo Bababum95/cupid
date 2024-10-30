@@ -1,11 +1,94 @@
 .section {
-  min-height: 320vh;
+  min-height: 400vh;
   position: relative;
+  max-width: 1104px;
+  padding: 0 20px;
+  width: 100%;
+  margin: 0 auto;
 }
 
-.video {
+.wrapper {
+  @include flex-column;
   position: sticky;
   top: 0;
   left: 0;
+  height: 100vh;
+  padding: calc(5vh + var(--header-height)) 0 3vh;
+  gap: 44px;
+}
+
+.video {
   max-width: 100%;
+  max-height: calc(90vh - var(--header-height) - 350px);
+  width: auto;
+  height: auto;
+}
+
+.title {
+  font-size: 48px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 110%;
+}
+
+.list {
+  height: 196px;
+  overflow: hidden;
+  flex-shrink: 0;
+  position: relative;
+
+  &:after,
+  &:before {
+    content: "";
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 20px;
+    z-index: 1;
+  }
+
+  &:before {
+    top: 0;
+    background: linear-gradient(180deg, #0c0c0c 0%, rgba(12, 12, 12, 0) 100%);
+  }
+
+  &:after {
+    bottom: 0;
+    background: linear-gradient(0deg, #0c0c0c 0%, rgba(12, 12, 12, 0) 100%);
+  }
+}
+
+.item {
+  @include flex-layout;
+  gap: 60px;
+  height: 100%;
+  padding: 20px 0;
+  translate: 0 calc(var(--progress) * -100%);
+  transition: translate 0.5s ease-in-out;
+}
+
+.subtitle {
+  font-size: 28px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+
+  span {
+    color: $text;
+  }
+}
+
+.description {
+  max-width: 608px;
+}
+
+.text {
+  font-size: 19px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 160%;
+
+  span {
+    color: $text;
+  }
 }

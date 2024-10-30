@@ -2,7 +2,15 @@ import { useTranslations } from "next-intl";
 import Image from "next/image";
 import Link from "next/link";
 
-import { Header, Advantages, FAQ, Ingredients } from "@/components/home";
+import {
+  Header,
+  Advantages,
+  FAQ,
+  Ingredients,
+  Comments,
+  Subscribe,
+  Footer,
+} from "@/components/home";
 
 import styles from "./page.module.scss";
 import classNames from "classnames";
@@ -44,8 +52,11 @@ export default function Page() {
           height={600}
           className={classNames(styles.image, styles.chocolate)}
         />
+        <Comments />
         <FAQ />
+        <Subscribe />
       </main>
+      <Footer />
     </>
   );
 }

@@ -25,6 +25,53 @@
     "fast": "Fast & Free Shipping",
     "fast-text": " Enjoy Cupid with no added cost"
   },
+  "Ingredients": {
+    "title": "Why These Ingredients Work",
+    "list": {
+      "1": {
+        "name": "Dark Chocolate",
+        "property": "Natural Aphrodisiac",
+        "description": "Contains <span>phenylethylamine</span>, known as the \"<span>love chemical</span>\" which enhances mood and stimulates the release of endorphins. It also increases serotonin levels, promoting relaxation and setting the stage for intimacy"
+      },
+      "2": {
+        "name": "Black Maca Extract",
+        "property": "Libido Enhancer",
+        "description": "Traditionally used as a natural remedy to enhance sexual desire and stamina. Black Maca is rich in nutrients that help balance hormones, improve energy, and boost libido for both men and women."
+      },
+      "3": {
+        "name": "L-Arginine",
+        "property": "Blood Flow & Libido Booster",
+        "description": "An amino acid that increases nitric oxide production, dilating blood vessels and improving circulation. It has been used as a treatment to boost sexual activity for women, enhancing sensations, physical response, and overall sexual satisfaction during intimate moments"
+      },
+      "4": {
+        "name": "Panax Ginseng",
+        "property": "Performance Booster & Aphrodisiac",
+        "description": "Known as the \"King of all herbs,\" it is used in traditional Chinese medicine to enhance sexual activity. The active ingredient, ginsenoside, has positive effects on libido, erection quality, and sexual arousal. They also help improve sperm quality, enhance sexual performance, and increase overall satisfaction."
+      },
+      "5": {
+        "name": "Guarana Extract",
+        "property": "Natural Energizer & Aphrodisiac",
+        "description": "Guarana increases energy, reduces fatigue and supports overall vitality with antioxidants and natural caffeine. It has been shown to improve focus, increase stamina and boost libido, contributing to improved performance and increased intimacy."
+      },
+      "6": {
+        "name": "Taurine",
+        "property": "Focus & Energy Support",
+        "description": "Taurine helps maintain energy levels and focus, reducing stress and supporting muscle function during intimate moments. This creates the ideal balance of relaxation and alertness for a more connected experience."
+      }
+    },
+    "read-the-study": "Read the study"
+  },
+  "Comments": {
+    "reviews": "Reviews",
+    "verified": "Verified",
+    "write-review": "Write a review"
+  },
+  "Subscribe": {
+    "title": "Unlock 10% Off Your Next Order!",
+    "placeholder": "E-Mail eingeben",
+    "button": "Sign Up and Save",
+    "description": "Du kannst den Newsletter jederzeit wieder abbestellen. Weitere Informationen findest Du in unserer <a>Datenschutzerklärung.</a>"
+  },
   "FAQ": {
     "title": "Frequently Asked Questions",
     "show-more": "More Questions",
@@ -66,6 +113,21 @@
     "18-text": "Currently, we ship within Germany and to select European countries. Please check our shipping policy or contact customer service for more information on international shipping options.",
     "19": "Is Cupid Chocolate safe to consume?",
     "19-text": "Yes, Cupid Chocolate is safe when consumed as directed. It contains no illicit substances or harmful additives. All ingredients are professionally dosed and undergo rigorous quality control."
+  },
+  "Footer": {
+    "description": "At Cupid, we believe in the power of shared experiences. Our premium aphrodisiac chocolates are crafted to bring couples closer, igniting passion and creating unforgettable moments. Made with love in Germany, using only the finest natural ingredients to ensure every bite is a delight.",
+    "info": "Info",
+    "about": "About Us",
+    "contact-us": "Contact Us",
+    "contact": "Contact",
+    "faq": "FAQ",
+    "order": "Track Your Order",
+    "legal": "Legal",
+    "privacy": "Privacy Policy",
+    "terms": "Terms & Conditions",
+    "shiping": "Shipping & Returns",
+    "imprint": "Imprint",
+    "cookies": "Cookie Policy"
   },
   "Common": {
     "back": "Back",

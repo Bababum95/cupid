@@ -1,2 +1,2 @@
-export { buildProductsByIdsQuery } from "./buildProductsByIdsQuery";
-export { dataUtils } from './dataUtils'
+export { dataUtils } from "./dataUtils";
+export { getInitialsLetters } from "./getInitialsLetters";

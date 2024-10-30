@@ -1,6 +1,5 @@
 .block {
   @include flex-layout(space-between, center);
-  margin-top: 120px;
   position: relative;
   max-width: $home-mw;
   margin: 270px auto;
