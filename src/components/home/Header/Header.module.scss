@@ -5,6 +5,13 @@
   gap: 40px;
   width: 100%;
   margin: 0 auto;
+  height: var(--header-height);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background-color: $page-bg;
+  box-shadow: 0 0 0 100vmax $page-bg;
+  clip-path: inset(0 -100vmax);
 }
 
 .logo {
@@ -19,4 +26,13 @@
 
 .end {
   margin-left: auto;
+}
+
+.button {
+  @include primary-button;
+  height: 28px;
+  border-radius: 50px;
+  padding: 8px 20px;
+  font-size: 13px;
+  line-height: 110%;
 }

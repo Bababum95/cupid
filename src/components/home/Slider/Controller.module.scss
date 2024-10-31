@@ -1,0 +1,30 @@
+.buttons {
+  @include flex-center;
+  gap: 8px;
+}
+
+.button {
+  @include flex-center;
+  gap: 8px;
+  border-radius: 78px;
+  border: 2px solid #1a1a1a;
+  padding: 0 20px;
+  height: 44px;
+  background-color: transparent;
+  color: $secondary-text;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 160%;
+  transition: $transition;
+
+  &:last-child {
+    svg {
+      rotate: 180deg;
+    }
+  }
+
+  @include hover {
+    color: $text;
+  }
+}

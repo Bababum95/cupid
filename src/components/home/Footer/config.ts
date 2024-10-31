@@ -33,3 +33,19 @@ export const SOCIAL_LINKS = [
   { Icon: InstagramIcon, href: "#" },
   { Icon: TwitterIcon, href: "#" },
 ];
+
+export const PAYMENT_METHODS = [
+  { src: "/images/payments/paypal.png", alt: "PayPal", name: "paypal" },
+  { src: "/images/payments/amex.png", alt: "American Express", name: "amex" },
+  { src: "/images/payments/visa.png", alt: "Visa", name: "visa" },
+  { src: "/images/payments/maestro.png", alt: "Maestro", name: "maestro" },
+  {
+    src: "/images/payments/mastercard.png",
+    alt: "Mastercard",
+    name: "mastercard",
+  },
+  { src: "/images/payments/applepay.png", alt: "Apple Pay", name: "applepay" },
+  { src: "/images/payments/klarna.png", alt: "Klarna", name: "klarna" },
+  { src: "/images/payments/sofort.png", alt: "Sofort", name: "sofort" },
+  { src: "/images/payments/vorkasse.png", alt: "Vorkasse", name: "vorkasse" },
+];

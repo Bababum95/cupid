@@ -1,7 +1,20 @@
 {
+  "Common": {
+    "back": "Back",
+    "total": "Total",
+    "add-to-cart": "Add to Cart",
+    "weight-of-product": "Weight of product",
+    "price-per": "Price per",
+    "inkl": "inkl. MwSt",
+    "ingredients": "Ingredients",
+    "how-to-use": "How to Use",
+    "product-details": "Product Details",
+    "prev": "Prev",
+    "next": "Next"
+  },
   "HomePage": {
     "title": "Cupid Aphrodisiac Chocolate",
-    "by-now": "Buy now",
+    "by-now": "Buy Now",
     "ingredients": "Ingredients",
     "reviews": "Reviews",
     "faq": "FAQ",
@@ -9,7 +22,11 @@
     "naturally": "Naturally. Cupid is designed to bring couples closer, ",
     "enhancing-intimacy": "enhancing intimacy ",
     "connection": "and connection with ",
-    "every-bite": "every bite."
+    "every-bite": "every bite.",
+    "what-our-customers-say": "What Our Customers Say",
+    "orders": "Orders and subscriptions",
+    "born-from-love": "Born from Love, Made for Connection",
+    "born-from-love-text": "Cupid was created to help couples reconnect in today's fast-paced world. Inspired by love and personal experience, our founder Nico, with a background in natural health, developed Cupid's unique blend to reignite intimacy and bring passion back into relationships."
   },
   "Advantages": {
     "heightens-pleasure": "Heightens Pleasure",
@@ -128,17 +145,6 @@
     "shiping": "Shipping & Returns",
     "imprint": "Imprint",
     "cookies": "Cookie Policy"
-  },
-  "Common": {
-    "back": "Back",
-    "total": "Total",
-    "add-to-cart": "Add to Cart",
-    "weight-of-product": "Weight of product",
-    "price-per": "Price per",
-    "inkl": "inkl. MwSt",
-    "ingredients": "Ingredients",
-    "how-to-use": "How to Use",
-    "product-details": "Product Details"
   },
   "SexChocolate": {
     "title-1": "How Many Boxes Would You Like?",

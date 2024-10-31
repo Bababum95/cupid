@@ -61,6 +61,15 @@
   }
 }
 
+.logo {
+  color: $secondary-text;
+  transition: $transition;
+
+  @include hover {
+    color: $text;
+  }
+}
+
 @include media("tablet-small") {
   .wrapper {
     border-radius: 0 !important;

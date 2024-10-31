@@ -1,0 +1,33 @@
+.button {
+  background-color: transparent;
+  color: $secondary-text;
+  transition: $transition;
+
+  @include hover {
+    color: $text;
+  }
+}
+
+.nav {
+  @include flex-column;
+  margin-top: 60px;
+  gap: 28px;
+}
+
+.divider {
+  width: 100%;
+  height: 1px;
+  background-color: #1a1a1a;
+}
+
+.link {
+  font-size: 17px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 110%;
+  transition: $transition;
+
+  @include hover {
+    color: $text;
+  }
+}

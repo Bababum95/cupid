@@ -6,14 +6,17 @@ import {
   Header,
   Advantages,
   FAQ,
+  Gallery,
   Ingredients,
   Comments,
   Subscribe,
   Footer,
+  Slider,
+  Video,
 } from "@/components/home";
 
+import { VIDEOS } from "./config";
 import styles from "./page.module.scss";
-import classNames from "classnames";
 
 export default function Page() {
   const t = useTranslations("HomePage");
@@ -44,14 +47,13 @@ export default function Page() {
           </Link>
         </div>
         <Advantages />
-        <Ingredients />
-        <Image
-          src="/images/chocolate.jpg"
-          alt="Cupid Aphrodisiac Chocolate"
-          width={1440}
-          height={600}
-          className={classNames(styles.image, styles.chocolate)}
-        />
+        {/* <Ingredients /> */}
+        <Slider title={t("what-our-customers-say")}>
+          {VIDEOS.map((video, i) => (
+            <Video src={video.src} description={video.description} key={i} />
+          ))}
+        </Slider>
+        <Gallery />
         <Comments />
         <FAQ />
         <Subscribe />

@@ -58,7 +58,7 @@ export const Comments = () => {
                 </li>
               ))}
             </ul>
-            <button className={styles.button}>{t("write-review")}</button>
+            {/* <button className={styles.button}>{t("write-review")}</button> */}
           </div>
         </div>
       </div>

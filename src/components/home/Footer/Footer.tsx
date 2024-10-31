@@ -1,8 +1,9 @@
 import { useTranslations } from "next-intl";
+import Image from "next/image";
 
 import LogoIcon from "@/icons/footer-logo.svg";
 
-import { LINKS, SOCIAL_LINKS } from "./config";
+import { LINKS, SOCIAL_LINKS, PAYMENT_METHODS } from "./config";
 import styles from "./Footer.module.scss";
 
 export const Footer = () => {
@@ -42,6 +43,22 @@ export const Footer = () => {
             <li className={styles.link}>WhatsApp</li>
           </ul>
         </nav>
+      </div>
+      <span className={styles.divider} />
+      <div className={styles.wrapper}>
+        <div className={styles.payments}>
+          {PAYMENT_METHODS.map(({ alt, src }, i) => (
+            <Image
+              className={styles.payment}
+              key={i}
+              alt={alt}
+              src={src}
+              width={70}
+              height={28}
+            />
+          ))}
+        </div>
+        <p className={styles.copyright}>2024 Cupid®</p>
       </div>
     </footer>
   );

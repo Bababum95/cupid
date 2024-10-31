@@ -1,6 +1,9 @@
 import { FC } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import classNames from "classnames";
+import Link from "next/link";
+
+import LogoIcon from "@/icons/logotype.svg";
 
 import styles from "./SideDrawer.module.scss";
 
@@ -48,7 +51,13 @@ export const SideDrawer: FC<Props> = ({
             transition={{ duration: 0.35, type: "tween" }}
           >
             <header className={styles.header}>
-              {title && <h2 className={styles.title}>{title}</h2>}
+              {title ? (
+                <h2 className={styles.title}>{title}</h2>
+              ) : (
+                <Link href="/" className={styles.logo}>
+                  <LogoIcon />
+                </Link>
+              )}
               <button
                 aria-label="Close button"
                 onClick={onClose}

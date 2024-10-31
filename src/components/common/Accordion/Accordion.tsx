@@ -4,6 +4,8 @@ import { useRef, useState, type FC } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import classNames from "classnames";
 
+import ArrowIcon from "@/icons/arrow.svg";
+
 import styles from "./Accordion.module.scss";
 
 type Props = {
@@ -40,19 +42,7 @@ export const Accordion: FC<Props> = ({ data, t }) => {
                 onClick={() => setExpanded(isOpen ? false : index)}
               >
                 <p className={styles.label}>{t(name)}</p>
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width={8}
-                  height={12}
-                  viewBox="0 0 8 12"
-                  fill="none"
-                >
-                  <path
-                    d="M7 1L2 6L7 11"
-                    stroke="currentColor"
-                    strokeWidth="1.8"
-                  />
-                </svg>
+                <ArrowIcon />
               </div>
               <AnimatePresence initial={false}>
                 {isOpen && (
