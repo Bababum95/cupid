@@ -40,3 +40,19 @@
     text-decoration: underline;
   }
 }
+
+@include media('desktop') {
+  .wrapper {
+    gap: 20px;
+  }
+}
+
+@include media('tablet') {
+  .wrapper {
+    flex-direction: column;
+  }
+
+  .image {
+    width: 100%;
+  }
+}

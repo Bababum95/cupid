@@ -9,6 +9,7 @@
 
 .info {
   max-width: 552px;
+  flex: 1;
 }
 
 .top {
@@ -42,6 +43,11 @@
   @include flex-layout(space-between);
   flex: 1;
   max-width: 628px;
+  gap: 8px;
+
+  ul {
+    flex-shrink: 0;
+  }
 }
 
 .label {
@@ -85,4 +91,24 @@
 
 .payment {
   object-fit: contain;
+}
+
+@include media("tablet") {
+  .wrapper {
+    flex-direction: column;
+  }
+
+  .info {
+    max-width: 100%;
+  }
+
+  .nav {
+    max-width: 100%;
+    width: 100%;
+    flex-wrap: wrap;
+  }
+
+  .payments {
+    flex-wrap: wrap;
+  }
 }

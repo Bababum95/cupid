@@ -4,6 +4,7 @@
   max-width: $home-mw;
   margin: 270px auto;
   padding: 0 20px;
+  gap: 20px;
 }
 
 .summary {
@@ -97,4 +98,14 @@
   font-weight: 600;
   line-height: 160%;
   border-width: 2px;
+}
+
+@include media('tablet') {
+  .section {
+    flex-direction: column;
+  }
+
+  .list {
+    max-width: 100%;
+  }
 }

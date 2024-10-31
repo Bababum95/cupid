@@ -48,10 +48,12 @@
 
 .image {
   position: sticky;
-  top: 20px;
+  top: calc(var(--header-height) + 20px);
   right: 0;
   border-radius: 40px;
   max-width: 650px;
+  flex-shrink: 1;
+  height: auto;
 }
 
 .button {
@@ -124,6 +126,25 @@
 
   &:after {
     left: -16px;
+  }
+}
+
+@include media("tablet") {
+  .wrapper {
+    flex-direction: column;
+    margin-top: 48px;
+  }
+
+  .accordion {
+    order: 2;
+    max-width: 100%;
+  }
+
+  .image {
+    position: relative;
+    top: 0;
+    width: 100%;
+    max-width: 100%;
   }
 }
 

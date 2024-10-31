@@ -10,16 +10,17 @@
 .wrapper {
   @include flex-column;
   position: sticky;
+  justify-content: space-between;
   top: 0;
   left: 0;
   height: 100vh;
-  padding: calc(5vh + var(--header-height)) 0 3vh;
+  padding: calc(2vh + var(--header-height)) 0 3vh;
   gap: 44px;
 }
 
 .video {
   max-width: 100%;
-  max-height: calc(90vh - var(--header-height) - 350px);
+  max-height: calc(96vh - var(--header-height) - 350px);
   width: auto;
   height: auto;
 }
@@ -68,7 +69,7 @@
 }
 
 .subtitle {
-  font-size: 28px;
+  font-size: clamp(1.3125rem, 1.0434rem + 1.1041vw, 1.75rem);
   font-style: normal;
   font-weight: 700;
   line-height: normal;
@@ -90,5 +91,34 @@
 
   span {
     color: $text;
+  }
+}
+
+@include media("tablet") {
+  .wrapper {
+    gap: 28px;
+  }
+
+  .title {
+    font-size: 32px;
+    order: -1;
+  }
+
+  .list {
+    height: 310px;
+  }
+
+  .item {
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .text {
+    font-size: 16px;
+  }
+
+  .video {
+    max-width: calc(100% + 40px);
+    margin-left: -20px;
   }
 }

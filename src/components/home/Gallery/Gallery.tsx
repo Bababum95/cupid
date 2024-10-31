@@ -13,60 +13,58 @@ export const Gallery = () => {
         <h2>{t("born-from-love")}</h2>
         <p>{t("born-from-love-text")}</p>
       </div>
-      <div>
-        <div className={styles.first}>
-          <Image
-            src="/images/chocolate.jpg"
-            alt="Cupid Aphrodisiac Chocolate"
-            width={1440}
-            height={600}
-            className={styles.image}
-          />
-          <Image
-            src="/images/chocolate.jpg"
-            alt="Cupid Aphrodisiac Chocolate"
-            width={1440}
-            height={600}
-            className={styles.image}
-          />
-          <Image
-            src="/images/chocolate.jpg"
-            alt="Cupid Aphrodisiac Chocolate"
-            width={1440}
-            height={600}
-            className={styles.image}
-          />
-          <Image
-            src="/images/chocolate.jpg"
-            alt="Cupid Aphrodisiac Chocolate"
-            width={1440}
-            height={600}
-            className={styles.image}
-          />
-        </div>
-        <div className={styles.last}>
-          <Image
-            src="/images/chocolate.jpg"
-            alt="Cupid Aphrodisiac Chocolate"
-            width={1440}
-            height={600}
-            className={styles.image}
-          />
-          <Image
-            src="/images/chocolate.jpg"
-            alt="Cupid Aphrodisiac Chocolate"
-            width={1440}
-            height={600}
-            className={styles.image}
-          />
-          <Image
-            src="/images/chocolate.jpg"
-            alt="Cupid Aphrodisiac Chocolate"
-            width={1440}
-            height={600}
-            className={styles.image}
-          />
-        </div>
+      <div className={styles.row}>
+        <Image
+          src="/images/chocolate.jpg"
+          alt="Cupid Aphrodisiac Chocolate"
+          width={133}
+          height={278}
+          className={styles.image}
+        />
+        <Image
+          src="/images/chocolate.jpg"
+          alt="Cupid Aphrodisiac Chocolate"
+          width={430}
+          height={278}
+          className={styles.image}
+        />
+        <Image
+          src="/images/chocolate.jpg"
+          alt="Cupid Aphrodisiac Chocolate"
+          width={320}
+          height={278}
+          className={styles.image}
+        />
+        <Image
+          src="/images/chocolate.jpg"
+          alt="Cupid Aphrodisiac Chocolate"
+          width={498}
+          height={278}
+          className={styles.image}
+        />
+      </div>
+      <div className={styles.row}>
+        <Image
+          src="/images/chocolate.jpg"
+          alt="Cupid Aphrodisiac Chocolate"
+          width={400}
+          height={278}
+          className={styles.image}
+        />
+        <Image
+          src="/images/chocolate.jpg"
+          alt="Cupid Aphrodisiac Chocolate"
+          width={602}
+          height={278}
+          className={styles.image}
+        />
+        <Image
+          src="/images/chocolate.jpg"
+          alt="Cupid Aphrodisiac Chocolate"
+          width={400}
+          height={278}
+          className={styles.image}
+        />
       </div>
     </section>
   );

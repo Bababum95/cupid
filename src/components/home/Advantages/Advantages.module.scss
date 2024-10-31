@@ -16,6 +16,10 @@
   }
 }
 
+.image {
+  height: auto;
+}
+
 .title {
   color: $text;
   font-size: clamp(1.5rem, 1.3143rem + 0.7619vw, 2rem);
@@ -30,4 +34,19 @@
   font-style: normal;
   font-weight: 500;
   line-height: normal;
+}
+
+@include media("tablet") {
+  .block {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: flex-start;
+  }
+
+  .image {
+    position: sticky;
+    right: 0;
+    transform: translateX(20px);
+    top: var(--header-height);
+  }
 }

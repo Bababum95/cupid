@@ -1,7 +1,7 @@
 import { useTranslations } from "next-intl";
+import Image from "next/image";
 
 import styles from "./Advantages.module.scss";
-import Image from "next/image";
 
 const colOne = [
   "heightens-pleasure",
@@ -27,6 +27,7 @@ export const Advantages = () => {
         alt="Cupid Aphrodisiac Chocolate"
         width={410}
         height={446}
+        className={styles.image}
       />
       <ul className={styles.list}>
         {colTwo.map((item) => (

@@ -36,3 +36,9 @@
   font-size: 13px;
   line-height: 110%;
 }
+
+@include media('tablet') {
+  .nav {
+    display: none;
+  }
+}
