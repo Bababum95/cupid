@@ -47,7 +47,7 @@ export default function Page() {
           </Link>
         </div>
         <Advantages />
-        {/* <Ingredients /> */}
+        <Ingredients />
         <Slider title={t("what-our-customers-say")}>
           {VIDEOS.map((video, i) => (
             <Video src={video.src} description={video.description} key={i} />
