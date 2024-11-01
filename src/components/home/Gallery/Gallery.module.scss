@@ -57,6 +57,11 @@
   border-radius: 20px;
   max-height: 100%;
   flex-grow: 1;
+  flex-shrink: 1;
+
+  &.main {
+    min-width: 204px;
+  }
 
   &:first-child {
     border-radius: 0 20px 20px 0;
@@ -73,16 +78,29 @@
 
 @include media("tablet") {
   .section {
-    margin: 270px 0;
+    margin: 144px 0;
   }
 
   .text {
     flex-direction: column;
     gap: 32px;
-    margin: 144px 0;
+    margin-bottom: 44px;
+  }
+
+  .row {
+    gap: 8px;
   }
 
   .image {
     height: 120px;
+    width: 20%;
+
+    &:nth-child(3) {
+      border-radius: 20px 0 0 20px;
+    }
+
+    &:nth-child(4) {
+      display: none;
+    }
   }
 }

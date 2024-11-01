@@ -130,6 +130,10 @@
 }
 
 @include media("tablet") {
+  .section {
+    margin: 144px 0;
+  }
+
   .wrapper {
     flex-direction: column;
     margin-top: 48px;
@@ -145,6 +149,7 @@
     top: 0;
     width: 100%;
     max-width: 100%;
+    border-radius: 25px;
   }
 }
 

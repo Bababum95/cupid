@@ -37,3 +37,17 @@
   padding: 12px 32px;
   white-space: nowrap;
 }
+
+@include media("tablet-small") {
+  .form {
+    flex-direction: column;
+  }
+
+  .input {
+    width: 100%;
+  }
+
+  .button {
+    width: 100%;
+  }
+}

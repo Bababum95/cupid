@@ -6,6 +6,7 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import Image from "next/image";
 
 import styles from "./Gallery.module.scss";
+import classNames from "classnames";
 
 export const Gallery = () => {
   const t = useTranslations("HomePage");
@@ -83,7 +84,7 @@ export const Gallery = () => {
               alt="Cupid Aphrodisiac Chocolate"
               width={602}
               height={278}
-              className={styles.image}
+              className={classNames(styles.image, styles.main)}
               ref={imageRef}
               style={{ borderRadius }}
             />
