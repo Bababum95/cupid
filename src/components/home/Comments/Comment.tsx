@@ -3,6 +3,7 @@ import { useTranslations } from "next-intl";
 
 import { getInitialsLetters } from "@/utils";
 import StarIcon from "@/icons/star.svg";
+import VerifiedIcon from "@/icons/approval.svg";
 
 import styles from "./Comment.module.scss";
 
@@ -59,7 +60,10 @@ export const Comment: FC<Props> = ({ name, rating, review, date }) => {
       </p>
 
       <div className={styles.footer}>
-        <button className={styles.button}>{t("verified")}</button>
+        <button className={styles.button}>
+          <VerifiedIcon width={24} height={24} />
+          {t("verified")}
+        </button>
         <span>/</span>
         <time itemProp="datePublished" dateTime={date}>
           {date}

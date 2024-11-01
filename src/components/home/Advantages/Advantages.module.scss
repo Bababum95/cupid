@@ -51,4 +51,10 @@
     transform: translateX(20px);
     top: var(--header-height);
   }
+
+  .item {
+    &:not(:last-child) {
+      margin-bottom: 28px;
+    }
+  }
 }

@@ -37,8 +37,16 @@
   line-height: 110%;
 }
 
-@include media('tablet') {
+@include media("tablet") {
+  .header {
+    gap: 16px;
+  }
+
   .nav {
     display: none;
+  }
+
+  .logo {
+    color: $text;
   }
 }

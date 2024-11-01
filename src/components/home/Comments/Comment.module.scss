@@ -56,6 +56,8 @@
 }
 
 .button {
+  @include flex-center;
+  gap: 8px;
   color: $text;
   font-size: 17px;
   font-style: normal;

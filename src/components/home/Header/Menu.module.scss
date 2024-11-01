@@ -31,3 +31,9 @@
     color: $text;
   }
 }
+
+@include media("tablet") {
+  .button {
+    color: $text;
+  }
+}
