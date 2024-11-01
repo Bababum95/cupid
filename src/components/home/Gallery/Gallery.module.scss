@@ -8,6 +8,7 @@
   padding: 12px 20px;
   margin: auto;
   margin-bottom: 80px;
+  gap: 12px;
 
   h2 {
     max-width: 442px;
@@ -23,7 +24,21 @@
     font-style: normal;
     font-weight: 500;
     line-height: 160%;
+    flex-shrink: 2;
   }
+}
+
+.wrapper {
+  width: 100%;
+  height: fit-content;
+  overflow: hidden;
+  position: sticky;
+  top: var(--top, var(--header-height));
+}
+
+.images {
+  transform-origin: bottom;
+  width: 100%;
 }
 
 .row {
@@ -50,4 +65,8 @@
   &:last-child {
     border-radius: 20px 0 0 20px;
   }
+}
+
+.filler {
+  height: 50vh;
 }

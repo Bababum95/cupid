@@ -44,6 +44,7 @@
   flex: 1;
   max-width: 628px;
   gap: 8px;
+  flex-wrap: wrap;
 
   ul {
     flex-shrink: 0;
@@ -79,6 +80,7 @@
 .payments {
   @include flex-layout;
   gap: 8px;
+  flex-wrap: wrap;
 }
 
 .divider {
@@ -93,6 +95,14 @@
   object-fit: contain;
 }
 
+.copyright {
+  font-size: 17px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  white-space: nowrap;
+}
+
 @include media("tablet") {
   .wrapper {
     flex-direction: column;
@@ -105,10 +115,5 @@
   .nav {
     max-width: 100%;
     width: 100%;
-    flex-wrap: wrap;
-  }
-
-  .payments {
-    flex-wrap: wrap;
   }
 }
