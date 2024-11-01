@@ -103,6 +103,7 @@
 @include media('tablet') {
   .section {
     flex-direction: column;
+    margin: 144px 0;
   }
 
   .list {

@@ -27,4 +27,8 @@
   @include hover {
     color: $text;
   }
+
+  @include media("tablet") {
+    display: none;
+  }
 }

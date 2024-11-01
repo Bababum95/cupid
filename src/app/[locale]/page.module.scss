@@ -5,6 +5,8 @@
 .image {
   height: auto;
   width: 100%;
+  min-height: 443px;
+  object-fit: cover;
 }
 
 .content {
@@ -46,4 +48,35 @@
   width: 240px;
   height: 52px;
   border-radius: 20px;
+}
+
+@include media("tablet") {
+  .content {
+    position: relative;
+    top: 0;
+    left: 0;
+    transform: none;
+    margin-top: 28px;
+  }
+}
+
+@include media("tablet-small") {
+  .text {
+    max-width: 100%;
+  }
+
+  .title {
+    max-width: 100%;
+    margin-bottom: 12px;
+  }
+
+  .image {
+    object-position: 70% bottom;
+  }
+
+  .button {
+    width: 100%;
+    margin-top: 24px;
+    border-radius: 15px;
+  }
 }

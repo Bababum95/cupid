@@ -36,11 +36,7 @@ export default function Page() {
         <div className={styles.content}>
           <h1 className={styles.title}>{t("title")}</h1>
           <p className={styles.text}>
-            <span>{t("ignite-passion")}</span>
-            {t("naturally")}
-            <span>{t("enhancing-intimacy")}</span>
-            {t("connection")}
-            <span>{t("every-bite")}</span>
+            {t.rich("description", { span: (chunks) => <span>{chunks}</span> })}
           </p>
           <Link href="/sex-chocolate" className={styles.button}>
             {t("by-now")}
