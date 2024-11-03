@@ -227,6 +227,10 @@
   margin-left: auto;
 }
 
+.tab-close {
+  display: none;
+}
+
 @include media("tablet-small") {
   .popup {
     display: block;
@@ -301,5 +305,32 @@
 
   .row {
     gap: 20px;
+  }
+
+  .tab-content {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: $page-bg;
+    z-index: 10;
+    padding-inline: 20px;
+  }
+
+  .tab-title {
+    text-align: center;
+    margin-top: 26px
+  }
+
+  .tab-close {
+    @include flex-center;
+    background-color: transparent;
+    display: block;
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    cursor: pointer;
+    width: 35px;
+    height: 35px;
   }
 }

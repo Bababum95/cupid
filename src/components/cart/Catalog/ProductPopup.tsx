@@ -8,6 +8,7 @@ import type { ProductType } from "@/types";
 import { dataUtils } from "@/utils";
 import { Price } from "@/components";
 import { default as CloseIcon } from "@/icons/close.svg";
+import { default as BackIcon } from "@/icons/back.svg";
 
 import styles from "./ProductPopup.module.scss";
 
@@ -98,10 +99,16 @@ const Product: FC<ProductProps> = ({
               animate="open"
               exit="collapsed"
               variants={{
-                open: { opacity: 1, height: "auto", marginTop: 12 },
+                open: { opacity: 1, height: "auto", marginTop: 12, top: 0 },
                 collapsed: { opacity: 0, height: 0, marginTop: 0 },
               }}
             >
+              <button
+                className={styles["tab-close"]}
+                onClick={() => setTab(null)}
+              >
+                <BackIcon />
+              </button>
               <h3 className={styles["tab-title"]}>{t(tab)}</h3>
               <AnimatePresence initial={false}>
                 {product[tab].children.map((node, index) =>

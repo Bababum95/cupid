@@ -2,6 +2,7 @@
   @include flex-layout(space-between);
   margin-top: 70px;
   gap: 28px;
+  position: relative;
 }
 
 .summary {
@@ -57,12 +58,26 @@
   .wrapper {
     flex-direction: column;
     align-items: center;
-    margin-top: 24px;
+    padding-top: 12px;
+    margin-top: 12px;
   }
 
   .summary {
     max-width: 550px;
     width: 100%;
+  }
+}
+
+@include media("tablet-small") {
+  .wrapper {
+    padding-top: 60px;
+  }
+
+  .back {
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin: 0 0 0 -20px;
   }
 }
 

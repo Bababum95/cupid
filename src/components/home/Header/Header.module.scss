@@ -17,11 +17,24 @@
 .logo {
   display: block;
   height: 26px;
+  transition: $transition;
+
+  @include hover {
+    color: $text;
+  }
 }
 
 .nav {
   @include flex-layout(flex-start, center);
   gap: 24px;
+
+  a {
+    transition: $transition;
+
+    @include hover {
+      color: $text;
+    }
+  }
 }
 
 .end {

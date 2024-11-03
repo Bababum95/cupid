@@ -50,3 +50,17 @@
   font-weight: 700;
   line-height: 150%;
 }
+
+@include media("tablet-small") {
+  .item {
+    svg {
+      rotate: -90deg;
+    }
+
+    &.open {
+      svg {
+        rotate: 90deg;
+      }
+    }
+  }
+}

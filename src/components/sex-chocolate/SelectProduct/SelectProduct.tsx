@@ -6,7 +6,7 @@ import { useSearchParams, useRouter } from "next/navigation";
 import Image from "next/image";
 
 import type { ProductType, VariantProductType } from "@/types";
-// import { BackButton } from "@/components";
+import { BackButton } from "@/components";
 
 import type { GiftType, SellingPlanGroupType } from "./types";
 import { StepOne } from "./StepOne";
@@ -118,11 +118,9 @@ export const SelectProduct: FC<Props> = ({ products, gifts }) => {
         />
       </div>
       <div className={styles.summary}>
-        {/* {step === "2" && (
-          <div className={styles.back}>
-            <BackButton />
-          </div>
-        )} */}
+        <div className={styles.back}>
+          <BackButton />
+        </div>
         <h2 className={styles.h2}>
           {step === "2" ? t("title-2") : t("title-1")}
         </h2>
