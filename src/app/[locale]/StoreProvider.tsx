@@ -25,10 +25,12 @@ export default function StoreProvider({
   if (!storeRef.current) storeRef.current = makeStore();
 
   useEffect(() => {
-    sendPageView();
-    document.documentElement.classList.add('cc--elegant-black');
+    document.documentElement.classList.add("cc--elegant-black");
     CookieConsent.run(COOKIE_CONSENT_CONFIG);
-    console.log(CookieConsent.getConfig());
+  }, []);
+
+  useEffect(() => {
+    sendPageView();
   }, [pathname, searchParams]);
 
   useShopifyCookies({ hasUserConsent: true });

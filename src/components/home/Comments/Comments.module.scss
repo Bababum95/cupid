@@ -26,6 +26,7 @@
 .rating {
   @include flex-layout(space-between);
   margin-top: 60px;
+  gap: 40px;
 }
 
 .info {
