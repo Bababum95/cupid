@@ -6,7 +6,7 @@ import StoreProvider from "./StoreProvider";
 
 export const metadata: Metadata = {
   title: "Cupid Chocolate",
-  description: "Cupid Chocolate",
+  description: "Cupid Aphrodisiac Chocolate",
 };
 
 export default async function RootLayout({

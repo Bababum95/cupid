@@ -1,4 +1,10 @@
 import { createStorefrontApiClient } from "@shopify/storefront-api-client";
+import {
+  sendShopifyAnalytics,
+  getClientBrowserParameters,
+  AnalyticsEventName,
+  type ShopifyPageViewPayload,
+} from "@shopify/hydrogen-react";
 
 export const client = createStorefrontApiClient({
   storeDomain: process.env.SHOPIFY_DOMEN as string,
@@ -18,4 +24,18 @@ export async function fetchShopify({ query, variables }: FetchShopifyParams) {
   });
 
   return response.data;
+}
+
+export function sendPageView() {
+  const payload: ShopifyPageViewPayload = {
+    shopId: process.env.SHOPIFY_SHOP_ID as string,
+    currency: "USD",
+    hasUserConsent: true,
+    ...getClientBrowserParameters(),
+  };
+
+  sendShopifyAnalytics({
+    eventName: AnalyticsEventName.PAGE_VIEW,
+    payload,
+  });
 }
