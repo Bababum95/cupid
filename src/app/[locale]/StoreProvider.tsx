@@ -26,7 +26,7 @@ export default function StoreProvider({
 
   useEffect(() => {
     sendPageView();
-    // document.documentElement.classList.add('cc--darkmode');
+    document.documentElement.classList.add('cc--elegant-black');
     CookieConsent.run(COOKIE_CONSENT_CONFIG);
     console.log(CookieConsent.getConfig());
   }, [pathname, searchParams]);
