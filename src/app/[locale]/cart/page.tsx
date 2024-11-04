@@ -7,7 +7,7 @@ import Image from "next/image";
 import { useAppDispatch, useAppSelector } from "@/hooks";
 import { BackButton, Price, SubmitButton } from "@/components";
 import { dataUtils } from "@/utils";
-import { crossSellsQuery } from "@/graphql";
+import { relatedProductsQuery, giftFragment } from "@/graphql";
 import { ProductNode, ProductType } from "@/types";
 import { fetchShopify } from "@/lib/shopify";
 import { Catalog } from "@/components/cart";
@@ -17,22 +17,46 @@ import styles from "./page.module.scss";
 
 export default function Page() {
   const [crossSells, setCrossSells] = useState<ProductType[]>([]);
+  const [crossSellsIsLoading, setCrossSellsIsLoading] = useState(true);
   const cart = useAppSelector((state) => state.cart);
   const dispatch = useAppDispatch();
   const t = useTranslations("Cart");
 
   const fetchCrossSells = async () => {
-    const { collection } = await fetchShopify({
-      query: crossSellsQuery,
+    const data = await fetchShopify({
+      query: relatedProductsQuery,
     });
 
-    if (!collection) return;
+    setCrossSellsIsLoading(false);
 
-    const products = collection.products.nodes.map((node: ProductNode) =>
-      dataUtils.normalizeProduct(node)
-    );
+    if (data.crossSells) {
+      const products = data.crossSells.products.nodes.map((node: ProductNode) =>
+        dataUtils.normalizeProduct(node)
+      );
 
-    setCrossSells(products);
+      setCrossSells(products);
+    }
+
+    if (data.gifts) {
+      const gifts = JSON.parse(data.gifts.metafield.value) as string[];
+
+      const giftsQuery = `
+      query GiftsQuery {
+        ${gifts
+          .map(
+            (id, index) => `gift_${index}: product(id: "${id}") {
+            ...GiftFragment
+          }`
+          )
+          .join("\n")}
+      }
+      ${giftFragment}
+      `;
+
+      const giftsResponse = await fetchShopify({ query: giftsQuery });
+
+      console.log(giftsResponse);
+    }
   };
 
   useEffect(() => {
@@ -91,7 +115,7 @@ export default function Page() {
           <h2 className={styles.h2}>{t("complete-your-experience")}</h2>
           <BackButton />
         </header>
-        <Catalog products={crossSells} />
+        <Catalog products={crossSells} isLoading={crossSellsIsLoading} />
       </div>
     </main>
   );

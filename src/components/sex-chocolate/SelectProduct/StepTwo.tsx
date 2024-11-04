@@ -4,14 +4,14 @@ import { useRouter } from "next/navigation";
 import { AnimatePresence, motion } from "framer-motion";
 import classNames from "classnames";
 
-import type { CreateCartInput, VariantProductType } from "@/types";
+import type { CreateCartInput, VariantProductType, GiftType } from "@/types";
 import { SubmitButton, Price } from "@/components";
 import { dataUtils } from "@/utils";
 import { useAppDispatch } from "@/hooks";
 import { create as createCart } from "@/lib/slices/cart";
 import { default as CheckMarkIcon } from "@/icons/checkmark.svg";
 
-import type { SellingPlanGroupType, GiftType } from "./types";
+import type { SellingPlanGroupType } from "./types";
 import { Variant } from "./Variant";
 import styles from "./StepTwo.module.scss";
 

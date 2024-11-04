@@ -3,15 +3,15 @@ import Image from "next/image";
 import Link from "next/link";
 
 import {
-  Header,
   Advantages,
-  FAQ,
-  Gallery,
-  Ingredients,
   Comments,
-  Subscribe,
+  FAQ,
   Footer,
+  Gallery,
+  Header,
+  Ingredients,
   Slider,
+  Subscribe,
   Video,
 } from "@/components/home";
 

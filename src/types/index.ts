@@ -1,3 +1,4 @@
+export type { GiftType, GiftsResponse, GiftResponse } from "./gift";
 export type { Price, PriceNode } from "./price";
 export type { Image } from "./image";
 export type {

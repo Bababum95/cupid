@@ -5,10 +5,10 @@ import { useTranslations } from "next-intl";
 import { useSearchParams, useRouter } from "next/navigation";
 import Image from "next/image";
 
-import type { ProductType, VariantProductType } from "@/types";
+import type { ProductType, VariantProductType, GiftType } from "@/types";
 import { BackButton } from "@/components";
 
-import type { GiftType, SellingPlanGroupType } from "./types";
+import type { SellingPlanGroupType } from "./types";
 import { StepOne } from "./StepOne";
 import { StepTwo } from "./StepTwo";
 import { fetchInitialData } from "./fetchInitialData";

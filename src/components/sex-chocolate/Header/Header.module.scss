@@ -1,0 +1,39 @@
+.header {
+  @include flex-layout(flex-start, center);
+  max-width: 1152px;
+  padding: 12px 20px;
+  gap: 40px;
+  width: 100%;
+  margin: 0 auto;
+  height: var(--header-height);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background-color: $page-bg;
+  box-shadow: 0 0 0 100vmax $page-bg;
+  clip-path: inset(0 -100vmax);
+}
+
+.logo {
+  display: block;
+  height: 26px;
+  transition: $transition;
+
+  @include hover {
+    color: $text;
+  }
+}
+
+.end {
+  margin-left: auto;
+}
+
+@include media("tablet") {
+  .header {
+    gap: 16px;
+  }
+
+  .logo {
+    color: $text;
+  }
+}

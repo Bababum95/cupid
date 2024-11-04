@@ -1,0 +1,61 @@
+.image,
+.title,
+.description,
+.price,
+.button {
+  border-radius: 20px;
+  background: #0f0f0f;
+  width: 100%;
+  position: relative;
+  mask-image: -webkit-radial-gradient(center, white, black);
+  overflow: hidden;
+
+  &:after {
+    content: "";
+    background: linear-gradient(
+      95deg,
+      transparent 0,
+      #252525bf 40%,
+      transparent 60%
+    );
+    filter: blur(32px);
+    position: absolute;
+    translate: -200% 0;
+    inset: 0px;
+    :global {
+      animation: 3.6s linear 0.55s infinite normal none running
+        animation-skeleton;
+    }
+  }
+}
+
+.image {
+  height: auto;
+  aspect-ratio: 1 / 1;
+}
+
+.title {
+  height: 22px;
+  margin-top: 16px;
+}
+
+.description {
+  height: 34px;
+  margin-top: 6px;
+}
+
+.bottom {
+  @include flex-layout(flex-start, center);
+  gap: 16px;
+  margin-top: 24px;
+}
+
+.price {
+  height: 36px;
+  max-width: 63px;
+}
+
+.button {
+  height: 44px;
+  max-width: 140px;
+}

@@ -2,9 +2,9 @@ import { FC } from "react";
 import { motion } from "framer-motion";
 
 import { Price } from "@/components";
+import type { GiftType } from "@/types";
 
 import { GIFT_INITIAL, GIFT_ACTIVE } from "./config";
-import type { GiftType } from "./types";
 import styles from "./Gift.module.scss";
 
 type Props = {

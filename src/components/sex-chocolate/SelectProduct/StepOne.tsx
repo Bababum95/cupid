@@ -5,11 +5,10 @@ import { useTranslations } from "next-intl";
 
 import { dataUtils } from "@/utils";
 import { SubmitButton } from "@/components";
-import type { ProductType, VariantProductType } from "@/types";
+import type { ProductType, VariantProductType, GiftType } from "@/types";
 
 import { Gift } from "./Gift";
 import { Variant } from "./Variant";
-import type { GiftType } from "./types";
 import styles from "./StepOne.module.scss";
 
 type Props = {
@@ -84,7 +83,9 @@ export const StepOne: FC<Props> = ({
       <SubmitButton
         label={t("next")}
         isActive={!!selectedVariant}
-        total={selectedVariant ? dataUtils.formatPrice(selectedVariant.price) : null}
+        total={
+          selectedVariant ? dataUtils.formatPrice(selectedVariant.price) : null
+        }
       />
     </form>
   );

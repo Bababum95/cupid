@@ -1,10 +1,3 @@
-export type GiftType = {
-  id: string;
-  title: string;
-  price: string;
-  code: string | null;
-};
-
 export type SellingPlanGroupType = {
   sellingPlans: {
     id: string;

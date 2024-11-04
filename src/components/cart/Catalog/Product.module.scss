@@ -9,6 +9,8 @@
 .item {
   @include flex-column;
   cursor: pointer;
+  opacity: 0;
+  animation: shade-on 0.5s linear forwards;
 }
 
 .title {
@@ -84,5 +86,14 @@
 
   .button {
     max-width: none;
+  }
+}
+
+@keyframes shade-on {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
   }
 }

@@ -8,7 +8,6 @@ import Link from "next/link";
 import { SideDrawer } from "@/components";
 import MenuIcon from "@/icons/menu.svg";
 
-import { LINKS } from "./config";
 import styles from "./Menu.module.scss";
 
 export default function Menu() {
@@ -31,7 +30,7 @@ export default function Menu() {
               {t("orders")}
             </Link>
             <span className={styles.divider} />
-            {LINKS.map((link) => (
+            {["ingredients", "reviews", "faq"].map((link) => (
               <Link key={link} href={`/#${link}`} className={styles.link}>
                 {t(link)}
               </Link>

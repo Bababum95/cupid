@@ -4,6 +4,8 @@ import {
   ProductNode,
   ProductType,
   UnitPriceMeasurementType,
+  GiftType,
+  GiftsResponse,
 } from "@/types";
 
 export const dataUtils = {
@@ -14,6 +16,23 @@ export const dataUtils = {
       amount: parseFloat(data.amount),
       currencyCode: data.currencyCode,
     } as Price;
+  },
+
+  formatGift: (data: GiftsResponse) => {
+    return Object.values(data).map((item) => {
+      const variant = item.variants.nodes[0];
+      const price = dataUtils.formatPrice({
+        amount: parseFloat(variant.price.amount),
+        currencyCode: variant.price.currencyCode,
+      });
+
+      return {
+        id: variant.id,
+        title: item.title,
+        price,
+        code: item.code?.value || null,
+      } as GiftType;
+    });
   },
 
   normalizeProduct: (productNode: ProductNode): ProductType => {

@@ -2,8 +2,9 @@
 import { fetchShopify } from "@/lib/shopify";
 import { dataUtils } from "@/utils";
 import { sellingPlansFragment, giftFragment } from "@/graphql";
+import type { GiftType } from "@/types";
 
-import { GiftType, SellingPlanGroupType } from "./types";
+import type { SellingPlanGroupType } from "./types";
 
 type InitialDataType = {
   sellingPlans: SellingPlanGroupType[];

@@ -8,13 +8,15 @@ import { addLine } from "@/lib/slices/cart";
 
 import { ProductPopup } from "./ProductPopup";
 import { Product } from "./Product";
+import { ProductLoader } from "./ProductLoader";
 import styles from "./Catalog.module.scss";
 
 type Props = {
   products: ProductType[];
+  isLoading?: boolean;
 };
 
-export const Catalog: FC<Props> = ({ products }) => {
+export const Catalog: FC<Props> = ({ products, isLoading }) => {
   const [selectedProduct, setSelectedProduct] = useState<ProductType | null>(
     null
   );
@@ -37,14 +39,16 @@ export const Catalog: FC<Props> = ({ products }) => {
   return (
     <>
       <ul className={styles.list}>
-        {products.map((product, index) => (
-          <Product
-            key={index}
-            product={product}
-            openPopup={openPopup}
-            handleAddToCart={addToCart}
-          />
-        ))}
+        {isLoading
+          ? Array.from({ length: 6 }).map((_, i) => <ProductLoader key={i} />)
+          : products.map((product, index) => (
+              <Product
+                key={index}
+                product={product}
+                openPopup={openPopup}
+                handleAddToCart={addToCart}
+              />
+            ))}
       </ul>
       <ProductPopup
         product={selectedProduct}

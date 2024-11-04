@@ -7,7 +7,7 @@ export { productFragment } from "./fragments/productFragment";
 export { collectionQuery } from "./queries/collectionQuery";
 export { sellingPlansQuery } from "./queries/sellingPlansQuery";
 export { cartQuery } from "./queries/cartQuery";
-export { crossSellsQuery } from "./queries/crossSellsQuery";
+export { relatedProductsQuery } from "./queries/relatedProductsQuery";
 
 export { cartCreateMutation } from "./mutations/cartCreateMutation";
 export { addToCartMutation } from "./mutations/addToCartMutation";

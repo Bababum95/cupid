@@ -1,4 +1,4 @@
-import { Footer } from "@/components/sex-chocolate";
+import { Footer, Header } from "@/components/sex-chocolate";
 
 export default async function SexChocolateLayout({
   children,
@@ -7,6 +7,7 @@ export default async function SexChocolateLayout({
 }) {
   return (
     <>
+      <Header />
       {children}
       <Footer />
     </>
