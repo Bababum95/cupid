@@ -83,7 +83,7 @@ export default function Page() {
           {cart.lines.map((line) => (
             <li key={line.id} className={styles.item}>
               <Image
-                src={line.image.url}
+                src={line.image?.url || "/favicon.ico"}
                 alt={line.title}
                 width={123}
                 height={123}

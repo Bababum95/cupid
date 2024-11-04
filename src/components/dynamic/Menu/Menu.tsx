@@ -26,15 +26,15 @@ export default function Menu() {
           side="left"
         >
           <nav className={styles.nav}>
-            <Link className={styles.link} href="#">
-              {t("orders")}
-            </Link>
-            <span className={styles.divider} />
             {["ingredients", "reviews", "faq"].map((link) => (
               <Link key={link} href={`/#${link}`} className={styles.link}>
                 {t(link)}
               </Link>
             ))}
+            <span className={styles.divider} />
+            <Link className={styles.link} href="#">
+              {t("orders")}
+            </Link>
           </nav>
         </SideDrawer>,
         document.body

@@ -19,7 +19,7 @@ export type CartLineType = {
   description: string;
   price: Price;
   compareAtPrice: Price | null;
-  image: Image;
+  image: Image | null;
 };
 
 export type CartState = {
@@ -46,7 +46,7 @@ export type CartResponse = {
       quantity: number;
       cost: CartResponseCostType;
       merchandise: {
-        image: Image;
+        image: Image | null;
         product: {
           title: string;
           description: string;
