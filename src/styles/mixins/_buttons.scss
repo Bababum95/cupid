@@ -51,6 +51,30 @@
   }
 }
 
+@mixin add-to-cart-button {
+  @include flex-center;
+  background-color: transparent;
+  border: $grey-line;
+  color: $text;
+  border-radius: 15px;
+  padding: 12px;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  transition: $transition;
+  white-space: nowrap;
+
+  &:active {
+    transform: scale(0.9);
+  }
+
+  @include hover {
+    color: #b0000d;
+    border-color: #85141b;
+  }
+}
+
 @mixin button-loading {
   position: relative;
   color: transparent;

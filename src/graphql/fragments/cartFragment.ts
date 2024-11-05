@@ -4,6 +4,9 @@ export const cartFragment = `
 fragment CartFragment on Cart {
   id
   checkoutUrl
+  discountCodes {
+    code
+  }
   lines(first: 10) {
     nodes {
       id
@@ -21,6 +24,7 @@ fragment CartFragment on Cart {
       }
       merchandise {
         ... on ProductVariant {
+          id
           product {
             title
             description

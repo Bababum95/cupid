@@ -9,5 +9,7 @@ export { sellingPlansQuery } from "./queries/sellingPlansQuery";
 export { cartQuery } from "./queries/cartQuery";
 export { relatedProductsQuery } from "./queries/relatedProductsQuery";
 
-export { cartCreateMutation } from "./mutations/cartCreateMutation";
 export { addToCartMutation } from "./mutations/addToCartMutation";
+export { cartCreateMutation } from "./mutations/cartCreateMutation";
+export { discountCodesUpdateMutation } from "./mutations/discountCodesUpdateMutation";
+export { removeCartLineMutation } from "./mutations/removeCartLineMutation";

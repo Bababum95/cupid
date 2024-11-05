@@ -15,21 +15,23 @@ export const Header = () => {
 
   return (
     <header className={styles.header}>
-      <Menu />
-      <Link href="/" className={styles.logo}>
-        <Logotype width={60} />
-      </Link>
-      <nav className={styles.nav}>
-        {["ingredients", "reviews", "faq"].map((link) => (
-          <Link key={link} href={`/#${link}`}>
-            {t(link)}
-          </Link>
-        ))}
-      </nav>
-      <div className={styles.end}>
-        <Link className={styles.button} href="/sex-chocolate">
-          {t("by-now")}
+      <div className={styles.container}>
+        <Menu />
+        <Link href="/" className={styles.logo}>
+          <Logotype width={60} />
         </Link>
+        <nav className={styles.nav}>
+          {["ingredients", "reviews", "faq"].map((link) => (
+            <Link key={link} href={`/#${link}`}>
+              {t(link)}
+            </Link>
+          ))}
+        </nav>
+        <div className={styles.end}>
+          <Link className={styles.button} href="/sex-chocolate">
+            {t("by-now")}
+          </Link>
+        </div>
       </div>
     </header>
   );

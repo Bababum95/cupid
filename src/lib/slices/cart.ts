@@ -1,7 +1,13 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 
 import { fetchShopify } from "@/lib/shopify";
-import { cartCreateMutation, cartQuery, addToCartMutation } from "@/graphql";
+import {
+  cartCreateMutation,
+  cartQuery,
+  addToCartMutation,
+  removeCartLineMutation,
+  discountCodesUpdateMutation,
+} from "@/graphql";
 import type {
   CreateCartInput,
   CartState,
@@ -46,6 +52,24 @@ export const addLine = createAsyncThunk(
   }
 );
 
+export const removeLine = createAsyncThunk(
+  "cart/removeLine",
+  async (lineId: string, { rejectWithValue, getState }) => {
+    const cartId = (getState() as RootState).cart.id;
+
+    try {
+      const ressponse = await fetchShopify({
+        query: removeCartLineMutation,
+        variables: { lineIds: [lineId], cartId },
+      });
+
+      return ressponse.cartLinesRemove.cart;
+    } catch (error) {
+      return rejectWithValue(error);
+    }
+  }
+);
+
 export const get = createAsyncThunk(
   "cart/get",
   async (cartId: string, { rejectWithValue }) => {
@@ -62,12 +86,42 @@ export const get = createAsyncThunk(
   }
 );
 
+export const discountCodeUpdate = createAsyncThunk(
+  "cart/discountCodeUpdate",
+  async (
+    { code, add }: { code: string; add: boolean },
+    { rejectWithValue, getState }
+  ) => {
+    const state = (getState() as RootState).cart;
+
+    const discountCodes = [...state.discountCodes];
+
+    if (add) {
+      if (!discountCodes.includes(code)) discountCodes.push(code);
+    } else {
+      discountCodes.splice(discountCodes.indexOf(code), 1);
+    }
+
+    try {
+      const ressponse = await fetchShopify({
+        query: discountCodesUpdateMutation,
+        variables: { cartId: state.id, discountCodes },
+      });
+
+      return ressponse.cartDiscountCodesUpdate.cart;
+    } catch (error) {
+      return rejectWithValue(error);
+    }
+  }
+);
+
 const initialState: CartState = {
   status: "idle",
   error: null,
   id: null,
   lines: [],
   total: null,
+  discountCodes: [],
 };
 
 const getCompareAtPrice = ({
@@ -104,10 +158,12 @@ const cartSlice = createSlice({
     const setCart = (state: CartState, data: CartResponse) => {
       state.id = data.id;
       state.checkoutUrl = data.checkoutUrl;
+      state.discountCodes = data.discountCodes.flatMap(({ code }) => code);
       state.total = dataUtils.normalizePrice(data.cost.totalAmount);
       state.lines = data.lines.nodes
         .map((line) => ({
           id: line.id,
+          productId: line.merchandise.id,
           quantity: line.quantity,
           title: line.merchandise.product.title,
           description: line.merchandise.product.description,
@@ -128,6 +184,22 @@ const cartSlice = createSlice({
         setCart(state, action.payload);
       })
       .addCase(addLine.fulfilled, (state, action) => {
+        state.status = "fulfilled";
+        setCart(state, action.payload);
+      })
+      .addCase(removeLine.pending, (state, action) => {
+        state.lines = state.lines.map((line) => {
+          if (line.id === action.meta.arg) {
+            return { ...line, removing: true };
+          }
+          return line;
+        });
+      })
+      .addCase(removeLine.fulfilled, (state, action) => {
+        state.status = "fulfilled";
+        setCart(state, action.payload);
+      })
+      .addCase(discountCodeUpdate.fulfilled, (state, action) => {
         state.status = "fulfilled";
         setCart(state, action.payload);
       })

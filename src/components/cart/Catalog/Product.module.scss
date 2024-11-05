@@ -41,32 +41,12 @@
 }
 
 .button {
-  @include flex-center;
-  background-color: transparent;
-  border: $grey-line;
-  color: $text;
-  border-radius: 15px;
-  padding: 12px;
-  font-size: 15px;
-  font-style: normal;
-  font-weight: 700;
-  line-height: normal;
-  transition: $transition;
+  @include add-to-cart-button;
   max-width: 140px;
   width: 100%;
-  white-space: nowrap;
-
-  &:active {
-    transform: scale(0.9);
-  }
 
   &.loading {
     @include button-loading;
-  }
-
-  @include hover {
-    color: #b0000d;
-    border-color: #85141b;
   }
 }
 

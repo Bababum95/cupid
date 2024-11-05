@@ -2,22 +2,24 @@
 
 import { useTranslations } from "next-intl";
 import { useEffect, useState } from "react";
-import Image from "next/image";
 
 import { useAppDispatch, useAppSelector } from "@/hooks";
-import { BackButton, Price, SubmitButton } from "@/components";
+import { BackButton, SubmitButton } from "@/components";
 import { dataUtils } from "@/utils";
 import { relatedProductsQuery, giftFragment } from "@/graphql";
-import { ProductNode, ProductType } from "@/types";
+import { GiftType, ProductNode, ProductType } from "@/types";
 import { fetchShopify } from "@/lib/shopify";
-import { Catalog } from "@/components/cart";
+import { Catalog, CartLine } from "@/components/cart";
 import { get as getCart } from "@/lib/slices/cart";
 
 import styles from "./page.module.scss";
 
 export default function Page() {
   const [crossSells, setCrossSells] = useState<ProductType[]>([]);
-  const [crossSellsIsLoading, setCrossSellsIsLoading] = useState(true);
+  const [gifts, setGifts] = useState<GiftType[]>([]);
+  const [isLoading, setIsLoading] = useState({
+    crossSells: true,
+  });
   const cart = useAppSelector((state) => state.cart);
   const dispatch = useAppDispatch();
   const t = useTranslations("Cart");
@@ -27,7 +29,7 @@ export default function Page() {
       query: relatedProductsQuery,
     });
 
-    setCrossSellsIsLoading(false);
+    setIsLoading((prev) => ({ ...prev, crossSells: false }));
 
     if (data.crossSells) {
       const products = data.crossSells.products.nodes.map((node: ProductNode) =>
@@ -38,16 +40,20 @@ export default function Page() {
     }
 
     if (data.gifts) {
-      const gifts = JSON.parse(data.gifts.metafield.value) as string[];
+      const parseGifts = JSON.parse(data.gifts.metafield.value) as string[];
 
       const giftsQuery = `
       query GiftsQuery {
-        ${gifts
-          .map(
-            (id, index) => `gift_${index}: product(id: "${id}") {
-            ...GiftFragment
-          }`
-          )
+        ${parseGifts
+          .map((id, index) => {
+            return `gift_${index}: product(id: "${id}") {
+              ...GiftFragment
+              description
+              featuredImage {
+                url
+              }
+            }`;
+          })
           .join("\n")}
       }
       ${giftFragment}
@@ -55,7 +61,9 @@ export default function Page() {
 
       const giftsResponse = await fetchShopify({ query: giftsQuery });
 
-      console.log(giftsResponse);
+      if (!giftsResponse) return;
+
+      setGifts(dataUtils.formatGift(giftsResponse));
     }
   };
 
@@ -64,6 +72,7 @@ export default function Page() {
     if (cart.status === "idle" && cartId) {
       dispatch(getCart(cartId));
     }
+
     fetchCrossSells();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
@@ -80,27 +89,32 @@ export default function Page() {
           <h1 className={styles.h2}>{t("your-cart")}</h1>
         </header>
         <ul className={styles.list}>
-          {cart.lines.map((line) => (
-            <li key={line.id} className={styles.item}>
-              <Image
-                src={line.image?.url || "/favicon.ico"}
-                alt={line.title}
-                width={123}
-                height={123}
-                className={styles.image}
-              />
-              <div className={styles.info}>
-                <h3 className={styles.title}>{line.title}</h3>
-                <p className={styles.description}>{line.description}</p>
-                <div className={styles.bottom}>
-                  <Price
-                    price={dataUtils.formatPrice(line.price)}
-                    old={dataUtils.formatPrice(line.compareAtPrice)}
-                  />
-                </div>
-              </div>
-            </li>
+          {cart.lines.map((line, index) => (
+            <CartLine
+              key={line.id}
+              image={line.image}
+              title={line.title}
+              description={line.description}
+              canRemove={index !== 0}
+              id={line.id}
+              removing={line.removing}
+              price={dataUtils.formatPrice(line.price)}
+              oldPrice={dataUtils.formatPrice(line.compareAtPrice)}
+            />
           ))}
+          {gifts[0] &&
+            gifts[0].code &&
+            !cart.discountCodes.includes(gifts[0].code) && (
+              <CartLine
+                image={gifts[0].image}
+                title={gifts[0].title}
+                description={gifts[0].description}
+                id={gifts[0].id}
+                price="0,00 €"
+                oldPrice={gifts[0].price}
+                gift={gifts[0].code}
+              />
+            )}
         </ul>
         <footer className={styles.footer}>
           <SubmitButton
@@ -115,7 +129,7 @@ export default function Page() {
           <h2 className={styles.h2}>{t("complete-your-experience")}</h2>
           <BackButton />
         </header>
-        <Catalog products={crossSells} isLoading={crossSellsIsLoading} />
+        <Catalog products={crossSells} isLoading={isLoading.crossSells} />
       </div>
     </main>
   );

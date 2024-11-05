@@ -12,11 +12,13 @@ const Menu = dynamic(() => import("@/components/dynamic/Menu"), {
 export const Header = () => {
   return (
     <header className={styles.header}>
+      <div className={styles.container}>
       <Menu />
       <Link href="/" className={styles.logo}>
         <Logotype width={60} />
       </Link>
       <div className={styles.end}></div>
+      </div>
     </header>
   );
 };

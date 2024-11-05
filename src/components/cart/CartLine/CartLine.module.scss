@@ -1,0 +1,87 @@
+.item {
+  @include flex-layout(flex-start, stretch);
+  padding: 24px 28px;
+  border-bottom: $grey-line;
+  gap: 15px;
+
+  &.removing {
+    background-color: #242424;
+    opacity: 0.5;
+    pointer-events: none;
+  }
+}
+
+.image {
+  border-radius: 16px;
+  object-fit: cover;
+}
+
+.info {
+  @include flex-column;
+  flex: 1;
+  position: relative;
+}
+
+.title {
+  @include text-overflow(2);
+  color: $text;
+  font-size: clamp(1.0625rem, 0.9696rem + 0.381vw, 1.3125rem);
+  font-style: normal;
+  font-weight: 700;
+  line-height: 105%;
+  margin-bottom: 8px;
+  padding-right: 70px;
+}
+
+.remove {
+  @include flex-center;
+  border-radius: 50%;
+  position: absolute;
+  right: 0;
+  top: 0;
+  cursor: pointer;
+  width: 25px;
+  height: 25px;
+  background-color: #1b1b1b;
+
+  svg {
+    scale: 0.7;
+  }
+}
+
+.description {
+  @include text-overflow(2);
+  font-size: clamp(0.8125rem, 0.7893rem + 0.0952vw, 0.875rem);
+  font-style: normal;
+  font-weight: 500;
+  line-height: 120%;
+  margin-bottom: 24px;
+}
+
+.bottom {
+  @include flex-layout(space-between, center);
+  margin-top: auto;
+}
+
+.free {
+  position: absolute;
+  top: 0;
+  right: 0;
+  color: $text;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 105%;
+  border-radius: 20px;
+  background: $accent;
+  padding: 6px 10px;
+}
+
+.button {
+  @include add-to-cart-button;
+  padding-inline: 28px;
+
+  &.loading {
+    @include button-loading;
+  }
+}

@@ -14,12 +14,14 @@ export type CreateCartInput = {
 
 export type CartLineType = {
   id: string;
+  productId: string;
   quantity: number;
   title: string;
   description: string;
   price: Price;
   compareAtPrice: Price | null;
   image: Image | null;
+  removing?: boolean;
 };
 
 export type CartState = {
@@ -29,6 +31,7 @@ export type CartState = {
   checkoutUrl?: string;
   lines: CartLineType[];
   total: Price | null;
+  discountCodes: string[];
 };
 
 export type CartResponseCostType = {
@@ -40,12 +43,14 @@ export type CartResponseCostType = {
 export type CartResponse = {
   id: string;
   checkoutUrl: string;
+  discountCodes: { code: string }[];
   lines: {
     nodes: {
       id: string;
       quantity: number;
       cost: CartResponseCostType;
       merchandise: {
+        id: string;
         image: Image | null;
         product: {
           title: string;

@@ -10,6 +10,10 @@
   &.left {
     align-items: flex-start;
   }
+
+  &:not(.left) {
+    margin-left: auto;
+  }
 }
 
 .old {

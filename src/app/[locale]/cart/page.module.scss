@@ -49,44 +49,6 @@
   overflow-y: auto;
 }
 
-.item {
-  @include flex-layout(flex-start, stretch);
-  padding: 24px 28px;
-  border-bottom: $grey-line;
-  gap: 15px;
-}
-
-.image {
-  border-radius: 16px;
-}
-
-.info {
-  @include flex-column;
-  flex: 1;
-}
-
-.title {
-  @include text-overflow(2);
-  color: $text;
-  font-size: clamp(1.0625rem, 0.9696rem + 0.381vw, 1.3125rem);
-  font-style: normal;
-  font-weight: 700;
-  line-height: 105%;
-  margin-bottom: 8px;
-}
-
-.description {
-  @include text-overflow(2);
-  font-size: clamp(0.8125rem, 0.7893rem + 0.0952vw, 0.875rem);
-  font-style: normal;
-  font-weight: 500;
-  line-height: 120%;
-}
-
-.bottom {
-  margin-top: auto;
-}
-
 .footer {
   padding: 20px 28px;
   border-top: $grey-line;

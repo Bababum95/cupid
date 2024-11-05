@@ -31,6 +31,8 @@ export const dataUtils = {
         title: item.title,
         price,
         code: item.code?.value || null,
+        description: item.description,
+        image: item.featuredImage,
       } as GiftType;
     });
   },
