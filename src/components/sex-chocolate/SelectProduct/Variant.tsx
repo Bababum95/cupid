@@ -37,6 +37,7 @@ export const Variant: FC<Props> = ({ active, onSelect, top, children }) => {
           <motion.circle
             cx="9"
             cy="9"
+            r="8.5"
             initial={CIRCLE_INITIAL}
             animate={active ? CIRCLE_ACTIVE : CIRCLE_INITIAL}
             transition={{ duration: 0.2 }}
@@ -50,6 +51,8 @@ export const Variant: FC<Props> = ({ active, onSelect, top, children }) => {
             initial={{ pathLength: 0 }}
             animate={active ? { pathLength: 1 } : { pathLength: 0 }}
             transition={{ duration: 0.35 }}
+            strokeLinejoin={active ? "round" : "miter"}
+            strokeLinecap={active ? "round" : "butt"}
           />
         </svg>
         {top}

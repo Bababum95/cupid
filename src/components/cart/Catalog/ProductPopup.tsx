@@ -82,8 +82,8 @@ const Product: FC<ProductProps> = ({
         <Image
           src={
             variantIndex === null
-              ? product.featuredImage.url
-              : variant.image.url
+              ? product.featuredImage?.url || "/favicon.ico"
+              : variant.image?.url || "/favicon.ico"
           }
           alt={product.title}
           width={350}

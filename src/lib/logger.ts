@@ -4,14 +4,15 @@ import path from "path";
 import fs from "fs";
 
 const logsDirectory = path.join(process.cwd(), "logs");
+const isVercel = process.env.IS_VERCEL === "true";
 
-if (!process.env.IS_VERCEL && !fs.existsSync(logsDirectory)) {
+if (!isVercel && !fs.existsSync(logsDirectory)) {
   fs.mkdirSync(logsDirectory);
 }
 
 const loggerTransports = [];
 
-if (!process.env.IS_VERCEL) {
+if (!isVercel) {
   loggerTransports.push(
     new DailyRotateFile({
       filename: path.join(logsDirectory, "error-%DATE%.log"),
@@ -39,4 +40,19 @@ export const logger = createLogger({
   level: process.env.NODE_ENV === "production" ? "warn" : "debug",
   format: format.combine(format.timestamp(), format.simple()),
   transports: loggerTransports,
+});
+
+export const cookieLogger = createLogger({
+  level: "info",
+  format: format.combine(format.timestamp(), format.simple()),
+  transports: isVercel
+    ? []
+    : [
+        new DailyRotateFile({
+          filename: path.join(logsDirectory, "cookies-%DATE%.log"),
+          level: "info",
+          datePattern: "YYYY-MM-DD",
+          maxSize: "20m",
+        }),
+      ],
 });

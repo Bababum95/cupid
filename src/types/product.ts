@@ -45,7 +45,7 @@ export type UnitPriceMeasurementType = {
 export type VariantProductType = {
   id: string;
   components: ComponentType[];
-  image: Image;
+  image: Image | null;
   price: Price;
   compareAtPrice: Price | null;
   title: string;
@@ -57,7 +57,7 @@ export type ProductType = {
   title: string;
   description: string;
   bage?: string | null;
-  featuredImage: Image;
+  featuredImage: Image | null;
   ingredients?: RichTextNode;
   "product-details"?: RichTextNode;
   "how-to-use"?: RichTextNode;
@@ -68,7 +68,7 @@ export type ProductNode = {
   handle?: string;
   id?: string;
   title: string;
-  featuredImage: Image;
+  featuredImage: Image | null;
   description: string;
   ingredients?: MetafieldType;
   details?: MetafieldType;
@@ -82,7 +82,7 @@ export type ProductNode = {
       id: string;
       title: string;
       description: MetafieldType;
-      image: Image;
+      image: Image | null;
       price: PriceNode;
       compareAtPrice: PriceNode | null;
       components: {

@@ -59,6 +59,12 @@
     background-color: $secondary-text;
     transition: $transition;
   }
+
+  @include hover {
+    span {
+      background-color: $text;
+    }
+  }
 }
 
 .logo {

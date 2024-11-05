@@ -108,7 +108,9 @@ export const SelectProduct: FC<Props> = ({ products, gifts }) => {
         </div>
         <Image
           src={
-            selectedVariant ? selectedVariant.image.url : mainVariant.image.url
+            selectedVariant
+              ? selectedVariant.image?.url || "/favicon.ico"
+              : mainVariant.image?.url || "/favicon.ico"
           }
           className={styles.image}
           alt={products[0].title}

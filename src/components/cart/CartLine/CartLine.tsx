@@ -53,10 +53,8 @@ export const CartLine: FC<Props> = ({
   const addGift = async () => {
     if (!gift) return;
     setIsLoading((prev) => ({ ...prev, gift: true }));
-    await Promise.all([
-      dispatch(discountCodeUpdate({ code: gift, add: true })),
-      dispatch(addLineToCart({ merchandiseId: id, quantity: 1 })),
-    ]);
+    await dispatch(discountCodeUpdate({ code: gift, add: true }));
+    await dispatch(addLineToCart({ merchandiseId: id, quantity: 1 }));
     setIsLoading((prev) => ({ ...prev, gift: false }));
   };
 

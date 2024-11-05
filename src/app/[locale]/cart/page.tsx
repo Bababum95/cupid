@@ -8,8 +8,8 @@ import { BackButton, SubmitButton } from "@/components";
 import { dataUtils } from "@/utils";
 import { relatedProductsQuery, giftFragment } from "@/graphql";
 import { GiftType, ProductNode, ProductType } from "@/types";
+import { Catalog, CartLine, ProgressBar } from "@/components/cart";
 import { fetchShopify } from "@/lib/shopify";
-import { Catalog, CartLine } from "@/components/cart";
 import { get as getCart } from "@/lib/slices/cart";
 
 import styles from "./page.module.scss";
@@ -17,18 +17,13 @@ import styles from "./page.module.scss";
 export default function Page() {
   const [crossSells, setCrossSells] = useState<ProductType[]>([]);
   const [gifts, setGifts] = useState<GiftType[]>([]);
-  const [isLoading, setIsLoading] = useState({
-    crossSells: true,
-  });
+  const [isLoading, setIsLoading] = useState({ crossSells: true });
   const cart = useAppSelector((state) => state.cart);
   const dispatch = useAppDispatch();
   const t = useTranslations("Cart");
 
   const fetchCrossSells = async () => {
-    const data = await fetchShopify({
-      query: relatedProductsQuery,
-    });
-
+    const data = await fetchShopify({ query: relatedProductsQuery });
     setIsLoading((prev) => ({ ...prev, crossSells: false }));
 
     if (data.crossSells) {
@@ -88,6 +83,14 @@ export default function Page() {
         <header className={styles.header}>
           <h1 className={styles.h2}>{t("your-cart")}</h1>
         </header>
+        {gifts[1]?.code && cart.lines[0]?.quantity === 1 && (
+          <ProgressBar
+            total={cart.total?.amount}
+            chocolate={cart.lines[0].price.amount}
+            complete={cart.discountCodes.includes(gifts[1].code)}
+            gift={{ code: gifts[1].code, id: gifts[1].id }}
+          />
+        )}
         <ul className={styles.list}>
           {cart.lines.map((line, index) => (
             <CartLine
@@ -102,9 +105,8 @@ export default function Page() {
               oldPrice={dataUtils.formatPrice(line.compareAtPrice)}
             />
           ))}
-          {gifts[0] &&
-            gifts[0].code &&
-            !cart.discountCodes.includes(gifts[0].code) && (
+          {gifts[0]?.code &&
+            cart.lines.every((line) => line.productId !== gifts[0].id) && (
               <CartLine
                 image={gifts[0].image}
                 title={gifts[0].title}

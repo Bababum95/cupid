@@ -42,7 +42,7 @@ export const Product: FC<Props> = ({ product, openPopup, handleAddToCart }) => {
       //   whileHover={{ scale: 1.05 }}
     >
       <Image
-        src={product.featuredImage.url}
+        src={product.featuredImage?.url || "/favicon.ico"}
         alt={product.title}
         width={250}
         height={250}

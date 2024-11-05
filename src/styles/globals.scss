@@ -20,7 +20,6 @@ html,
   @include flex-column;
   background: $page-bg;
   color: $secondary-text;
-  font-family: "VelaSans", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   min-height: 100vh;
@@ -37,6 +36,7 @@ html,
   padding: 0;
   margin: 0;
   scroll-behavior: smooth;
+  font-family: "VelaSans", sans-serif;
 }
 
 a {
