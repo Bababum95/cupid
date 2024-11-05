@@ -60,6 +60,7 @@
 
 .bottom {
   @include flex-layout(space-between, center);
+  gap: 8px;
   margin-top: auto;
 }
 
@@ -83,5 +84,22 @@
 
   &.loading {
     @include button-loading;
+  }
+}
+
+@include media("tablet-small") {
+  .image {
+    width: 88px;
+    height: 88px;
+  }
+
+  .free {
+    font-size: 10px;
+    padding: 5px 10px;
+  }
+
+  .button {
+    font-size: 13px;
+    padding: 10px 24px;
   }
 }

@@ -45,6 +45,7 @@ export const Video: FC<Props> = ({ src, description }) => {
           loop
           ref={videoRef}
           muted={isMuted}
+          preload="metadata"
         />
         <button className={styles.play} onClick={togglePlay}>
           <PlayIcon />
