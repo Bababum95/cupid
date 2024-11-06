@@ -14,7 +14,11 @@ import { get as getCart } from "@/lib/slices/cart";
 
 import styles from "./page.module.scss";
 
-export default function Page() {
+export default function Page({
+  params: { locale },
+}: {
+  params: { locale: string };
+}) {
   const [crossSells, setCrossSells] = useState<ProductType[]>([]);
   const [gifts, setGifts] = useState<GiftType[]>([]);
   const [isLoading, setIsLoading] = useState({ crossSells: true });
@@ -74,7 +78,8 @@ export default function Page() {
 
   const handleSubmit = (evt: React.FormEvent) => {
     evt.preventDefault();
-    if (cart.checkoutUrl) window.location.href = cart.checkoutUrl;
+    if (cart.checkoutUrl)
+      window.location.href = `${cart.checkoutUrl}?locale=${locale}`;
   };
 
   return (

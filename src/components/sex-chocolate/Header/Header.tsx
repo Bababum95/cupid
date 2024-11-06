@@ -8,16 +8,24 @@ import styles from "./Header.module.scss";
 const Menu = dynamic(() => import("@/components/dynamic/Menu"), {
   ssr: false,
 });
+const LangSwitcher = dynamic(
+  () => import("@/components/dynamic/LangSwitcher"),
+  {
+    ssr: false,
+  }
+);
 
 export const Header = () => {
   return (
     <header className={styles.header}>
       <div className={styles.container}>
-      <Menu />
-      <Link href="/" className={styles.logo}>
-        <Logotype width={60} />
-      </Link>
-      <div className={styles.end}></div>
+        <Menu />
+        <Link href="/" className={styles.logo}>
+          <Logotype width={60} />
+        </Link>
+        <div className={styles.end}>
+          <LangSwitcher />
+        </div>
       </div>
     </header>
   );

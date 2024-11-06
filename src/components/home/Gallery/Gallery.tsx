@@ -24,7 +24,7 @@ export const Gallery = () => {
     if (imageRef.current && window) {
       const imgRect = imageRef.current.getBoundingClientRect();
       const windowWidth = window.innerWidth;
-      setMaxScale(windowWidth / imgRect.width);
+      setMaxScale((windowWidth / imgRect.width) * 1.2);
       sectionRef.current?.style.setProperty(
         "--top",
         window.innerHeight / 2 - imgRect.height + "px"
