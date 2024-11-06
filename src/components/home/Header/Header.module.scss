@@ -1,7 +1,7 @@
 .header {
   width: 100%;
   height: var(--header-height);
-  position: sticky;
+  // position: sticky;
   top: 0;
   z-index: 10;
   background-color: $page-bg;
@@ -64,4 +64,9 @@
   .logo {
     color: $text;
   }
+}
+
+.end {
+  @include flex-layout(flex-end, center);
+  gap: 8px;
 }

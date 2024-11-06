@@ -14,19 +14,47 @@ const comments = [
       "Absolut begeistert! Die Verpackung ist wunderschön und die Schokolade schmeckt fantastisch. Werde definitiv wieder bestellen!",
   },
   {
-    name: "Lisa M.",
+    name: "Daniel W.",
     rating: 5,
-    date: "11/02/2024",
+    date: "11/01/2024",
     review:
-      "Absolut begeistert! Die Verpackung ist wunderschön und die Schokolade schmeckt fantastisch. Werde definitiv wieder bestellen!",
+      "War zuerst skeptisch, aber es hat wirklich etwas Besonderes zu unserem Abend beigetragen. Sehr empfehlenswert!",
   },
   {
-    name: "Lisa M.",
+    name: "Sophie K.",
     rating: 5,
     date: "11/02/2024",
     review:
-      "Absolut begeistert! Die Verpackung ist wunderschön und die Schokolade schmeckt fantastisch. Werde definitiv wieder bestellen!",
+      "Das perfekte Geschenk für meinen Partner. Wir haben es beide sehr genossen. Werde auf jeden Fall wieder kaufen!",
   },
+  {
+    name: "Alex H.",
+    rating: 5,
+    date: "11/02/2024",
+    review:
+      "Toller Geschmack und spürbare Wirkung. Kam schnell und diskret an. Danke!",
+  },
+  {
+    name: "Emma S.",
+    rating: 5,
+    date: "11/02/2024",
+    review:
+      "Wunderschöne Verpackung und köstliche Schokolade. Hat unseren Date-Abend besonders gemacht.",
+  },
+  {
+    name: "Tom R.",
+    rating: 5,
+    date: "11/02/2024",
+    review:
+      "Habe keinen großen Unterschied bemerkt, aber die Schokolade war lecker. Werde es vielleicht nochmal versuchen.",
+  },
+  // {
+  //   name: "Marie L.",
+  //   rating: 5,
+  //   date: "11/02/2024",
+  //   review:
+  //     "Tolles Produkt! Es hat wirklich die Stimmung gesetzt. Mein Partner und ich hatten einen wundervollen Abend.",
+  // },
 ];
 
 export const Comments = () => {

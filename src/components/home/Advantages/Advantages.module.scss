@@ -1,6 +1,7 @@
 .block {
   @include flex-layout(space-between, center);
   position: relative;
+  gap: 20px;
   max-width: $home-mw;
   margin: 270px auto;
   padding: 0 20px;
@@ -8,6 +9,7 @@
 
 .list {
   max-width: 360px;
+  flex: 1;
 }
 
 .item {
@@ -18,6 +20,9 @@
 
 .image {
   height: auto;
+  max-height: 446px;
+  border-radius: 20px;
+  flex: 1;
 }
 
 .title {
@@ -42,14 +47,17 @@
     grid-template-columns: 1fr 1fr;
     align-items: flex-start;
     margin: 144px 0;
-    gap: 20px 0;
+    gap: 20px;
   }
 
   .image {
     position: sticky;
     right: 0;
-    transform: translateX(20px);
+    aspect-ratio: 150 / 230;
+    transform: translateX(20px) rotateY(180deg);
     top: var(--header-height);
+    object-fit: cover;
+    border-radius: 0 20px 20px 0;
   }
 
   .item {

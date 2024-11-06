@@ -1,6 +1,4 @@
-import type { Metadata } from "next";
 import { useTranslations } from "next-intl";
-import { getTranslations } from "next-intl/server";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -19,42 +17,6 @@ import {
 
 import { VIDEOS } from "./config";
 import styles from "./page.module.scss";
-
-export async function generateMetadata({
-  params: { locale },
-}: {
-  params: { locale: string };
-}): Promise<Metadata> {
-  const t = await getTranslations({ locale, namespace: "Metadata" });
-
-  return {
-    title: t("title"),
-    description: t("description"),
-    alternates: {
-      canonical: "https://cupidchoco.com/",
-      languages: { de: "https://cupidchoco.com/de" },
-    },
-    openGraph: {
-      type: "website",
-      title: t("title"),
-      description: t("description"),
-      siteName: "Cupid",
-      images: {
-        url: "https://cdn.shopify.com/s/files/1/0871/6163/5140/files/Cupid_cover_img.jpg",
-      },
-    },
-    twitter: {
-      card: "summary_large_image",
-      title: t("title"),
-      description: t("description"),
-      site: "@cupid_choco",
-      creator: "@cupid_choco_de",
-      images: {
-        url: "https://cdn.shopify.com/s/files/1/0871/6163/5140/files/Cupid_cover_img.jpg",
-      },
-    },
-  };
-}
 
 export default function Page() {
   const t = useTranslations("HomePage");
@@ -84,7 +46,19 @@ export default function Page() {
         <Ingredients />
         <Slider title={t("what-our-customers-say")}>
           {VIDEOS.map((video, i) => (
-            <Video src={video.src} description={video.description} key={i} />
+            <Video
+              description={video.description}
+              key={i}
+              poster={`/posters/${video.name}.png`}
+            >
+              {["webm", "mp4"].map((ext, i) => (
+                <source
+                  key={ext + i}
+                  src={`/videos/${video.name}.${ext}`}
+                  type={`video/${ext}`}
+                />
+              ))}
+            </Video>
           ))}
         </Slider>
         <Gallery />

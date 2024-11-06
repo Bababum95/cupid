@@ -31,12 +31,14 @@ export const Ingredients = () => {
       <div className={styles.wrapper}>
         <video
           ref={videoRef}
-          src="/videos/cupid-choco.mov"
           muted
           preload="auto"
           loop
           className={styles.video}
-        />
+        >
+          <source src="/videos/cupid-choco.webm" type="video/webm" />
+          <source src="/videos/cupid-choco.mp4" type="video/mp4" />
+        </video>
         <h2 className={styles.title}>{t("title")}</h2>
         <ul className={styles.list} ref={listRef}>
           {list.map((item) => (

@@ -27,14 +27,19 @@ export default function Menu() {
         >
           <nav className={styles.nav}>
             {["ingredients", "reviews", "faq"].map((link) => (
-              <Link key={link} href={`/#${link}`} className={styles.link}>
+              <Link
+                key={link}
+                href={`/#${link}`}
+                className={styles.link}
+                onClick={() => setIsOpen(false)}
+              >
                 {t(link)}
               </Link>
             ))}
             <span className={styles.divider} />
-            <Link className={styles.link} href="#">
+            <a className={styles.link} href="https://my.cupidchoco.com">
               {t("orders")}
-            </Link>
+            </a>
           </nav>
         </SideDrawer>,
         document.body

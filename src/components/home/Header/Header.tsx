@@ -9,6 +9,12 @@ import styles from "./Header.module.scss";
 const Menu = dynamic(() => import("@/components/dynamic/Menu"), {
   ssr: false,
 });
+const LangSwitcher = dynamic(
+  () => import("@/components/dynamic/LangSwitcher"),
+  {
+    ssr: false,
+  }
+);
 
 export const Header = () => {
   const t = useTranslations("HomePage");
@@ -28,6 +34,7 @@ export const Header = () => {
           ))}
         </nav>
         <div className={styles.end}>
+          <LangSwitcher />
           <Link className={styles.button} href="/sex-chocolate">
             {t("by-now")}
           </Link>

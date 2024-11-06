@@ -11,11 +11,12 @@ import MuteIcon from "@/icons/sound-speaker.svg";
 import styles from "./Video.module.scss";
 
 type Props = {
-  src: string;
   description: string;
+  poster: string;
+  children: React.ReactNode;
 };
 
-export const Video: FC<Props> = ({ src, description }) => {
+export const Video: FC<Props> = ({ description, poster, children }) => {
   const [isPlaying, setIsPlaying] = useState(false);
   const [isMuted, setIsMuted] = useState(false);
   const videoRef = useRef<HTMLVideoElement>(null);
@@ -33,20 +34,22 @@ export const Video: FC<Props> = ({ src, description }) => {
   };
 
   return (
-    <div>
+    <div className={styles.container}>
       <div
         className={classNames(styles.wrapper, {
           [styles.playing]: isPlaying,
         })}
       >
         <video
-          src={src}
           className={styles.video}
           loop
           ref={videoRef}
           muted={isMuted}
           preload="metadata"
-        />
+          poster={poster}
+        >
+          {children}
+        </video>
         <button className={styles.play} onClick={togglePlay}>
           <PlayIcon />
         </button>
@@ -63,7 +66,7 @@ export const Video: FC<Props> = ({ src, description }) => {
           </button>
         </div>
       </div>
-      <p>{description}</p>
+      <p className={styles.description}>{description}</p>
     </div>
   );
 };

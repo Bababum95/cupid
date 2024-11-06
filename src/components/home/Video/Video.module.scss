@@ -1,7 +1,11 @@
+.container {
+  width: 305px;
+}
+
 .wrapper {
   position: relative;
-  width: 305px;
   height: 478px;
+  width: 100%;
 
   &.playing {
     .play {
@@ -95,4 +99,12 @@
       }
     }
   }
+}
+
+.description {
+  margin-top: 20px;
+  font-size: 17px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 150%;
 }
