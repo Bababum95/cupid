@@ -79,7 +79,7 @@ export default function Page({
   const handleSubmit = (evt: React.FormEvent) => {
     evt.preventDefault();
     if (cart.checkoutUrl)
-      window.location.href = `${cart.checkoutUrl}?locale=${locale}`;
+      window.location.href = `${cart.checkoutUrl}&locale=${locale}`;
   };
 
   return (
