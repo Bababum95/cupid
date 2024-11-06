@@ -90,10 +90,14 @@
 
   .row {
     gap: 8px;
+
+    &:not(:last-child) {
+      margin-bottom: 8px;
+    }
   }
 
   .image {
-    height: 120px;
+    max-height: 120px;
     width: 20%;
 
     &:nth-child(3) {
