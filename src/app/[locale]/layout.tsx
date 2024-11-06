@@ -1,15 +1,9 @@
-import type { Metadata } from "next";
 import { NextIntlClientProvider } from "next-intl";
 import { getMessages } from "next-intl/server";
 
 import "@/styles/globals.scss";
 
 import StoreProvider from "./StoreProvider";
-
-export const metadata: Metadata = {
-  title: "Cupid Chocolate",
-  description: "Cupid Aphrodisiac Chocolate",
-};
 
 export default async function RootLayout({
   children,
