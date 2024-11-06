@@ -1,0 +1,55 @@
+.wrapper {
+  flex: 1;
+  padding: 40px 30px 120px 40px;
+  border-left: $grey-line;
+
+  @include media("tablet") {
+    border-left: none;
+    padding-inline: 0;
+  }
+}
+
+.section {
+  margin-top: calc((var(--header-height) + 40px) * -1);
+  padding-top: calc(var(--header-height) + 40px);
+
+  &:not(:last-child) {
+    margin-bottom: 60px;
+  }
+}
+
+.title {
+  color: $text;
+  font-size: clamp(1.5rem, 1.2446rem + 1.0476vw, 2.1875rem);
+  font-style: normal;
+  font-weight: 700;
+  line-height: 120%;
+}
+
+.content {
+  margin-top: 20px;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 160%;
+
+  p {
+    &:not(:last-child) {
+      margin-bottom: 20px;
+    }
+  }
+
+  a {
+    color: $text;
+    text-decoration-line: underline;
+  }
+
+  strong {
+    color: $text;
+    display: block;
+  }
+
+  ul {
+    margin: 20px 0;
+  }
+}

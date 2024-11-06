@@ -5,6 +5,7 @@ import LogoIcon from "@/icons/footer-logo.svg";
 
 import { LINKS, SOCIAL_LINKS, PAYMENT_METHODS } from "./config";
 import styles from "./Footer.module.scss";
+import Link from "next/link";
 
 export const Footer = () => {
   const t = useTranslations("Footer");
@@ -17,7 +18,13 @@ export const Footer = () => {
             <LogoIcon />
             <nav className={styles.socials}>
               {SOCIAL_LINKS.map(({ Icon, href }, i) => (
-                <a key={i} href={href} className={styles.social}>
+                <a
+                  key={i}
+                  href={href}
+                  className={styles.social}
+                  rel="noreferrer nofollow"
+                  target="_blank"
+                >
                   <Icon width={28} height={28} />
                 </a>
               ))}
@@ -31,7 +38,7 @@ export const Footer = () => {
               <li className={styles.label}>{t(name)}</li>
               {list.map(({ label, href }) => (
                 <li key={label} className={styles.link}>
-                  <a href={href}>{t(label)}</a>
+                  <Link href={href}>{t(label)}</Link>
                 </li>
               ))}
             </ul>
@@ -40,7 +47,15 @@ export const Footer = () => {
             <li className={styles.label}>{t("contact")}</li>
             <li className={styles.link}>SM MIR GmbH Berlin, Deutshland</li>
             <li className={styles.link}>info@cupidchoco.com</li>
-            <li className={styles.link}>WhatsApp</li>
+            <li className={styles.link}>
+              <a
+                href="https://wa.me/4915226740425"
+                rel="noreferrer nofollow"
+                target="_blank"
+              >
+                WhatsApp
+              </a>
+            </li>
           </ul>
         </nav>
       </div>

@@ -1,0 +1,29 @@
+.wrapper {
+  margin: 40px 40px 120px 0;
+  width: 208px;
+  position: sticky;
+  top: calc(var(--header-height) + 40px);
+  left: 0;
+
+  @include media("tablet") {
+    display: none;
+  }
+}
+
+.link {
+  display: block;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  transition: $transition;
+
+  &:not(:last-child) {
+    margin-bottom: 20px;
+  }
+
+  @include hover {
+    color: $text;
+    text-decoration-line: underline;
+  }
+}

@@ -2,16 +2,14 @@ import { useTranslations } from "next-intl";
 import Image from "next/image";
 import Link from "next/link";
 
+import { Subscribe, Header, Footer } from "@/components";
 import {
   Advantages,
   Comments,
   FAQ,
-  Footer,
   Gallery,
-  Header,
   Ingredients,
   Slider,
-  Subscribe,
   Video,
 } from "@/components/home";
 

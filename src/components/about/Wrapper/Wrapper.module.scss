@@ -1,0 +1,11 @@
+.wrapper {
+  // border-top: $grey-line;
+  margin-bottom: -100px;
+}
+
+.content {
+  @include flex-layout;
+  max-width: $home-mw;
+  padding: 0 20px;
+  margin: 0 auto;
+}

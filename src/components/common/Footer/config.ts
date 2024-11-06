@@ -9,19 +9,20 @@ export const LINKS = [
     name: "info",
     list: [
       { label: "about", href: "/about" },
-      { label: "contact-us", href: "/contact" },
-      { label: "faq", href: "/faq" },
-      { label: "order", href: "/order" },
+      { label: "contact-us", href: "https://my.cupidchoco.com/" },
+      { label: "faq", href: "/#faq" },
+      { label: "shiping", href: "/shiping" },
+      { label: "order", href: "https://my.cupidchoco.com/" },
     ],
   },
   {
     name: "legal",
     list: [
-      { label: "privacy", href: "/privacy" },
-      { label: "terms", href: "/terms" },
-      { label: "shiping", href: "/shiping" },
+      { label: "refund-policy", href: "/refund-policy" },
+      { label: "privacy", href: "/privacy-policy" },
+      { label: "terms", href: "/terms-of-service" },
       { label: "imprint", href: "/imprint" },
-      { label: "cookies", href: "/cookies" },
+      { label: "cookies", href: "/cookie-policy" },
     ],
   },
 ];

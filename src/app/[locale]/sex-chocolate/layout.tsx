@@ -1,6 +1,6 @@
 import { Footer, Header } from "@/components/sex-chocolate";
 
-export default async function SexChocolateLayout({
+export default function SexChocolateLayout({
   children,
 }: {
   children: React.ReactNode;
