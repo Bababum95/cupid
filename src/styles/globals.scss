@@ -1,0 +1,91 @@
+@import "./cookie.scss";
+
+:root {
+  --header-height: 50px;
+
+  @font-face {
+    font-family: "VelaSans";
+    font-style: normal;
+    font-weight: 100 900;
+    src: url(/fonts/VelaSans-GX-subset.woff2) format("woff2");
+  }
+}
+
+html,
+.body {
+  max-width: 100vw;
+}
+
+.body {
+  @include flex-column;
+  background: $page-bg;
+  color: $secondary-text;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  min-height: 100vh;
+  overflow-x: hidden;
+
+  &.no-scroll {
+    overflow: hidden;
+    padding-right: var(--dialog-scrollgutter, 0);
+  }
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  scroll-behavior: smooth;
+  font-family: "VelaSans", sans-serif;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+pre {
+  font-weight: 400;
+  font-size: 16px;
+  color: $text;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+svg {
+  flex-shrink: 0;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+button {
+  border: none;
+  cursor: pointer;
+}
+
+@keyframes animation-skeleton {
+  0% {
+    translate: -200% 0;
+  }
+  50% {
+    translate: 200% 0;
+  }
+  100% {
+    translate: 200% 0;
+  }
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0) translate(-50%, -50%);
+  }
+  to {
+    transform: rotate(360deg) translate(-50%, -50%);
+  }
+}

@@ -1,0 +1,170 @@
+.section {
+  max-width: $home-mw;
+  margin: 270px auto;
+  padding: 0 20px;
+}
+
+.title {
+  font-size: clamp(2rem, 1.6286rem + 1.5238vw, 3rem);
+  font-style: normal;
+  font-weight: 700;
+  line-height: 110%;
+  max-width: 520px;
+}
+
+.wrapper {
+  @include flex-layout(space-between);
+  gap: 32px;
+  margin-top: 60px;
+  position: relative;
+}
+
+.accordion {
+  width: 100%;
+  max-width: 520px;
+
+  :global {
+    .item {
+      &:not(:last-child) {
+        margin-bottom: 32px;
+      }
+    }
+
+    .opener {
+      font-size: clamp(1.3125rem, 1.2429rem + 0.2857vw, 1.5rem);
+      align-items: flex-start;
+
+      svg {
+        height: 16px;
+        margin-top: 10px;
+      }
+    }
+
+    .content {
+      font-size: 17px;
+    }
+  }
+}
+
+.image {
+  position: sticky;
+  top: calc(var(--header-height) + 20px);
+  right: 0;
+  border-radius: 40px;
+  max-width: 650px;
+  flex-shrink: 1;
+  height: auto;
+}
+
+.button {
+  @include flex-layout(space-between, center);
+  width: 100%;
+  margin-top: 32px;
+  background-color: transparent;
+  color: $text;
+  font-size: clamp(1.3125rem, 1.2429rem + 0.2857vw, 1.5rem);
+  font-style: normal;
+  font-weight: 700;
+  line-height: 170%;
+  transition: $transition;
+
+  svg {
+    opacity: 0;
+    visibility: hidden;
+    width: 0;
+  }
+
+  @include hover {
+    color: $secondary-text;
+
+    svg {
+      opacity: 1;
+      visibility: visible;
+      width: 20px;
+
+      circle {
+        animation: eye 2.5s infinite;
+      }
+    }
+
+    .dots {
+      opacity: 0;
+      visibility: hidden;
+      width: 0;
+    }
+  }
+}
+
+.icon {
+  @include flex-center;
+}
+
+.dots {
+  position: relative;
+
+  &,
+  &:before,
+  &:after {
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background-color: $text;
+    display: inline-block;
+  }
+
+  &:before,
+  &:after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  &:before {
+    left: -8px;
+  }
+
+  &:after {
+    left: -16px;
+  }
+}
+
+@include media("tablet") {
+  .section {
+    margin: 144px 0;
+  }
+
+  .wrapper {
+    flex-direction: column;
+    margin-top: 48px;
+  }
+
+  .accordion {
+    order: 2;
+    max-width: 100%;
+  }
+
+  .image {
+    position: relative;
+    top: 0;
+    width: 100%;
+    max-width: 100%;
+    border-radius: 25px;
+  }
+}
+
+@keyframes eye {
+  0% {
+    transform: translateX(0);
+  }
+  15% {
+    transform: translateX(4px);
+  }
+  45% {
+    transform: translateX(-4px);
+  }
+  60%,
+  100% {
+    transform: translateX(0);
+  }
+}

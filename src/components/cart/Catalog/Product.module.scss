@@ -1,0 +1,79 @@
+.image {
+  border-radius: 20px;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  aspect-ratio: 1/1;
+}
+
+.item {
+  @include flex-column;
+  cursor: pointer;
+  opacity: 0;
+  animation: shade-on 0.5s linear forwards;
+}
+
+.title {
+  @include text-overflow(2);
+  color: $text;
+  font-size: clamp(1.0625rem, 0.9696rem + 0.381vw, 1.3125rem);
+  font-style: normal;
+  font-weight: 700;
+  line-height: 105%;
+  letter-spacing: -0.21px;
+  margin: 16px 0 6px;
+}
+
+.description {
+  @include text-overflow(2);
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 130%;
+  letter-spacing: -0.13px;
+  margin-bottom: 24px;
+}
+
+.actions {
+  @include flex-layout(space-between, center);
+  margin-top: auto;
+  gap: 12px;
+}
+
+.button {
+  @include add-to-cart-button;
+  max-width: 140px;
+  width: 100%;
+
+  &.loading {
+    @include button-loading;
+  }
+}
+
+@include media("tablet-small") {
+  .actions {
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 18px;
+
+    & > p {
+      flex-direction: row;
+      gap: 8px;
+      align-items: center !important;
+    }
+  }
+
+  .button {
+    max-width: none;
+  }
+}
+
+@keyframes shade-on {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}

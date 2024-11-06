@@ -1,0 +1,53 @@
+.form {
+  @include flex-layout;
+  gap: 6px;
+  max-width: 529px;
+}
+
+.input {
+  height: 48px;
+  padding: 16px 20px;
+  border-radius: 16px;
+  border: $grey-line;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  color: $text;
+  background-color: transparent;
+  border-width: 2px;
+  flex: 1;
+
+  &::placeholder {
+    color: $secondary-text;
+  }
+}
+
+.button {
+  color: $text;
+  border-radius: 16px;
+  border: 2px solid var(--Button, #520c11);
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  letter-spacing: -0.3px;
+  background-color: transparent;
+  height: 48px;
+  padding: 12px 32px;
+  white-space: nowrap;
+}
+
+@include media("tablet-small") {
+  .form {
+    flex-direction: column;
+  }
+
+  .input {
+    width: 100%;
+  }
+
+  .button {
+    width: 100%;
+  }
+}

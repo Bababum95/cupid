@@ -1,0 +1,14 @@
+.button {
+  @include primary-button;
+
+  &.loading {
+    @include button-loading;
+  }
+}
+
+.total {
+  font-size: 17px;
+  font-weight: 700;
+  display: block;
+  margin-left: auto;
+}

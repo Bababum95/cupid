@@ -1,0 +1,110 @@
+.container {
+  width: 305px;
+}
+
+.wrapper {
+  position: relative;
+  height: 478px;
+  width: 100%;
+
+  &.playing {
+    .play {
+      opacity: 0;
+    }
+  }
+}
+
+.video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  clip-path: path(
+    "M0 25.25C0 11.4429 11.1929 0.25 25 0.25H280C293.807 0.25 305 11.4429 305 25.25V412.25C305 424.4 295.15 434.25 283 434.25C270.85 434.25 261 444.1 261 456.25C261 468.4 251.15 478.25 239 478.25H147C134.85 478.25 125 468.4 125 456.25C125 444.1 115.15 434.25 103 434.25H25C11.1929 434.25 0 423.057 0 409.25V25.25Z"
+  );
+}
+
+.play {
+  @include flex-center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: $text;
+  background-color: #1a1a1a;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  transition: $transition;
+
+  @include hover {
+    background-color: $accent;
+  }
+}
+
+.footer {
+  @include flex-layout;
+  gap: 3px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+}
+
+.icon,
+.tiktok,
+.sound {
+  @include flex-center;
+  border-radius: 78px;
+  background: #1a1a1a;
+  color: $text;
+  width: 36px;
+  height: 36px;
+}
+
+.tiktok {
+  width: 78px;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 160%;
+}
+
+.sound {
+  margin-left: auto;
+  transition: $transition;
+
+  @include hover {
+    color: $secondary-text;
+  }
+
+  &.muted {
+    border: 2px solid #85141b;
+    position: relative;
+
+    &::after {
+      content: "";
+      width: 100%;
+      height: 2px;
+      background-color: #85141b;
+      position: absolute;
+      left: 0;
+      rotate: 45deg;
+    }
+
+    @include hover {
+      border-color: $accent;
+
+      &::after {
+        background-color: $accent;
+      }
+    }
+  }
+}
+
+.description {
+  margin-top: 20px;
+  font-size: 17px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 150%;
+}

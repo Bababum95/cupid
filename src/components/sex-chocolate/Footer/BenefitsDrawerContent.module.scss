@@ -1,0 +1,32 @@
+.wrapper {
+  margin-top: 40px;
+
+  :global {
+    .list {
+      margin-top: 60px;
+    }
+
+    .opener p {
+      font-size: 17px;
+    }
+
+    .content {
+      font-size: 15px;
+    }
+  }
+}
+
+.text {
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 150%;
+}
+
+.label {
+  color: $text;
+  font-size: 17px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 150%;
+}

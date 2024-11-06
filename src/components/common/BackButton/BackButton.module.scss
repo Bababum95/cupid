@@ -1,0 +1,21 @@
+.button {
+  @include flex-center;
+  gap: 8px;
+  color: $secondary-text;
+  background-color: transparent;
+  font-size: 17px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 110%;
+  transition: $transition;
+
+  @include hover {
+    color: $text;
+  }
+
+  @include media("tablet-small") {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+  }
+}

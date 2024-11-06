@@ -1,0 +1,110 @@
+.wrapper {
+  @include flex-layout(space-between);
+  margin-top: 70px;
+  gap: 28px;
+  position: relative;
+}
+
+.summary {
+  max-width: 434px;
+  flex-shrink: 5;
+}
+
+.back {
+  margin-bottom: 16px;
+}
+
+.h2 {
+  font-size: clamp(1.5rem, 0.9429rem + 2.2857vw, 3rem);
+  margin: 0;
+}
+
+.preview {
+  position: relative;
+
+  .image {
+    border-radius: 20px;
+    object-fit: cover;
+    aspect-ratio: 550 / 520;
+    height: auto;
+    clip-path: path(
+      "M518 0H305.5C304.107 0 303.411 0 302.823 0.0346878C292.704 0.631424 284.631 8.70379 284.035 18.8226C284 19.4108 284 20.1072 284 21.5C284 22.8928 284 23.5892 283.965 24.1774C283.369 34.2962 275.296 42.3686 265.177 42.9653C264.589 43 263.893 43 262.5 43H32C20.799 43 15.1984 43 10.9202 45.1799C7.15695 47.0973 4.09734 50.1569 2.17987 53.9202C0 58.1984 0 63.7989 0 75V488.002C0 499.203 0 504.803 2.17987 509.082C4.09734 512.845 7.15695 515.904 10.9202 517.822C15.1984 520.002 20.799 520.002 32 520.002H518C529.201 520.002 534.802 520.002 539.08 517.822C542.843 515.904 545.903 512.845 547.82 509.082C550 504.803 550 499.203 550 488.002V32C550 20.799 550 15.1984 547.82 10.9202C545.903 7.15695 542.843 4.09734 539.08 2.17987C534.802 0 529.201 0 518 0Z"
+    );
+  }
+}
+
+.bages {
+  @include flex-layout;
+  gap: 4px;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.bage {
+  @include flex-center;
+  padding: 10px 16px;
+  color: $text;
+  background-color: $accent;
+  border-radius: 20px;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 100%;
+  letter-spacing: -0.15px;
+  gap: 6px;
+}
+
+@include media("desktop") {
+  .wrapper {
+    flex-direction: column;
+    align-items: center;
+    padding-top: 12px;
+    margin-top: 12px;
+  }
+
+  .summary {
+    max-width: 550px;
+    width: 100%;
+  }
+}
+
+@include media("tablet-small") {
+  .wrapper {
+    padding-top: 60px;
+  }
+
+  .back {
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin: 0 0 0 -20px;
+  }
+}
+
+@include media("phone") {
+  .bages {
+    gap: 2px;
+  }
+
+  .bage {
+    padding: 6px 10px;
+    font-size: 13px;
+    border-radius: 12px;
+
+    svg {
+      width: 9px;
+      height: 9px;
+    }
+  }
+
+  .preview {
+    position: relative;
+
+    .image {
+      clip-path: path(
+        "M429.636 0H243.75C240.941 0 239.537 0 238.367 0.220776C233.219 1.19232 229.192 5.21904 228.221 10.367C228 11.5368 228 12.9412 228 15.75C228 18.5588 228 19.9632 227.779 21.133C226.808 26.281 222.781 30.3077 217.633 31.2792C216.463 31.5 215.059 31.5 212.25 31.5H20.3636C13.2357 31.5 9.67172 31.5 6.94921 32.8872C4.55442 34.1074 2.6074 36.0544 1.38719 38.4492C0 41.1717 0 44.7357 0 51.8636V409.636C0 416.764 0 420.328 1.38719 423.051C2.6074 425.446 4.55442 427.393 6.94921 428.613C9.67172 430 13.2357 430 20.3637 430H429.636C436.764 430 440.328 430 443.051 428.613C445.446 427.393 447.393 425.446 448.613 423.051C450 420.328 450 416.764 450 409.636V20.3636C450 13.2357 450 9.67172 448.613 6.94921C447.393 4.55442 445.446 2.6074 443.051 1.38719C440.328 0 436.764 0 429.636 0Z"
+      );
+    }
+  }
+}

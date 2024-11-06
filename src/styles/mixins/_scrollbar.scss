@@ -1,0 +1,20 @@
+@mixin scrollbar {
+  &::-webkit-scrollbar-track {
+    border-radius: 6px;
+  }
+
+  &::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: $secondary-text;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: $transition;
+
+    @include hover {
+      background: $text;
+    }
+  }
+}

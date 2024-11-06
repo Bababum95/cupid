@@ -1,0 +1,22 @@
+.progress {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1;
+  height: 6px;
+  border-bottom: $grey-line;
+  background-image: linear-gradient($accent, $accent);
+  background-size: 10% 100%;
+  background-repeat: no-repeat;
+  animation: progress 2s linear forwards;
+}
+
+@keyframes progress {
+  from {
+    background-size: 10% 100%;
+  }
+  to {
+    background-size: 90% 100%;
+  }
+}
