@@ -43,28 +43,28 @@ export const Gallery = () => {
         <motion.div className={styles.images} style={{ scale }}>
           <div className={styles.row}>
             <Image
-              src="/images/chocolate.jpg"
+              src="/images/gallery/55427a7ecde126bdbfe9d797a7a39c30.png"
               alt="Cupid Aphrodisiac Chocolate"
               width={133}
               height={278}
               className={styles.image}
             />
             <Image
-              src="/images/chocolate.jpg"
+              src="/images/gallery/b543b75a4cb7f2125c3577d69f556b85.png"
               alt="Cupid Aphrodisiac Chocolate"
               width={430}
               height={278}
               className={styles.image}
             />
             <Image
-              src="/images/chocolate.jpg"
+              src="/images/gallery/65a21a78e35f4b6de119b097f0dd4f1a.png"
               alt="Cupid Aphrodisiac Chocolate"
               width={320}
               height={278}
               className={styles.image}
             />
             <Image
-              src="/images/chocolate.jpg"
+              src="/images/gallery/2fe7158d740321965705321491b51184.png"
               alt="Cupid Aphrodisiac Chocolate"
               width={498}
               height={278}
@@ -73,7 +73,7 @@ export const Gallery = () => {
           </div>
           <div className={styles.row}>
             <Image
-              src="/images/chocolate.jpg"
+              src="/images/gallery/0e9203b90ca98e59c0517d0819bc845d.png"
               alt="Cupid Aphrodisiac Chocolate"
               width={400}
               height={278}
@@ -89,7 +89,7 @@ export const Gallery = () => {
               style={{ borderRadius }}
             />
             <Image
-              src="/images/chocolate.jpg"
+              src="/images/gallery/2e350954be8a9eab7f7883f546a9ae61.png"
               alt="Cupid Aphrodisiac Chocolate"
               width={400}
               height={278}

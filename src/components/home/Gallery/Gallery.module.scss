@@ -34,6 +34,7 @@
   overflow: hidden;
   position: sticky;
   top: var(--top, var(--header-height));
+  margin-bottom: var(--top, var(--header-height));
 }
 
 .images {
@@ -73,7 +74,7 @@
 }
 
 .filler {
-  height: 50vh;
+  height: 100vh;
 }
 
 @include media("tablet") {

@@ -49,7 +49,7 @@ export default function Page() {
             <Video
               description={video.description}
               key={i}
-              poster={`/posters/${video.name}.png`}
+              poster={`/images/posters/${video.name}.png`}
             >
               {["webm", "mp4"].map((ext, i) => (
                 <source

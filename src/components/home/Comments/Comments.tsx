@@ -23,28 +23,28 @@ const comments = [
   {
     name: "Sophie K.",
     rating: 5,
-    date: "11/02/2024",
+    date: "10/31/2024",
     review:
       "Das perfekte Geschenk für meinen Partner. Wir haben es beide sehr genossen. Werde auf jeden Fall wieder kaufen!",
   },
   {
     name: "Alex H.",
     rating: 5,
-    date: "11/02/2024",
+    date: "10/30/2024",
     review:
       "Toller Geschmack und spürbare Wirkung. Kam schnell und diskret an. Danke!",
   },
   {
     name: "Emma S.",
     rating: 5,
-    date: "11/02/2024",
+    date: "10/29/2024",
     review:
       "Wunderschöne Verpackung und köstliche Schokolade. Hat unseren Date-Abend besonders gemacht.",
   },
   {
     name: "Tom R.",
     rating: 5,
-    date: "11/02/2024",
+    date: "10/28/2024",
     review:
       "Habe keinen großen Unterschied bemerkt, aber die Schokolade war lecker. Werde es vielleicht nochmal versuchen.",
   },
