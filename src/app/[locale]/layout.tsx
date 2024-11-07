@@ -5,6 +5,13 @@ import { getMessages } from "next-intl/server";
 
 import "@/styles/globals.scss";
 
+import {
+  BREADCRUMB_JSON_LD,
+  LOCAL_BUSINESS_JSON_LD,
+  ORGANIZATION_JSON_LD,
+  PRODUCT_JSON_LD,
+  WEBSITE_JSON_LD,
+} from "./config";
 import StoreProvider from "./StoreProvider";
 
 export async function generateMetadata({
@@ -17,6 +24,7 @@ export async function generateMetadata({
   return {
     title: t("title"),
     description: t("description"),
+    applicationName: "Cupid",
     alternates: {
       canonical: "https://cupidchoco.com/",
       languages: { de: "https://cupidchoco.com/de" },
@@ -60,6 +68,36 @@ export default async function RootLayout({
         <NextIntlClientProvider messages={messages} locale={locale}>
           <StoreProvider>{children}</StoreProvider>
         </NextIntlClientProvider>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(ORGANIZATION_JSON_LD),
+          }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(PRODUCT_JSON_LD),
+          }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(LOCAL_BUSINESS_JSON_LD),
+          }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(WEBSITE_JSON_LD),
+          }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(BREADCRUMB_JSON_LD),
+          }}
+        />
       </body>
     </html>
   );
