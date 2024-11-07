@@ -233,10 +233,10 @@
     "total": "Gesamt",
     "checkout": "Zur Kasse",
     "complete-your-experience": "Vervollständige dein Erlebnis",
-    "pick-up-your-gift": "Pick up your gift",
-    "free-gift": "Free Gift",
-    "spend": "Spend {amount} € to Receive a Free Gift!",
-    "more-until-your-free-gift": "more until your free gift!"
+    "pick-up-your-gift": "Hol dir dein Geschenk ab",
+    "free-gift": "Kostenloses Geschenk",
+    "spend": "Gib {amount} € aus, um ein kostenloses Geschenk zu erhalten!",
+    "more-until-your-free-gift": "noch bis zu deinem kostenlosen Geschenk!"
   },
   "Imprint": {
     "1": "Impressum",
