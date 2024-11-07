@@ -29,16 +29,36 @@ export const COOKIE_CONSENT_CONFIG: CookieConsentConfig = {
   },
 
   categories: {
-    performance: {
+    necessary: {
       readOnly: true,
       enabled: true,
+    },
+    performance: {
+      enabled: true,
+      autoClear: {
+        cookies: [
+          {
+            name: /^(_shopify_s|_shopify_sa_p)/,
+          },
+        ],
+      },
     },
     analytics: {
       enabled: true,
       autoClear: {
         cookies: [
           {
-            name: /^(_shopify_s|_shopify_y)/,
+            name: /^(_shopify_y|_ga|_gid)/,
+          },
+        ],
+      },
+    },
+    marketing: {
+      enabled: true,
+      autoClear: {
+        cookies: [
+          {
+            name: /^(_fbp|_gcl_au)/,
           },
         ],
       },
