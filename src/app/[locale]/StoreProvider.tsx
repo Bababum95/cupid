@@ -28,6 +28,7 @@ export default function StoreProvider({
   useEffect(() => {
     document.documentElement.classList.add("cc--elegant-black");
     CookieConsent.run(COOKIE_CONSENT_CONFIG);
+    Intercom({ app_id: "or685gsh" });
   }, []);
 
   useEffect(() => {
@@ -35,7 +36,6 @@ export default function StoreProvider({
   }, [pathname, searchParams]);
 
   useShopifyCookies({ hasUserConsent: true });
-  Intercom({ app_id: "or685gsh" });
 
   return <Provider store={storeRef.current}>{children}</Provider>;
 }

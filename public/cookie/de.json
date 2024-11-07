@@ -1,78 +1,158 @@
 {
   "consentModal": {
-    "title": "Hello traveller, it's cookie time! DE",
-    "description": "Our website uses tracking cookies to understand how you interact with it. The tracking will be enabled only if you accept explicitly. <a href=\"#privacy-policy\" data-cc=\"show-preferencesModal\" class=\"cc__link\">Manage preferences</a>",
-    "acceptAllBtn": "Accept all",
-    "acceptNecessaryBtn": "Reject all",
-    "showPreferencesBtn": "Manage preferences",
-    "footer": "<a href='#link'>Privacy Policy</a> <a href='#link'>Impressum</a>"
+    "title": "Cookie-Einstellungen",
+    "description": "Wir verwenden Cookies, um Ihre Erfahrung zu verbessern und zu verstehen, wie Sie mit unserer Website interagieren. Sie können Ihre Cookie-Einstellungen unten verwalten.",
+    "acceptAllBtn": "Alle akzeptieren",
+    "acceptNecessaryBtn": "Nur notwendige ablehnen",
+    "showPreferencesBtn": "Einstellungen verwalten",
+    "footer": "<a href='https://cupidchoco.com/privacy-policy'>Datenschutzerklärung</a> <a href='https://cupidchoco.com/imprint'>Impressum</a>"
   },
   "preferencesModal": {
-    "title": "Cookie preferences",
-    "acceptAllBtn": "Accept all",
-    "acceptNecessaryBtn": "Reject all",
-    "savePreferencesBtn": "Save preferences",
-    "closeIconLabel": "Close",
+    "title": "Cookie-Einstellungen",
+    "acceptAllBtn": "Alle akzeptieren",
+    "acceptNecessaryBtn": "Nur notwendige ablehnen",
+    "savePreferencesBtn": "Einstellungen speichern",
+    "closeIconLabel": "Schließen",
     "sections": [
       {
-        "title": "Cookie Usage",
-        "description": "I use cookies to ensure the basic functionalities of the website and to enhance your online experience. You can choose for each category to opt-in/out whenever you want. For more details relative to cookies and other sensitive data, please read the full <a href=\"#\" class=\"cc__link\">privacy policy</a>."
+        "title": "Verwendung von Cookies",
+        "description": "Wir verwenden Cookies, um die grundlegenden Funktionen der Website sicherzustellen und Ihre Online-Erfahrung zu verbessern. Sie können jederzeit entscheiden, welche Kategorien aktiviert oder deaktiviert werden sollen. Für weitere Informationen zu Cookies, Datenweitergabe und Datenverarbeitung lesen Sie bitte die vollständige <a href=\"https://cupidchoco.com/privacy-policy\" class=\"cc__link\">Datenschutzerklärung</a>."
       },
       {
-        "title": "Performance cookies",
-        "linkedCategory": "performance",
+        "title": "Notwendige Cookies",
+        "description": "Diese Cookies sind für die Kernfunktionen der Website wie Sicherheit, Netzwerkverwaltung und Barrierefreiheit unerlässlich und können nicht deaktiviert werden.",
+        "linkedCategory": "necessary",
         "cookieTable": {
           "headers": {
             "name": "Name",
-            "domain": "Service",
-            "description": "Description",
-            "expiration": "Expiration"
+            "domain": "Dienst",
+            "description": "Beschreibung",
+            "expiration": "Ablauf"
           },
           "body": [
             {
               "name": "NEXT_LOCALE",
               "domain": "cupidchoco.com",
-              "description": "Used to store the preferred language of the user.",
-              "expiration": "Expires after 1 year"
+              "description": "Speichert die bevorzugte Sprache des Benutzers.",
+              "expiration": "1 Jahr"
             },
             {
               "name": "cc_cookie",
               "domain": "cupidchoco.com",
-              "description": "Stores user consent preferences for necessary and analytics cookies.",
-              "expiration": "Expiration after 6 months"
+              "description": "Speichert die Benutzereinstellungen für notwendige und Analyse-Cookies.",
+              "expiration": "6 Monate"
+            },
+            {
+              "name": "_secure_session_id",
+              "domain": "Shopify",
+              "description": "Wird verwendet, um die Sitzung eines Benutzers während des Checkouts zu identifizieren.",
+              "expiration": "Sitzung"
+            },
+            {
+              "name": "cart",
+              "domain": "Shopify",
+              "description": "Speichert die Inhalte des Warenkorbs des Benutzers während des Browsens.",
+              "expiration": "14 Tage"
+            },
+            {
+              "name": "checkout_token",
+              "domain": "Shopify",
+              "description": "Speichert eine eindeutige ID für jede Checkout-Sitzung des Kunden.",
+              "expiration": "1 Jahr"
             }
           ]
         }
       },
       {
-        "title": "Analytics cookies",
-        "linkedCategory": "analytics",
+        "title": "Leistungs-Cookies",
+        "description": "Diese Cookies helfen, die Leistung der Website zu messen, indem sie das Nutzerverhalten auf verschiedenen Seitenelementen verfolgen. Sie sammeln nur anonyme Daten, die zur Verbesserung der Ladezeiten, Benutzeroberfläche und Effizienz der Seite beitragen.",
+        "linkedCategory": "performance",
         "cookieTable": {
           "headers": {
             "name": "Name",
-            "domain": "Service",
-            "description": "Description",
-            "expiration": "Expiration"
+            "domain": "Dienst",
+            "description": "Beschreibung",
+            "expiration": "Ablauf"
           },
           "body": [
             {
               "name": "_shopify_s",
-              "domain": "cupidchoco.com",
-              "description": "Session cookie set by Shopify.",
-              "expiration": "Session"
+              "domain": "Shopify",
+              "description": "Sitzungs-Cookie zur Leistungsüberwachung.",
+              "expiration": "Sitzung"
             },
             {
-              "name": "_shopify_y",
-              "domain": "cupidchoco.com",
-              "description": "Year-long cookie set by Shopify for analytics purposes.",
-              "expiration": "Expires after 1 year"
+              "name": "_shopify_sa_p",
+              "domain": "Shopify",
+              "description": "Wird von Shopify verwendet, um die angesehenen Produkte der Nutzer zu analysieren.",
+              "expiration": "Sitzung"
             }
           ]
         }
       },
       {
-        "title": "More information",
-        "description": "For any queries in relation to my policy on cookies and your choices, please <a class='cc__link' href='#'>contact me</a>."
+        "title": "Analyse-Cookies",
+        "linkedCategory": "analytics",
+        "description": "Analyse-Cookies bieten Einblicke in das Nutzerverhalten, was uns hilft, die Benutzerfreundlichkeit und Relevanz der Inhalte zu verbessern. Diese Cookies können personenbezogene Daten verarbeiten und erfordern eine ausdrückliche Zustimmung des Nutzers.",
+        "cookieTable": {
+          "headers": {
+            "name": "Name",
+            "domain": "Dienst",
+            "description": "Beschreibung",
+            "expiration": "Ablauf"
+          },
+          "body": [
+            {
+              "name": "_shopify_y",
+              "domain": "Shopify",
+              "description": "Erfasst Sitzungsdaten zu Analysezwecken.",
+              "expiration": "1 Jahr"
+            },
+            {
+              "name": "_ga",
+              "domain": "Google Analytics",
+              "description": "Dient zur Unterscheidung der Benutzer für das Tracking in der Analyse.",
+              "expiration": "2 Jahre"
+            },
+            {
+              "name": "_gid",
+              "domain": "Google Analytics",
+              "description": "Dient zur Unterscheidung der Benutzer innerhalb eines 24-Stunden-Fensters.",
+              "expiration": "1 Tag"
+            }
+          ]
+        }
+      },
+      {
+        "title": "Marketing-Cookies",
+        "linkedCategory": "marketing",
+        "description": "Diese Cookies werden verwendet, um Besucher über Websites hinweg zu verfolgen und relevante Anzeigen zu schalten. Dies umfasst die geräteübergreifende Nachverfolgung und das Profiling, was eine ausdrückliche Zustimmung erfordert.",
+        "cookieTable": {
+          "headers": {
+            "name": "Name",
+            "domain": "Dienst",
+            "description": "Beschreibung",
+            "expiration": "Ablauf"
+          },
+          "body": [
+            {
+              "name": "_fbp",
+              "domain": "Facebook",
+              "description": "Wird von Facebook verwendet, um personalisierte Werbung zu schalten.",
+              "expiration": "3 Monate"
+            },
+            {
+              "name": "_gcl_au",
+              "domain": "Google AdSense",
+              "description": "Dient zur Testung der Anzeigenwirksamkeit über Google-Dienste.",
+              "expiration": "3 Monate"
+            }
+          ]
+        }
+      },
+      {
+        "title": "Zusätzliche Informationen",
+        "description": "Bei Fragen zu unserer Cookie-Richtlinie oder zu Ihren Auswahlmöglichkeiten, oder um Ihre Zustimmung zurückzuziehen, konsultieren Sie bitte den Link „Cookie-Einstellungen“ im Footer der Website oder kontaktieren Sie uns direkt."
       }
     ]
   }
