@@ -36,6 +36,7 @@
 
 .actions {
   @include flex-layout(space-between, center);
+  flex-wrap: wrap;
   margin-top: auto;
   gap: 12px;
 }

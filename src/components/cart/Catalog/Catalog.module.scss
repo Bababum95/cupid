@@ -8,20 +8,20 @@
   overflow-x: hidden;
 }
 
-@include media("desktop") {
+@media screen and (max-width: 1340px) {
   .list {
     grid-template-columns: repeat(2, 1fr);
     padding: 20px;
   }
 }
 
-@include media("tablet") {
+@media screen and (max-width: 995px) {
   .list {
     grid-template-columns: 1fr;
   }
 }
 
-@include media("tablet-small") {
+@media screen and (max-width: 700px) {
   .list {
     grid-template-columns: repeat(2, 1fr);
     padding: 4px 20px 160px;
@@ -34,7 +34,7 @@
     align-items: flex-start;
     gap: 18px;
 
-    &> p {
+    & > p {
       flex-direction: row;
       gap: 8px;
       align-items: center !important;

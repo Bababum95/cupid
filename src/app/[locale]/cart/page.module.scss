@@ -11,6 +11,7 @@
   order: 2;
   max-width: 484px;
   max-height: 100dvh;
+  min-width: 400px;
   flex: 1;
   border-left: $grey-line;
   border-right: $grey-line;
@@ -47,6 +48,7 @@
   @include scrollbar;
   flex-grow: 1;
   overflow-y: auto;
+  overflow-x: hidden;
 }
 
 .footer {
@@ -62,7 +64,7 @@
   }
 }
 
-@include media("tablet-small") {
+@media screen and (max-width: 700px) {
   .page {
     flex-direction: column;
   }
@@ -76,6 +78,7 @@
     max-width: none;
     border: none;
     position: relative;
+    min-width: auto;
 
     .h2 {
       margin: auto;

@@ -5,6 +5,7 @@ import { Provider } from "react-redux";
 import { usePathname, useSearchParams } from "next/navigation";
 import { useShopifyCookies } from "@shopify/hydrogen-react";
 import * as CookieConsent from "vanilla-cookieconsent";
+import Intercom from "@intercom/messenger-js-sdk";
 
 import "vanilla-cookieconsent/dist/cookieconsent.css";
 
@@ -34,6 +35,7 @@ export default function StoreProvider({
   }, [pathname, searchParams]);
 
   useShopifyCookies({ hasUserConsent: true });
+  Intercom({ app_id: "zhtzdghs" });
 
   return <Provider store={storeRef.current}>{children}</Provider>;
 }
