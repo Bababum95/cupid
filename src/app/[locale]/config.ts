@@ -47,10 +47,11 @@ export const COOKIE_CONSENT_CONFIG: CookieConsentConfig = {
 
   language: {
     default: "en",
-    autoDetect: "browser",
+    autoDetect: "document",
 
     translations: {
       en: "/cookie/en.json",
+      de: "/cookie/de.json",
     },
   },
 };
