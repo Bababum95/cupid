@@ -11,7 +11,7 @@ export const LINKS = [
       { label: "about", href: "/about" },
       { label: "contact-us", href: "https://my.cupidchoco.com/" },
       { label: "faq", href: "/#faq" },
-      { label: "shiping", href: "/shiping" },
+      { label: "shiping", href: "/refund-policy" },
       { label: "order", href: "https://my.cupidchoco.com/" },
     ],
   },
@@ -22,7 +22,7 @@ export const LINKS = [
       { label: "privacy", href: "/privacy-policy" },
       { label: "terms", href: "/terms-of-service" },
       { label: "imprint", href: "/imprint" },
-      { label: "cookies", href: "/cookie-policy" },
+      { label: "cookies", href: "/privacy-policy#6" },
     ],
   },
 ];

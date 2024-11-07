@@ -24,9 +24,11 @@ export const Content: FC<Props> = ({ name, quontity }) => {
             {t.rich(`${i + 1}-content`, {
               p: (chunks) => <p>{chunks}</p>,
               ul: (chunks) => <ul>{chunks}</ul>,
+              ol: (chunks) => <ol>{chunks}</ol>,
               li: (chunks) => <li>{chunks}</li>,
               a: (chunks) => <a href={chunks as string}>{chunks}</a>,
               strong: (chunks) => <strong>{chunks}</strong>,
+              span: (chunks) => <span>{chunks}</span>,
             })}
           </div>
         </div>

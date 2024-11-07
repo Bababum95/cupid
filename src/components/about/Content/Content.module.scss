@@ -44,12 +44,22 @@
     text-decoration-line: underline;
   }
 
+  span {
+    color: $text;
+  }
+
   strong {
     color: $text;
     display: block;
   }
 
   ul {
+    margin: 20px 0;
+  }
+
+  ol {
+    padding-left: 20px;
+    list-style: disc;
     margin: 20px 0;
   }
 }

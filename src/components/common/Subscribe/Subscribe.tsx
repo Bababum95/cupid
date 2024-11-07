@@ -22,7 +22,7 @@ export const Subscribe = () => {
           <Form />
           <p className={styles.description}>
             {t.rich("description", {
-              a: (children) => <a href="#">{children}</a>,
+              a: (children) => <a href="/privacy-policy">{children}</a>,
             })}
           </p>
         </div>

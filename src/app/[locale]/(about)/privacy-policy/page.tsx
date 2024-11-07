@@ -1,7 +1,10 @@
+import { Navbar, Content } from "@/components/about";
+
 export default function Page() {
   return (
-    <main>
-      <h1>Privacy Policy</h1>
-    </main>
+    <>
+      <Navbar name="PrivacyPolicy" quontity={9} />
+      <Content name="PrivacyPolicy" quontity={9} />
+    </>
   );
 }
