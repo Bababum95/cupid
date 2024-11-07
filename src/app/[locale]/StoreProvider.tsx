@@ -35,7 +35,7 @@ export default function StoreProvider({
   }, [pathname, searchParams]);
 
   useShopifyCookies({ hasUserConsent: true });
-  Intercom({ app_id: "zhtzdghs" });
+  Intercom({ app_id: "or685gsh" });
 
   return <Provider store={storeRef.current}>{children}</Provider>;
 }
