@@ -5,9 +5,10 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
+    "start": "next start",
     "lint": "next lint",
     "clean": "rm -rf .next",
-    "start": "npm run clean && npm run build && next start",
+    "clean-and-build": "npm run clean && npm run build",
     "prepare-videos": "node .local/prepareVideoFiles.js"
   },
   "dependencies": {
