@@ -26,7 +26,7 @@ export const Content: FC<Props> = ({ name, quontity }) => {
               ul: (chunks) => <ul>{chunks}</ul>,
               ol: (chunks) => <ol>{chunks}</ol>,
               li: (chunks) => <li>{chunks}</li>,
-              a: (chunks) => <a href={chunks as string}>{chunks}</a>,
+              a: (chunks) => <a href={chunks as string} rel="noreferrer nofollow" target="_blank">{chunks}</a>,
               strong: (chunks) => <strong>{chunks}</strong>,
               span: (chunks) => <span>{chunks}</span>,
             })}
