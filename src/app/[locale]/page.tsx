@@ -9,6 +9,7 @@ import {
   FAQ,
   Gallery,
   Ingredients,
+  Recommendations,
   Slider,
   Video,
 } from "@/components/home";
@@ -42,6 +43,7 @@ export default function Page() {
         </div>
         <Advantages />
         <Ingredients />
+        <Recommendations />
         <Slider title={t("what-our-customers-say")}>
           {VIDEOS.map((video, i) => (
             <Video
