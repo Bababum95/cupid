@@ -83,6 +83,9 @@
     },
     "read-the-study": "Die Studie lesen"
   },
+  "Recommendations": {
+    "title": "Warum Kunden Cupid empfehlen"
+  },
   "Comments": {
     "reviews": "Bewertungen",
     "verified": "Verifiziert",
@@ -236,7 +239,9 @@
     "pick-up-your-gift": "Hol dir dein Geschenk ab",
     "free-gift": "Kostenloses Geschenk",
     "spend": "Gib {amount} € aus, um ein kostenloses Geschenk zu erhalten!",
-    "more-until-your-free-gift": "noch bis zu deinem kostenlosen Geschenk!"
+    "more-until-your-free-gift": "noch bis zu deinem kostenlosen Geschenk!",
+    "awesome": "Fantastisch! Kostenloses Geschenk freigeschaltet!",
+    "included": "Wir haben es Ihrem Warenkorb hinzugefügt."
   },
   "Imprint": {
     "1": "Impressum",

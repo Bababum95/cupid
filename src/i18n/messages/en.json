@@ -239,7 +239,9 @@
     "pick-up-your-gift": "Pick up your gift",
     "free-gift": "Free Gift",
     "spend": "Spend {amount} € to Receive a Free Gift!",
-    "more-until-your-free-gift": "more until your free gift!"
+    "more-until-your-free-gift": "more until your free gift!",
+    "awesome": "Awesome! Free Gift Unlocked!",
+    "included": "We've included it in your cart."
   },
   "Imprint": {
     "1": "Imprint",

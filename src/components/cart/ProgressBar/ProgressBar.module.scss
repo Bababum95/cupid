@@ -3,6 +3,13 @@
   gap: 16px;
   padding: 24px 28px;
   border-bottom: $grey-line;
+  border-top: $grey-line;
+
+  &.complete {
+    border-color: $accent;
+    background: rgba(89, 13, 18, 0.2);
+    backdrop-filter: blur(38px);
+  }
 }
 
 .progress {

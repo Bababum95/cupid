@@ -88,15 +88,15 @@ export default function Page({
         <header className={styles.header}>
           <h1 className={styles.h2}>{t("your-cart")}</h1>
         </header>
-        {gifts[1]?.code && cart.lines[0]?.quantity === 1 && (
-          <ProgressBar
-            total={cart.total?.amount}
-            chocolate={cart.lines[0].price.amount}
-            complete={cart.discountCodes.includes(gifts[1].code)}
-            gift={{ code: gifts[1].code, id: gifts[1].id }}
-          />
-        )}
         <ul className={styles.list}>
+          {gifts[1]?.code && cart.lines[0]?.quantity === 1 && (
+            <ProgressBar
+              total={cart.total?.amount}
+              chocolate={cart.lines[0].price.amount}
+              complete={cart.discountCodes.includes(gifts[1].code)}
+              gift={{ code: gifts[1].code, id: gifts[1].id }}
+            />
+          )}
           {cart.lines.map((line, index) => (
             <CartLine
               key={line.id}

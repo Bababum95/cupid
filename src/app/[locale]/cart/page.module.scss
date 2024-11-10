@@ -22,7 +22,6 @@
 .header {
   @include flex-layout(flex-start, center);
   padding: 20px 28px;
-  border-bottom: $grey-line;
 }
 
 .h2 {

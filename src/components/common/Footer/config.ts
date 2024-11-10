@@ -28,11 +28,11 @@ export const LINKS = [
 ];
 
 export const SOCIAL_LINKS = [
-  { Icon: YoutubeIcon, href: "#" },
-  { Icon: PinterestIcon, href: "#" },
-  { Icon: TiktokIcon, href: "#" },
-  { Icon: InstagramIcon, href: "#" },
-  { Icon: TwitterIcon, href: "#" },
+  { Icon: YoutubeIcon, href: "https://youtube.com/@cupid.choco_de" },
+  { Icon: PinterestIcon, href: "https://www.pinterest.com/cupidchoco/" },
+  { Icon: TiktokIcon, href: "https://www.tiktok.com/@cupid.choco" },
+  { Icon: InstagramIcon, href: "https://www.instagram.com/cupid.choco.de" },
+  { Icon: TwitterIcon, href: "https://x.com/cupid_choco" },
 ];
 
 export const PAYMENT_METHODS = [

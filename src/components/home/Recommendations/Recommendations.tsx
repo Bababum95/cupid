@@ -1,4 +1,5 @@
 import { useTranslations } from "next-intl";
+import Image from "next/image";
 
 import { Slider } from "@/components/home";
 import { getInitialsLetters } from "@/utils";
@@ -6,7 +7,6 @@ import StarIcon from "@/icons/star.svg";
 
 import { LIST_OF_RECOMMENDATIONS } from "./config";
 import styles from "./Recommendations.module.scss";
-import Image from "next/image";
 
 export const Recommendations = () => {
   const t = useTranslations("Recommendations");
