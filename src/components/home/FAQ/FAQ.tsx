@@ -36,7 +36,7 @@ export const FAQ: FC = () => {
           width={650}
           height={582}
           alt="Cupid Aphrodisiac Chocolate"
-          src="/images/chocolate.jpg"
+          src="/images/FAQ.jpg"
           className={styles.image}
         />
       </div>

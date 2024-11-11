@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { getTranslations } from "next-intl/server";
 import { NextIntlClientProvider } from "next-intl";
 import { getMessages } from "next-intl/server";
+import Script from "next/script";
 
 import "@/styles/globals.scss";
 
@@ -64,6 +65,23 @@ export default async function RootLayout({
 
   return (
     <html lang={locale}>
+      {/* Google Analytics Script */}
+      <Script
+        async
+        src="https://www.googletagmanager.com/gtag/js?id=G-GHCHV9M316"
+      />
+      <Script
+        id="google-analytics"
+        strategy="afterInteractive"
+        dangerouslySetInnerHTML={{
+          __html: `
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-GHCHV9M316');
+          `,
+        }}
+      />
       <body className="body">
         <NextIntlClientProvider messages={messages} locale={locale}>
           <StoreProvider>{children}</StoreProvider>

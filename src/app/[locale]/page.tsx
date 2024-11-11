@@ -25,7 +25,7 @@ export default function Page() {
       <Header />
       <main className={styles.page}>
         <Image
-          src="/images/preview.jpg"
+          src="/images/cupid-chocolate.jpg"
           alt="Cupid Aphrodisiac Chocolate"
           width={1440}
           height={860}
@@ -42,8 +42,8 @@ export default function Page() {
           </Link>
         </div>
         <Advantages />
-        <Ingredients />
         <Recommendations />
+        <Ingredients />
         <Slider title={t("what-our-customers-say")}>
           {VIDEOS.map((video, i) => (
             <Video

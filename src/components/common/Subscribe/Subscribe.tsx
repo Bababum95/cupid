@@ -11,7 +11,7 @@ export const Subscribe = () => {
     <div className={styles.block}>
       <div className={styles.wrapper}>
         <Image
-          src="/images/chocolate.jpg"
+          src="/images/email.jpg"
           alt="Cupid Aphrodisiac Chocolate"
           width={552}
           height={232}
