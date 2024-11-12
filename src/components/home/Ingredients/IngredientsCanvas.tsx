@@ -22,24 +22,18 @@ export const Ingredients = () => {
   const t = useTranslations("Ingredients");
 
   useEffect(() => {
-    let isMounted = true;
     const loadImages = async () => {
       const loadedImages: HTMLImageElement[] = [];
       for (let i = 0; i < LIST_OF_FRAMES.length; i++) {
         const img = new Image();
         img.src = LIST_OF_FRAMES[i];
         await img.decode();
-        if (!isMounted) return;
         loadedImages.push(img);
       }
-      if (isMounted) {
-        setImages(loadedImages);
-      }
+
+      setImages(loadedImages);
     };
     loadImages();
-    return () => {
-      isMounted = false;
-    };
   }, []);
 
   useMotionValueEvent(scrollYProgress, "change", (latest) => {

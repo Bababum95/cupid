@@ -14,6 +14,8 @@ import { sendPageView } from "@/lib/shopify";
 
 import { COOKIE_CONSENT_CONFIG } from "./config";
 
+const PUBLIC_GA_ID = process.env.PUBLIC_GA_ID;
+
 export default function StoreProvider({
   children,
 }: {
@@ -32,6 +34,9 @@ export default function StoreProvider({
   }, []);
 
   useEffect(() => {
+    if (PUBLIC_GA_ID) {
+      window.gtag("config", PUBLIC_GA_ID, { page_path: pathname });
+    }
     sendPageView();
   }, [pathname, searchParams]);
 
