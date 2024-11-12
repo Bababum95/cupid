@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 import { useTranslations } from "next-intl";
 import classNames from "classnames";
 
-import { useAppDispatch } from "@/hooks";
+import { useAppDispatch, useAppSelector } from "@/hooks";
 import {
   discountCodeUpdate,
   removeLine as removeCartLine,
@@ -52,6 +52,7 @@ export const ProgressBar: FC<Props> = ({
   const [isComplete, setIsComplete] = useState(complete);
   const t = useTranslations("Cart");
   const dispatch = useAppDispatch();
+  const cart = useAppSelector((state) => state.cart);
 
   // Determine the max threshold based on chocolate value.
   const max = chocolate < 40 ? 40 : chocolate < 60 ? 60 : 80;
@@ -74,10 +75,13 @@ export const ProgressBar: FC<Props> = ({
    */
   const removeGift = async () => {
     if (!gift || !isComplete) return;
-    Promise.all([
-      dispatch(discountCodeUpdate({ code: gift.code, add: false })),
-      dispatch(removeCartLine(gift.id)),
-    ]);
+    setIsComplete(false);
+
+    const giftLine = cart.lines.find((line) => line.productId === gift.id);
+
+    if (giftLine) await dispatch(removeCartLine(giftLine.id));
+
+    dispatch(discountCodeUpdate({ code: gift.code, add: false }));
   };
 
   /**

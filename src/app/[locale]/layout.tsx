@@ -2,18 +2,15 @@ import type { Metadata } from "next";
 import { getTranslations } from "next-intl/server";
 import { NextIntlClientProvider } from "next-intl";
 import { getMessages } from "next-intl/server";
-import Script from "next/script";
+
+import { GoogleAnalytics } from "@/components";
 
 import "@/styles/globals.scss";
 
-import {
-  BREADCRUMB_JSON_LD,
-  LOCAL_BUSINESS_JSON_LD,
-  ORGANIZATION_JSON_LD,
-  PRODUCT_JSON_LD,
-  WEBSITE_JSON_LD,
-} from "./config";
+import { SCHEMA_MARKUP } from "./config";
 import StoreProvider from "./StoreProvider";
+
+const PUBLIC_GA_ID = process.env.PUBLIC_GA_ID;
 
 export async function generateMetadata({
   params: { locale },
@@ -65,57 +62,21 @@ export default async function RootLayout({
 
   return (
     <html lang={locale}>
-      {/* Google Analytics Script */}
-      <Script
-        async
-        src="https://www.googletagmanager.com/gtag/js?id=G-GHCHV9M316"
-      />
-      <Script
-        id="google-analytics"
-        strategy="afterInteractive"
-        dangerouslySetInnerHTML={{
-          __html: `
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', 'G-GHCHV9M316');
-          `,
-        }}
-      />
+      {PUBLIC_GA_ID && <GoogleAnalytics id={PUBLIC_GA_ID} />}
+
       <body className="body">
         <NextIntlClientProvider messages={messages} locale={locale}>
           <StoreProvider>{children}</StoreProvider>
         </NextIntlClientProvider>
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify(ORGANIZATION_JSON_LD),
-          }}
-        />
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify(PRODUCT_JSON_LD),
-          }}
-        />
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify(LOCAL_BUSINESS_JSON_LD),
-          }}
-        />
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify(WEBSITE_JSON_LD),
-          }}
-        />
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify(BREADCRUMB_JSON_LD),
-          }}
-        />
+
+        {/* JSON-LD Schema Data */}
+        {SCHEMA_MARKUP.map((ld, index) => (
+          <script
+            key={index}
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{ __html: JSON.stringify(ld) }}
+          />
+        ))}
       </body>
     </html>
   );

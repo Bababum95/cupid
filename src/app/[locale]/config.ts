@@ -99,7 +99,7 @@ export const VIDEOS = [
   },
 ];
 
-export const ORGANIZATION_JSON_LD = {
+const ORGANIZATION_JSON_LD = {
   "@context": "https://schema.org",
   "@type": "Organization",
   name: "Cupid",
@@ -132,7 +132,7 @@ export const ORGANIZATION_JSON_LD = {
     "Cupid offers aphrodisiac chocolate for couples, crafted with natural ingredients to naturally ignite passion and enhance intimacy.",
 };
 
-export const PRODUCT_JSON_LD = {
+const PRODUCT_JSON_LD = {
   "@context": "https://schema.org",
   "@type": "Product",
   name: "Cupid Aphrodisiac Chocolate",
@@ -156,7 +156,7 @@ export const PRODUCT_JSON_LD = {
   },
 };
 
-export const LOCAL_BUSINESS_JSON_LD = {
+const LOCAL_BUSINESS_JSON_LD = {
   "@context": "https://schema.org",
   "@type": "LocalBusiness",
   name: "Cupid",
@@ -175,14 +175,14 @@ export const LOCAL_BUSINESS_JSON_LD = {
   priceRange: "$",
 };
 
-export const WEBSITE_JSON_LD = {
+const WEBSITE_JSON_LD = {
   "@context": "https://schema.org",
   "@type": "WebSite",
   name: "Cupid",
   url: "https://cupidchoco.com/",
 };
 
-export const BREADCRUMB_JSON_LD = {
+const BREADCRUMB_JSON_LD = {
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
   itemListElement: [
@@ -200,3 +200,11 @@ export const BREADCRUMB_JSON_LD = {
     },
   ],
 };
+
+export const SCHEMA_MARKUP = [
+  ORGANIZATION_JSON_LD,
+  PRODUCT_JSON_LD,
+  LOCAL_BUSINESS_JSON_LD,
+  WEBSITE_JSON_LD,
+  BREADCRUMB_JSON_LD,
+];

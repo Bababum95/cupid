@@ -10,6 +10,7 @@ const nextConfig = {
     SHOPIFY_PUBLIC_TOKEN: process.env.SHOPIFY_PUBLIC_TOKEN,
     SHOPIFY_SHOP_ID: process.env.SHOPIFY_SHOP_ID,
     IS_VERCEL: process.env.IS_VERCEL === "true" ? "true" : "false",
+    PUBLIC_GA_ID: process.env.PUBLIC_GA_ID,
   },
   images: {
     remotePatterns: [

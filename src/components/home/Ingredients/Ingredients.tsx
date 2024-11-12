@@ -1,7 +1,7 @@
 "use client";
 
 import { useRef, ReactNode } from "react";
-import { useScroll, useMotionValueEvent } from "framer-motion";
+import { useScroll, useMotionValueEvent, motion } from "framer-motion";
 import { useTranslations } from "next-intl";
 
 import styles from "./Ingredients.module.scss";
@@ -29,7 +29,7 @@ export const Ingredients = () => {
   return (
     <section className={styles.section} ref={sectionRef} id="ingredients">
       <div className={styles.wrapper}>
-        <video
+        <motion.video
           ref={videoRef}
           muted
           preload="auto"
@@ -38,7 +38,7 @@ export const Ingredients = () => {
         >
           <source src="/videos/cupid-choco.webm" type="video/webm" />
           <source src="/videos/cupid-choco.mp4" type="video/mp4" />
-        </video>
+        </motion.video>
         <h2 className={styles.title}>{t("title")}</h2>
         <ul className={styles.list} ref={listRef}>
           {list.map((item) => (
