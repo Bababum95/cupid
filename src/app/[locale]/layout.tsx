@@ -2,19 +2,12 @@ import type { Metadata } from "next";
 import { getTranslations } from "next-intl/server";
 import { NextIntlClientProvider } from "next-intl";
 import { getMessages } from "next-intl/server";
-import dynamic from "next/dynamic";
+import Script from "next/script";
 
 import "@/styles/globals.scss";
 
 import { SCHEMA_MARKUP } from "./config";
 import StoreProvider from "./StoreProvider";
-
-const GoogleAnalytics = dynamic(
-  () => import("@/components/dynamic/GoogleAnalytics"),
-  {
-    ssr: false,
-  }
-);
 
 const PUBLIC_GA_ID = process.env.PUBLIC_GA_ID;
 
@@ -68,7 +61,29 @@ export default async function RootLayout({
 
   return (
     <html lang={locale}>
-      {PUBLIC_GA_ID && <GoogleAnalytics id={PUBLIC_GA_ID} />}
+      {PUBLIC_GA_ID && (
+        <>
+          {/* Load Google Analytics script asynchronously */}
+          <Script
+            async
+            src={`https://www.googletagmanager.com/gtag/js?id=${PUBLIC_GA_ID}`}
+          />
+
+          {/* Initialize Google Analytics with the provided ID */}
+          <Script
+            id="google-analytics"
+            strategy="afterInteractive"
+            dangerouslySetInnerHTML={{
+              __html: `
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', '${PUBLIC_GA_ID}');
+      `,
+            }}
+          />
+        </>
+      )}
 
       <body className="body">
         <NextIntlClientProvider messages={messages} locale={locale}>
