@@ -8,10 +8,7 @@ import styles from "./Ingredients.module.scss";
 
 const LIST_OF_SLIDES = Array.from({ length: 6 }, (_, i) => i + 1);
 const TOTAL_FRAMES = 108;
-const LIST_OF_FRAMES = Array.from(
-  { length: TOTAL_FRAMES },
-  (_, i) => `animations/${i + 1}_q95.webp`
-);
+const CHUNK_SIZE = 20;
 
 export const Ingredients = () => {
   const [images, setImages] = useState<HTMLImageElement[]>([]);
@@ -20,47 +17,51 @@ export const Ingredients = () => {
   const listRef = useRef<HTMLUListElement>(null);
   const { scrollYProgress } = useScroll({ target: sectionRef });
   const t = useTranslations("Ingredients");
+  const [currentChunk, setCurrentChunk] = useState(0);
 
   useEffect(() => {
-    const loadImages = async () => {
-      const loadedImages: HTMLImageElement[] = [];
-      for (let i = 0; i < LIST_OF_FRAMES.length; i++) {
-        const img = new Image();
-        img.src = LIST_OF_FRAMES[i];
-        await img.decode();
-        loadedImages.push(img);
-      }
+    const loadChunk = async (chunkIndex: number) => {
+      const startIndex = chunkIndex * CHUNK_SIZE;
+      const endIndex = Math.min(startIndex + CHUNK_SIZE, TOTAL_FRAMES);
 
-      setImages(loadedImages);
+      for (let i = startIndex; i < endIndex; i++) {
+        const img = new Image();
+        img.src = `animations/${i + 1}_q95.webp`;
+        img.onload = () => {
+          setImages((prev) => {
+            const newImages = [...prev];
+            newImages[i] = img;
+            return newImages;
+          });
+        };
+      }
     };
-    loadImages();
-  }, []);
+
+    loadChunk(currentChunk);
+  }, [currentChunk]);
 
   useMotionValueEvent(scrollYProgress, "change", (latest) => {
-    if (canvasRef.current && images.length > 0) {
-      const ctx = canvasRef.current.getContext("2d");
-      if (ctx) {
-        const frameIndex = Math.min(
-          Math.floor(latest * TOTAL_FRAMES),
-          TOTAL_FRAMES - 1
-        );
-        const img = images[frameIndex];
-        ctx.clearRect(0, 0, canvasRef.current.width, canvasRef.current.height);
-        ctx.drawImage(
-          img,
-          0,
-          0,
-          canvasRef.current.width,
-          canvasRef.current.height
-        );
-      }
+    const frameIndex = Math.min(
+      Math.floor(latest * TOTAL_FRAMES),
+      images.length - 1
+    );
 
-      listRef.current!.style.setProperty(
-        "--progress",
-        `${Math.floor(
-          Math.min(latest * LIST_OF_SLIDES.length, LIST_OF_SLIDES.length - 1)
-        )}`
+    if (images[frameIndex]) {
+      const ctx = canvasRef.current!.getContext("2d");
+      ctx!.drawImage(
+        images[frameIndex],
+        0,
+        0,
+        canvasRef.current!.width,
+        canvasRef.current!.height
       );
+    }
+
+    if (
+      frameIndex >= (currentChunk + 1) * CHUNK_SIZE - CHUNK_SIZE / 2 &&
+      (currentChunk + 1) * CHUNK_SIZE < TOTAL_FRAMES
+    ) {
+      setCurrentChunk((prevChunk) => prevChunk + 1);
     }
   });
 
