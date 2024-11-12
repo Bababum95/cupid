@@ -10,6 +10,11 @@ const LIST_OF_SLIDES = Array.from({ length: 6 }, (_, i) => i + 1);
 const TOTAL_FRAMES = 108;
 const CHUNK_SIZE = 20;
 
+/**
+ * Ingredients component that displays an animated canvas synchronized with scroll position.
+ * Images are loaded in chunks and cached to improve performance.
+ * Now, chunks are loaded sequentially, starting the next chunk immediately after the previous one loads.
+ */
 export const Ingredients = () => {
   const [images, setImages] = useState<HTMLImageElement[]>([]);
   const sectionRef = useRef<HTMLElement>(null);
@@ -19,27 +24,61 @@ export const Ingredients = () => {
   const t = useTranslations("Ingredients");
   const [currentChunk, setCurrentChunk] = useState(0);
 
+  /**
+   * Loads a chunk of images and caches them in the images array.
+   * Once the chunk is loaded, it triggers the loading of the next chunk.
+   * @param chunkIndex - The index of the chunk to load.
+   */
   useEffect(() => {
     const loadChunk = async (chunkIndex: number) => {
       const startIndex = chunkIndex * CHUNK_SIZE;
       const endIndex = Math.min(startIndex + CHUNK_SIZE, TOTAL_FRAMES);
 
+      const promises = [];
+
       for (let i = startIndex; i < endIndex; i++) {
-        const img = new Image();
-        img.src = `animations/${i + 1}_q95.webp`;
-        img.onload = () => {
-          setImages((prev) => {
-            const newImages = [...prev];
-            newImages[i] = img;
-            return newImages;
+        // Check if the image is already loaded to prevent reloading
+        if (!images[i]) {
+          const img = new Image();
+          img.src = `animations/${i + 1}_q95.webp`;
+          img.crossOrigin = "anonymous";
+
+          const promise = new Promise<void>((resolve) => {
+            img.onload = () => {
+              setImages((prev) => {
+                // Avoid unnecessary state updates if image is already cached
+                if (prev[i]) return prev;
+                const newImages = [...prev];
+                newImages[i] = img;
+                return newImages;
+              });
+              resolve();
+            };
+            img.onerror = () => {
+              console.error(`Failed to load image: ${img.src}`);
+              resolve(); // Continue even if an image fails to load
+            };
           });
-        };
+
+          promises.push(promise);
+        }
+      }
+
+      await Promise.all(promises);
+
+      // After the current chunk is loaded, load the next chunk if any
+      if ((chunkIndex + 1) * CHUNK_SIZE < TOTAL_FRAMES) {
+        setCurrentChunk(chunkIndex + 1);
       }
     };
 
     loadChunk(currentChunk);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [currentChunk]);
 
+  /**
+   * Updates the canvas image based on scroll position.
+   */
   useMotionValueEvent(scrollYProgress, "change", (latest) => {
     const frameIndex = Math.min(
       Math.floor(latest * TOTAL_FRAMES),
@@ -47,26 +86,26 @@ export const Ingredients = () => {
     );
 
     if (images[frameIndex]) {
-      const ctx = canvasRef.current!.getContext("2d");
-      ctx!.drawImage(
-        images[frameIndex],
-        0,
-        0,
-        canvasRef.current!.width,
-        canvasRef.current!.height
-      );
+      const ctx = canvasRef.current?.getContext("2d");
+      if (ctx && canvasRef.current) {
+        ctx.drawImage(
+          images[frameIndex],
+          0,
+          0,
+          canvasRef.current.width,
+          canvasRef.current.height
+        );
+      }
     }
 
-    if (
-      frameIndex >= (currentChunk + 1) * CHUNK_SIZE - CHUNK_SIZE / 2 &&
-      (currentChunk + 1) * CHUNK_SIZE < TOTAL_FRAMES
-    ) {
-      setCurrentChunk((prevChunk) => prevChunk + 1);
-    }
+    // No longer need to trigger loading of the next chunk here
   });
 
+  /**
+   * Sets the canvas dimensions based on the first loaded image.
+   */
   useEffect(() => {
-    if (canvasRef.current && images.length > 0) {
+    if (canvasRef.current && images.length > 0 && images[0]) {
       const img = images[0];
       canvasRef.current.width = img.width;
       canvasRef.current.height = img.height;
