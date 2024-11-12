@@ -2,13 +2,19 @@ import type { Metadata } from "next";
 import { getTranslations } from "next-intl/server";
 import { NextIntlClientProvider } from "next-intl";
 import { getMessages } from "next-intl/server";
-
-import { GoogleAnalytics } from "@/components";
+import dynamic from "next/dynamic";
 
 import "@/styles/globals.scss";
 
 import { SCHEMA_MARKUP } from "./config";
 import StoreProvider from "./StoreProvider";
+
+const GoogleAnalytics = dynamic(
+  () => import("@/components/dynamic/GoogleAnalytics"),
+  {
+    ssr: false,
+  }
+);
 
 const PUBLIC_GA_ID = process.env.PUBLIC_GA_ID;
 

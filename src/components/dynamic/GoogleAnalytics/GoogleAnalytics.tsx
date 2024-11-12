@@ -19,7 +19,7 @@ type Props = {
  * @param {Props} props - Props object containing the Google Analytics ID.
  * @returns {JSX.Element} JSX element containing the Google Analytics Script tags.
  */
-export const GoogleAnalytics: FC<Props> = ({ id }) => {
+const GoogleAnalytics: FC<Props> = ({ id }) => {
   const router = useRouter();
 
   useEffect(() => {
@@ -60,3 +60,5 @@ export const GoogleAnalytics: FC<Props> = ({ id }) => {
     </>
   );
 };
+
+export default GoogleAnalytics;
