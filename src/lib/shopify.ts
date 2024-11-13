@@ -7,6 +7,7 @@ import {
 } from "@shopify/hydrogen-react";
 
 const SHOPIFY_DOMEN = process.env.SHOPIFY_DOMEN as string;
+const SHOPIFY_API_VERSION = process.env.SHOPIFY_API_VERSION as string;
 
 type FetchShopifyParams = {
   query: string;
@@ -15,7 +16,7 @@ type FetchShopifyParams = {
 
 export const client = createStorefrontApiClient({
   storeDomain: SHOPIFY_DOMEN,
-  apiVersion: "2024-10",
+  apiVersion: SHOPIFY_API_VERSION,
   publicAccessToken: process.env.SHOPIFY_PUBLIC_TOKEN as string,
 });
 
@@ -47,7 +48,7 @@ export async function fetchShopifyAdmin({
   variables,
 }: FetchShopifyParams) {
   const response = await fetch(
-    `https://${SHOPIFY_DOMEN}/admin/api/2024-10/graphql.json`,
+    `https://${SHOPIFY_DOMEN}/admin/api/${SHOPIFY_API_VERSION}/graphql.json`,
     {
       method: "POST",
       headers: {

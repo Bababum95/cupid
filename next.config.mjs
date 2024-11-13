@@ -7,6 +7,7 @@ const withNextIntl = createNextIntlPlugin();
 const nextConfig = {
   env: {
     SHOPIFY_DOMEN: process.env.SHOPIFY_DOMEN,
+    SHOPIFY_API_VERSION: process.env.SHOPIFY_API_VERSION || "2024-10",
     SHOPIFY_PUBLIC_TOKEN: process.env.SHOPIFY_PUBLIC_TOKEN,
     SHOPIFY_SHOP_ID: process.env.SHOPIFY_SHOP_ID,
     IS_VERCEL: process.env.IS_VERCEL === "true" ? "true" : "false",
