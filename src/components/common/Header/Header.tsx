@@ -1,7 +1,7 @@
 import { useTranslations } from "next-intl";
-import Link from "next/link";
 import dynamic from "next/dynamic";
 
+import { Link } from "@/i18n/routing";
 import { default as Logotype } from "@/icons/logotype.svg";
 
 import styles from "./Header.module.scss";

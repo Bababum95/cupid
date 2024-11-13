@@ -3,8 +3,8 @@
 import { useState } from "react";
 import { useTranslations } from "next-intl";
 import ReactDOM from "react-dom";
-import Link from "next/link";
 
+import { Link } from "@/i18n/routing";
 import { SideDrawer } from "@/components";
 import MenuIcon from "@/icons/menu.svg";
 

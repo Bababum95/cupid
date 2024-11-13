@@ -26,8 +26,9 @@ export const Advantages = () => {
         src="/images/advantages.png"
         alt="Cupid Aphrodisiac Chocolate"
         width={410}
-        height={446}
+        height={410}
         className={styles.image}
+        quality={90}
       />
       <ul className={styles.list}>
         {colTwo.map((item) => (

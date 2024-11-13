@@ -24,7 +24,7 @@ export async function generateMetadata({
     applicationName: "Cupid",
     alternates: {
       canonical: "https://cupidchoco.com/",
-      languages: { de: "https://cupidchoco.com/de" },
+      languages: { en: "https://cupidchoco.com/en" },
     },
     openGraph: {
       type: "website",
@@ -55,6 +55,7 @@ export default async function RootLayout({
   children: React.ReactNode;
   params: { locale: string };
 }) {
+  console.log("locale", locale);
   // Providing all messages to the client
   // side is the easiest way to get started
   const messages = await getMessages();
@@ -75,11 +76,11 @@ export default async function RootLayout({
             strategy="afterInteractive"
             dangerouslySetInnerHTML={{
               __html: `
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', '${PUBLIC_GA_ID}');
-      `,
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){dataLayer.push(arguments);}
+                gtag('js', new Date());
+                gtag('config', '${PUBLIC_GA_ID}');
+              `,
             }}
           />
         </>

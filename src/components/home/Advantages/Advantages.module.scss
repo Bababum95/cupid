@@ -48,18 +48,19 @@
     grid-template-columns: 1fr 1fr;
     align-items: flex-start;
     margin: 144px 0;
-    gap: 20px;
+    gap: 20px 0;
   }
 
   .image {
     position: sticky;
     right: 0;
     aspect-ratio: 150 / 230;
-    transform: translateX(20px) rotateY(180deg);
+    transform: translateX(20px);
     top: var(--header-height);
     object-fit: cover;
     border-radius: 0 20px 20px 0;
     width: 100%;
+    object-position: left;
   }
 
   .item {

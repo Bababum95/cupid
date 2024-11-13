@@ -18,11 +18,11 @@
   gap: 28px;
 }
 
-.video {
+.canvas {
   max-width: 100%;
   max-height: calc(96vh - var(--header-height) - 350px);
-  width: auto;
-  height: auto;
+  object-fit: contain;
+  display: block;
 }
 
 .title {
@@ -117,7 +117,7 @@
     font-size: 16px;
   }
 
-  .video {
+  .canvas {
     max-width: calc(100% + 40px);
     margin-inline: -20px;
   }

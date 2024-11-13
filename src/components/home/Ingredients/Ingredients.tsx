@@ -98,6 +98,13 @@ export const Ingredients = () => {
       }
     }
 
+    listRef.current?.style.setProperty(
+      "--progress",
+      `${Math.floor(
+        Math.min(latest * LIST_OF_SLIDES.length, LIST_OF_SLIDES.length - 1)
+      )}`
+    );
+
     // No longer need to trigger loading of the next chunk here
   });
 
