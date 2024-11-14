@@ -78,14 +78,14 @@ export const COOKIE_CONSENT_CONFIG: CookieConsentConfig = {
 
 export const VIDEOS = [
   {
-    name: "IMG_4435",
-    description:
-      "Bin jetzt schon begeistert, nur vom Aussehen der Box! Heute Abend wird spannend...",
-  },
-  {
     name: "IMG_4437",
     description:
       "Nach 5 Jahren Beziehung – endlich mal wieder guten Seggs gehabt. Ist schon unsere zweite Packung...",
+  },
+  {
+    name: "IMG_4438",
+    description:
+      "Hab heute die Lieferung bekommen und jetzt geht’s direkt zum Date.. Übernachtung inklusive",
   },
   {
     name: "IMG_4439",
@@ -93,9 +93,9 @@ export const VIDEOS = [
       "Mit der Schoki und der Augenbinde wird das heute ein richtig krasser Abend. Danke Cupid für das Geschenk!",
   },
   {
-    name: "IMG_4438",
+    name: "IMG_4435",
     description:
-      "Hab heute die Lieferung bekommen und jetzt geht’s direkt zum Date.. Übernachtung inklusive",
+      "Bin jetzt schon begeistert, nur vom Aussehen der Box! Heute Abend wird spannend...",
   },
 ];
 

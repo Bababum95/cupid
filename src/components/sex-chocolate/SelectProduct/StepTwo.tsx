@@ -1,7 +1,7 @@
 import { FC, useState } from "react";
 import { useTranslations } from "next-intl";
 import { useRouter } from "next/navigation";
-import { AnimatePresence, motion } from "framer-motion";
+import { AnimatePresence, motion } from "motion/react";
 import classNames from "classnames";
 
 import type { CreateCartInput, VariantProductType, GiftType } from "@/types";
@@ -114,14 +114,15 @@ export const StepTwo: FC<Props> = ({
           <div>
             <div className={styles.badges}>
               <span className={styles.badge}>
-                {t("save")}{" "}
-                {dataUtils.formatPrice(
-                  {
-                    amount: sellingPlan?.discount | 5,
-                    currencyCode: mainPrice.currencyCode,
-                  },
-                  0
-                )}
+                {t("save", {
+                  amount: dataUtils.formatPrice(
+                    {
+                      amount: sellingPlan?.discount | 5,
+                      currencyCode: mainPrice.currencyCode,
+                    },
+                    0
+                  ),
+                })}
               </span>
               <span className={styles.badge}>{t("best-value")}</span>
             </div>

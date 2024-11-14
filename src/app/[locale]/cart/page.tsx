@@ -8,7 +8,12 @@ import { BackButton, SubmitButton } from "@/components";
 import { dataUtils } from "@/utils";
 import { relatedProductsQuery, giftFragment } from "@/graphql";
 import { GiftType, ProductNode, ProductType } from "@/types";
-import { Catalog, CartLine, ProgressBar } from "@/components/cart";
+import {
+  Catalog,
+  CartLine,
+  ProgressBar,
+  DiscountCode,
+} from "@/components/cart";
 import { fetchShopify } from "@/lib/shopify";
 import { get as getCart } from "@/lib/slices/cart";
 
@@ -84,7 +89,7 @@ export default function Page({
 
   return (
     <main className={styles.page}>
-      <form className={styles.cart} onSubmit={handleSubmit}>
+      <div className={styles.cart}>
         <header className={styles.header}>
           <h1 className={styles.h2}>{t("your-cart")}</h1>
         </header>
@@ -122,15 +127,17 @@ export default function Page({
                 gift={gifts[0].code}
               />
             )}
+
+          <DiscountCode />
         </ul>
-        <footer className={styles.footer}>
+        <form className={styles.footer} onSubmit={handleSubmit}>
           <SubmitButton
             label={t("checkout")}
             isActive
             total={dataUtils.formatPrice(cart.total)}
           />
-        </footer>
-      </form>
+        </form>
+      </div>
       <div className={styles.content}>
         <header className={styles.header}>
           <h2 className={styles.h2}>{t("complete-your-experience")}</h2>

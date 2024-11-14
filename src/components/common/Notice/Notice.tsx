@@ -1,7 +1,7 @@
 "use client";
 
 import { FC, useEffect } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence } from "motion/react";
 
 import HappyIcon from "@/icons/happy.svg";
 import SadIcon from "@/icons/sad.svg";
@@ -22,7 +22,7 @@ type Props = {
 /**
  * Notice component displays a message notification to the user with an animation.
  *
- * This component uses `framer-motion` for animating the appearance and disappearance
+ * This component uses `motion/react` for animating the appearance and disappearance
  * of the notification. It shows the message, and automatically clears it after the specified
  * duration unless manually dismissed by the user.
  *

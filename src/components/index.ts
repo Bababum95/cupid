@@ -1,7 +1,9 @@
 export { Accordion } from "./common/Accordion/Accordion";
 export { BackButton } from "./common/BackButton/BackButton";
+export { Button } from "./common/Button/Button";
 export { Footer } from "./common/Footer/Footer";
 export { Header } from "./common/Header/Header";
+export { Input } from "./common/Input/Input";
 export { Notice } from "./common/Notice/Notice";
 export { Price } from "./common/Price/Price";
 export { SideDrawer } from "./common/SideDrawer/SideDrawer";

@@ -1,5 +1,5 @@
 import { FC, useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence } from "motion/react";
 import { useTranslations } from "next-intl";
 import Image from "next/image";
 import classNames from "classnames";

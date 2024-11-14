@@ -1,7 +1,7 @@
 "use client";
 
 import { useRef, useState, type FC } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence } from "motion/react";
 import classNames from "classnames";
 
 import ArrowIcon from "@/icons/arrow.svg";

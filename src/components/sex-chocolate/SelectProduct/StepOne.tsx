@@ -56,16 +56,17 @@ export const StepOne: FC<Props> = ({
               )}
               {quantity === 3 && (
                 <span className={styles.bage}>
-                  {t("save")}{" "}
-                  {dataUtils.formatPrice(
-                    {
-                      amount:
-                        products[0].variants[0].price.amount * quantity -
-                        product.variants[0].price.amount,
-                      currencyCode: product.variants[0].price.currencyCode,
-                    },
-                    0
-                  )}
+                  {t("save", {
+                    amount: dataUtils.formatPrice(
+                      {
+                        amount:
+                          products[0].variants[0].price.amount * quantity -
+                          product.variants[0].price.amount,
+                        currencyCode: product.variants[0].price.currencyCode,
+                      },
+                      0
+                    ),
+                  })}
                 </span>
               )}
               <span className={styles.price}>

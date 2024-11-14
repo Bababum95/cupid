@@ -1,0 +1,47 @@
+.wrapper {
+  padding: 24px 20px;
+  position: relative;
+}
+
+.opener {
+  @include flex-center;
+  gap: 16px;
+  cursor: pointer;
+  transition: $transition;
+
+  @include hover {
+    color: $text;
+
+    .icon {
+      background-color: #323234;
+    }
+  }
+}
+
+.icon {
+  @include flex-center;
+  color: $text;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background-color: #19191a;
+  transition: $transition;
+}
+
+.label {
+  font-size: 17px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+
+.form {
+  @include flex-layout;
+  gap: 8px;
+  width: 100%;
+  margin-top: 12px;
+}
+
+.button {
+  padding-inline: 48px;
+}

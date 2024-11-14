@@ -1,5 +1,5 @@
 import { FC } from "react";
-import { motion } from "framer-motion";
+import { motion } from "motion/react";
 import classNames from "classnames";
 
 import styles from "./SubmitButton.module.scss";

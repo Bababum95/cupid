@@ -28,7 +28,6 @@ export const Form: FC = () => {
       body: JSON.stringify({ email: value }),
     });
 
-    console.log(res);
     const data = await res.json();
     setNotice({ message: data.message, success: res.ok });
     setIsLoading(false);

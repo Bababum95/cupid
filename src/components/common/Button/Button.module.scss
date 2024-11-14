@@ -1,0 +1,17 @@
+.button {
+  &.loading {
+    @include button-loading;
+  }
+
+  &:disabled {
+    pointer-events: none;
+  }
+}
+
+.secondary {
+  @include add-to-cart-button;
+
+  &:disabled {
+    color: #333;
+  }
+}
