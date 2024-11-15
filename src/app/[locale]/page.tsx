@@ -15,17 +15,22 @@ import {
   Slider,
   Video,
 } from "@/components/home";
+import { DEFAULLT_LOCALE } from "@/i18n/config";
 
 import { VIDEOS } from "./config";
 import styles from "./page.module.scss";
 
-export default function Page() {
+export default function Page({
+  params: { locale },
+}: {
+  params: { locale: string };
+}) {
   const t = useTranslations("HomePage");
   const cookieStore = cookies();
 
   return (
     <>
-      {!cookieStore.has("LS") && <LangSwitcher />}
+      {!cookieStore.has("LS") && locale === DEFAULLT_LOCALE && <LangSwitcher />}
       <Header />
       <main className={styles.page}>
         <Image

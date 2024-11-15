@@ -1,7 +1,6 @@
 "use client";
 
 import { FC, useEffect, useState } from "react";
-import { useLocale } from "next-intl";
 import { useParams } from "next/navigation";
 import { motion } from "motion/react";
 import classNames from "classnames";
@@ -25,8 +24,6 @@ import styles from "./LangSwitcher.module.scss";
  * @returns JSX.Element - Language switcher element for changing the application's language.
  */
 export const LangSwitcher: FC = () => {
-  // Get the current locale, router, pathname, and params
-  const locale = useLocale();
   const router = useRouter();
   const pathname = usePathname();
   const params = useParams();
@@ -34,7 +31,7 @@ export const LangSwitcher: FC = () => {
   // State for selected locale, dropdown open status, and visibility of the switcher
   const [nextLocale, setNextLocale] = useState<LocaleType>("de");
   const [isOpen, setIsOpen] = useState(false);
-  const [isShow, setIsShow] = useState(locale === routing.defaultLocale);
+  const [isShow, setIsShow] = useState(true);
 
   /**
    * handleChange - Form submit handler for changing the language and hiding the switcher.
