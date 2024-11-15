@@ -9,7 +9,6 @@ import { Image as ImageType } from "@/types";
 import { useAppDispatch } from "@/hooks";
 import { Price } from "@/components";
 import {
-  discountCodeUpdate,
   removeLine as removeCartLine,
   addLine as addLineToCart,
 } from "@/lib/slices/cart";
@@ -47,14 +46,18 @@ export const CartLine: FC<Props> = ({
   const t = useTranslations("Cart");
 
   const handleRemove = async (lineId: string) => {
-    dispatch(removeCartLine(lineId));
+    dispatch(removeCartLine({ lineId }));
   };
 
   const addGift = async () => {
     if (!gift) return;
     setIsLoading((prev) => ({ ...prev, gift: true }));
-    await dispatch(discountCodeUpdate({ code: gift, add: true }));
-    await dispatch(addLineToCart({ merchandiseId: id, quantity: 1 }));
+    await dispatch(
+      addLineToCart({
+        line: { merchandiseId: id, quantity: 1 },
+        discountCode: gift,
+      })
+    );
     setIsLoading((prev) => ({ ...prev, gift: false }));
   };
 

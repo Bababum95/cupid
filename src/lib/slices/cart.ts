@@ -36,13 +36,23 @@ export const create = createAsyncThunk(
 
 export const addLine = createAsyncThunk(
   "cart/addLine",
-  async (line: CartLine, { rejectWithValue, getState }) => {
-    const cartId = (getState() as RootState).cart.id;
+  async (
+    { line, discountCode }: { line: CartLine; discountCode?: string },
+    { rejectWithValue, getState }
+  ) => {
+    const cart = (getState() as RootState).cart;
+    const discountCodes = discountCode
+      ? [...cart.discountCodes, discountCode]
+      : cart.discountCodes;
 
     try {
       const ressponse = await fetchShopify({
         query: addToCartMutation,
-        variables: { lines: [line], cartId },
+        variables: {
+          lines: [line],
+          cartId: cart.id,
+          discountCodes,
+        },
       });
 
       return ressponse.cartLinesAdd.cart;
@@ -54,13 +64,19 @@ export const addLine = createAsyncThunk(
 
 export const removeLine = createAsyncThunk(
   "cart/removeLine",
-  async (lineId: string, { rejectWithValue, getState }) => {
-    const cartId = (getState() as RootState).cart.id;
+  async (
+    { lineId, discountCode }: { lineId: string; discountCode?: string },
+    { rejectWithValue, getState }
+  ) => {
+    const cart = (getState() as RootState).cart;
+    const discountCodes = discountCode
+      ? cart.discountCodes.filter((code) => code !== discountCode)
+      : cart.discountCodes;
 
     try {
       const ressponse = await fetchShopify({
         query: removeCartLineMutation,
-        variables: { lineIds: [lineId], cartId },
+        variables: { lineIds: [lineId], cartId: cart.id, discountCodes },
       });
 
       return ressponse.cartLinesRemove.cart;
@@ -189,7 +205,7 @@ const cartSlice = createSlice({
       })
       .addCase(removeLine.pending, (state, action) => {
         state.lines = state.lines.map((line) => {
-          if (line.id === action.meta.arg) {
+          if (line.id === action.meta.arg.lineId) {
             return { ...line, removing: true };
           }
           return line;

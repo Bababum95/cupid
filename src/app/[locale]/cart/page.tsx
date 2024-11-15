@@ -12,7 +12,7 @@ import {
   Catalog,
   CartLine,
   ProgressBar,
-  DiscountCode,
+  // DiscountCode,
 } from "@/components/cart";
 import { fetchShopify } from "@/lib/shopify";
 import { get as getCart } from "@/lib/slices/cart";
@@ -128,7 +128,7 @@ export default function Page({
               />
             )}
 
-          <DiscountCode />
+          {/* <DiscountCode gifts={gifts} /> */}
         </ul>
         <form className={styles.footer} onSubmit={handleSubmit}>
           <SubmitButton

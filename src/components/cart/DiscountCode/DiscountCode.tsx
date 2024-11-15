@@ -1,9 +1,12 @@
 "use client";
 
-import { FC, useState } from "react";
+import { FC, useEffect, useState } from "react";
 import { AnimatePresence, motion, type Variant } from "motion/react";
 
+import type { GiftType } from "@/types";
 import { Input, Button } from "@/components";
+import { useAppDispatch, useAppSelector } from "@/hooks";
+import { discountCodeUpdate } from "@/lib/slices/cart";
 import AddIcon from "@/icons/plus.svg";
 
 import styles from "./DiscountCode.module.scss";
@@ -19,26 +22,42 @@ const VISIBLE: Variant = {
   visibility: "visible",
 };
 
-export const DiscountCode: FC = () => {
-  const [isOpen, setIsOpen] = useState(false);
+type Props = {
+  gifts?: GiftType[];
+};
+
+export const DiscountCode: FC<Props> = ({ gifts }) => {
+  const [status, setStatus] = useState<"closed" | "form" | "code" | "loading">(
+    "loading"
+  );
   const [value, setValue] = useState("");
   const [isLoading, setIsLoading] = useState(false);
+  const dispatch = useAppDispatch();
+  const cart = useAppSelector((state) => state.cart);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsLoading(true);
-    console.log(value);
+
+    const res = await dispatch(discountCodeUpdate({ code: value, add: true }));
+
+    localStorage.setItem("userDiscountCode", value);
+    console.log(cart, res);
     setIsLoading(false);
   };
 
+  useEffect(() => {
+    console.log(cart, gifts);
+  }, [cart, gifts]);
+
   return (
     <div className={styles.wrapper}>
-      <AnimatePresence initial={isOpen}>
+      <AnimatePresence initial={false}>
         <motion.div
           className={styles.opener}
-          onClick={() => setIsOpen(!isOpen)}
-          variants={{ open: HIDDEN, closed: { ...VISIBLE, display: "flex" } }}
-          animate={isOpen ? "open" : "closed"}
+          onClick={() => setStatus("form")}
+          variants={{ open: { ...VISIBLE, display: "flex" }, closed: HIDDEN }}
+          animate={status === "closed" ? "open" : "closed"}
           key="opener"
           transition={{ duration: 0.2, type: "tween" }}
         >
@@ -50,7 +69,7 @@ export const DiscountCode: FC = () => {
         <motion.div
           className={styles.content}
           variants={{ open: { ...VISIBLE, display: "block" }, closed: HIDDEN }}
-          animate={isOpen ? "open" : "closed"}
+          animate={status === "form" ? "open" : "closed"}
           key="content"
           transition={{ duration: 0.2, type: "tween", delay: 0.2 }}
         >

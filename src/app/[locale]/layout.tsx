@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
-import { getTranslations } from "next-intl/server";
 import { NextIntlClientProvider } from "next-intl";
-import { getMessages } from "next-intl/server";
+import { getTranslations, getMessages } from "next-intl/server";
 import Script from "next/script";
 
 import "@/styles/globals.scss";
@@ -24,7 +23,7 @@ export async function generateMetadata({
     applicationName: "Cupid",
     alternates: {
       canonical: "https://cupidchoco.com/",
-      languages: { en: "https://cupidchoco.com/en" },
+      languages: { de: "https://cupidchoco.com/de" },
     },
     openGraph: {
       type: "website",

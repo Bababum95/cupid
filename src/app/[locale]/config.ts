@@ -20,9 +20,9 @@ export const COOKIE_CONSENT_CONFIG: CookieConsentConfig = {
     console.log("onFirstAction fired");
   },
 
-  onConsent: function ({ cookie }) {
-    console.log("onConsent fired ...", cookie);
-  },
+  // onConsent: function ({ cookie }) {
+  // console.log("onConsent fired ...", cookie);
+  // },
 
   onChange: function ({ changedCategories, cookie }) {
     console.log("onChange fired ...", changedCategories, cookie);

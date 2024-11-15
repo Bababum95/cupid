@@ -7,7 +7,6 @@ import classNames from "classnames";
 
 import { useAppDispatch, useAppSelector } from "@/hooks";
 import {
-  discountCodeUpdate,
   removeLine as removeCartLine,
   addLine as addLineToCart,
 } from "@/lib/slices/cart";
@@ -48,7 +47,7 @@ export const ProgressBar: FC<Props> = ({
   gift,
   complete,
   chocolate = 0,
-}) => {
+}: Props): JSX.Element | null => {
   const [isComplete, setIsComplete] = useState(complete);
   const t = useTranslations("Cart");
   const dispatch = useAppDispatch();
@@ -58,19 +57,23 @@ export const ProgressBar: FC<Props> = ({
   const max = chocolate < 40 ? 40 : chocolate < 60 ? 60 : 80;
 
   /**
-   * Adds a gift to the cart and updates the discount code.
+   * Adds a gift to the cart.
    * If a gift is already complete, does nothing.
    */
-  const addGift = async () => {
+  const addGift = async (): Promise<void> => {
     if (!gift || isComplete) return;
     setIsComplete(true);
 
-    await dispatch(discountCodeUpdate({ code: gift.code, add: true }));
-    dispatch(addLineToCart({ merchandiseId: gift.id, quantity: 1 }));
+    dispatch(
+      addLineToCart({
+        line: { merchandiseId: gift.id, quantity: 1 },
+        discountCode: gift.code,
+      })
+    );
   };
 
   /**
-   * Removes a gift from the cart and updates the discount code.
+   * Removes a gift from the cart.
    * If no gift or the gift is not complete, does nothing.
    */
   const removeGift = async () => {
@@ -79,9 +82,9 @@ export const ProgressBar: FC<Props> = ({
 
     const giftLine = cart.lines.find((line) => line.productId === gift.id);
 
-    if (giftLine) await dispatch(removeCartLine(giftLine.id));
+    if (!giftLine) return;
 
-    dispatch(discountCodeUpdate({ code: gift.code, add: false }));
+    dispatch(removeCartLine({ lineId: giftLine.id, discountCode: gift.code }));
   };
 
   /**

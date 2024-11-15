@@ -17,6 +17,7 @@
     "@reduxjs/toolkit": "^2.3.0",
     "@shopify/hydrogen-react": "^2024.10.0",
     "@shopify/storefront-api-client": "^1.0.2",
+    "js-cookie": "^3.0.5",
     "motion": "^11.11.14",
     "next": "14.2.15",
     "next-intl": "^3.21.1",
@@ -33,6 +34,7 @@
   },
   "devDependencies": {
     "@svgr/webpack": "^8.1.0",
+    "@types/js-cookie": "^3.0.6",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",

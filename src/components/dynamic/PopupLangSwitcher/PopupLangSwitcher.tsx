@@ -5,6 +5,7 @@ import { useParams } from "next/navigation";
 import { useLocale, useTranslations } from "next-intl";
 import { motion, AnimatePresence } from "motion/react";
 import ReactDOM from "react-dom";
+import Cookies from "js-cookie";
 
 import {
   usePathname,
@@ -14,9 +15,9 @@ import {
 } from "@/i18n/routing";
 import LangIcon from "@/icons/lang.svg";
 
-import styles from "./LangSwitcher.module.scss";
+import styles from "./PopupLangSwitcher.module.scss";
 
-export default function LangSwitcher() {
+export default function PopupLangSwitcher() {
   const [isOpen, setIsOpen] = useState(false);
   const t = useTranslations("LocaleSwitcher");
   const locale = useLocale();
@@ -25,6 +26,7 @@ export default function LangSwitcher() {
   const params = useParams();
 
   const handleChange = (nextLocale: LocaleType) => {
+    Cookies.set("LS", "true", { expires: 365 });
     router.replace(pathname, { ...params, locale: nextLocale });
   };
 

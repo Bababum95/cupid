@@ -1,4 +1,5 @@
 import { useTranslations } from "next-intl";
+import { cookies } from "next/headers";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -9,6 +10,7 @@ import {
   FAQ,
   Gallery,
   Ingredients,
+  LangSwitcher,
   Recommendations,
   Slider,
   Video,
@@ -19,9 +21,11 @@ import styles from "./page.module.scss";
 
 export default function Page() {
   const t = useTranslations("HomePage");
+  const cookieStore = cookies();
 
   return (
     <>
+      {!cookieStore.has("LS") && <LangSwitcher />}
       <Header />
       <main className={styles.page}>
         <Image

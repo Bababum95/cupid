@@ -9,7 +9,7 @@ const Menu = dynamic(() => import("@/components/dynamic/Menu"), {
   ssr: false,
 });
 const LangSwitcher = dynamic(
-  () => import("@/components/dynamic/LangSwitcher"),
+  () => import("@/components/dynamic/PopupLangSwitcher"),
   {
     ssr: false,
   }

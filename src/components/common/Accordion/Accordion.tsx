@@ -40,6 +40,9 @@ export const Accordion: FC<Props> = ({ data, t }) => {
               <div
                 className={classNames("opener", styles.top)}
                 onClick={() => setExpanded(isOpen ? false : index)}
+                aria-label="toggle open accordion"
+                tabIndex={0}
+                role="button"
               >
                 <p className={styles.label}>{t(name)}</p>
                 <ArrowIcon />

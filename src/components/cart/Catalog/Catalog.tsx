@@ -23,7 +23,7 @@ export const Catalog: FC<Props> = ({ products, isLoading }) => {
   const dispatch = useAppDispatch();
 
   const addToCart = async (id: string) => {
-    await dispatch(addLine({ merchandiseId: id, quantity: 1 }));
+    await dispatch(addLine({ line: { merchandiseId: id, quantity: 1 } }));
   };
 
   const openPopup = (product: ProductType) => {
