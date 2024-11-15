@@ -13,8 +13,85 @@
     "next": "Next"
   },
   "Metadata": {
-    "title": "Cupid Aphrodisiac Chocolate for Couples",
-    "description": "Cupid offers aphrodisiac chocolate for couples, crafted with natural ingredients to naturally ignite passion and enhance intimacy."
+    "common": {
+      "home": { "url": "https://cupidchoco.com/", "name": "Home" }
+    },
+    "main": {
+      "title": "Cupid Aphrodisiac Chocolate for Couples",
+      "description": "Cupid offers aphrodisiac chocolate for couples, crafted with natural ingredients to naturally ignite passion and enhance intimacy.",
+      "keywords": "Cupid, Aphrodisiac Chocolate, Sex Chocolate, Natural Aphrodisiac, Couples Chocolate",
+      "name": "Cupid Aphrodisiac Chocolate for Couples | Ignite Passion Naturally",
+      "description-graph": "Cupid offers natural aphrodisiac chocolate for couples, crafted to enhance intimacy and ignite passion.",
+      "description-wp": "Experience Cupid's natural aphrodisiac chocolate crafted to enhance intimacy and ignite passion among couples."
+    },
+    "chocolate": {
+      "title": "Cupid Sex Chocolate | Natural Aphrodisiac Chocolate for Couples",
+      "description": "Discover Cupid Chocolate, a natural aphrodisiac chocolate designed to enhance intimacy and ignite passion among couples.",
+      "keywords": "Sex Chocolate, Aphrodisiac Chocolate, Cupid, Natural Aphrodisiac, Couples Chocolate",
+      "description-og": "Experience the benefits of Cupid's Sex Chocolate, crafted with natural ingredients to enhance intimacy and ignite passion.",
+      "description-tw": "Enhance your romantic moments with Cupid's Sex Chocolate, a natural aphrodisiac chocolate for couples.",
+      "name": "Cupid Chocolate",
+      "name-crumb": "Sex Chocolate",
+      "category": "Chocolate",
+      "color": "Dark Brown",
+      "material": "Cocoa, Natural Ingredients",
+      "description-graph": "Cupid Chocolate is a natural aphrodisiac chocolate crafted to enhance intimacy and ignite passion among couples.",
+      "additional": {
+        "0": {
+          "name": "Ingredients",
+          "value": "Cocoa mass, sugar, cocoa butter, aphrodisiac blend (L-Arginine, Black Maca Extract (20:1), Guarana Extract (6:1), Panax Ginseng Extract (35:1), Taurine), contains caffeine from guarana, emulsifier: soy lecithin, vanilla extract, natural flavorings."
+        },
+        "1": {
+          "name": "Allergen Information",
+          "value": "Contains soy. May contain traces of nuts."
+        },
+        "2": {
+          "name": "Net Weight",
+          "value": "87 grams"
+        },
+        "3": {
+          "name": "Storage Instructions",
+          "value": "Store in a cool, dry place away from direct sunlight."
+        },
+        "4": {
+          "name": "Serving Size",
+          "value": "14.5 grams"
+        },
+        "5": {
+          "name": "Country of Origin",
+          "value": "Germany"
+        }
+      }
+    },
+    "cart": {
+      "title": "Cart | Cupid Chocolate",
+      "description": "View the items in your cart and proceed to checkout on Cupid Chocolate.",
+      "description-og": "Check the items in your Cupid Chocolate cart and prepare for checkout."
+    },
+    "imprint": {
+      "title": "Imprint | Cupid Chocolate",
+      "description": "Find legal information about Cupid Chocolate, including company details and contact information.",
+      "description-og": "Access legal and contact information for Cupid Chocolate on our imprint page.",
+      "name": "Imprint"
+    },
+    "privacy": {
+      "title": "Privacy Policy | Cupid Chocolate",
+      "description": "Read Cupid's privacy policy to understand how we collect, use, and protect your personal information.",
+      "description-og": "Learn about our commitment to protecting your privacy and personal data at Cupid.",
+      "name": "Privacy Policy"
+    },
+    "refund": {
+      "title": "Refund policy | Cupid Chocolate",
+      "description": "Read Cupid's refund policy.",
+      "description-og": "Refund Policy.",
+      "name": "Refund Policy"
+    },
+    "terms": {
+      "title": "Terms of Service | Cupid Chocolate",
+      "description": "Read Cupid's terms of service to understand the guidelines for using our website and services.",
+      "description-og": "Review our terms of service to understand your rights and responsibilities when using Cupid's website and services.",
+      "name": "Terms of Service"
+    }
   },
   "LocaleSwitcher": {
     "label": "Change language",

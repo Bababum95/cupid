@@ -13,8 +13,85 @@
     "next": "Weiter"
   },
   "Metadata": {
-    "title": "Cupid Aphrodisiac Chocolate for Couples",
-    "description": "Cupid offers aphrodisiac chocolate for couples, crafted with natural ingredients to naturally ignite passion and enhance intimacy."
+    "common": {
+      "home": { "url": "https://cupidchoco.com/de/", "name": "Startseite" }
+    },
+    "main": {
+      "title": "Cupid Aphrodisierende Schokolade für Paare",
+      "description": "Erleben Sie Cupids natürliche aphrodisierende Schokolade, die entwickelt wurde, um Intimität zu fördern und Leidenschaft bei Paaren zu entfachen.",
+      "keywords": "Cupid, Aphrodisierende Schokolade, Sex Schokolade, Natürliche Aphrodisiaka, Schokolade für Paare",
+      "name": "Cupid Aphrodisierende Schokolade für Paare | Natürlich Leidenschaft Entfachen",
+      "description-graph": "Cupid bietet natürliche aphrodisierende Schokolade für Paare, die entwickelt wurde, um Intimität zu fördern und Leidenschaft zu entfachen.",
+      "description-wp": "Erleben Sie Cupids natürliche aphrodisierende Schokolade, die entwickelt wurde, um Intimität zu fördern und Leidenschaft bei Paaren zu entfachen."
+    },
+    "chocolate": {
+      "title": "Cupid Sex-Schokolade | Natürliche Aphrodisierende Schokolade für Paare",
+      "description": "Entdecken Sie Cupid Schokolade, eine natürliche aphrodisierende Schokolade, die entwickelt wurde, um Intimität zu fördern und Leidenschaft bei Paaren zu entfachen.",
+      "keywords": "Sex Schokolade, Aphrodisierende Schokolade, Cupid, Natürliches Aphrodisiakum, Schokolade für Paare",
+      "description-og": "Erleben Sie die Vorteile von Cupid Sex-Schokolade, hergestellt mit natürlichen Zutaten zur Förderung von Intimität und Leidenschaft.",
+      "description-tw": "Verstärken Sie Ihre romantischen Momente mit Cupid Sex-Schokolade, einer natürlichen aphrodisierenden Schokolade für Paare.",
+      "name": "Cupid Schokolade",
+      "name-crumb": "Sex-Schokolade",
+      "category": "Schokolade",
+      "color": "Dunkelbraun",
+      "material": "Kakao, Natürliche Zutaten",
+      "description-graph": "Cupid Schokolade ist eine natürliche aphrodisierende Schokolade, die entwickelt wurde, um Intimität zu fördern und Leidenschaft bei Paaren zu entfachen.",
+      "additional": {
+        "0": {
+          "name": "Zutaten",
+          "value": "Kakaomasse, Zucker, Kakaobutter, aphrodisierende Mischung (L-Arginin, Schwarze Maca Extrakt (20:1), Guarana Extrakt (6:1), Panax Ginseng Extrakt (35:1), Taurin), enthält Koffein aus Guarana, Emulgator: Sojalecithin, Vanilleextrakt, natürliche Aromen."
+        },
+        "1": {
+          "name": "Allergeninformationen",
+          "value": "Enthält Soja. Kann Spuren von Nüssen enthalten."
+        },
+        "2": {
+          "name": "Nettogewicht",
+          "value": "87 Gramm"
+        },
+        "3": {
+          "name": "Lagerhinweise",
+          "value": "Kühl und trocken lagern, vor direkter Sonneneinstrahlung schützen."
+        },
+        "4": {
+          "name": "Portionsgröße",
+          "value": "14,5 Gramm"
+        },
+        "5": {
+          "name": "Herkunftsland",
+          "value": "Deutschland"
+        }
+      }
+    },
+    "cart": {
+      "title": "Warenkorb | Cupid Schokolade",
+      "description": "Sehen Sie sich die Artikel in Ihrem Warenkorb an und gehen Sie zur Kasse bei Cupid Schokolade.",
+      "description-og": "Überprüfen Sie die Artikel in Ihrem Warenkorb und bereiten Sie sich auf die Kasse vor."
+    },
+    "imprint": {
+      "title": "Impressum | Cupid Schokolade",
+      "description": "Finden Sie rechtliche Informationen über Cupid Schokolade, einschließlich Unternehmensdetails und Kontaktinformationen.",
+      "description-og": "Zugriff auf rechtliche und Kontaktinformationen zu Cupid Schokolade auf unserer Impressum-Seite.",
+      "name": "Impressum"
+    },
+    "privacy": {
+      "title": "Datenschutzerklärung | Cupid Schokolade",
+      "description": "Lesen Sie die Datenschutzerklärung von Cupid, um zu verstehen, wie wir Ihre persönlichen Daten sammeln, verwenden und schützen.",
+      "description-og": "Erfahren Sie mehr über unser Engagement zum Schutz Ihrer Privatsphäre und persönlichen Daten bei Cupid.",
+      "name": "Datenschutzerklärung"
+    },
+    "refund": {
+      "title": "Widerrufsrecht | Cupid Schokolade",
+      "description": "Lesen Sie die Rückerstattungsrichtlinie von Cupid.",
+      "description-og": "Rückerstattungsrichtlinie.",
+      "name": "Widerrufsrecht"
+    },
+    "terms": {
+      "title": "AGB | Cupid Schokolade",
+      "description": "Lesen Sie die Nutzungsbedingungen von Cupid, um die Richtlinien zur Nutzung unserer Website und Dienste zu verstehen.",
+      "description-og": "Überprüfen Sie unsere Nutzungsbedingungen, um Ihre Rechte und Pflichten bei der Nutzung der Website und Dienste von Cupid zu verstehen.",
+      "name": "AGB"
+    }
   },
   "LocaleSwitcher": {
     "label": "Sprache ändern",

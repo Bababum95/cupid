@@ -15,6 +15,7 @@ import { sendPageView } from "@/lib/shopify";
 import { COOKIE_CONSENT_CONFIG } from "./config";
 
 const PUBLIC_GA_ID = process.env.PUBLIC_GA_ID;
+const INTERCOM_APP_ID = process.env.INTERCOM_APP_ID;
 
 export default function StoreProvider({
   children,
@@ -30,7 +31,7 @@ export default function StoreProvider({
   useEffect(() => {
     document.documentElement.classList.add("cc--elegant-black");
     CookieConsent.run(COOKIE_CONSENT_CONFIG);
-    Intercom({ app_id: "or685gsh" });
+    if (INTERCOM_APP_ID) Intercom({ app_id: INTERCOM_APP_ID });
   }, []);
 
   useEffect(() => {

@@ -12,6 +12,7 @@ const nextConfig = {
     SHOPIFY_SHOP_ID: process.env.SHOPIFY_SHOP_ID,
     IS_VERCEL: process.env.IS_VERCEL === "true" ? "true" : "false",
     PUBLIC_GA_ID: process.env.PUBLIC_GA_ID,
+    INTERCOM_APP_ID: process.env.INTERCOM_APP_ID,
   },
   images: {
     remotePatterns: [
