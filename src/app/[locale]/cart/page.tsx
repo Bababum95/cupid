@@ -32,7 +32,7 @@ export default function Page({
   const t = useTranslations("Cart");
 
   const fetchCrossSells = async () => {
-    const data = await fetchShopify({ query: relatedProductsQuery });
+    const data = await fetchShopify({ query: relatedProductsQuery, locale });
     setIsLoading((prev) => ({ ...prev, crossSells: false }));
 
     if (data.crossSells) {
@@ -74,7 +74,7 @@ export default function Page({
   useEffect(() => {
     const cartId = localStorage.getItem("cartId");
     if (cart.status === "idle" && cartId) {
-      dispatch(getCart(cartId));
+      dispatch(getCart({ cartId, locale }));
     }
 
     fetchCrossSells();

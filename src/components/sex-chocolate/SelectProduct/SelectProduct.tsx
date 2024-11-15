@@ -1,7 +1,7 @@
 "use client";
 
 import { FC, useState, useEffect } from "react";
-import { useTranslations } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 import { useSearchParams, useRouter } from "next/navigation";
 import Image from "next/image";
 
@@ -22,6 +22,7 @@ type Props = {
 export const SelectProduct: FC<Props> = ({ products, gifts }) => {
   const searchParams = useSearchParams();
   const router = useRouter();
+  const locale = useLocale();
   const t = useTranslations("SexChocolate");
   const [selectedVariant, setSelectedVariant] =
     useState<VariantProductType | null>(null);
@@ -31,7 +32,7 @@ export const SelectProduct: FC<Props> = ({ products, gifts }) => {
   const mainVariant = products[0].variants[0];
 
   const getInitialData = async () => {
-    const initialData = await fetchInitialData({ gifts });
+    const initialData = await fetchInitialData({ gifts, locale });
 
     if (!initialData) return;
 
@@ -117,6 +118,7 @@ export const SelectProduct: FC<Props> = ({ products, gifts }) => {
           width={550}
           height={520}
           priority
+          quality={95}
         />
       </div>
       <div className={styles.summary}>

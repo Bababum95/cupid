@@ -34,7 +34,10 @@ export const Recommendations = () => {
               height={352}
               alt={name}
             />
-            <p className={styles.review}>{review}</p>
+            <p
+              className={styles.review}
+              dangerouslySetInnerHTML={{ __html: review }}
+            />
           </div>
         ))}
       </Slider>

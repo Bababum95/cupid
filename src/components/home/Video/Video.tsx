@@ -66,7 +66,10 @@ export const Video: FC<Props> = ({ description, poster, children }) => {
           </button>
         </div>
       </div>
-      <p className={styles.description}>{description}</p>
+      <p
+        className={styles.description}
+        dangerouslySetInnerHTML={{ __html: description }}
+      />
     </div>
   );
 };

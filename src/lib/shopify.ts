@@ -12,6 +12,7 @@ const SHOPIFY_API_VERSION = process.env.SHOPIFY_API_VERSION as string;
 type FetchShopifyParams = {
   query: string;
   variables?: Record<string, unknown>;
+  locale?: string;
 };
 
 export const client = createStorefrontApiClient({
@@ -20,10 +21,17 @@ export const client = createStorefrontApiClient({
   publicAccessToken: process.env.SHOPIFY_PUBLIC_TOKEN as string,
 });
 
-export async function fetchShopify({ query, variables }: FetchShopifyParams) {
+export async function fetchShopify({
+  query,
+  variables,
+  locale = "en",
+}: FetchShopifyParams) {
   const cleanQuery = query.replace(/\s+/g, " ").trim();
   const response = await client.request(cleanQuery, {
     variables,
+    headers: {
+      "Accept-Language": locale,
+    },
   });
 
   return response.data;

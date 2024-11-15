@@ -13,8 +13,10 @@ type InitialDataType = {
 
 export const fetchInitialData = async ({
   gifts,
+  locale,
 }: {
   gifts: string[];
+  locale?: string;
 }): Promise<InitialDataType | null> => {
   const combinedQuery = `
       query CombinedQuery($handle: String) {
@@ -37,6 +39,7 @@ export const fetchInitialData = async ({
     const { sellingPlans, ...giftsResponse } = await fetchShopify({
       query: combinedQuery,
       variables: { handle: "cupid-chocolate" },
+      locale,
     });
 
     const giftsData: GiftType[] = Object.values(giftsResponse).map(

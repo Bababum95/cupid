@@ -88,11 +88,15 @@ export const removeLine = createAsyncThunk(
 
 export const get = createAsyncThunk(
   "cart/get",
-  async (cartId: string, { rejectWithValue }) => {
+  async (
+    { cartId, locale }: { cartId: string; locale?: string },
+    { rejectWithValue }
+  ) => {
     try {
       const ressponse = await fetchShopify({
         query: cartQuery,
         variables: { cartId },
+        locale,
       });
 
       return ressponse.cart;
