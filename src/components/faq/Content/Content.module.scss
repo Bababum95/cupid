@@ -1,0 +1,79 @@
+.hero {
+  position: relative;
+}
+
+.wrapper {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  max-width: $home-mw;
+  padding: 0 20px;
+}
+
+h1.title {
+  font-size: clamp(2.25rem, 1.6464rem + 2.4762vw, 3.875rem);
+  color: $text;
+  max-width: 972px;
+}
+
+.image {
+  height: auto;
+  width: 100%;
+  min-height: 200px;
+  object-fit: cover;
+}
+
+.section {
+  @include flex-layout(space-between);
+  max-width: $home-mw;
+  padding: 80px 20px;
+  margin: 0 auto;
+  gap: 48px;
+}
+
+h2.title {
+  max-width: 515px;
+  font-size: clamp(2rem, 1.9304rem + 0.2857vw, 2.1875rem);
+  flex: 1;
+}
+
+.accordion {
+  width: 100%;
+  max-width: 520px;
+  flex: 1;
+
+  :global {
+    .item {
+      &:not(:last-child) {
+        margin-bottom: 32px;
+      }
+    }
+
+    .opener {
+      font-size: clamp(1.3125rem, 1.2429rem + 0.2857vw, 1.5rem);
+      align-items: flex-start;
+
+      svg {
+        height: 16px;
+        margin-top: 10px;
+      }
+    }
+
+    .content {
+      font-size: 17px;
+    }
+  }
+}
+
+@include media("tablet-small") {
+  .section {
+    flex-direction: column;
+    padding-block: 44px;
+  }
+
+  h2.title {
+    word-break: break-word;
+  }
+}

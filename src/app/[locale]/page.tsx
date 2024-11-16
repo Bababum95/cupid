@@ -84,6 +84,7 @@ export default function Page({
           height={860}
           className={styles.image}
           priority
+          quality={90}
         />
         <div className={styles.content}>
           <h1 className={styles.title}>{t("title")}</h1>

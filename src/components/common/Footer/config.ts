@@ -10,7 +10,7 @@ export const LINKS = [
     list: [
       { label: "about", href: "#" },
       { label: "contact-us", href: "https://my.cupidchoco.com/" },
-      { label: "faq", href: "/#faq" },
+      { label: "faq", href: "/faq" },
       { label: "shiping", href: "/refund-policy" },
       { label: "order", href: "https://my.cupidchoco.com/" },
     ],

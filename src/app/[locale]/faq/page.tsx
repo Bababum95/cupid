@@ -1,9 +1,8 @@
 import type { Metadata } from "next";
 import { getTranslations } from "next-intl/server";
 import { useTranslations } from "next-intl";
-import Image from "next/image";
 
-import styles from "./page.module.scss";
+import { Content } from "@/components/faq";
 
 const BASE_URL = process.env.BASE_URL as string;
 
@@ -49,21 +48,14 @@ export default function Page({
 }: {
   params: { locale: string };
 }) {
-  const t = useTranslations("Metadata.faq");
+  const metadata = useTranslations("Metadata.faq");
   const commonMetadata = useTranslations("Metadata.common");
   const homePage = commonMetadata("home.url");
-  const currentUrl = homePage + "imprint";
+  const currentUrl = homePage + "faq";
 
   return (
     <>
-      <Image
-        src="/images/chocolate.jpg"
-        alt="Romantic Couple Sharing Chocolate"
-        width={1440}
-        height={440}
-        priority
-        className={styles.image}
-      />
+      <Content />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
@@ -72,7 +64,7 @@ export default function Page({
             "@type": "WebPage",
             url: currentUrl,
             name: "FAQ",
-            description: t("description"),
+            description: metadata("description"),
             inLanguage: locale,
             isPartOf: {
               "@type": "WebSite",

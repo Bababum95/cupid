@@ -20,6 +20,7 @@ type Props = {
   selectedVariant: VariantProductType;
   sellingPlans: SellingPlanGroupType[];
   gifts: GiftType[];
+  locale: string;
 };
 
 export const StepTwo: FC<Props> = ({
@@ -27,6 +28,7 @@ export const StepTwo: FC<Props> = ({
   mainProduct,
   sellingPlans,
   gifts,
+  locale,
 }) => {
   const [sellingPlanIndex, setSellingPlanIndex] = useState(0);
   const [isLoading, setIsLoading] = useState(false);
@@ -74,7 +76,7 @@ export const StepTwo: FC<Props> = ({
       if (gifts[0].code) input.discountCodes.push(gifts[0].code);
     }
 
-    const res = await dispatch(createCart(input));
+    const res = await dispatch(createCart({ input, locale }));
 
     if (res.meta.requestStatus === "fulfilled") {
       router.push("/cart");

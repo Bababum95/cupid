@@ -20,11 +20,15 @@ import { RootState } from "@/lib/store";
 
 export const create = createAsyncThunk(
   "cart/create",
-  async (input: CreateCartInput, { rejectWithValue }) => {
+  async (
+    { input, locale }: { input: CreateCartInput; locale?: string },
+    { rejectWithValue }
+  ) => {
     try {
       const ressponse = await fetchShopify({
         query: cartCreateMutation,
         variables: { input },
+        locale,
       });
 
       return ressponse.cartCreate.cart;

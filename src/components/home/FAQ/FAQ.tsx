@@ -20,7 +20,7 @@ export const FAQ: FC = () => {
         <div className={styles.accordion}>
           <Accordion
             t={t}
-            data={Array.from({ length }, (_, i) => (i + 1).toString())}
+            data={Array.from({ length }, (_, i) => (`list.${i}`).toString())}
           />
           {length < 19 && (
             <button className={styles.button} onClick={() => setLength(19)}>

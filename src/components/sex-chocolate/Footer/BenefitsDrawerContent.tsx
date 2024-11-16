@@ -5,21 +5,24 @@ import { useTranslations } from "next-intl";
 
 import { Accordion } from "@/components";
 
-import { listOfBenefits } from "./config";
 import styles from "./BenefitsDrawerContent.module.scss";
 
 export const BenefitsDrawerContent: FC = () => {
-  const t = useTranslations("BenefitsDrawerContent");
+  const t = useTranslations("SexChocolate.BenefitsDrawerContent");
 
   return (
     <div className={styles.wrapper}>
       <p className={styles.text}>
-        <strong className={styles.label}>
-          {t("ignite-passion-and-performance")}:
-        </strong>{" "}
-        {t("ignite-passion-and-performance-text")}
+        {t.rich("text", {
+          strong: (chunks) => (
+            <strong className={styles.label}>{chunks}</strong>
+          ),
+        })}
       </p>
-      <Accordion data={listOfBenefits} t={t} />
+      <Accordion
+        data={Array.from({ length: 6 }, (_, i) => `list.${i}`)}
+        t={t}
+      />
     </div>
   );
 };

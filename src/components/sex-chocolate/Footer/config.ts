@@ -26,15 +26,6 @@ export const details = [
   },
 ];
 
-export const listOfBenefits = [
-  "boost-libido-and-desire",
-  "improve-blood-flow-and-sensation",
-  "increase-energy-and-stamina",
-  "enhance-mood-and-connection",
-  "support-hormonal-balance",
-  "promote-overall-well-being",
-];
-
 export const nutritionalInformationTable = [
   ["energy", "2535 kJ / 611 kcal", "380 kJ / 92 kcal"],
   ["fat", "46 g", "6.9 g"],

@@ -2,11 +2,12 @@
 
 import { FC, useState, useEffect } from "react";
 import { useLocale, useTranslations } from "next-intl";
-import { useSearchParams, useRouter } from "next/navigation";
+import { useSearchParams } from "next/navigation";
 import Image from "next/image";
 
 import type { ProductType, VariantProductType, GiftType } from "@/types";
 import { BackButton } from "@/components";
+import { useRouter } from "@/i18n/routing";
 
 import type { SellingPlanGroupType } from "./types";
 import { StepOne } from "./StepOne";
@@ -134,6 +135,7 @@ export const SelectProduct: FC<Props> = ({ products, gifts }) => {
             selectedVariant={selectedVariant || mainVariant}
             sellingPlans={sellingPlans}
             gifts={giftsData}
+            locale={locale}
           />
         ) : (
           <StepOne

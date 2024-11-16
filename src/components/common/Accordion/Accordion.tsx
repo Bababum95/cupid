@@ -44,7 +44,7 @@ export const Accordion: FC<Props> = ({ data, t }) => {
                 tabIndex={0}
                 role="button"
               >
-                <p className={styles.label}>{t(name)}</p>
+                <p className={styles.label}>{t(`${name}.label`)}</p>
                 <ArrowIcon />
               </div>
               <AnimatePresence initial={false}>
@@ -61,7 +61,7 @@ export const Accordion: FC<Props> = ({ data, t }) => {
                     }}
                     transition={{ duration: 0.3 }}
                   >
-                    {t(`${name}-text`)}
+                    {t(`${name}.content`)}
                   </motion.p>
                 )}
               </AnimatePresence>
