@@ -120,6 +120,7 @@
   font-weight: 400;
   line-height: 150%;
   margin-top: 24px;
+  margin-bottom: 16px;
 
   span {
     color: $text;
@@ -315,11 +316,13 @@
     background-color: $page-bg;
     z-index: 10;
     padding-inline: 20px;
+    overflow-y: auto;
+    border-radius: 24px 24px 0 0;
   }
 
   .tab-title {
     text-align: center;
-    margin-top: 26px
+    margin-top: 26px;
   }
 
   .tab-close {
