@@ -1,6 +1,11 @@
 import type { Metadata } from "next";
 import { getTranslations } from "next-intl/server";
 import { useTranslations } from "next-intl";
+import Image from "next/image";
+
+import styles from "./page.module.scss";
+
+const BASE_URL = process.env.BASE_URL as string;
 
 export async function generateMetadata({
   params: { locale },
@@ -12,10 +17,10 @@ export async function generateMetadata({
   return {
     title: t("title"),
     description: t("description"),
-    applicationName: "Cupid",
+    metadataBase: new URL(BASE_URL),
     alternates: {
-      canonical: "https://cupidchoco.com/faq",
-      languages: { de: "https://cupidchoco.com/de/faq" },
+      canonical: "/faq",
+      languages: { de: "/de/faq" },
     },
     openGraph: {
       type: "website",
@@ -44,14 +49,21 @@ export default function Page({
 }: {
   params: { locale: string };
 }) {
-  const t = useTranslations("Metadata.imprint");
-  const commonMetadata = useTranslations("Metadata.faq");
+  const t = useTranslations("Metadata.faq");
+  const commonMetadata = useTranslations("Metadata.common");
   const homePage = commonMetadata("home.url");
   const currentUrl = homePage + "imprint";
 
   return (
     <>
-      {/* JSON-LD Schema Data */}
+      <Image
+        src="/images/chocolate.jpg"
+        alt="Romantic Couple Sharing Chocolate"
+        width={1440}
+        height={440}
+        priority
+        className={styles.image}
+      />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
@@ -59,7 +71,7 @@ export default function Page({
             "@context": "https://schema.org",
             "@type": "WebPage",
             url: currentUrl,
-            name: t("name"),
+            name: "FAQ",
             description: t("description"),
             inLanguage: locale,
             isPartOf: {
@@ -78,7 +90,7 @@ export default function Page({
                 {
                   "@type": "ListItem",
                   position: 2,
-                  name: t("name"),
+                  name: "FAQ",
                   item: currentUrl,
                 },
               ],

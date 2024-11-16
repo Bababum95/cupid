@@ -14,6 +14,7 @@ const nextConfig = {
     PUBLIC_GA_ID: process.env.PUBLIC_GA_ID,
     PUBLIC_GTM_ID: process.env.PUBLIC_GTM_ID,
     INTERCOM_APP_ID: process.env.INTERCOM_APP_ID,
+    BASE_URL: process.env.BASE_URL,
   },
   images: {
     remotePatterns: [

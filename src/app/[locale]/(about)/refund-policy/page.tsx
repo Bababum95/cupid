@@ -4,6 +4,8 @@ import { useTranslations } from "next-intl";
 
 import { Navbar, Content } from "@/components/about";
 
+const BASE_URL = process.env.BASE_URL as string;
+
 export async function generateMetadata({
   params: { locale },
 }: {
@@ -15,9 +17,10 @@ export async function generateMetadata({
     title: t("title"),
     description: t("description"),
     applicationName: "Cupid",
+    metadataBase: new URL(BASE_URL),
     alternates: {
-      canonical: "https://cupidchoco.com/refund-policy",
-      languages: { de: "https://cupidchoco.com/de/refund-policy" },
+      canonical: "/refund-policy",
+      languages: { de: "/de/refund-policy" },
     },
     openGraph: {
       type: "website",

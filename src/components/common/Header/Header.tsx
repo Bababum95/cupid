@@ -27,11 +27,9 @@ export const Header = () => {
           <Logotype width={60} />
         </Link>
         <nav className={styles.nav}>
-          {["ingredients", "reviews", "faq"].map((link) => (
-            <Link key={link} href={`/#${link}`}>
-              {t(link)}
-            </Link>
-          ))}
+          <Link href="/#ingredients">{t("ingredients")}</Link>
+          <Link href="/#reviews">{t("reviews")}</Link>
+          <Link href="/faq">{t("faq")}</Link>
         </nav>
         <div className={styles.end}>
           <PopupLangSwitcher />

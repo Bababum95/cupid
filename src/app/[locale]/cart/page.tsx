@@ -83,8 +83,12 @@ export default function Page({
 
   const handleSubmit = (evt: React.FormEvent) => {
     evt.preventDefault();
-    if (cart.checkoutUrl)
-      window.location.href = `${cart.checkoutUrl}&locale=${locale}`;
+    if (cart.checkoutUrl) {
+      // window.location.href = `${cart.checkoutUrl}&locale=${locale}`;
+
+      const url = `${cart.checkoutUrl}&locale=${locale}`;
+      window.open(url, "_self", "noopener,noreferrer");
+    }
   };
 
   return (

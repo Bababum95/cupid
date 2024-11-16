@@ -11,7 +11,7 @@ import styles from "./FAQ.module.scss";
 
 export const FAQ: FC = () => {
   const [length, setLength] = useState(6);
-  const t = useTranslations("FAQ");
+  const t = useTranslations("HomePage.FAQ");
 
   return (
     <section id="faq" className={styles.section}>

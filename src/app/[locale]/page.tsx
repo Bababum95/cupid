@@ -21,6 +21,8 @@ import { DEFAULLT_LOCALE } from "@/i18n/config";
 import { VIDEOS } from "./config";
 import styles from "./page.module.scss";
 
+const BASE_URL = process.env.BASE_URL as string;
+
 export async function generateMetadata({
   params: { locale },
 }: {
@@ -33,9 +35,10 @@ export async function generateMetadata({
     description: t("description"),
     keywords: t("keywords"),
     applicationName: "Cupid",
+    metadataBase: new URL(BASE_URL),
     alternates: {
-      canonical: "https://cupidchoco.com/",
-      languages: { de: "https://cupidchoco.com/de" },
+      canonical: "/",
+      languages: { de: "/de" },
     },
     openGraph: {
       type: "website",

@@ -8,6 +8,8 @@ import styles from "./page.module.scss";
 
 export const dynamic = "force-dynamic";
 
+const BASE_URL = process.env.BASE_URL as string;
+
 export async function generateMetadata({
   params: { locale },
 }: {
@@ -20,9 +22,10 @@ export async function generateMetadata({
     description: t("description"),
     keywords: t("keywords"),
     applicationName: "Cupid",
+    metadataBase: new URL(BASE_URL),
     alternates: {
-      canonical: "https://cupidchoco.com/sex-chocolate",
-      languages: { de: "https://cupidchoco.com/de/sex-chocolate" },
+      canonical: "/sex-chocolate",
+      languages: { de: "/de/sex-chocolate" },
     },
     openGraph: {
       type: "website",

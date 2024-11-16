@@ -22,7 +22,7 @@ export const Footer = () => {
                   key={i}
                   href={href}
                   className={styles.social}
-                  rel="noreferrer nofollow"
+                  rel="noopener noreferrer nofollow"
                   target="_blank"
                 >
                   <Icon width={28} height={28} />

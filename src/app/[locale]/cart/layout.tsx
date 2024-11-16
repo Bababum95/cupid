@@ -1,6 +1,8 @@
 import { getTranslations } from "next-intl/server";
 import type { Metadata } from "next";
 
+const BASE_URL = process.env.BASE_URL as string;
+
 export async function generateMetadata({
   params: { locale },
 }: {
@@ -16,9 +18,10 @@ export async function generateMetadata({
       follow: false,
     },
     applicationName: "Cupid",
+    metadataBase: new URL(BASE_URL),
     alternates: {
-      canonical: "https://cupidchoco.com/cart",
-      languages: { de: "https://cupidchoco.com/de/cart" },
+      canonical: "/cart",
+      languages: { de: "/de/cart" },
     },
     openGraph: {
       type: "website",
