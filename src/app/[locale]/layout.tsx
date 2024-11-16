@@ -7,6 +7,7 @@ import "@/styles/globals.scss";
 import StoreProvider from "./StoreProvider";
 
 const PUBLIC_GA_ID = process.env.PUBLIC_GA_ID;
+const PUBLIC_GTM_ID = process.env.PUBLIC_GTM_ID;
 
 export default async function RootLayout({
   children,
@@ -45,7 +46,36 @@ export default async function RootLayout({
         </>
       )}
 
+      {PUBLIC_GTM_ID && (
+        <>
+          {/* Google Tag Manager Script */}
+          <Script
+            id="google-tag-manager"
+            strategy="afterInteractive"
+            dangerouslySetInnerHTML={{
+              __html: `
+                (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+                new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+                j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+                'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+                })(window,document,'script','dataLayer', '${PUBLIC_GTM_ID}');
+              `,
+            }}
+          />
+        </>
+      )}
+
       <body className="body">
+        {PUBLIC_GTM_ID && (
+          <noscript>
+            <iframe
+              src={`https://www.googletagmanager.com/ns.html?id=${PUBLIC_GTM_ID}`}
+              height="0"
+              width="0"
+              style={{ display: "none", visibility: "hidden" }}
+            />
+          </noscript>
+        )}
         <NextIntlClientProvider messages={messages} locale={locale}>
           <StoreProvider>{children}</StoreProvider>
         </NextIntlClientProvider>

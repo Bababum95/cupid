@@ -89,6 +89,7 @@ const Product: FC<ProductProps> = ({
           width={350}
           height={520}
           className={styles.image}
+          quality={95}
         />
         <AnimatePresence initial={false}>
           {tab !== null && product[tab] && (

@@ -44,9 +44,10 @@ export const Product: FC<Props> = ({ product, openPopup, handleAddToCart }) => {
       <Image
         src={product.featuredImage?.url || "/favicon.ico"}
         alt={product.title}
-        width={250}
-        height={250}
+        width={350}
+        height={350}
         className={styles.image}
+        quality={90}
       />
       <motion.h3 className={styles.title}>{product.title}</motion.h3>
       <motion.p className={styles.description}>{product.description}</motion.p>

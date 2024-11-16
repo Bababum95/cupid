@@ -73,6 +73,7 @@ export const CartLine: FC<Props> = ({
         width={123}
         height={123}
         className={styles.image}
+        quality={90}
       />
       <div className={styles.info}>
         <h3 className={styles.title}>{title}</h3>
