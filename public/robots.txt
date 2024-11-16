@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://cupidchoco.com
+
+# Sitemaps
+Sitemap: https://cupidchoco.com/sitemap.xml
