@@ -86,6 +86,11 @@
       "description-og": "Refund Policy.",
       "name": "Refund Policy"
     },
+    "faq": {
+      "title": "Cupid Chocolate FAQ | Frequently Asked Questions",
+      "description": "Find answers to frequently asked questions about Cupid's aphrodisiac chocolate, shipping, returns, and more.",
+      "name": "FAQ"
+    },
     "terms": {
       "title": "Terms of Service | Cupid Chocolate",
       "description": "Read Cupid's terms of service to understand the guidelines for using our website and services.",
