@@ -16,8 +16,8 @@ export async function generateMetadata({
     description: t("description"),
     applicationName: "Cupid",
     alternates: {
-      canonical: "https://cupidchoco.com/imprint",
-      languages: { de: "https://cupidchoco.com/de/imprint" },
+      canonical: "https://cupidchoco.com/terms-of-service",
+      languages: { de: "https://cupidchoco.com/de/terms-of-service" },
     },
     openGraph: {
       type: "website",

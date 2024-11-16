@@ -4,6 +4,7 @@ export { Button } from "./common/Button/Button";
 export { Footer } from "./common/Footer/Footer";
 export { Header } from "./common/Header/Header";
 export { Input } from "./common/Input/Input";
+export { LangSwitcher } from "./common/LangSwitcher/LangSwitcher";
 export { Notice } from "./common/Notice/Notice";
 export { Price } from "./common/Price/Price";
 export { SideDrawer } from "./common/SideDrawer/SideDrawer";

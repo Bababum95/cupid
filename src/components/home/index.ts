@@ -3,7 +3,6 @@ export { Comments } from "./Comments/Comments";
 export { FAQ } from "./FAQ/FAQ";
 export { Gallery } from "./Gallery/Gallery";
 export { Ingredients } from "./Ingredients/Ingredients";
-export { LangSwitcher } from "./LangSwitcher/LangSwitcher";
 export { Recommendations } from "./Recommendations/Recommendations";
 export { Slider } from "./Slider/Slider";
 export { Video } from "./Video/Video";

@@ -1,7 +1,6 @@
 import { cookies } from "next/headers";
 
 import { Subscribe, Header, Footer, LangSwitcher } from "@/components";
-import { Wrapper } from "@/components/about";
 import { DEFAULLT_LOCALE } from "@/i18n/config";
 
 export default function AboutLayout({
@@ -18,7 +17,7 @@ export default function AboutLayout({
       {!cookieStore.has("LS") && locale === DEFAULLT_LOCALE && <LangSwitcher />}
       <Header />
       <main>
-        <Wrapper>{children}</Wrapper>
+        {children}
         <Subscribe />
       </main>
       <Footer />

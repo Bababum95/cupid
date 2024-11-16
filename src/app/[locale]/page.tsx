@@ -5,14 +5,13 @@ import { cookies } from "next/headers";
 import Image from "next/image";
 import Link from "next/link";
 
-import { Subscribe, Header, Footer } from "@/components";
+import { Subscribe, Header, Footer, LangSwitcher } from "@/components";
 import {
   Advantages,
   Comments,
   FAQ,
   Gallery,
   Ingredients,
-  LangSwitcher,
   Recommendations,
   Slider,
   Video,
