@@ -69,10 +69,13 @@
     margin-bottom: 12px;
   }
 
+  .hero {
+    @include flex-column;
+    height: calc(100dvh - var(--header-height) - 20px);
+  }
+
   .image {
-    object-position: 43% bottom;
-    height: calc(100dvh - var(--header-height) - 290px);
-    max-height: 440px;
+    height: 100%;
   }
 
   .button {

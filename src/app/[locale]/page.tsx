@@ -77,23 +77,27 @@ export default function Page({
       {!cookieStore.has("LS") && locale === DEFAULLT_LOCALE && <LangSwitcher />}
       <Header />
       <main className={styles.page}>
-        <Image
-          src="/images/cupid-chocolate.jpg"
-          alt="Cupid Aphrodisiac Chocolate"
-          width={1440}
-          height={860}
-          className={styles.image}
-          priority
-          quality={90}
-        />
-        <div className={styles.content}>
-          <h1 className={styles.title}>{t("title")}</h1>
-          <p className={styles.text}>
-            {t.rich("description", { span: (chunks) => <span>{chunks}</span> })}
-          </p>
-          <Link href="/sex-chocolate" className={styles.button}>
-            {t("by-now")}
-          </Link>
+        <div className={styles.hero}>
+          <Image
+            src="/images/cupid-chocolate.jpg"
+            alt="Cupid Aphrodisiac Chocolate"
+            width={1440}
+            height={860}
+            className={styles.image}
+            priority
+            quality={90}
+          />
+          <div className={styles.content}>
+            <h1 className={styles.title}>{t("title")}</h1>
+            <p className={styles.text}>
+              {t.rich("description", {
+                span: (chunks) => <span>{chunks}</span>,
+              })}
+            </p>
+            <Link href="/sex-chocolate" className={styles.button}>
+              {t("by-now")}
+            </Link>
+          </div>
         </div>
         <Advantages />
         <Recommendations />
