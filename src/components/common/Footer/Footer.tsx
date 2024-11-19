@@ -1,11 +1,15 @@
 import { useTranslations } from "next-intl";
 import Image from "next/image";
+import dynamic from "next/dynamic";
 
 import LogoIcon from "@/icons/footer-logo.svg";
 
-import { LINKS, SOCIAL_LINKS, PAYMENT_METHODS } from "./config";
+import { SOCIAL_LINKS, PAYMENT_METHODS } from "./config";
 import styles from "./Footer.module.scss";
-import Link from "next/link";
+
+const FooterMenu = dynamic(() => import("@/components/dynamic/FooterMenu"), {
+  ssr: false,
+});
 
 export const Footer = () => {
   const t = useTranslations("Footer");
@@ -32,32 +36,7 @@ export const Footer = () => {
           </div>
           <p className={styles.description}>{t("description")}</p>
         </div>
-        <nav className={styles.nav}>
-          {LINKS.map(({ name, list }) => (
-            <ul key={name}>
-              <li className={styles.label}>{t(name)}</li>
-              {list.map(({ label, href }) => (
-                <li key={label} className={styles.link}>
-                  <Link href={href}>{t(label)}</Link>
-                </li>
-              ))}
-            </ul>
-          ))}
-          <ul>
-            <li className={styles.label}>{t("contact")}</li>
-            <li className={styles.link}>SM MIR GmbH Berlin, Deutshland</li>
-            <li className={styles.link}>info@cupidchoco.com</li>
-            <li className={styles.link}>
-              <a
-                href="https://wa.me/4915226740425"
-                rel="noreferrer nofollow"
-                target="_blank"
-              >
-                WhatsApp
-              </a>
-            </li>
-          </ul>
-        </nav>
+        <FooterMenu />
       </div>
       <span className={styles.divider} />
       <div className={styles.wrapper}>
@@ -70,6 +49,7 @@ export const Footer = () => {
               src={src}
               width={70}
               height={28}
+              quality={95}
             />
           ))}
         </div>

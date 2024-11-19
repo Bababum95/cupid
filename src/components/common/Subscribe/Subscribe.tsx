@@ -10,14 +10,16 @@ export const Subscribe = () => {
   return (
     <div className={styles.block}>
       <div className={styles.wrapper}>
-        <Image
-          src="/images/email.jpg"
-          alt="Cupid Aphrodisiac Chocolate"
-          width={552}
-          height={232}
-          className={styles.image}
-        />
         <div>
+          <Image
+            src="/images/email.jpg"
+            alt="Cupid Aphrodisiac Chocolate"
+            width={552}
+            height={232}
+            className={styles.image}
+          />
+        </div>
+        <div className={styles.content}>
           <h3 className={styles.title}>{t("title")}</h3>
           <Form />
           <p className={styles.description}>
