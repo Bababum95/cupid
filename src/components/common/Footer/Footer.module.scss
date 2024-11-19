@@ -106,7 +106,7 @@
 
   .payment {
     grid-column: span 2;
-    object-fit: cover;
+    // object-fit: cover;
 
     &:nth-child(n + 7) {
       grid-column: span 3;
