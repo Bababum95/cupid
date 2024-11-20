@@ -6,9 +6,10 @@ import classNames from "classnames";
 
 import type { ProductType } from "@/types";
 import { dataUtils } from "@/utils";
-import { Price } from "@/components";
+import { Price, Bage } from "@/components";
 import { default as CloseIcon } from "@/icons/close.svg";
 import { default as BackIcon } from "@/icons/back.svg";
+import { default as StarIcon } from "@/icons/star.svg";
 
 import styles from "./ProductPopup.module.scss";
 
@@ -79,18 +80,43 @@ const Product: FC<ProductProps> = ({
       onClick={(e) => e.stopPropagation()}
     >
       <div className={styles.preview}>
-        <Image
-          src={
-            variantIndex === null
-              ? product.featuredImage?.url || "/favicon.ico"
-              : variant.image?.url || "/favicon.ico"
-          }
-          alt={product.title}
-          width={350}
-          height={520}
-          className={styles.image}
-          quality={95}
-        />
+        <div
+          className={classNames(styles.image, {
+            [styles.withBage]: product.bage,
+          })}
+        >
+          {product.bage && (
+            <div className={styles.bages}>
+              {dataUtils
+                .splitStringWithLimit(product.bage)
+                .map((bage, index) => (
+                  <span key={index}>{bage}</span>
+                ))}
+            </div>
+          )}
+          <Image
+            src={
+              variantIndex === null
+                ? product.featuredImage?.url || "/favicon.ico"
+                : variant.image?.url || "/favicon.ico"
+            }
+            alt={product.title}
+            width={350}
+            height={520}
+            quality={95}
+          />
+          <div className={styles["bages-bottom"]}>
+            <Bage variant="secondary">
+              <StarIcon
+                fill="#520C11"
+                width={12}
+                height={12}
+                viewBox="0 0 24 24"
+              />
+              {t('complete')}
+            </Bage>
+          </div>
+        </div>
         <AnimatePresence initial={false}>
           {tab !== null && product[tab] && (
             <motion.div

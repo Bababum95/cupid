@@ -1,0 +1,41 @@
+.bage {
+  @include flex-center;
+  gap: 6px;
+  width: fit-content;
+  padding: 10px 14px;
+  border-radius: 20px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 100%;
+}
+
+.secondary {
+  background-color: $text;
+  color: $accent;
+}
+
+.large {
+  font-size: 15px;
+  letter-spacing: -0.15px;
+}
+
+.medium {
+  font-size: 13px;
+  letter-spacing: -0.13px;
+}
+
+@include media("tablet-small") {
+  .bage {
+    gap: 4px;
+  }
+
+  .large {
+    font-size: 12px;
+    padding: 6px 10px;
+
+    svg {
+      width: 10px;
+      height: 10px;
+    }
+  }
+}

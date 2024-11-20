@@ -1,5 +1,6 @@
 export { Accordion } from "./common/Accordion/Accordion";
 export { BackButton } from "./common/BackButton/BackButton";
+export { Bage } from "./common/Bage/Bage";
 export { Button } from "./common/Button/Button";
 export { Footer } from "./common/Footer/Footer";
 export { Header } from "./common/Header/Header";

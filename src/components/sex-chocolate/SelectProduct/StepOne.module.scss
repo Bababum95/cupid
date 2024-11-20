@@ -3,6 +3,9 @@
   gap: 10px;
   padding: 0;
   margin: 52px 0 12px;
+  position: relative;
+  z-index: 2;
+  background-color: $page-bg;
 }
 
 .price {
@@ -34,4 +37,3 @@
     gap: 8px;
   }
 }
-

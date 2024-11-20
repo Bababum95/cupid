@@ -80,7 +80,7 @@ export const Gallery = () => {
               className={styles.image}
             />
             <motion.img
-              src="/images/gallery/7.jpg"
+              src="/images/gallery/7.webp"
               alt="Cupid Aphrodisiac Chocolate"
               width={602}
               height={278}

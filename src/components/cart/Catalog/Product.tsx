@@ -39,8 +39,14 @@ export const Product: FC<Props> = ({ product, openPopup, handleAddToCart }) => {
       layoutId={product.variants[0].id}
       className={styles.item}
       onClick={() => openPopup(product)}
-      //   whileHover={{ scale: 1.05 }}
     >
+      {product.bage && (
+        <div className={styles.bages}>
+          {dataUtils.splitStringWithLimit(product.bage).map((bage, index) => (
+            <span key={index}>{bage}</span>
+          ))}
+        </div>
+      )}
       <Image
         src={product.featuredImage?.url || "/favicon.ico"}
         alt={product.title}

@@ -27,10 +27,50 @@
 }
 
 .image {
-  border-radius: 20px;
-  object-fit: cover;
   flex: 1;
   height: 300px;
+  position: relative;
+
+  img {
+    object-fit: cover;
+    border-radius: 20px;
+    height: 100%;
+  }
+
+  &.withBage img {
+    clip-path: path(
+      "M521.6 0H173.75C162.566 0 153.5 9.06623 153.5 20.25C153.5 31.4338 144.434 40.5 133.25 40.5H38.4C24.9587 40.5 18.2381 40.5 13.1042 43.1158C8.58834 45.4168 4.9168 49.0883 2.61584 53.6042C0 58.7381 0 65.4587 0 78.9V480.6C0 494.041 0 500.762 2.61584 505.896C4.9168 510.412 8.58834 514.083 13.1042 516.384C18.2381 519 24.9587 519 38.4 519H521.6C535.041 519 541.762 519 546.896 516.384C551.412 514.083 555.083 510.412 557.384 505.896C560 500.762 560 494.041 560 480.6V38.4C560 24.9587 560 18.2381 557.384 13.1042C555.083 8.58834 551.412 4.9168 546.896 2.61584C541.762 0 535.041 0 521.6 0Z"
+    );
+  }
+}
+
+.bages {
+  @include flex-layout(flex-start, center);
+  position: absolute;
+  left: 0;
+  top: 0;
+  min-width: 143px;
+
+  span {
+    @include flex-center;
+    color: $text;
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 100%; /* 13px */
+    letter-spacing: -0.13px;
+    border-radius: 30px;
+    background: #520c11;
+    padding: 10px 14px;
+    flex: 1;
+  }
+
+  &-bottom {
+    position: absolute;
+    bottom: 12px;
+    left: 12px;
+    right: 12px;
+  }
 }
 
 .tab-content {
@@ -256,8 +296,8 @@
     order: 2;
   }
 
-  .image {
-    aspect-ratio: 350 / 330;
+  .image img {
+    aspect-ratio: 1 / 1;
     height: auto;
     width: 100%;
   }

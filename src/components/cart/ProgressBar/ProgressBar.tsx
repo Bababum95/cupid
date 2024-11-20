@@ -1,7 +1,7 @@
 "use client";
 
 import { FC, useEffect, useState } from "react";
-import { motion } from "motion/react";
+import { motion, useMotionValue, animate, useTransform } from "motion/react";
 import { useTranslations } from "next-intl";
 import classNames from "classnames";
 
@@ -43,18 +43,21 @@ type Props = {
  * @returns {JSX.Element | null} - A visual progress bar or null if no total or chocolate value is provided.
  */
 export const ProgressBar: FC<Props> = ({
-  total,
   gift,
   complete,
+  total = 0,
   chocolate = 0,
 }: Props): JSX.Element | null => {
   const [isComplete, setIsComplete] = useState(complete);
   const t = useTranslations("Cart");
   const dispatch = useAppDispatch();
   const cart = useAppSelector((state) => state.cart);
+  const count = useMotionValue(0);
+  const procent = useTransform(() => Math.floor(count.get() * 100) + "%");
 
   // Determine the max threshold based on chocolate value.
   const max = chocolate < 40 ? 40 : chocolate < 60 ? 60 : 80;
+  const progress = Number(total) / max;
 
   /**
    * Adds a gift to the cart.
@@ -94,13 +97,13 @@ export const ProgressBar: FC<Props> = ({
   useEffect(() => {
     if (total && total >= max) addGift();
     else removeGift();
+
+    const controls = animate(count, progress, { duration: 0.25 });
+    return () => controls.stop();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [total, max]);
 
   if (!total || !chocolate) return null;
-
-  // Calculate progress as a percentage of the max threshold.
-  const progress = total / max;
 
   // If progress reaches or exceeds 100%, display the "gift unlocked" message.
   if (progress >= 1) {
@@ -130,7 +133,7 @@ export const ProgressBar: FC<Props> = ({
             animate={{ pathLength: progress }}
           />
         </svg>
-        <span>{Math.floor(progress * 100)}%</span>
+        <motion.span className={styles.percent}>{procent}</motion.span>
       </div>
       <div>
         <p className={styles.max}>{t("spend", { amount: max })}</p>

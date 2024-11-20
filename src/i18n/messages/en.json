@@ -10,11 +10,15 @@
     "how-to-use": "How to Use",
     "product-details": "Product Details",
     "prev": "Prev",
-    "next": "Next"
+    "next": "Next",
+    "complete": "Complete your experience"
   },
   "Metadata": {
     "common": {
-      "home": { "url": "https://cupidchoco.com/", "name": "Home" }
+      "home": {
+        "url": "https://cupidchoco.com/",
+        "name": "Home"
+      }
     },
     "main": {
       "title": "Cupid Aphrodisiac Chocolate for Couples",
@@ -347,7 +351,8 @@
           "content": "Our holistic formula not only focuses on enhancing intimate moments but also contributes to your general wellness. The combination of natural ingredients works synergistically to support your vitality and well-being."
         }
       }
-    }
+    },
+    "trusted": "Trusted by Over 10,000 Satisfied Customers"
   },
   "NutritionalDrawerContent": {
     "nutritional-information": "Nutritional Information",
@@ -440,7 +445,6 @@
     "title": "All About Cupid's Sex Chocolate",
     "list": {
       "about_the_sex_chocolate": {
-        "title": "About the Sex Chocolate",
         "0": {
           "label": "What ingredients is Cupid Chocolate made of?",
           "content": "Cupid Chocolate is made from high-quality ingredients, including 65% cocoa from Ghana, aphrodisiac additives such as Black Maca, Panax Ginseng, L-Arginine, Guarana, Taurine. All ingredients are tested, approved, and widely used in the food industry. Our chocolate is carefully produced in southern Germany to ensure consistently high quality.\n\nIngredients:\nCocoa mass, sugar, cocoa butter, aphrodisiac blend (L-Arginine, Black Maca Extract (20:1), Guarana Extract (6:1), Panax Ginseng Extract (35:1), Taurine), contains caffeine from Guarana, Emulsifier: SOYA LECITHIN, vanilla extract, natural flavoring."
@@ -460,10 +464,10 @@
         "4": {
           "label": "How long does it take for Sex Chocolate to work?",
           "content": "The effect of Sex Chocolate can vary individually, but most couples feel an enhanced connection and intimacy within 30 to 60 minutes after consumption."
-        }
+        },
+        "title": "About the Sex Chocolate"
       },
       "effects_of_sex_chocolate": {
-        "title": "Effects of Sex Chocolate",
         "0": {
           "label": "What benefits does Cupid's Sex Chocolate offer?",
           "content": "Cupid's Sex Chocolate is specifically designed to offer a range of intimacy-enhancing benefits, including:\n\n- Strengthening of sensual desire and emotional connection\n- Beautification and intensification of intimate moments\n- Intensified pleasure and heightened sensitivity\n- A bolder, more adventurous feeling and a strong connection to one’s own body\n\nSome customers report feeling the effect even before intimacy, while others experience increased sensitivity and improved performance during intercourse."
@@ -483,10 +487,10 @@
         "4": {
           "label": "What happens if I take more than one serving of Sex Chocolate?",
           "content": "If you have consumed more than one serving of Cupid Sex Chocolate, it is generally safe. The chocolate contains natural ingredients that should not cause any harmful side effects. However, you may notice side effects like restlessness, heart palpitations, or digestive discomfort, as the aphrodisiac ingredients can act more strongly. We recommend not exceeding double the dose per day (one bar) to ensure a pleasant experience and avoid potential discomfort."
-        }
+        },
+        "title": "Effects of Sex Chocolate"
       },
       "safety_and_compatibility_of_sex_chocolate": {
-        "title": "Safety and Compatibility of Sex Chocolate",
         "0": {
           "label": "What side effects does Sex Chocolate have?",
           "content": "The plant-based ingredients used in our Cupid Sex Chocolate are safe and carefully formulated. They contain clinically tested natural active ingredients backed by extensive research and clinical studies.\n\nHowever, if you take more than the recommended dose, the following side effects may occur:\n\n- Palpitations or an increased heart rate, caused by ingredients such as Guarana.\n- Restlessness or nervousness, which can be caused by stimulating ingredients.\n- Digestive issues such as stomach aches or bloating.\n- Sleep disturbances if taken late at night, due to the stimulating effects of some ingredients.\n\nWe recommend not exceeding a maximum of one bar per day to avoid potential side effects and ensure a pleasant experience."
@@ -506,10 +510,10 @@
         "4": {
           "label": "Can Sex Chocolate be combined with alcohol?",
           "content": "Of course, combining Sex Chocolate with a glass of your favorite drink can enrich the experience. But here's a suggestion – try the chocolate for the first time without any alcoholic accompaniment. This way, you can fully enjoy the unique connection and increased intimacy that the chocolate brings to your shared moments."
-        }
+        },
+        "title": "Safety and Compatibility of Sex Chocolate"
       },
       "ordering_process_and_support": {
-        "title": "Ordering Process and Support",
         "0": {
           "label": "How do I order Cupid's Sex Chocolate?",
           "content": "Simply add the desired quantity to the cart and proceed to checkout to complete your purchase.\n\nIf you encounter any issues or have questions, feel free to message us on WhatsApp at +4915226740425 – we’re online to ensure your order goes smoothly."
@@ -525,10 +529,10 @@
         "3": {
           "label": "There is an issue with my order – what should I do?",
           "content": "If something is wrong with your order, don’t hesitate to contact us via WhatsApp at +4915226740425 or by email at info@cupidchoco.com. Creating meaningful connections is our priority, and your satisfaction is more than a priority – it’s a promise."
-        }
+        },
+        "title": "Ordering Process and Support"
       },
       "delivery_and_return_information": {
-        "title": "Delivery and Return Information",
         "0": {
           "label": "Which countries do you deliver to?",
           "content": "We deliver within Germany and to selected other countries, including Austria, the Netherlands, Switzerland, and Italy. Delivery time within Germany is usually 1-2 business days, and for the mentioned countries, it typically takes 2-4 business days.\n\nIf you have further questions, feel free to contact us anytime via WhatsApp at +4915226740425 or email info@cupidchoco.com. We are happy to help and provide you with all necessary information."
@@ -548,7 +552,8 @@
         "4": {
           "label": "When can I expect my refund?",
           "content": "Once we have received your return, we process your refund. You will receive a confirmation email within 72 hours, and the refund will be in your account within 3 days."
-        }
+        },
+        "title": "Delivery and Return Information"
       }
     }
   },

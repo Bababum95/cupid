@@ -113,4 +113,27 @@ export const dataUtils = {
         return null;
     }
   },
+
+  /**
+   * Splits a string into an array by a specified delimiter and limits the result to a maximum number of elements.
+   * If no delimiter is found, returns an array with the original string as its only element.
+   *
+   * @param {string} str - The input string to split.
+   * @param {object} [options] - Optional settings for the split operation.
+   * @param {number} [options.limit=2] - Maximum number of elements in the resulting array (default is 2).
+   * @param {string} [options.delimiter=","] - Delimiter used to split the string (default is ",").
+   * @returns {string[]} - The resulting array with at most the specified number of elements.
+   */
+  splitStringWithLimit: (
+    str: string,
+    options?: { limit?: number; delimiter?: string }
+  ): string[] => {
+    const { limit = 2, delimiter = "," } = options || {};
+
+    // Split the string by the specified delimiter and limit the result
+    const result = str.split(delimiter).slice(0, limit);
+
+    // Return the resulting array
+    return result;
+  },
 };

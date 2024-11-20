@@ -26,7 +26,8 @@ export default async function RootLayout({
         <>
           {/* Load Google Analytics script asynchronously */}
           <Script
-            async
+            strategy="afterInteractive"
+            defer
             src={`https://www.googletagmanager.com/gtag/js?id=${PUBLIC_GA_ID}`}
           />
 
@@ -34,6 +35,7 @@ export default async function RootLayout({
           <Script
             id="google-analytics"
             strategy="afterInteractive"
+            defer
             dangerouslySetInnerHTML={{
               __html: `
                 window.dataLayer = window.dataLayer || [];

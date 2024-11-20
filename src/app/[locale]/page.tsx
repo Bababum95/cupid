@@ -85,7 +85,6 @@ export default function Page({
             height={860}
             className={styles.image}
             priority
-            quality={90}
           />
           <div className={styles.content}>
             <h1 className={styles.title}>{t("title")}</h1>
@@ -107,7 +106,7 @@ export default function Page({
             <Video
               description={video.description}
               key={i}
-              poster={`/images/posters/${video.name}.png`}
+              poster={`/images/posters/${video.name}.webp`}
             >
               {["webm", "mp4"].map((ext, i) => (
                 <source

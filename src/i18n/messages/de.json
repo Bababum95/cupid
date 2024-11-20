@@ -10,7 +10,8 @@
     "how-to-use": "Anwendung",
     "product-details": "Produktdetails",
     "prev": "Zurück",
-    "next": "Weiter"
+    "next": "Weiter",
+    "complete": "Vervollständigen Sie Ihr Erlebnis"
   },
   "Metadata": {
     "common": {
@@ -350,7 +351,8 @@
           "content": "Unsere ganzheitliche Formel konzentriert sich nicht nur auf die Verbesserung intimer Momente, sondern trägt auch zu deinem allgemeinen Wohlbefinden bei. Die Kombination natürlicher Inhaltsstoffe wirkt synergistisch, um deine Vitalität und dein Wohlbefinden zu unterstützen."
         }
       }
-    }
+    },
+    "trusted": "Vertrauen von über 10.000 zufriedenen Kunden"
   },
   "NutritionalDrawerContent": {
     "nutritional-information": "Nährwertinformationen",
@@ -443,7 +445,6 @@
     "title": "All About Cupid's Sex Chocolate",
     "list": {
       "about_the_sex_chocolate": {
-        "title": "Über die Sex Schokolade",
         "0": {
           "label": "Aus welchen Zutaten wird Cupid Schokolade hergestellt?",
           "content": "Cupid-Schokolade wird aus hochwertigen Zutaten hergestellt, darunter 65 % Kakao aus Ghana, aphrodisierende Zusätze wie, Schwarze Maca, Panax Ginseng, L-Arginin, Guarana, Taurin. Alle Zutaten sind geprüft, zugelassen und weit verbreitet in der Lebensmittelindustrie. Unsere Schokolade wird mit Sorgfalt in Süddeutschland produziert, um eine gleichbleibend hohe Qualität zu gewährleisten.\n\n\nZutaten:\nKakaomasse, Zucker, Kakaobutter, Aphrodisiakum-Mischung (L-Arginin, Schwarze Maca-Extrakt (20:1), Guarana-Extrakt (6:1), Panax Ginseng-Extrakt (35:1), Taurin), enthält Koffein aus Guarana, Emulgator: SOJALECITHIN, Vanilleextrakt, natürliche Aromastoffe."
@@ -463,10 +464,10 @@
         "4": {
           "label": "Wie lange dauert es, bis die Sex Schokolade wirkt?",
           "content": "Die Wirkung von der Sex Schokolade kann individuell unterschiedlich sein, aber die meisten Paare spüren eine verstärkte Verbindung und Intimität innerhalb von 30 bis 60 Minuten nach dem Verzehr."
-        }
+        },
+        "title": "Über die Sex Schokolade"
       },
       "effects_of_sex_chocolate": {
-        "title": "Die Wirkung der Sex Schokolade",
         "0": {
           "label": "Welche Vorteile bietet die Sex Schokolade von Cupid?",
           "content": "Die Sex Schokolade von Cupid ist speziell dafür entwickelt worden, eine Reihe von intimitätssteigernden Vorteilen zu bieten, einschließlich:\n\n- Stärkung des sinnlichen Verlangens und der emotionalen Bindung\n- Verschönerung und Intensivierung intimer Momente\n- Intensiviertes Vergnügen und gesteigerte Empfindsamkeit\n- Ein mutigeres, abenteuerlicheres Gefühl und eine starke Verbindung zum eigenen Körper\n\nEinige unserer Kunden berichten, dass sie die Wirkung bereits vor der Intimität spüren, während andere eine erhöhte Sensibilität und verbesserte Leistung während des Geschlechtsverkehrs erfahren."
@@ -487,10 +488,10 @@
           "category": "Die Wirkung der Sex Schokolade",
           "label": "Was passiert, wenn ich mehr als eine Portion der Sex Schokolade genommen habe?",
           "content": "Wenn Sie mehr als eine Portion der Cupid Sex Schokolade konsumiert haben, ist das in der Regel unbedenklich. Die Schokolade enthält natürliche Inhaltsstoffe, die keine bedenklichen Nebenwirkungen verursachen sollten. Allerdings könnten Sie möglicherweise Nebenwirkungen wie Unruhe, Herzklopfen oder Verdauungsbeschwerden bemerken, da die aphrodisierenden Wirkstoffe stärker wirken können.\n\nWir empfehlen, die doppelte Dosis pro Tag (eine Tafel) nicht zu überschreiten, um ein angenehmes Erlebnis zu gewährleisten und mögliche Unannehmlichkeiten zu vermeiden."
-        }
+        },
+        "title": "Die Wirkung der Sex Schokolade"
       },
       "safety_and_compatibility_of_sex_chocolate": {
-        "title": "Sicherheit und Verträglichkeit der Sex Schokolade",
         "0": {
           "label": "Welche Nebenwirkungen hat die Sex Schokolade?",
           "content": "Die in unserer Cupid Sex Schokolade verwendeten pflanzlichen Inhaltsstoffe sind sicher und wurden sorgfältig formuliert. Sie enthalten klinisch erprobte natürliche Wirkstoffe, die durch umfangreiche Forschung und klinische Studien belegt sind.\n\nSollten Sie jedoch mehr als die empfohlene Dosis einnehmen, könnten folgende Nebenwirkungen auftreten:\n\n- Herzklopfen oder eine erhöhte Herzfrequenz, verursacht durch Inhaltsstoffe wie Guarana.\n- Unruhe oder Nervosität, die durch die stimulierenden Wirkstoffe entstehen kann.\n- Verdauungsbeschwerden wie Bauchschmerzen oder Blähungen.\n- Schlafprobleme, wenn die Schokolade spät am Abend eingenommen wird, da einige Inhaltsstoffe eine anregende Wirkung haben.\n\nWir empfehlen, die Dosierung von maximal einer Tafel pro Tag nicht zu überschreiten, um mögliche Nebenwirkungen zu vermeiden und ein angenehmes Erlebnis zu gewährleisten."
@@ -510,10 +511,10 @@
         "4": {
           "label": "Kann man die Sex Schokolade mit Alkohol kombinieren?",
           "content": "Natürlich, das Kombinieren der Sex Schokolade mit einem Glas Ihres Lieblingsgetränks kann das Erlebnis noch bereichern. Aber hier ist ein Vorschlag – probieren Sie die Schokolade beim ersten Mal ganz ohne alkoholische Begleitung. So können Sie die einzigartige Verbindung und die gesteigerte Intimität, die die Schokolade in Ihre gemeinsamen Momente bringt, in voller Intensität genießen."
-        }
+        },
+        "title": "Sicherheit und Verträglichkeit der Sex Schokolade"
       },
       "ordering_process_and_support": {
-        "title": "Bestellprozess und Unterziehung",
         "0": {
           "label": "Wie bestelle ich die Sex Schokolade von Cupid?",
           "content": "Legen Sie einfach die gewünschte Menge in den Warenkorb und gehen Sie zur Kasse, um Ihren Einkauf abzuschließen.\n\nFalls Sie auf ein Problem stoßen oder einfach nur Fragen haben, schreiben Sie uns auf WhatsApp unter +4915226740425 – wir sind immer online, um sicherzustellen, dass Ihre Bestellung reibungslos abläuft."
@@ -529,10 +530,10 @@
         "3": {
           "label": "Es gibt ein Problem mit meiner Bestellung – was soll ich tun?\n",
           "content": "Wenn etwas mit Ihrer Bestellung nicht stimmt, zögern Sie nicht, uns über WhatsApp unter +4915226740425 oder per E-Mail an info@cupidchoco.com zu kontaktieren. Wir setzen alles daran, bedeutungsvolle Verbindungen zu schaffen, und Ihre Zufriedenheit ist für uns mehr als nur eine Priorität – sie ist ein Versprechen."
-        }
+        },
+        "title": "Bestellprozess und Unterziehung"
       },
       "delivery_and_return_information": {
-        "title": "Liefer-und Rückgabeinformationen",
         "0": {
           "label": "In welche Länder liefern Sie?",
           "content": "Wir liefern innerhalb Deutschlands sowie in ausgewählte andere Länder, darunter Österreich, die Niederlande, die Schweiz und Italien. Die Lieferzeit innerhalb Deutschlands beträgt in der Regel 1-2 Werktage, und für Lieferungen in die genannten Länder normalerweise 2-4 Werktage.\n\nFalls Sie weitere Fragen haben, können Sie uns jederzeit über WhatsApp unter +4915226740425 oder per E-Mail an info@cupidchoco.com kontaktieren. Wir helfen Ihnen gerne weiter und stellen Ihnen alle notwendigen Informationen zur Verfügung."
@@ -552,7 +553,8 @@
         "4": {
           "label": "Wann kann ich mit meiner Rückerstattung rechnen?\n",
           "content": "Sobald wir Ihre Rücksendung erhalten haben, bearbeiten wir Ihre Rückerstattung. Innerhalb von 72 Stunden erhalten Sie eine Bestätigungs-E-Mail, und die Rückerstattung wird innerhalb von 3 Tagen auf Ihrem Konto sein."
-        }
+        },
+        "title": "Liefer-und Rückgabeinformationen"
       }
     }
   },

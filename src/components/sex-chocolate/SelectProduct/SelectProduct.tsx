@@ -6,8 +6,9 @@ import { useSearchParams } from "next/navigation";
 import Image from "next/image";
 
 import type { ProductType, VariantProductType, GiftType } from "@/types";
-import { BackButton } from "@/components";
+import { BackButton, Bage } from "@/components";
 import { useRouter } from "@/i18n/routing";
+import StarIcon from "@/icons/star.svg";
 
 import type { SellingPlanGroupType } from "./types";
 import { StepOne } from "./StepOne";
@@ -121,6 +122,17 @@ export const SelectProduct: FC<Props> = ({ products, gifts }) => {
           priority
           quality={95}
         />
+        <div className={styles["bages-bottom"]}>
+          <Bage variant="secondary" size="large">
+            <StarIcon
+              fill="#520C11"
+              width={12}
+              height={12}
+              viewBox="0 0 24 24"
+            />
+            {t('trusted')}
+          </Bage>
+        </div>
       </div>
       <div className={styles.summary}>
         <div className={styles.back}>
