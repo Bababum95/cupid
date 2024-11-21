@@ -22,6 +22,12 @@ fragment CartFragment on Cart {
           ...PriceFragment
         }
       }
+      sellingPlanAllocation {
+        sellingPlan {
+          id
+          name
+        }
+      }
       merchandise {
         ... on ProductVariant {
           id

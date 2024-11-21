@@ -31,6 +31,8 @@ export default function Page({
   const dispatch = useAppDispatch();
   const t = useTranslations("Cart");
 
+  console.log(cart);
+
   const fetchCrossSells = async () => {
     const data = await fetchShopify({ query: relatedProductsQuery, locale });
     setIsLoading((prev) => ({ ...prev, crossSells: false }));

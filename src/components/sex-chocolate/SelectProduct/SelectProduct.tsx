@@ -130,7 +130,7 @@ export const SelectProduct: FC<Props> = ({ products, gifts }) => {
               height={12}
               viewBox="0 0 24 24"
             />
-            {t('trusted')}
+            {t("trusted", { amount: 1000 })}
           </Bage>
         </div>
       </div>

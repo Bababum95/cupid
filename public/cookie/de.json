@@ -37,6 +37,12 @@
               "expiration": "1 Jahr"
             },
             {
+              "name": "LS",
+              "domain": "cupidchoco.com",
+              "description": "Speichert die bevorzugte Sprache des Benutzers.",
+              "expiration": "1 Jahr"
+            },
+            {
               "name": "cc_cookie",
               "domain": "cupidchoco.com",
               "description": "Speichert die Benutzereinstellungen für notwendige und Analyse-Cookies.",
@@ -86,6 +92,18 @@
               "domain": "Shopify",
               "description": "Wird von Shopify verwendet, um die angesehenen Produkte der Nutzer zu analysieren.",
               "expiration": "Sitzung"
+            },
+            {
+              "name": "intercom-device-id",
+              "domain": "Intercom",
+              "description": "Wird verwendet, um das Gerät des Benutzers zu identifizieren und die Kommunikation über den Intercom-Chat über Sitzungen hinweg aufrechtzuerhalten.",
+              "expiration": "9 Monate"
+            },
+            {
+              "name": "intercom-id",
+              "domain": "Intercom",
+              "description": "Speichert eine eindeutige Kennung für jeden Benutzer, um Unterhaltungen und Interaktionen mit dem Intercom-Support zu verfolgen.",
+              "expiration": "9 Monate"
             }
           ]
         }
@@ -119,6 +137,18 @@
               "domain": "Google Analytics",
               "description": "Dient zur Unterscheidung der Benutzer innerhalb eines 24-Stunden-Fensters.",
               "expiration": "1 Tag"
+            },
+            {
+              "name": "_clck",
+              "domain": "Microsoft Clarity",
+              "description": "Wird verwendet, um eindeutige Benutzer über mehrere Sitzungen hinweg zu identifizieren, indem eine eindeutige Benutzerkennung zugewiesen wird.",
+              "expiration": "1 Jahr"
+            },
+            {
+              "name": "_clsk",
+              "domain": "Microsoft Clarity",
+              "description": "Wird verwendet, um eine einzelne Benutzersitzung zu verfolgen, indem alle Ereignisse aus derselben Sitzung miteinander verknüpft werden.",
+              "expiration": "Sitzung"
             }
           ]
         }
@@ -146,6 +176,18 @@
               "domain": "Google AdSense",
               "description": "Dient zur Testung der Anzeigenwirksamkeit über Google-Dienste.",
               "expiration": "3 Monate"
+            },
+            {
+              "name": "_ttp",
+              "domain": "TikTok Pixel",
+              "description": "Wird verwendet, um eine eindeutige Kennung zu speichern, um Benutzerinteraktionen mit der Website zu verfolgen und Aktionen TikTok-Anzeigen zuzuordnen.",
+              "expiration": "13 Monate"
+            },
+            {
+              "name": "_tt_enable_cookie",
+              "domain": "TikTok Pixel",
+              "description": "Wird verwendet, um zu überprüfen, ob Cookies aktiviert sind, und um die Zielgruppenansprache und Leistungsanalyse von Anzeigen zu verbessern.",
+              "expiration": "13 Monate"
             }
           ]
         }

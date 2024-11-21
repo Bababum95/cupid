@@ -352,7 +352,7 @@
         }
       }
     },
-    "trusted": "Vertrauen von über 10.000 zufriedenen Kunden"
+    "trusted": "Vertrauen von über {amount} zufriedenen Kunden"
   },
   "NutritionalDrawerContent": {
     "nutritional-information": "Nährwertinformationen",
