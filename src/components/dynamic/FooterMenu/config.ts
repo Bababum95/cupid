@@ -11,12 +11,13 @@ export const LINKS = [
   },
   {
     name: "legal",
+    cookies: true,
     list: [
       { label: "refund-policy", href: "/refund-policy" },
       { label: "privacy", href: "/privacy-policy" },
       { label: "terms", href: "/terms-of-service" },
       { label: "imprint", href: "/imprint" },
-      { label: "cookies", href: "/privacy-policy#6" },
+      // { label: "cookies", href: "/privacy-policy#6" },
     ],
   },
 ];

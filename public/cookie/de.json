@@ -3,14 +3,14 @@
     "title": "Cookie-Einstellungen",
     "description": "Wir verwenden Cookies, um Ihre Erfahrung zu verbessern und zu verstehen, wie Sie mit unserer Website interagieren. Sie können Ihre Cookie-Einstellungen unten verwalten.",
     "acceptAllBtn": "Alle akzeptieren",
-    "acceptNecessaryBtn": "Nur notwendige ablehnen",
+    "acceptNecessaryBtn": "Nur essenzielle akzeptieren",
     "showPreferencesBtn": "Einstellungen verwalten",
     "footer": "<a href='https://cupidchoco.com/privacy-policy'>Datenschutzerklärung</a> <a href='https://cupidchoco.com/imprint'>Impressum</a>"
   },
   "preferencesModal": {
     "title": "Cookie-Einstellungen",
     "acceptAllBtn": "Alle akzeptieren",
-    "acceptNecessaryBtn": "Nur notwendige ablehnen",
+    "acceptNecessaryBtn": "Nur essenzielle akzeptieren",
     "savePreferencesBtn": "Einstellungen speichern",
     "closeIconLabel": "Schließen",
     "sections": [

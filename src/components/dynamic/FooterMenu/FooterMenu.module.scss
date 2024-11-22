@@ -19,17 +19,22 @@
   margin-bottom: 24px;
 }
 
+.li,
 .link {
   font-size: 17px;
   font-style: normal;
   font-weight: 500;
   line-height: normal;
   max-width: 180px;
-  transition: $transition;
 
   &:not(:last-child) {
     margin-bottom: 16px;
   }
+}
+
+.link {
+  transition: $transition;
+  cursor: pointer;
 
   @include hover {
     color: $text;

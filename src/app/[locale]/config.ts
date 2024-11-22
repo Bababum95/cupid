@@ -1,4 +1,12 @@
-import type { CookieConsentConfig } from "vanilla-cookieconsent";
+import type { CookieConsentConfig, CookieValue } from "vanilla-cookieconsent";
+
+const saveCookie = (cookie: CookieValue) => {
+  fetch("/api/cookie", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(cookie),
+  });
+};
 
 export const COOKIE_CONSENT_CONFIG: CookieConsentConfig = {
   guiOptions: {
@@ -16,16 +24,12 @@ export const COOKIE_CONSENT_CONFIG: CookieConsentConfig = {
     },
   },
 
-  onFirstConsent: function () {
-    console.log("onFirstAction fired");
+  onFirstConsent: function ({ cookie }) {
+    saveCookie(cookie);
   },
 
-  // onConsent: function ({ cookie }) {
-  // console.log("onConsent fired ...", cookie);
-  // },
-
-  onChange: function ({ changedCategories, cookie }) {
-    console.log("onChange fired ...", changedCategories, cookie);
+  onChange: function ({ cookie }) {
+    saveCookie(cookie);
   },
 
   categories: {

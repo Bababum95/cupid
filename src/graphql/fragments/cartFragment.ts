@@ -22,6 +22,12 @@ fragment CartFragment on Cart {
           ...PriceFragment
         }
       }
+      discountAllocations {
+        ... on CartAutomaticDiscountAllocation {
+          __typename
+          title
+        }
+      }
       sellingPlanAllocation {
         sellingPlan {
           id
@@ -34,6 +40,7 @@ fragment CartFragment on Cart {
           product {
             title
             description
+            handle
           }
           price {
             ...PriceFragment

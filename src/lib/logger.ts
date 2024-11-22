@@ -19,7 +19,7 @@ if (!isVercel) {
       level: "warn",
       datePattern: "YYYY-MM-DD",
       maxSize: "20m",
-      maxFiles: "14d",
+      maxFiles: "7d",
     })
   );
   loggerTransports.push(
@@ -46,13 +46,14 @@ export const cookieLogger = createLogger({
   level: "info",
   format: format.combine(format.timestamp(), format.simple()),
   transports: isVercel
-    ? []
+    ? [new transports.Console()]
     : [
         new DailyRotateFile({
           filename: path.join(logsDirectory, "cookies-%DATE%.log"),
           level: "info",
           datePattern: "YYYY-MM-DD",
           maxSize: "20m",
+          zippedArchive: true,
         }),
       ],
 });

@@ -25,22 +25,50 @@ export default function Page({
   params: { locale: string };
 }) {
   const [crossSells, setCrossSells] = useState<ProductType[]>([]);
+  const [chocolate, setChocolate] = useState<ProductType | null>(null);
   const [gifts, setGifts] = useState<GiftType[]>([]);
   const [isLoading, setIsLoading] = useState({ crossSells: true });
   const cart = useAppSelector((state) => state.cart);
   const dispatch = useAppDispatch();
   const t = useTranslations("Cart");
 
-  console.log(cart);
-
   const fetchCrossSells = async () => {
+    let cupidChocolate: ProductType | null = null;
+
     const data = await fetchShopify({ query: relatedProductsQuery, locale });
     setIsLoading((prev) => ({ ...prev, crossSells: false }));
+
+    if (data.chocolate) {
+      cupidChocolate = dataUtils.normalizeProduct({
+        ...data.chocolate,
+        bage: {
+          value: data.chocolate.bage
+            ? "Hot Sale," + data.chocolate.bage.value
+            : "Hot Sale",
+        },
+        variants: {
+          nodes: data.chocolate.variants.nodes.map(
+            (variant: ProductNode["variants"]["nodes"][0]) => ({
+              ...variant,
+              compareAtPrice: variant.compareAtPrice || variant.price,
+              price: {
+                ...variant.price,
+                amount: Math.round(Number(variant.price.amount) / 2).toString(),
+              },
+            })
+          ),
+        },
+      });
+
+      setChocolate(cupidChocolate);
+    }
 
     if (data.crossSells) {
       const products = data.crossSells.products.nodes.map((node: ProductNode) =>
         dataUtils.normalizeProduct(node)
       );
+
+      if (cupidChocolate) products.unshift(cupidChocolate);
 
       setCrossSells(products);
     }
@@ -82,6 +110,23 @@ export default function Page({
     fetchCrossSells();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
+
+  useEffect(() => {
+    if (!chocolate) return;
+
+    if (cart.showExtraBox) {
+      if (!crossSells.includes(chocolate)) {
+        setCrossSells([chocolate, ...crossSells]);
+      }
+    } else {
+      setCrossSells((prev) =>
+        prev.filter(
+          (product) => product.variants[0].id !== chocolate.variants[0].id
+        )
+      );
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [cart.showExtraBox, chocolate]);
 
   const handleSubmit = (evt: React.FormEvent) => {
     evt.preventDefault();

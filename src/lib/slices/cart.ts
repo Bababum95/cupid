@@ -180,26 +180,45 @@ const cartSlice = createSlice({
   reducers: {},
   extraReducers: (builder) => {
     const setCart = (state: CartState, data: CartResponse) => {
+      let showExtraBox = false;
+
       state.id = data.id;
       state.checkoutUrl = data.checkoutUrl;
       state.discountCodes = data.discountCodes.flatMap(({ code }) => code);
       state.total = dataUtils.normalizePrice(data.cost.totalAmount);
       state.lines = data.lines.nodes
-        .map((line) => ({
-          id: line.id,
-          productId: line.merchandise.id,
-          quantity: line.quantity,
-          title: line.merchandise.product.title,
-          description: line.merchandise.product.description,
-          price: dataUtils.normalizePrice(line.cost.totalAmount),
-          compareAtPrice: getCompareAtPrice({
-            cost: line.cost,
-            quontity: line.quantity,
-          }),
-          image: line.merchandise.image,
-        }))
-        .reverse();
+        .map((line) => {
+          if (
+            line.merchandise.product.handle === "cupid-chocolate" &&
+            !line.sellingPlanAllocation &&
+            !line.discountAllocations.find(({ title }) => title === "Extra box")
+          ) {
+            showExtraBox = true;
+          }
 
+          return {
+            id: line.id,
+            productId: line.merchandise.id,
+            image: line.merchandise.image,
+            quantity: line.quantity,
+            title: line.merchandise.product.title,
+            description: line.merchandise.product.description,
+            price: dataUtils.normalizePrice(line.cost.totalAmount),
+            compareAtPrice: getCompareAtPrice({
+              cost: line.cost,
+              quontity: line.quantity,
+            }),
+          };
+        })
+        .reverse()
+        .sort((a, b) => {
+          if (a.productId === b.productId) {
+            return b.price.amount - a.price.amount;
+          }
+          return 0;
+        });
+
+      state.showExtraBox = showExtraBox;
       localStorage.setItem("cartId", data.id);
     };
     builder

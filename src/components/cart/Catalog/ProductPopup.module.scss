@@ -50,6 +50,7 @@
   left: 0;
   top: 0;
   min-width: 143px;
+  gap: 4px;
 
   span {
     @include flex-center;

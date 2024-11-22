@@ -39,6 +39,7 @@ export const Product: FC<Props> = ({ product, openPopup, handleAddToCart }) => {
       layoutId={product.variants[0].id}
       className={styles.item}
       onClick={() => openPopup(product)}
+      layout
     >
       {product.bage && (
         <div className={styles.bages}>

@@ -32,6 +32,7 @@ export type CartState = {
   lines: CartLineType[];
   total: Price | null;
   discountCodes: string[];
+  showExtraBox?: boolean;
 };
 
 export type CartResponseCostType = {
@@ -49,12 +50,21 @@ export type CartResponse = {
       id: string;
       quantity: number;
       cost: CartResponseCostType;
+      sellingPlanAllocation: {
+        id: string;
+        name: string;
+      } | null;
+      discountAllocations: {
+        __typename?: string;
+        title?: string;
+      }[];
       merchandise: {
         id: string;
         image: Image | null;
         product: {
           title: string;
           description: string;
+          handle: string;
         };
       };
     }[];

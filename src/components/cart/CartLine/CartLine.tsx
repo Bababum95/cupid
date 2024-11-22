@@ -2,6 +2,7 @@
 
 import { FC, useState } from "react";
 import { useTranslations } from "next-intl";
+import { motion } from "motion/react";
 import classNames from "classnames";
 import Image from "next/image";
 
@@ -62,10 +63,11 @@ export const CartLine: FC<Props> = ({
   };
 
   return (
-    <li
+    <motion.li
       className={classNames(styles.item, {
         [styles.removing]: removing,
       })}
+      layout
     >
       <Image
         src={image?.url || "/favicon.ico"}
@@ -103,6 +105,6 @@ export const CartLine: FC<Props> = ({
           <Price price={price} old={oldPrice} />
         </div>
       </div>
-    </li>
+    </motion.li>
   );
 };

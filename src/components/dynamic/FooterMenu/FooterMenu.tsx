@@ -4,6 +4,7 @@ import { FC, useState } from "react";
 import { useMediaQuery } from "react-responsive";
 import { useTranslations } from "next-intl";
 import { motion, AnimatePresence } from "motion/react";
+import * as CookieConsent from "vanilla-cookieconsent";
 
 import { Link } from "@/i18n/routing";
 import ArrowIcon from "@/icons/arrow.svg";
@@ -91,7 +92,7 @@ const FooterMenu = () => {
 
   return (
     <nav className={styles.nav}>
-      {LINKS.map(({ name, list }) => (
+      {LINKS.map(({ name, list, cookies }) => (
         <Column key={name} name={t(name)}>
           <ul>
             {list.map(({ label, href }) => (
@@ -99,13 +100,23 @@ const FooterMenu = () => {
                 <Link href={href}>{t(label)}</Link>
               </li>
             ))}
+            {cookies && (
+              <li
+                className={styles.link}
+                onClick={() => CookieConsent.showPreferences()}
+                tabIndex={0}
+                role="button"
+              >
+                {t("cookies")}
+              </li>
+            )}
           </ul>
         </Column>
       ))}
       <Column name={t("contact")}>
         <ul className={styles.column}>
-          <li className={styles.link}>SM MIR GmbH Berlin, Deutschland</li>
-          <li className={styles.link}>info@cupidchoco.com</li>
+          <li className={styles.li}>SM MIR GmbH Berlin, Deutschland</li>
+          <li className={styles.li}>info@cupidchoco.com</li>
           <li className={styles.link}>
             <a
               href="https://wa.me/4915226740425"
