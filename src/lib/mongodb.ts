@@ -1,38 +1,38 @@
-import mongoose, { ConnectOptions } from "mongoose";
+// import mongoose, { ConnectOptions } from "mongoose";
 
-const MONGODB_URI = process.env.MONGODB_URI as string;
+// const MONGODB_URI = process.env.MONGODB_URI as string;
 
-type MongooseCache = {
-  conn: typeof mongoose | null;
-  promise: Promise<typeof mongoose> | null;
-};
+// type MongooseCache = {
+//   conn: typeof mongoose | null;
+//   promise: Promise<typeof mongoose> | null;
+// };
 
-declare global {
-  // eslint-disable-next-line no-var
-  var mongoose: MongooseCache | undefined;
-}
+// declare global {
+//   // eslint-disable-next-line no-var
+//   var mongoose: MongooseCache | undefined;
+// }
 
-let cached: MongooseCache = global.mongoose || { conn: null, promise: null };
+// let cached: MongooseCache = global.mongoose || { conn: null, promise: null };
 
-if (!cached) {
-  cached = { conn: null, promise: null };
-  global.mongoose = cached;
-}
+// if (!cached) {
+//   cached = { conn: null, promise: null };
+//   global.mongoose = cached;
+// }
 
-async function dbConnect() {
-  if (cached.conn) return cached.conn;
+// async function dbConnect() {
+//   if (cached.conn) return cached.conn;
 
-  if (!cached.promise) {
-    cached.promise = mongoose
-      .connect(MONGODB_URI, {
-        useNewUrlParser: true,
-        useUnifiedTopology: true,
-      } as ConnectOptions)
-      .then((mongoose) => mongoose);
-  }
+//   if (!cached.promise) {
+//     cached.promise = mongoose
+//       .connect(MONGODB_URI, {
+//         useNewUrlParser: true,
+//         useUnifiedTopology: true,
+//       } as ConnectOptions)
+//       .then((mongoose) => mongoose);
+//   }
 
-  cached.conn = await cached.promise;
-  return cached.conn;
-}
+//   cached.conn = await cached.promise;
+//   return cached.conn;
+// }
 
-export default dbConnect;
+// export default dbConnect;
