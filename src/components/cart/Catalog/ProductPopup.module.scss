@@ -117,17 +117,10 @@
   flex: 1;
   position: relative;
 
-  &-list {
-    margin-top: 12px;
-  }
-
   &-item {
     @include flex-layout(space-between, center);
     gap: 12px;
-
-    &:not(:last-child) {
-      margin-bottom: 8px;
-    }
+    margin-bottom: 8px;
   }
 }
 

@@ -41,11 +41,9 @@ export default function Page({
     if (data.chocolate) {
       cupidChocolate = dataUtils.normalizeProduct({
         ...data.chocolate,
-        bage: {
-          value: data.chocolate.bage
-            ? "Hot Sale," + data.chocolate.bage.value
-            : "Hot Sale",
-        },
+        title: "Extra Cupid Box",
+        description: "Double the pleasure at a limited-time offer! 33% OFF",
+        bage: { value: "Hot Sale" },
         variants: {
           nodes: data.chocolate.variants.nodes.map(
             (variant: ProductNode["variants"]["nodes"][0]) => ({
@@ -53,7 +51,7 @@ export default function Page({
               compareAtPrice: variant.compareAtPrice || variant.price,
               price: {
                 ...variant.price,
-                amount: Math.round(Number(variant.price.amount) / 2).toString(),
+                amount: "19.99",
               },
             })
           ),

@@ -1,6 +1,7 @@
 "use client";
 
-import { FC, useState } from "react";
+import { FC, useState, useEffect } from "react";
+import { useMediaQuery } from "react-responsive";
 
 import type { ProductType } from "@/types";
 import { useAppDispatch } from "@/hooks";
@@ -21,18 +22,28 @@ export const Catalog: FC<Props> = ({ products, isLoading }) => {
     null
   );
   const dispatch = useAppDispatch();
+  const isDesktop = useMediaQuery({ query: "(min-width: 701px)" });
 
   const addToCart = async (id: string) => {
     await dispatch(addLine({ line: { merchandiseId: id, quantity: 1 } }));
   };
 
+  useEffect(() => {
+    if (!isDesktop) return;
+
+    console.log(isDesktop);
+    document.body.classList.add("no-scroll");
+
+    return () => {
+      document.body.classList.remove("no-scroll");
+    };
+  }, [isDesktop]);
+
   const openPopup = (product: ProductType) => {
-    document.body.style.overflow = "hidden";
     setSelectedProduct(product);
   };
 
   const closePopup = () => {
-    document.body.style.overflow = "auto";
     setSelectedProduct(null);
   };
 

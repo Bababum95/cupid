@@ -11,8 +11,13 @@
   background-color: transparent;
   border-width: 2px;
   flex: 1;
+  transition: $transition;
 
   &::placeholder {
     color: $secondary-text;
+  }
+
+  @include hover {
+    border-color: $text;
   }
 }

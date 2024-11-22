@@ -8,7 +8,7 @@ export const SOCIAL_LINKS = [
   { Icon: YoutubeIcon, href: "https://youtube.com/@cupid.choco_de" },
   { Icon: PinterestIcon, href: "https://www.pinterest.com/cupidchoco/" },
   { Icon: TiktokIcon, href: "https://www.tiktok.com/@cupid.choco" },
-  { Icon: InstagramIcon, href: "https://www.instagram.com/cupid.choco.de" },
+  { Icon: InstagramIcon, href: "https://www.instagram.com/cupidchoco.de" },
   { Icon: TwitterIcon, href: "https://x.com/cupid_choco" },
 ];
 

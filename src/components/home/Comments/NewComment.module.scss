@@ -1,0 +1,60 @@
+.button {
+  margin-top: 32px;
+  width: 100%;
+}
+
+.title {
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  color: $text;
+}
+
+.stars {
+  @include flex-layout;
+  gap: 18px;
+  margin-top: 42px;
+  margin-bottom: 24px;
+
+  svg {
+    cursor: pointer;
+    outline: none;
+  }
+}
+
+.user {
+  @include flex-layout(flex-start, center);
+  border: none;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.review {
+  padding: 16px 20px;
+  border-radius: 16px;
+  border: $grey-line;
+  background-color: transparent;
+  resize: none;
+  margin-bottom: 12px;
+  width: 100%;
+  min-height: 120px;
+  font-family: inherit;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  transition: $transition;
+
+  &::placeholder {
+    color: $secondary-text;
+  }
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  @include hover {
+    border-color: $text;
+  }
+}

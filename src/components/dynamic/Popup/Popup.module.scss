@@ -1,0 +1,44 @@
+.popup {
+  @include flex-center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(5px);
+  z-index: 20;
+
+  &.closed {
+    margin-right: calc(var(--dialog-scrollgutter, 0) * -1);
+  }
+}
+
+.container {
+  border-radius: 40px;
+  border: $grey-line;
+  background: $page-bg;
+  padding: 24px;
+  width: 100%;
+  position: relative;
+}
+
+.close {
+  @include flex-center;
+  width: 35px;
+  height: 35px;
+  background-color: transparent;
+  color: $secondary-text;
+  transition: $transition;
+  position: absolute;
+  top: 24px;
+  right: 24px;
+
+  @include hover {
+    color: $text;
+  }
+}
+
+.large {
+  max-width: 602px;
+}

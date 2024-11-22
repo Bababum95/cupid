@@ -3,6 +3,7 @@ import { useTranslations } from "next-intl";
 import StarIcon from "@/icons/star.svg";
 
 import { Comment } from "./Comment";
+// import { NewComment } from "./NewComment";
 import styles from "./Comments.module.scss";
 
 const comments = [
@@ -86,7 +87,7 @@ export const Comments = () => {
                 </li>
               ))}
             </ul>
-            {/* <button className={styles.button}>{t("write-review")}</button> */}
+            {/* <NewComment /> */}
           </div>
         </div>
       </div>

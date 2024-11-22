@@ -265,7 +265,11 @@
   "Comments": {
     "reviews": "Bewertungen",
     "verified": "Verifiziert",
-    "write-review": "Bewertung schreiben"
+    "write-review": "Bewertung schreiben",
+    "my-rewiew": "Meine Bewertung",
+    "submit": "Senden",
+    "name": "Vorname",
+    "review": "Deine Bewertung"
   },
   "Subscribe": {
     "title": "Sichere dir 10% Rabatt auf deine nächste Bestellung!",

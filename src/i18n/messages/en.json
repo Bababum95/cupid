@@ -265,7 +265,11 @@
   "Comments": {
     "reviews": "Reviews",
     "verified": "Verified",
-    "write-review": "Write a review"
+    "write-review": "Write a review",
+    "my-rewiew": "My Review",
+    "submit": "Send",
+    "name": "Name",
+    "review": "Your Review"
   },
   "Subscribe": {
     "title": "Unlock 10% Off Your Next Order!",
