@@ -6,6 +6,7 @@ import {
   getCustomersQuery,
   customerEmailMarketingConsentUpdateMutation,
 } from "@/graphql";
+import { checkToken } from "@/utils";
 import { fetchShopifyAdmin } from "@/lib/shopify";
 
 // Type definitions for Shopify GraphQL responses
@@ -68,6 +69,15 @@ const handleShopifyResponse = <T extends keyof CustomerResponse>(
  * @returns JSON response indicating subscription status
  */
 export async function POST(request: Request) {
+  const authHeader = request.headers.get("Authorization");
+
+  if (!checkToken(authHeader)) {
+    return NextResponse.json(
+      { message: { title: "Unauthorized" } },
+      { status: 401 }
+    );
+  }
+
   const { email } = await request.json();
 
   if (!email || !validator.isEmail(email)) {

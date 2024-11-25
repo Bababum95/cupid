@@ -9,6 +9,8 @@ import { Notice } from "@/components";
 
 import styles from "./Form.module.scss";
 
+const CUPID_PUBLIC_TOKEN = process.env.CUPID_PUBLIC_TOKEN;
+
 export const Form: FC = () => {
   const [value, setValue] = useState("");
   const [isLoading, setIsLoading] = useState(false);
@@ -25,7 +27,10 @@ export const Form: FC = () => {
     e.preventDefault();
     const res = await fetch("/api/subscribe", {
       method: "POST",
-      headers: { "Content-Type": "application/json" },
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${CUPID_PUBLIC_TOKEN}`,
+      },
       body: JSON.stringify({ email: value }),
     });
 
