@@ -3,6 +3,7 @@
 import { FC, useEffect } from "react";
 import { motion, AnimatePresence } from "motion/react";
 
+import type { Notice as NoticeType } from "@/types";
 import HappyIcon from "@/icons/happy.svg";
 import SadIcon from "@/icons/sad.svg";
 import CloseIcon from "@/icons/close.svg";
@@ -10,10 +11,7 @@ import CloseIcon from "@/icons/close.svg";
 import styles from "./Notice.module.scss";
 
 type Props = {
-  message: {
-    title: string;
-    description?: string;
-  } | null;
+  message: NoticeType | null;
   clear: () => void;
   duration?: number;
   success?: boolean;

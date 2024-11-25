@@ -4,6 +4,7 @@ import { FC, useState } from "react";
 import { useTranslations } from "next-intl";
 import classNames from "classnames";
 
+import type { Notice as NoticeType } from "@/types";
 import { Notice } from "@/components";
 
 import styles from "./Form.module.scss";
@@ -12,7 +13,7 @@ export const Form: FC = () => {
   const [value, setValue] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   const [notice, setNotice] = useState<{
-    message: { title: string } | null;
+    message: NoticeType | null;
     success?: boolean;
   }>({
     message: null,

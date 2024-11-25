@@ -48,8 +48,11 @@
 │   ├── /lib                               # Libraries and services
 │   │   ├── /slices.ts                     # 
 │   │   ├── logger.ts                      # Winston logger for the project
+│   │   ├── mongodb.ts                     # 
 │   │   ├── shopify.ts                     # Shopify integration service
 │   │   └── store.ts                       # Redux store for the project
+│   ├── /models                            #
+│   │   └── Comment.ts                     # 
 │   ├── /styles                            # Project styles
 │   │   ├── /mixins                        # SCSS mixins
 │   │   └── globals.scss                   # Global styles for the entire app

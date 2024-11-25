@@ -52,6 +52,10 @@
   padding: 8px 20px;
   font-size: 13px;
   line-height: 110%;
+
+  &:not(:disabled)::after {
+    filter: blur(16px);
+  }
 }
 
 @include media("tablet") {

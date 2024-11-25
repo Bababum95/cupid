@@ -207,6 +207,29 @@
           "content": "Ja, Cupid-Schokolade ist sicher, wenn sie wie angegeben konsumiert wird. Sie enthält keine verbotenen Substanzen oder schädliche Zusätze. Alle Inhaltsstoffe sind professionell dosiert und unterliegen strengen Qualitätskontrollen."
         }
       }
+    },
+    "Comments": {
+      "reviews": "Bewertungen",
+      "verified": "Verifiziert",
+      "write-review": "Bewertung schreiben",
+      "my-rewiew": "Meine Bewertung",
+      "submit": "Senden",
+      "name": "Vorname",
+      "review": "Deine Bewertung",
+      "notices": {
+        "success": {
+          "title": "Vielen Dank für Ihre Bewertung!",
+          "description": "Ihre Bewertung wird bald sichtbar sein."
+        },
+        "500": {
+          "title": "Etwas ist schiefgelaufen",
+          "description": "Bitte versuchen Sie es erneut."
+        },
+        "invalid-email": {
+          "title": "Ungültige E-Mail-Adresse",
+          "description": "Bitte prüfen Sie Ihre E-Mail."
+        }
+      }
     }
   },
   "Advantages": {
@@ -261,15 +284,6 @@
   },
   "Recommendations": {
     "title": "Warum Kunden Cupid empfehlen"
-  },
-  "Comments": {
-    "reviews": "Bewertungen",
-    "verified": "Verifiziert",
-    "write-review": "Bewertung schreiben",
-    "my-rewiew": "Meine Bewertung",
-    "submit": "Senden",
-    "name": "Vorname",
-    "review": "Deine Bewertung"
   },
   "Subscribe": {
     "title": "Sichere dir 10% Rabatt auf deine nächste Bestellung!",
@@ -356,7 +370,7 @@
         }
       }
     },
-    "trusted": "Vertrauen von über {amount} zufriedenen Kunden"
+    "trusted": "{amount}+ zufriedene Kunden"
   },
   "NutritionalDrawerContent": {
     "nutritional-information": "Nährwertinformationen",

@@ -12,6 +12,7 @@
   border-width: 2px;
   flex: 1;
   transition: $transition;
+  width: 100%;
 
   &::placeholder {
     color: $secondary-text;

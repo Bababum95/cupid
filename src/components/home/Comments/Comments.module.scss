@@ -24,9 +24,11 @@
 }
 
 .rating {
-  @include flex-layout(space-between);
+  display: grid;
+  grid-template-columns: minmax(80px, 100px) minmax(200px, 290px);
+  justify-content: space-between;
   margin-top: 60px;
-  gap: 40px;
+  gap: 32px 40px;
 }
 
 .info {
@@ -102,7 +104,7 @@
   border-width: 2px;
 }
 
-@include media('tablet') {
+@include media("tablet") {
   .section {
     flex-direction: column;
     margin: 144px 0;
@@ -110,5 +112,9 @@
 
   .list {
     max-width: 100%;
+  }
+
+  .rating {
+    gap: 20px 40px;
   }
 }

@@ -1,6 +1,6 @@
 .button {
-  margin-top: 32px;
   width: 100%;
+  grid-column: 2;
 }
 
 .title {
@@ -56,5 +56,35 @@
 
   @include hover {
     border-color: $text;
+  }
+}
+
+.notice {
+  @include flex-center;
+  position: fixed;
+  bottom: 30px;
+  left: 0;
+  width: 100%;
+  padding: 0 20px;
+  z-index: 30;
+}
+
+@include media("phone") {
+  .button {
+    grid-column: span 2;
+  }
+
+  .content {
+    @include flex-column;
+    flex-grow: 1;
+  }
+
+  .user {
+    flex-direction: column;
+  }
+
+  .review {
+    margin-bottom: auto;
+    max-height: 234px;
   }
 }

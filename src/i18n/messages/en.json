@@ -207,6 +207,29 @@
           "content": "Yes, Cupid Chocolate is safe when consumed as directed. It contains no illicit substances or harmful additives. All ingredients are professionally dosed and undergo rigorous quality control."
         }
       }
+    },
+    "Comments": {
+      "reviews": "Reviews",
+      "verified": "Verified",
+      "write-review": "Write a review",
+      "my-rewiew": "My Review",
+      "submit": "Send",
+      "name": "Name",
+      "review": "Your Review",
+      "notices": {
+        "success": {
+          "title": "Thank You for Your Review!",
+          "description": "Your review will be visible after moderation."
+        },
+        "500": {
+          "title": "Something Went Wrong",
+          "description": "Failed to submit. Please try again."
+        },
+        "invalid-email": {
+          "title": "Invalid Email Address",
+          "description": "Please provide a valid email and try again."
+        }
+      }
     }
   },
   "Advantages": {
@@ -261,15 +284,6 @@
   },
   "Recommendations": {
     "title": "Why Customers Recommend Cupid"
-  },
-  "Comments": {
-    "reviews": "Reviews",
-    "verified": "Verified",
-    "write-review": "Write a review",
-    "my-rewiew": "My Review",
-    "submit": "Send",
-    "name": "Name",
-    "review": "Your Review"
   },
   "Subscribe": {
     "title": "Unlock 10% Off Your Next Order!",

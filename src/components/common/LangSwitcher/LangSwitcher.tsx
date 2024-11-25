@@ -32,6 +32,14 @@ export const LangSwitcher: FC = () => {
   const [nextLocale, setNextLocale] = useState<LocaleType>("de");
   const [isOpen, setIsOpen] = useState(false);
   const [isShow, setIsShow] = useState(true);
+  const [isInitialRender, setIsInitialRender] = useState<boolean>(false);
+
+  // Check cookie on mount
+  useEffect(() => {
+    const isLangSwitcherClosed = Cookies.get("LS") === "true";
+
+    if (isLangSwitcherClosed) setIsInitialRender(true);
+  }, []);
 
   /**
    * handleChange - Form submit handler for changing the language and hiding the switcher.
@@ -75,6 +83,9 @@ export const LangSwitcher: FC = () => {
       document.removeEventListener("click", close);
     };
   }, [isOpen]);
+
+  // Avoid rendering the component until the initial cookie check is complete
+  if (isInitialRender) return null;
 
   return (
     <motion.aside

@@ -3,7 +3,7 @@ import { useTranslations } from "next-intl";
 import StarIcon from "@/icons/star.svg";
 
 import { Comment } from "./Comment";
-// import { NewComment } from "./NewComment";
+import { NewComment } from "./NewComment";
 import styles from "./Comments.module.scss";
 
 const comments = [
@@ -59,7 +59,7 @@ const comments = [
 ];
 
 export const Comments = () => {
-  const t = useTranslations("Comments");
+  const t = useTranslations("HomePage.Comments");
 
   return (
     <section id="reviews" className={styles.section}>
@@ -75,20 +75,18 @@ export const Comments = () => {
             </div>
             <p className={styles.count}>{t("reviews")}: 152</p>
           </div>
-          <div className={styles.bar}>
-            <ul>
-              {[90, 8, 2, 0, 0].map((percentage, i) => (
-                <li key={i} className={styles.item}>
-                  <span>{5 - i}</span>
-                  <span
-                    className={styles.percentage}
-                    style={{ backgroundSize: `${percentage}% 100%` }}
-                  />
-                </li>
-              ))}
-            </ul>
-            {/* <NewComment /> */}
-          </div>
+          <ul className={styles.bar}>
+            {[90, 8, 2, 0, 0].map((percentage, i) => (
+              <li key={i} className={styles.item}>
+                <span>{5 - i}</span>
+                <span
+                  className={styles.percentage}
+                  style={{ backgroundSize: `${percentage}% 100%` }}
+                />
+              </li>
+            ))}
+          </ul>
+          <NewComment />
         </div>
       </div>
       <ul

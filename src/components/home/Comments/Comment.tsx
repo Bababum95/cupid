@@ -15,7 +15,7 @@ type Props = {
 };
 
 export const Comment: FC<Props> = ({ name, rating, review, date }) => {
-  const t = useTranslations("Comments");
+  const t = useTranslations("HomePage.Comments");
 
   return (
     <li

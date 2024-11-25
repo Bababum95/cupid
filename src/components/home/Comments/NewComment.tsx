@@ -1,14 +1,17 @@
 "use client";
 
-import { FC, useRef, useState } from "react";
+import { FC, useEffect, useRef, useState } from "react";
 import { useTranslations } from "next-intl";
 import dynamic from "next/dynamic";
 import TextareaAutosize from "react-textarea-autosize";
 
-import { Button, Input, SubmitButton } from "@/components";
+import type { Notice as NoticeType } from "@/types";
+import { Button, Input, SubmitButton, Notice } from "@/components";
 import { useScrollbarWidth } from "@/hooks";
+import { useCommentsMutation } from "@/lib/slices/api";
 import StarIcon from "@/icons/star.svg";
 
+import { COMMENT_DEFAULTS } from "./config";
 import styles from "./NewComment.module.scss";
 
 const Popup = dynamic(() => import("@/components/dynamic/Popup"), {
@@ -16,20 +19,20 @@ const Popup = dynamic(() => import("@/components/dynamic/Popup"), {
 });
 
 export const NewComment: FC = () => {
+  const t = useTranslations("HomePage.Comments");
+
   const [isOpen, setIsOpen] = useState(false);
-  const [values, setValues] = useState({
-    name: "",
-    email: "",
-    content: "",
-    rating: 0,
-  });
-  const t = useTranslations("Comments");
+  const [notice, setNotice] = useState<NoticeType | null>(null);
+  const [values, setValues] =
+    useState<typeof COMMENT_DEFAULTS>(COMMENT_DEFAULTS);
+  const [createComment, { isLoading, isSuccess, isError, error }] =
+    useCommentsMutation();
   const formRef = useRef<HTMLFormElement>(null);
   useScrollbarWidth();
 
-  const handleSubmit = (evt: React.FormEvent) => {
+  const handleSubmit = async (evt: React.FormEvent) => {
     evt.preventDefault();
-    console.log("submit", evt);
+    createComment({ ...values, pageId: "home" });
   };
 
   const handleChange = (
@@ -39,17 +42,54 @@ export const NewComment: FC = () => {
   };
 
   const open = () => {
-    document.body.classList.add("no-scroll");
     setIsOpen(true);
   };
 
   const close = () => {
     setIsOpen(false);
-
-    setTimeout(() => {
-      document.body.classList.remove("no-scroll");
-    }, 200);
   };
+
+  useEffect(() => {
+    if (isSuccess) {
+      setNotice({
+        title: t("notices.success.title"),
+        description: t("notices.success.description"),
+      });
+      setValues(COMMENT_DEFAULTS);
+      close();
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [isSuccess]);
+
+  useEffect(() => {
+    if (isError) {
+      if ("data" in error) {
+        const errorData = error.data as {
+          message: NoticeType;
+          fealds?: string[];
+        };
+
+        if (errorData.message?.title) {
+          const message: NoticeType = {
+            title: t(errorData.message.title),
+          };
+
+          if (errorData.message.description) {
+            message.description = t(errorData.message.description);
+          }
+
+          setNotice(message);
+          return;
+        }
+      }
+
+      setNotice({
+        title: t("notices.500.title"),
+        description: t("notices.500.description"),
+      });
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [isError]);
 
   return (
     <>
@@ -95,18 +135,26 @@ export const NewComment: FC = () => {
           </fieldset>
           <TextareaAutosize
             required
-            name="content"
+            name="message"
             placeholder={t("review")}
             className={styles.review}
             onChange={handleChange}
-            value={values.content}
+            value={values.message}
           />
           <SubmitButton
             label={t("submit")}
             isActive={values.rating > 0 && !!formRef.current?.checkValidity()}
+            isLoading={isLoading}
           />
         </form>
       </Popup>
+      <div className={styles.notice}>
+        <Notice
+          message={notice}
+          success={isSuccess}
+          clear={() => setNotice(null)}
+        />
+      </div>
     </>
   );
 };

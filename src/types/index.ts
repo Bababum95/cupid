@@ -1,6 +1,7 @@
 export type { GiftType, GiftsResponse } from "./gift";
 export type { Price, PriceNode } from "./price";
 export type { Image } from "./image";
+export type { Notice } from "./notice";
 export type {
   CreateCartInput,
   CartState,
