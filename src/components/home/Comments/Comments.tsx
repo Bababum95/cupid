@@ -6,6 +6,8 @@ import { Comment } from "./Comment";
 import { NewComment } from "./NewComment";
 import styles from "./Comments.module.scss";
 
+const BASE_URL = process.env.BASE_URL
+
 const comments = [
   {
     name: "Lisa M.",
@@ -92,8 +94,18 @@ export const Comments = () => {
       <ul
         itemScope
         itemType="https://schema.org/ItemList"
+        itemProp="review"
         className={styles.list}
       >
+        <div
+          itemProp="itemReviewed"
+          itemScope
+          itemType="https://schema.org/Product"
+        >
+          <meta itemProp="name" content="Cupid Chocolate" />
+          <meta itemProp="brand" content="Cupid" />
+          <link itemProp="url" href={`${BASE_URL}/sex-chocolate`} />
+        </div>
         {comments.map(({ name, review, rating, date }, i) => (
           <Comment
             key={i}

@@ -3,7 +3,7 @@
   position: relative;
   max-width: $home-mw;
   margin: 270px auto;
-  padding: 0 20px;
+  padding: var(--header-height, 0) 20px 0;
   gap: 20px;
 }
 

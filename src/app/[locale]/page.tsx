@@ -20,6 +20,7 @@ import {
   Ingredients,
   Recommendations,
   Slider,
+  Stars,
   Video,
 } from "@/components/home";
 import { DEFAULLT_LOCALE } from "@/i18n/config";
@@ -77,6 +78,9 @@ export default function Page({
   const t = useTranslations("HomePage");
   const metadata = useTranslations("Metadata.main");
   const commonMetadata = useTranslations("Metadata.common");
+  const chocolateMetadata = useTranslations("Metadata.chocolate");
+  const homePage = commonMetadata("home.url");
+  const chocolateUrl = homePage + "sex-chocolate";
 
   return (
     <>
@@ -101,6 +105,12 @@ export default function Page({
             </p>
             <Link href="/sex-chocolate" className={styles.button}>
               {t("by-now")}
+            </Link>
+            <Link href="/#reviews" className={styles.stars}>
+              <p>
+                <span>152</span> {t("verified-5-star-reviews")}
+              </p>
+              <Stars />
             </Link>
           </div>
         </div>
@@ -225,6 +235,145 @@ export default function Page({
                     },
                   },
                 ],
+              },
+              {
+                "@type": "Product",
+                "@id": "https://cupidchoco.com/sex-chocolate#product",
+                name: chocolateMetadata("name"),
+                description: chocolateMetadata("description-graph"),
+                sku: "CPD01",
+                mpn: "CPD01",
+                gtin13: "0721688150398",
+                brand: {
+                  "@type": "Brand",
+                  name: "Cupid",
+                },
+                image: [
+                  "https://cdn.shopify.com/s/files/1/0871/6163/5140/files/cupid-choco2.jpg?v=1730910763",
+                  "https://cdn.shopify.com/s/files/1/0871/6163/5140/files/Boxes1_ca652e9a-aba4-4e24-8599-a9020f30ff3e.jpg?v=173097889",
+                  "https://cdn.shopify.com/s/files/1/0871/6163/5140/files/Boxes2.jpg?v=1730905243",
+                  "https://cdn.shopify.com/s/files/1/0871/6163/5140/files/Boxes3.jpg?v=1730905260",
+                ],
+                url: chocolateUrl,
+                category: chocolateMetadata("category"),
+                color: chocolateMetadata("color"),
+                material: chocolateMetadata("material"),
+                weight: "87g",
+                size: "87g bar",
+                countryOfOrigin: "DE",
+                manufacturer: {
+                  "@type": "Organization",
+                  name: "SM MIR GmbH",
+                  address: {
+                    "@type": "PostalAddress",
+                    streetAddress: "Mühlenstr. 8a",
+                    addressLocality: "Berlin",
+                    postalCode: "14167",
+                    addressCountry: "DE",
+                  },
+                },
+                additionalProperty: Array.from({ length: 6 }, (_, i) => {
+                  return {
+                    "@type": "PropertyValue",
+                    name: chocolateMetadata(`additional.${i}.name`),
+                    value: chocolateMetadata(`additional.${i}.value`),
+                  };
+                }),
+                nutrition: {
+                  "@type": "NutritionInformation",
+                  servingSize: "14.5 grams",
+                  calories: "85 kcal",
+                  fatContent: "6 g",
+                  saturatedFatContent: "3.5 g",
+                  carbohydrateContent: "8 g",
+                  sugarContent: "5 g",
+                  proteinContent: "1.2 g",
+                  fiberContent: "2 g",
+                  sodiumContent: "0 mg",
+                },
+                offers: {
+                  "@type": "Offer",
+                  priceCurrency: "EUR",
+                  price: "29.99",
+                  priceValidUntil: "2025-12-31",
+                  itemCondition: "https://schema.org/NewCondition",
+                  availability: "https://schema.org/InStock",
+                  url: chocolateUrl,
+                  seller: {
+                    "@type": "Organization",
+                    name: "Cupid",
+                  },
+                  shippingDetails: [
+                    {
+                      "@type": "OfferShippingDetails",
+                      shippingRate: {
+                        "@type": "MonetaryAmount",
+                        value: "0.00",
+                        currency: "EUR",
+                      },
+                      shippingDestination: {
+                        "@type": "DefinedRegion",
+                        addressCountry: "DE",
+                      },
+                      deliveryTime: {
+                        "@type": "ShippingDeliveryTime",
+                        handlingTime: {
+                          "@type": "QuantitativeValue",
+                          minValue: 1,
+                          maxValue: 2,
+                          unitCode: "DAY",
+                        },
+                        transitTime: {
+                          "@type": "QuantitativeValue",
+                          minValue: 1,
+                          maxValue: 2,
+                          unitCode: "DAY",
+                        },
+                      },
+                    },
+                    {
+                      "@type": "OfferShippingDetails",
+                      shippingRate: {
+                        "@type": "MonetaryAmount",
+                        value: "3.95",
+                        currency: "EUR",
+                      },
+                      shippingDestination: {
+                        "@type": "DefinedRegion",
+                        addressCountry: ["AT", "CH", "IT", "NL"],
+                      },
+                      deliveryTime: {
+                        "@type": "ShippingDeliveryTime",
+                        handlingTime: {
+                          "@type": "QuantitativeValue",
+                          minValue: 1,
+                          maxValue: 2,
+                          unitCode: "DAY",
+                        },
+                        transitTime: {
+                          "@type": "QuantitativeValue",
+                          minValue: 3,
+                          maxValue: 5,
+                          unitCode: "DAY",
+                        },
+                      },
+                    },
+                  ],
+                },
+                returnPolicy: {
+                  "@type": "MerchantReturnPolicy",
+                  name: "Return Policy",
+                  url: "https://cupidchoco.com/return-policy",
+                  merchantReturnDays: 14,
+                  returnFees: "https://schema.org/RestockingFees",
+                  returnPolicyCategory:
+                    "https://schema.org/ReturnableWithRestockingFee",
+                },
+                aggregateRating: {
+                  "@type": "AggregateRating",
+                  ratingValue: "4.9",
+                  reviewCount: "153",
+                },
               },
             ],
           }),

@@ -49,6 +49,24 @@
   border-radius: 20px;
 }
 
+.stars {
+  @include flex-column;
+  position: absolute;
+  right: 0;
+  top: 12px;
+  font-size: clamp(1.0625rem, 0.9696rem + 0.381vw, 1.3125rem);
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  letter-spacing: 0.21px;
+  gap: 8px;
+  align-items: flex-end;
+
+  span {
+    color: $text;
+  }
+}
+
 @include media("tablet") {
   .content {
     position: relative;
@@ -56,6 +74,18 @@
     left: 0;
     transform: none;
     margin-top: 28px;
+  }
+
+  .stars {
+    position: relative;
+    top: 0;
+    left: 0;
+    align-items: flex-start;
+    margin-top: 20px;
+
+    p {
+      order: 2;
+    }
   }
 }
 

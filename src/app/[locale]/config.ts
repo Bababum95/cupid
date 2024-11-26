@@ -92,10 +92,15 @@ export const VIDEOS = [
       "Hab heute die Lieferung bekommen und jetzt geht's direkt zum Date.. <span>Übernachtung inklusive</span>",
   },
   {
-    name: "IMG_4439",
+    name: "IMG_4436",
     description:
       "<span>Mit der Schoki und der Augenbinde</span> wird das heute ein richtig krasser Abend. Danke Cupid für das Geschenk! ",
   },
+  // {
+  //   name: "IMG_4439",
+  //   description:
+  //     "<span>Mit der Schoki und der Augenbinde</span> wird das heute ein richtig krasser Abend. Danke Cupid für das Geschenk! ",
+  // },
   {
     name: "IMG_4435",
     description:
