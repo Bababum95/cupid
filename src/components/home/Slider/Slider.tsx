@@ -49,6 +49,7 @@ export const Slider: FC<Props> = ({ title, children, gap = DEFAULT_GAP }) => {
       className={styles.section}
       spaceBetween={gap}
       slidesPerView="auto"
+      loop={true}
       breakpoints={{
         0: {
           spaceBetween: MOBILE_GAP,

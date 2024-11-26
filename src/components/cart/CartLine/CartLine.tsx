@@ -91,7 +91,7 @@ export const CartLine: FC<Props> = ({
         )}
         <p className={styles.description}>{description}</p>
         <div className={styles.bottom}>
-          {gift && (
+          {gift ? (
             <button
               className={classNames(styles.button, {
                 [styles.loading]: isLoading.gift,
@@ -101,8 +101,9 @@ export const CartLine: FC<Props> = ({
             >
               {t("pick-up-your-gift")}
             </button>
+          ) : (
+            <Price price={price} old={oldPrice} />
           )}
-          <Price price={price} old={oldPrice} />
         </div>
       </div>
     </motion.li>

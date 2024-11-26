@@ -47,6 +47,7 @@ export const Video: FC<Props> = ({ description, poster, children }) => {
           muted={isMuted}
           preload="metadata"
           poster={poster}
+          onClick={togglePlay}
         >
           {children}
         </video>

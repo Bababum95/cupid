@@ -5,7 +5,6 @@ import { Provider } from "react-redux";
 import { usePathname, useSearchParams } from "next/navigation";
 import { useShopifyCookies } from "@shopify/hydrogen-react";
 import * as CookieConsent from "vanilla-cookieconsent";
-import Intercom from "@intercom/messenger-js-sdk";
 
 import "vanilla-cookieconsent/dist/cookieconsent.css";
 
@@ -15,7 +14,6 @@ import { sendPageView } from "@/lib/shopify";
 import { COOKIE_CONSENT_CONFIG } from "./config";
 
 const PUBLIC_GA_ID = process.env.PUBLIC_GA_ID;
-const INTERCOM_APP_ID = process.env.INTERCOM_APP_ID;
 
 export default function StoreProvider({
   children,
@@ -31,7 +29,6 @@ export default function StoreProvider({
   useEffect(() => {
     document.documentElement.classList.add("cc--elegant-black");
     CookieConsent.run(COOKIE_CONSENT_CONFIG);
-    if (INTERCOM_APP_ID) Intercom({ app_id: INTERCOM_APP_ID });
   }, []);
 
   useEffect(() => {

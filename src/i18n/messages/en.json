@@ -217,13 +217,13 @@
       "name": "Name",
       "review": "Your Review",
       "notices": {
-        "success": {
-          "title": "Thank You for Your Review!",
-          "description": "Your review will be visible after moderation."
-        },
         "500": {
           "title": "Something Went Wrong",
           "description": "Failed to submit. Please try again."
+        },
+        "success": {
+          "title": "Thank You for Your Review!",
+          "description": "Your review will be visible after moderation."
         },
         "invalid-email": {
           "title": "Invalid Email Address",
@@ -403,7 +403,7 @@
     "checkout": "Checkout",
     "complete-your-experience": "Complete Your Experience",
     "pick-up-your-gift": "Pick up your gift",
-    "free-gift": "Free Gift",
+    "free-gift": "Limited offer",
     "spend": "Spend {amount} € to Receive a Free Gift!",
     "more-until-your-free-gift": "more until your free gift!",
     "awesome": "Awesome! Free Gift Unlocked!",

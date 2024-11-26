@@ -5,7 +5,13 @@ import { cookies } from "next/headers";
 import Image from "next/image";
 import Link from "next/link";
 
-import { Subscribe, Header, Footer, LangSwitcher } from "@/components";
+import {
+  Subscribe,
+  Header,
+  Footer,
+  LangSwitcher,
+  Intercom,
+} from "@/components";
 import {
   Advantages,
   Comments,
@@ -124,6 +130,7 @@ export default function Page({
         <Subscribe />
       </main>
       <Footer />
+      <Intercom />
       {/* JSON-LD Schema Data */}
       <script
         type="application/ld+json"

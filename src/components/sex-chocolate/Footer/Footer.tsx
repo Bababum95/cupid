@@ -2,14 +2,18 @@
 
 import { FC, useState } from "react";
 import { useTranslations } from "next-intl";
+import dynamic from "next/dynamic";
 
-import { SideDrawer } from "@/components";
 import { useScrollbarWidth } from "@/hooks";
 
 import { details } from "./config";
 import { BenefitsDrawerContent } from "./BenefitsDrawerContent";
 import { NutritionalDrawerContent } from "./NutritionalDrawerContent";
 import styles from "./Footer.module.scss";
+
+const SideDrawer = dynamic(() => import("@/components/dynamic/SideDrawer"), {
+  ssr: false,
+});
 
 export const Footer: FC = () => {
   const [drawer, setDrawer] = useState<

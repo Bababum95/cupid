@@ -1,141 +1,46 @@
-@mixin item {
-  @include flex-layout(flex-start, center);
-  gap: 8px;
-  padding: 12px 20px;
+.button {
+  @include flex-center;
+  color: $text;
+  border-radius: 50px;
+  background-color: #1a1a1a;
+  height: 28px;
+  padding: 5px 10px;
   transition: $transition;
-  background-color: $page-bg;
-  user-select: none;
 
   @include hover {
-    background-color: #000;
+    background-color: #333;
   }
 }
 
-.wrapper {
-  background-color: #121212;
-  position: relative;
-  z-index: 11;
-  display: block;
-}
-
-.content {
-  @include flex-layout(space-between, center);
-  max-width: $home-mw;
-  margin: 0 auto;
-  padding: 14px 20px;
-  gap: 16px;
-}
-
-.text {
+.title {
   color: $text;
+  font-size: 21px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  margin-bottom: 40px;
+}
+
+.lang {
+  width: 100%;
+  height: 60px;
+  padding: 16px 20px;
+  border-radius: 16px;
+  border: $grey-line;
+  background-color: transparent;
+  color: $secondary-text;
+  transition: $transition;
   font-size: 15px;
   font-style: normal;
   font-weight: 500;
   line-height: normal;
-}
 
-.form {
-  @include flex-layout(flex-end, center);
-  gap: 8px;
-  flex: 1;
-  width: 100%;
-}
-
-.dropdown {
-  flex: 1;
-  max-width: 320px;
-  position: relative;
-  cursor: pointer;
-}
-
-.active {
-  @include item;
-  position: relative;
-  z-index: 10;
-}
-
-.arrow {
-  margin-left: auto;
-  color: $text;
-}
-
-.label {
-  color: $text;
-  font-size: 15px;
-  font-style: normal;
-  font-weight: 600;
-  line-height: normal;
-}
-
-.list {
-  position: absolute;
-  top: 100%;
-  left: 0;
-  width: 100%;
-  border-radius: 0 0 12px 12px;
-  overflow: hidden;
-}
-
-.item {
-  @include item;
-  border-top: $grey-line;
-
-  &.selected {
-    display: none;
+  &:not(:last-child) {
+    margin-bottom: 8px;
   }
-}
-
-.submit {
-  padding: 10px 26px;
-  border-radius: 68px;
-  border: 2px solid $accent;
-  color: $text;
-  font-size: 15px;
-  font-style: normal;
-  font-weight: 600;
-  line-height: normal;
-  background-color: transparent;
-  transition: $transition;
-
-  @include hover {
-    background-color: rgba(124, 51, 51, 0.08);
-  }
-}
-
-.close {
-  @include flex-center;
-  width: 35px;
-  height: 35px;
-  background-color: transparent;
-  color: $secondary-text;
-  transition: $transition;
 
   @include hover {
     color: $text;
-  }
-}
-
-@include media("tablet-small") {
-  .content {
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: flex-start;
-    padding-block: 16px;
-  }
-
-  .form {
-    justify-content: space-between;
-  }
-
-  .label,
-  .submit {
-    font-size: 13px;
-  }
-
-  .close {
-    position: absolute;
-    top: 10px;
-    right: 20px;
-    color: $text;
+    border-color: #333;
   }
 }

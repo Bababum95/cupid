@@ -1,5 +1,8 @@
+"use client";
+
 import { FC } from "react";
 import { AnimatePresence, motion } from "motion/react";
+import ReactDOM from "react-dom";
 import classNames from "classnames";
 import Link from "next/link";
 
@@ -15,14 +18,14 @@ type Props = {
   children?: React.ReactNode;
 };
 
-export const SideDrawer: FC<Props> = ({
+const SideDrawer: FC<Props> = ({
   title,
   onClose,
   isOpen,
   side = "right",
   children,
 }) => {
-  return (
+  return ReactDOM.createPortal(
     <AnimatePresence initial={false}>
       {isOpen && (
         <>
@@ -72,7 +75,8 @@ export const SideDrawer: FC<Props> = ({
           </motion.aside>
         </>
       )}
-    </AnimatePresence>
+    </AnimatePresence>,
+    document.body
   );
 };
 
@@ -93,3 +97,5 @@ const Line: FC<LineProps> = ({ rotate }) => {
     />
   );
 };
+
+export default SideDrawer;

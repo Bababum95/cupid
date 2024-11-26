@@ -12,6 +12,8 @@ import ArrowIcon from "@/icons/arrow.svg";
 import { LINKS } from "./config";
 import styles from "./FooterMenu.module.scss";
 
+const WHATSAPP_URI = process.env.WHATSAPP_URI;
+
 type ColumnProps = {
   name: string;
   children: React.ReactNode;
@@ -118,11 +120,7 @@ const FooterMenu = () => {
           <li className={styles.li}>SM MIR GmbH Berlin, Deutschland</li>
           <li className={styles.li}>info@cupidchoco.com</li>
           <li className={styles.link}>
-            <a
-              href="https://wa.me/4915226740425"
-              rel="noreferrer nofollow"
-              target="_blank"
-            >
+            <a href={WHATSAPP_URI} rel="noreferrer nofollow" target="_blank">
               WhatsApp
             </a>
           </li>

@@ -16,6 +16,7 @@ const nextConfig = {
     INTERCOM_APP_ID: process.env.INTERCOM_APP_ID,
     BASE_URL: process.env.BASE_URL,
     CUPID_PUBLIC_TOKEN: process.env.CUPID_PUBLIC_TOKEN,
+    WHATSAPP_URI: process.env.WHATSAPP_URI,
   },
   images: {
     remotePatterns: [

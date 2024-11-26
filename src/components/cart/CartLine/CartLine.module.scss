@@ -80,8 +80,7 @@
 
 .button {
   @include add-to-cart-button;
-  max-width: 180px;
-  flex: 1;
+  padding: 10px 26px;
 
   &.loading {
     @include button-loading;

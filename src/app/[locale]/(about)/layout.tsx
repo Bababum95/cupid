@@ -1,6 +1,12 @@
 import { cookies } from "next/headers";
 
-import { Subscribe, Header, Footer, LangSwitcher } from "@/components";
+import {
+  Subscribe,
+  Header,
+  Footer,
+  LangSwitcher,
+  Intercom,
+} from "@/components";
 import { Wrapper } from "@/components/about";
 import { DEFAULLT_LOCALE } from "@/i18n/config";
 
@@ -22,6 +28,7 @@ export default function AboutLayout({
         <Subscribe />
       </main>
       <Footer />
+      <Intercom />
     </>
   );
 }

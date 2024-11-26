@@ -43,6 +43,10 @@
   max-width: 602px;
 }
 
+.small {
+  max-width: 350px;
+}
+
 @include media("phone") {
   .large {
     @include flex-column;

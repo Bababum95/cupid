@@ -31,7 +31,6 @@ export const Catalog: FC<Props> = ({ products, isLoading }) => {
   useEffect(() => {
     if (!isDesktop) return;
 
-    console.log(isDesktop);
     document.body.classList.add("no-scroll");
 
     return () => {

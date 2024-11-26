@@ -1,20 +1,10 @@
 import { useTranslations } from "next-intl";
-import dynamic from "next/dynamic";
 
+import { Menu, LangSwitcher } from "@/components";
 import { Link } from "@/i18n/routing";
 import { default as Logotype } from "@/icons/logotype.svg";
 
 import styles from "./Header.module.scss";
-
-const Menu = dynamic(() => import("@/components/dynamic/Menu"), {
-  ssr: false,
-});
-const PopupLangSwitcher = dynamic(
-  () => import("@/components/dynamic/PopupLangSwitcher"),
-  {
-    ssr: false,
-  }
-);
 
 export const Header = () => {
   const t = useTranslations("HomePage");
@@ -32,7 +22,7 @@ export const Header = () => {
           <Link href="/faq">{t("faq")}</Link>
         </nav>
         <div className={styles.end}>
-          <PopupLangSwitcher />
+          <LangSwitcher />
           <Link className={styles.button} href="/sex-chocolate">
             {t("by-now")}
           </Link>
