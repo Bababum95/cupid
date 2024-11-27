@@ -44,9 +44,9 @@ export default function StoreProvider({
     }
     if (INTERCOM_APP_ID) {
       if (HIDE_INTERCOM_PATHS.includes(pathname)) {
-        IntercomBoot({ app_id: INTERCOM_APP_ID });
-      } else {
         IntercomShutdown();
+      } else {
+        IntercomBoot({ app_id: INTERCOM_APP_ID });
       }
     }
     sendPageView();
