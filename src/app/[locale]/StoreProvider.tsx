@@ -7,8 +7,8 @@ import { useShopifyCookies } from "@shopify/hydrogen-react";
 import * as CookieConsent from "vanilla-cookieconsent";
 import {
   Intercom,
-  show as IntercomShow,
-  hide as IntercomHide,
+  boot as IntercomBoot,
+  shutdown as IntercomShutdown,
 } from "@intercom/messenger-js-sdk";
 
 import "vanilla-cookieconsent/dist/cookieconsent.css";
@@ -44,9 +44,9 @@ export default function StoreProvider({
     }
     if (INTERCOM_APP_ID) {
       if (HIDE_INTERCOM_PATHS.includes(pathname)) {
-        IntercomHide();
+        IntercomBoot({ app_id: INTERCOM_APP_ID });
       } else {
-        IntercomShow();
+        IntercomShutdown();
       }
     }
     sendPageView();
