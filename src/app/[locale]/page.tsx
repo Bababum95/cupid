@@ -17,7 +17,7 @@ import {
   FAQ,
   Gallery,
   Ingredients,
-  // Marquee,
+  Marquee,
   Recommendations,
   Slider,
   Stars,
@@ -114,7 +114,7 @@ export default function Page({
             </Link>
           </div>
         </div>
-        {/* <Marquee /> */}
+        <Marquee />
         <Advantages />
         <Recommendations />
         <Ingredients />
