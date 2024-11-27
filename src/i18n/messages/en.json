@@ -127,6 +127,17 @@
     "orders": "My Orders",
     "born-from-love": "Born from Love, Made for Connection",
     "born-from-love-text": "Cupid was created to help couples reconnect in today's fast-paced world. Inspired by love and personal experience, our founder Nico, with a background in natural health, developed Cupid's unique blend to reignite intimacy and bring passion back into relationships.",
+    "Marquee": {
+      "30min": "Works in 30 Minutes",
+      "delivery": "Free Delivery",
+      "discreet": "Discreet Packaging",
+      "germany": "German Made",
+      "natural": "All Natural Ingredients",
+      "quality": "Quality Ingredients",
+      "superfood": "With Superfoods",
+      "support": "Fast Support",
+      "vegan": "100% Vegan"
+    },
     "FAQ": {
       "title": "Frequently Asked Questions",
       "show-more": "More Questions",

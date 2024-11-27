@@ -1,0 +1,42 @@
+.wrapper {
+  @include flex-layout(flex-start, center);
+  width: 100%;
+  pointer-events: none;
+  padding: 12px 0;
+  background-color: $accent;
+  overflow: hidden;
+  margin: 120px 0;
+}
+
+.list {
+  @include flex-layout(space-between, center);
+  animation: marquee 42s linear infinite;
+  gap: 40px;
+  min-width: 100vw;
+  padding-inline: 20px;
+  flex-shrink: 0;
+  transform: translateX(0%);
+  animation-play-state: running;
+  will-change: transform;
+}
+
+.item {
+  @include flex-center;
+  gap: 12px;
+  white-space: nowrap;
+  color: $text;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-100%);
+  }
+}

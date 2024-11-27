@@ -127,6 +127,17 @@
     "orders": "Meine Bestellungen",
     "born-from-love": "Aus Liebe geboren, für Verbindung gemacht",
     "born-from-love-text": "Cupid wurde entwickelt, um Paaren in der heutigen schnelllebigen Welt zu helfen, wieder zueinander zu finden. Inspiriert von Liebe und persönlichen Erfahrungen wurde die einzigartige Mischung von Cupid geschaffen, um die Intimität neu zu entfachen und die Leidenschaft in Beziehungen zurückzubringen.",
+    "Marquee": {
+      "30min": "Wirkung in 30 Minuten",
+      "delivery": "Kostenloser Versand",
+      "discreet": "Diskrete Verpackung",
+      "germany": "Hergestellt in Deutschland",
+      "natural": "100% natürliche Zutaten",
+      "quality": "Hochwertige Inhaltsstoffe",
+      "superfood": "Mit Superfoods",
+      "support": "Schneller Support",
+      "vegan": "100% vegan"
+    },
     "FAQ": {
       "title": "Häufig gestellte Fragen",
       "show-more": "Weitere Fragen",

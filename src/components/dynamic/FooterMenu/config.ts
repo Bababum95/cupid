@@ -1,9 +1,11 @@
+const WHATSAPP_URI = process.env.WHATSAPP_URI as string;
+
 export const LINKS = [
   {
     name: "info",
     list: [
       { label: "about", href: "#" },
-      { label: "contact-us", href: "https://my.cupidchoco.com/" },
+      { label: "contact-us", href: WHATSAPP_URI },
       { label: "faq", href: "/faq" },
       { label: "shiping", href: "/refund-policy" },
       { label: "order", href: "https://my.cupidchoco.com/" },
