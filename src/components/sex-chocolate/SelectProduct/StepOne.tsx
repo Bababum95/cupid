@@ -2,6 +2,7 @@
 
 import { FC, useRef } from "react";
 import { useTranslations } from "next-intl";
+import { useInView } from "motion/react";
 
 import { dataUtils } from "@/utils";
 import { SubmitButton } from "@/components";
@@ -27,10 +28,12 @@ export const StepOne: FC<Props> = ({
   nextStep,
 }) => {
   const buttonRef = useRef<HTMLButtonElement>(null);
+  const isInView = useInView(buttonRef)
   const t = useTranslations("SexChocolate");
 
   const handleSelectVariant = (product: VariantProductType) => {
     setSelectedVariant(product);
+    console.log(isInView)
 
     // buttonRef.current?.scrollIntoView({
     //   behavior: "smooth",
@@ -42,7 +45,7 @@ export const StepOne: FC<Props> = ({
     //     behavior: "smooth",
     //     block: "nearest",
     //   });
-    // }, 300);
+    // }, 100);
   };
 
   return (

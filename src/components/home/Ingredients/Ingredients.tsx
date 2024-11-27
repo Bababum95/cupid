@@ -3,8 +3,15 @@
 import { useRef, useState, useEffect } from "react";
 import { useScroll, useMotionValueEvent } from "motion/react";
 import { useTranslations } from "next-intl";
+import dynamic from "next/dynamic";
+
+import { NutritionalDrawerContent } from "@/components";
 
 import styles from "./Ingredients.module.scss";
+
+const SideDrawer = dynamic(() => import("@/components/dynamic/SideDrawer"), {
+  ssr: false,
+});
 
 const LIST_OF_SLIDES = Array.from({ length: 6 }, (_, i) => i + 1);
 const TOTAL_FRAMES = 108;
@@ -17,12 +24,13 @@ const CHUNK_SIZE = 20;
  */
 export const Ingredients = () => {
   const [images, setImages] = useState<HTMLImageElement[]>([]);
+  const [currentChunk, setCurrentChunk] = useState(0);
+  const [drawerIsOpen, setDrawerIsOpen] = useState(false);
   const sectionRef = useRef<HTMLElement>(null);
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const listRef = useRef<HTMLUListElement>(null);
   const { scrollYProgress } = useScroll({ target: sectionRef });
-  const t = useTranslations("Ingredients");
-  const [currentChunk, setCurrentChunk] = useState(0);
+  const t = useTranslations("HomePage.Ingredients");
 
   /**
    * Loads a chunk of images and caches them in the images array.
@@ -141,7 +149,17 @@ export const Ingredients = () => {
             </li>
           ))}
         </ul>
+        <button className={styles.button} onClick={() => setDrawerIsOpen(true)}>
+          {t("supplemen-facts")}
+        </button>
       </div>
+      <SideDrawer
+        isOpen={drawerIsOpen}
+        onClose={() => setDrawerIsOpen(false)}
+        title={""}
+      >
+        <NutritionalDrawerContent />
+      </SideDrawer>
     </section>
   );
 };

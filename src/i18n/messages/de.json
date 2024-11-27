@@ -138,6 +138,43 @@
       "support": "Schneller Support",
       "vegan": "100% vegan"
     },
+    "Ingredients": {
+      "title": "Warum diese Zutaten so gut funktionieren",
+      "list": {
+        "1": {
+          "name": "Dunkle Schokolade",
+          "property": "Natürliches Aphrodisiakum",
+          "description": "Enthält <span>Phenylethylamin</span>, bekannt als das \"<span>Liebeschemikalie</span>\", das die Stimmung hebt und die Ausschüttung von Endorphinen stimuliert. Es erhöht auch den Serotoninspiegel, fördert Entspannung und schafft die Grundlage für Intimität"
+        },
+        "2": {
+          "name": "Schwarzer Maca-Extrakt",
+          "property": "Libidoverstärker",
+          "description": "Traditionell als natürliches Mittel verwendet, um sexuelles Verlangen und Ausdauer zu steigern. Schwarzer Maca ist reich an Nährstoffen, die helfen, Hormone auszugleichen, Energie zu verbessern und die Libido für Männer und Frauen zu steigern."
+        },
+        "3": {
+          "name": "L-Arginin",
+          "property": "Blutfluss- & Libido-Booster",
+          "description": "Eine Aminosäure, die die Produktion von Stickstoffmonoxid erhöht, die Blutgefäße erweitert und die Durchblutung verbessert. Es wurde als Behandlung zur Steigerung der sexuellen Aktivität bei Frauen verwendet, um Empfindungen, physische Reaktionen und allgemeine sexuelle Zufriedenheit während intimer Momente zu steigern"
+        },
+        "4": {
+          "name": "Panax Ginseng",
+          "property": "Leistungssteigerer & Aphrodisiakum",
+          "description": "Bekannt als der \"König aller Kräuter\", wird es in der traditionellen chinesischen Medizin zur Steigerung der sexuellen Aktivität verwendet. Der aktive Inhaltsstoff, Ginsenosid, hat positive Effekte auf die Libido, die Qualität der Erektion und die sexuelle Erregung. Sie helfen auch, die Spermienqualität zu verbessern, die sexuelle Leistung zu steigern und die allgemeine Zufriedenheit zu erhöhen."
+        },
+        "5": {
+          "name": "Guarana-Extrakt",
+          "property": "Natürlicher Energizer & Aphrodisiakum",
+          "description": "Guarana erhöht die Energie, reduziert Müdigkeit und unterstützt die allgemeine Vitalität mit Antioxidantien und natürlichem Koffein. Es hat sich gezeigt, dass es die Konzentration verbessert, die Ausdauer erhöht und die Libido steigert, was zu einer verbesserten Leistung und erhöhten Intimität beiträgt."
+        },
+        "6": {
+          "name": "Taurin",
+          "property": "Fokus- & Energiesteigerung",
+          "description": "Taurin hilft, das Energieniveau und den Fokus aufrechtzuerhalten, reduziert Stress und unterstützt die Muskelfunktion während intimer Momente. Dies schafft das ideale Gleichgewicht zwischen Entspannung und Wachsamkeit für eine intensivere Verbundenheit."
+        }
+      },
+      "read-the-study": "Die Studie lesen",
+      "supplemen-facts": "Nahrungsergänzung Fakten"
+    },
     "FAQ": {
       "title": "Häufig gestellte Fragen",
       "show-more": "Weitere Fragen",
@@ -229,13 +266,13 @@
       "name": "Vorname",
       "review": "Deine Bewertung",
       "notices": {
-        "success": {
-          "title": "Vielen Dank für Ihre Bewertung!",
-          "description": "Ihre Bewertung wird bald sichtbar sein."
-        },
         "500": {
           "title": "Etwas ist schiefgelaufen",
           "description": "Bitte versuchen Sie es erneut."
+        },
+        "success": {
+          "title": "Vielen Dank für Ihre Bewertung!",
+          "description": "Ihre Bewertung wird bald sichtbar sein."
         },
         "invalid-email": {
           "title": "Ungültige E-Mail-Adresse",
@@ -257,42 +294,6 @@
     "trusted-text": "Ein Favorit bei Paaren weltweit",
     "fast": "Schneller & Kostenloser Versand",
     "fast-text": "Genieße Cupid ohne zusätzliche Kosten"
-  },
-  "Ingredients": {
-    "title": "Warum diese Zutaten so gut funktionieren",
-    "list": {
-      "1": {
-        "name": "Dunkle Schokolade",
-        "property": "Natürliches Aphrodisiakum",
-        "description": "Enthält <span>Phenylethylamin</span>, bekannt als das \"<span>Liebeschemikalie</span>\", das die Stimmung hebt und die Ausschüttung von Endorphinen stimuliert. Es erhöht auch den Serotoninspiegel, fördert Entspannung und schafft die Grundlage für Intimität"
-      },
-      "2": {
-        "name": "Schwarzer Maca-Extrakt",
-        "property": "Libidoverstärker",
-        "description": "Traditionell als natürliches Mittel verwendet, um sexuelles Verlangen und Ausdauer zu steigern. Schwarzer Maca ist reich an Nährstoffen, die helfen, Hormone auszugleichen, Energie zu verbessern und die Libido für Männer und Frauen zu steigern."
-      },
-      "3": {
-        "name": "L-Arginin",
-        "property": "Blutfluss- & Libido-Booster",
-        "description": "Eine Aminosäure, die die Produktion von Stickstoffmonoxid erhöht, die Blutgefäße erweitert und die Durchblutung verbessert. Es wurde als Behandlung zur Steigerung der sexuellen Aktivität bei Frauen verwendet, um Empfindungen, physische Reaktionen und allgemeine sexuelle Zufriedenheit während intimer Momente zu steigern"
-      },
-      "4": {
-        "name": "Panax Ginseng",
-        "property": "Leistungssteigerer & Aphrodisiakum",
-        "description": "Bekannt als der \"König aller Kräuter\", wird es in der traditionellen chinesischen Medizin zur Steigerung der sexuellen Aktivität verwendet. Der aktive Inhaltsstoff, Ginsenosid, hat positive Effekte auf die Libido, die Qualität der Erektion und die sexuelle Erregung. Sie helfen auch, die Spermienqualität zu verbessern, die sexuelle Leistung zu steigern und die allgemeine Zufriedenheit zu erhöhen."
-      },
-      "5": {
-        "name": "Guarana-Extrakt",
-        "property": "Natürlicher Energizer & Aphrodisiakum",
-        "description": "Guarana erhöht die Energie, reduziert Müdigkeit und unterstützt die allgemeine Vitalität mit Antioxidantien und natürlichem Koffein. Es hat sich gezeigt, dass es die Konzentration verbessert, die Ausdauer erhöht und die Libido steigert, was zu einer verbesserten Leistung und erhöhten Intimität beiträgt."
-      },
-      "6": {
-        "name": "Taurin",
-        "property": "Fokus- & Energiesteigerung",
-        "description": "Taurin hilft, das Energieniveau und den Fokus aufrechtzuerhalten, reduziert Stress und unterstützt die Muskelfunktion während intimer Momente. Dies schafft das ideale Gleichgewicht zwischen Entspannung und Wachsamkeit für eine intensivere Verbundenheit."
-      }
-    },
-    "read-the-study": "Die Studie lesen"
   },
   "Recommendations": {
     "title": "Warum Kunden Cupid empfehlen"

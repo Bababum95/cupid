@@ -89,7 +89,7 @@
 
   .hero {
     @include flex-column;
-    height: calc(100dvh - var(--header-height) - 20px);
+    height: calc(100lvh - var(--header-height) - 20px);
   }
 
   .image {

@@ -1,7 +1,7 @@
 import { FC } from "react";
 import { useTranslations } from "next-intl";
 
-import { nutritionalInformationTable } from "./config";
+import { NUTRITIONAL_INFORMATION_TABLE } from "./config";
 import styles from "./NutritionalDrawerContent.module.scss";
 
 export const NutritionalDrawerContent: FC = () => {
@@ -29,7 +29,7 @@ export const NutritionalDrawerContent: FC = () => {
             </tr>
           </thead>
           <tbody className={styles.tbody}>
-            {nutritionalInformationTable.map((row, index) => (
+            {NUTRITIONAL_INFORMATION_TABLE.map((row, index) => (
               <tr key={index}>
                 <td>{t(row[0])}</td>
                 <td>{row[1]}</td>
