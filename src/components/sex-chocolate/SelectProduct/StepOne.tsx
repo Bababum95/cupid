@@ -1,6 +1,6 @@
 "use client";
 
-import { FC } from "react";
+import { FC, useRef } from "react";
 import { useTranslations } from "next-intl";
 
 import { dataUtils } from "@/utils";
@@ -26,10 +26,23 @@ export const StepOne: FC<Props> = ({
   selectedVariant,
   nextStep,
 }) => {
+  const buttonRef = useRef<HTMLButtonElement>(null);
   const t = useTranslations("SexChocolate");
 
   const handleSelectVariant = (product: VariantProductType) => {
     setSelectedVariant(product);
+
+    // buttonRef.current?.scrollIntoView({
+    //   behavior: "smooth",
+    //   block: "nearest",
+    // });
+
+    // setTimeout(() => {
+    //   buttonRef.current?.scrollIntoView({
+    //     behavior: "smooth",
+    //     block: "nearest",
+    //   });
+    // }, 300);
   };
 
   return (
@@ -84,6 +97,7 @@ export const StepOne: FC<Props> = ({
       <SubmitButton
         label={t("next")}
         isActive={!!selectedVariant}
+        ref={buttonRef}
         total={
           selectedVariant ? dataUtils.formatPrice(selectedVariant.price) : null
         }

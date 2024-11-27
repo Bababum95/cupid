@@ -1,4 +1,4 @@
-import { FC } from "react";
+import { forwardRef } from "react";
 import { motion } from "motion/react";
 import classNames from "classnames";
 
@@ -9,21 +9,25 @@ type Props = {
   total?: string | null;
   isActive: boolean;
   isLoading?: boolean;
-};
+} & React.DetailedHTMLProps<
+  React.ButtonHTMLAttributes<HTMLButtonElement>,
+  HTMLButtonElement
+>;
 
-export const SubmitButton: FC<Props> = ({
-  label,
-  total,
-  isActive,
-  isLoading,
-}) => {
-  return (
-    <button
-      className={classNames(styles.button, { [styles.loading]: isLoading })}
-      disabled={!isActive}
-    >
-      <motion.span layout>{label}</motion.span>
-      {total && <span className={styles.total}>{total}</span>}
-    </button>
-  );
-};
+export const SubmitButton = forwardRef<HTMLButtonElement, Props>(
+  ({ label, total, isActive, isLoading, ...props }, ref) => {
+    return (
+      <button
+        className={classNames(styles.button, { [styles.loading]: isLoading })}
+        disabled={!isActive}
+        ref={ref}
+        {...props}
+      >
+        <motion.span layout>{label}</motion.span>
+        {total && <span className={styles.total}>{total}</span>}
+      </button>
+    );
+  }
+);
+
+SubmitButton.displayName = "SubmitButton";

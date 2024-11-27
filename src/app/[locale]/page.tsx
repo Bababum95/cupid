@@ -9,7 +9,7 @@ import {
   Subscribe,
   Header,
   Footer,
-  LangSwitcher,
+  InitialLangSwitcher,
 } from "@/components";
 import {
   Advantages,
@@ -84,7 +84,7 @@ export default function Page({
 
   return (
     <>
-      {!cookieStore.has("LS") && locale === DEFAULLT_LOCALE && <LangSwitcher />}
+      {!cookieStore.has("LS") && locale === DEFAULLT_LOCALE && <InitialLangSwitcher />}
       <Header />
       <main className={styles.page}>
         <div className={styles.hero}>

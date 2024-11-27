@@ -1,6 +1,6 @@
 import { cookies } from "next/headers";
 
-import { Subscribe, Header, Footer, LangSwitcher } from "@/components";
+import { Subscribe, Header, Footer, InitialLangSwitcher } from "@/components";
 import { DEFAULLT_LOCALE } from "@/i18n/config";
 
 export default function AboutLayout({
@@ -14,7 +14,9 @@ export default function AboutLayout({
 
   return (
     <>
-      {!cookieStore.has("LS") && locale === DEFAULLT_LOCALE && <LangSwitcher />}
+      {!cookieStore.has("LS") && locale === DEFAULLT_LOCALE && (
+        <InitialLangSwitcher />
+      )}
       <Header />
       <main>
         {children}
