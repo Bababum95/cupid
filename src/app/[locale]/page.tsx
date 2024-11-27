@@ -10,7 +10,6 @@ import {
   Header,
   Footer,
   LangSwitcher,
-  Intercom,
 } from "@/components";
 import {
   Advantages,
@@ -140,7 +139,6 @@ export default function Page({
         <Subscribe />
       </main>
       <Footer />
-      <Intercom />
       {/* JSON-LD Schema Data */}
       <script
         type="application/ld+json"

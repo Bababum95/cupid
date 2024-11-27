@@ -25,7 +25,7 @@
   font-weight: 800;
   line-height: 110%;
   color: $text;
-  max-width: 670px;
+  max-width: 590px;
   margin-bottom: 24px;
 }
 
@@ -52,7 +52,7 @@
 .stars {
   @include flex-column;
   position: absolute;
-  right: 0;
+  right: 20px;
   top: 12px;
   font-size: clamp(1.0625rem, 0.9696rem + 0.381vw, 1.3125rem);
   font-style: normal;
@@ -69,23 +69,11 @@
 
 @include media("tablet") {
   .content {
-    position: relative;
+    position: static;
     top: 0;
     left: 0;
     transform: none;
     margin-top: 28px;
-  }
-
-  .stars {
-    position: relative;
-    top: 0;
-    left: 0;
-    align-items: flex-start;
-    margin-top: 20px;
-
-    p {
-      order: 2;
-    }
   }
 }
 

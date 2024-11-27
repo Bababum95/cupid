@@ -5,7 +5,6 @@ import {
   Header,
   Footer,
   LangSwitcher,
-  Intercom,
 } from "@/components";
 import { Wrapper } from "@/components/about";
 import { DEFAULLT_LOCALE } from "@/i18n/config";
@@ -28,7 +27,6 @@ export default function AboutLayout({
         <Subscribe />
       </main>
       <Footer />
-      <Intercom />
     </>
   );
 }

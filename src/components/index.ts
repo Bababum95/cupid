@@ -13,4 +13,4 @@ export { Price } from "./common/Price/Price";
 export { SubmitButton } from "./common/SubmitButton/SubmitButton";
 export { Subscribe } from "./common/Subscribe/Subscribe";
 
-export { Intercom } from "./Intercom";
+// export { Intercom } from "./Intercom";

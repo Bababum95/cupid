@@ -107,3 +107,10 @@ export const VIDEOS = [
       "Bin jetzt schon begeistert, nur vom Aussehen der Box! <span>Heute Abend wird spannend...</span>",
   },
 ];
+
+export const HIDE_INTERCOM_PATHS = [
+  "/sex-chocolate",
+  "/de/sex-chocolate",
+  "/cart",
+  "/de/cart",
+];
