@@ -2,7 +2,6 @@
 
 import { FC, useRef } from "react";
 import { useTranslations } from "next-intl";
-import { useInView } from "motion/react";
 
 import { dataUtils } from "@/utils";
 import { SubmitButton } from "@/components";
@@ -28,24 +27,33 @@ export const StepOne: FC<Props> = ({
   nextStep,
 }) => {
   const buttonRef = useRef<HTMLButtonElement>(null);
-  const isInView = useInView(buttonRef)
   const t = useTranslations("SexChocolate");
 
+  const scrollToButton = (bottomGap = 20) => {
+    if (!buttonRef.current) return;
+
+    const rect = buttonRef.current.getBoundingClientRect();
+    const bottom = rect.bottom + bottomGap;
+
+    console.log(bottom, window.innerHeight);
+
+    if (bottom > window.innerHeight) {
+      window.scrollBy({
+        top: bottom - window.innerHeight,
+        behavior: "smooth",
+      });
+    }
+  };
+
   const handleSelectVariant = (product: VariantProductType) => {
+    scrollToButton();
     setSelectedVariant(product);
-    console.log(isInView)
 
-    // buttonRef.current?.scrollIntoView({
-    //   behavior: "smooth",
-    //   block: "nearest",
-    // });
-
-    // setTimeout(() => {
-    //   buttonRef.current?.scrollIntoView({
-    //     behavior: "smooth",
-    //     block: "nearest",
-    //   });
-    // }, 100);
+    if (!selectedVariant?.components.length && product.components.length) {
+      setTimeout(() => {
+        scrollToButton(114);
+      }, 50);
+    }
   };
 
   return (
