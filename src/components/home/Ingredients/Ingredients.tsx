@@ -127,10 +127,10 @@ export const Ingredients = () => {
     }
   }, [images]);
 
-  const openDrawer = () => {
-    document.body.classList.add("no-scroll");
-    setDrawerIsOpen(true);
-  };
+  // const openDrawer = () => {
+  //   document.body.classList.add("no-scroll");
+  //   setDrawerIsOpen(true);
+  // };
 
   const closeDrawer = () => {
     document.body.classList.remove("no-scroll");
@@ -159,9 +159,9 @@ export const Ingredients = () => {
             </li>
           ))}
         </ul>
-        <button className={styles.button} onClick={openDrawer}>
+        {/* <button className={styles.button} onClick={openDrawer}>
           {t("supplemen-facts")}
-        </button>
+        </button> */}
       </div>
       <SideDrawer
         isOpen={drawerIsOpen}
