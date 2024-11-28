@@ -127,6 +127,16 @@ export const Ingredients = () => {
     }
   }, [images]);
 
+  // const openDrawer = () => {
+  //   document.body.classList.add("no-scroll");
+  //   setDrawerIsOpen(true);
+  // };
+
+  const closeDrawer = () => {
+    document.body.classList.remove("no-scroll");
+    setDrawerIsOpen(false);
+  };
+
   return (
     <section className={styles.section} ref={sectionRef} id="ingredients">
       <div className={styles.wrapper}>
@@ -149,14 +159,14 @@ export const Ingredients = () => {
             </li>
           ))}
         </ul>
-        <button className={styles.button} onClick={() => setDrawerIsOpen(true)}>
+        {/* <button className={styles.button} onClick={openDrawer}>
           {t("supplemen-facts")}
-        </button>
+        </button> */}
       </div>
       <SideDrawer
         isOpen={drawerIsOpen}
-        onClose={() => setDrawerIsOpen(false)}
-        title={""}
+        onClose={closeDrawer}
+        title={t("nutritional-information")}
       >
         <NutritionalDrawerContent />
       </SideDrawer>
