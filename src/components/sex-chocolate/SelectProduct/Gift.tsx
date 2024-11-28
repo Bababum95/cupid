@@ -14,7 +14,7 @@ type Props = {
 
 export const Gift: FC<Props> = ({ gifts, isActive }) => {
   return (
-    <AnimatePresence initial={false}>
+    <AnimatePresence initial={false} key="gift">
       {isActive && (
         <motion.div
           variants={{
@@ -25,6 +25,7 @@ export const Gift: FC<Props> = ({ gifts, isActive }) => {
           animate={isActive ? "open" : "closed"}
           exit="closed"
           transition={{ duration: 0.35, type: "tween" }}
+          key="gift"
         >
           <div className={styles.wrapper}>
             {!!gifts.length && (

@@ -28,3 +28,20 @@ export const GIFT_ACTIVE: Variant = {
   visibility: "visible",
   height: "auto",
 };
+export const HIDDEN_STEP: Variant = {
+  opacity: 0,
+  visibility: "hidden",
+  display: "none",
+  transition: { duration: 0.25, type: "tween" },
+};
+
+export const VISIBLE_STEP: Variant = {
+  opacity: 1,
+  visibility: "visible",
+  display: "block",
+  transition: { duration: 0.25, type: "tween", delay: 0.25 },
+};
+export const STEP_VARIANTS = {
+  hidden: HIDDEN_STEP,
+  visible: VISIBLE_STEP,
+};

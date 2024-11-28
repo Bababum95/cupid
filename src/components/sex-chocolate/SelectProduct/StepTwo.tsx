@@ -1,4 +1,6 @@
-import { FC, useState } from "react";
+"use client";
+
+import { FC, useState, useEffect, useRef } from "react";
 import { useTranslations } from "next-intl";
 import { useRouter } from "next/navigation";
 import { AnimatePresence, motion } from "motion/react";
@@ -36,6 +38,7 @@ export const StepTwo: FC<Props> = ({
     null
   );
   const t = useTranslations("SexChocolate");
+  const buttonRef = useRef<HTMLButtonElement>(null);
   const router = useRouter();
   const dispatch = useAppDispatch();
 
@@ -46,6 +49,29 @@ export const StepTwo: FC<Props> = ({
 
   const sellingPlan = quantity === 3 ? sellingPlans[1] : sellingPlans[0];
   const subscribePrice = mainPrice.amount - (sellingPlan?.discount || 5);
+
+  const scrollToButton = (bottomGap = 20) => {
+    if (!buttonRef.current) return;
+
+    const rect = buttonRef.current.getBoundingClientRect();
+    const bottom = rect.bottom + bottomGap;
+
+    console.log(bottom);
+
+    if (bottom > window.innerHeight) {
+      window.scrollBy({
+        top: bottom - window.innerHeight,
+        behavior: "smooth",
+      });
+    }
+  };
+
+  useEffect(() => {
+    if (!buttonRef.current) return;
+    setTimeout(() => {
+      scrollToButton();
+    }, 300);
+  }, [buttonRef]);
 
   const handleSubmit = async (evt: React.FormEvent) => {
     evt.preventDefault();
@@ -159,7 +185,7 @@ export const StepTwo: FC<Props> = ({
                 </p>
               </li>
             </ul>
-            <AnimatePresence initial={false}>
+            <AnimatePresence initial={false} key="content">
               {selected === "subscribe" && (
                 <motion.div
                   key="content"
@@ -216,6 +242,7 @@ export const StepTwo: FC<Props> = ({
       <SubmitButton
         label={t("add-to-cart")}
         isActive={!!selected}
+        ref={buttonRef}
         total={
           selected
             ? dataUtils.formatPrice({

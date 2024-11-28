@@ -26,6 +26,7 @@ export const Variant: FC<Props> = ({ active, onSelect, top, children }) => {
       initial={ITEM_INITIAL}
       animate={active ? ITEM_ACTIVE : ITEM_INITIAL}
       transition={{ duration: 0.25 }}
+      key="item"
     >
       <div className={styles.top}>
         <svg

@@ -35,8 +35,6 @@ export const StepOne: FC<Props> = ({
     const rect = buttonRef.current.getBoundingClientRect();
     const bottom = rect.bottom + bottomGap;
 
-    console.log(bottom, window.innerHeight);
-
     if (bottom > window.innerHeight) {
       window.scrollBy({
         top: bottom - window.innerHeight,

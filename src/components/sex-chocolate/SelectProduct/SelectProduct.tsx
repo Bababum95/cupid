@@ -3,6 +3,7 @@
 import { FC, useState, useEffect } from "react";
 import { useLocale, useTranslations } from "next-intl";
 import { useSearchParams } from "next/navigation";
+import { motion, AnimatePresence } from "motion/react";
 import Image from "next/image";
 
 import type { ProductType, VariantProductType, GiftType } from "@/types";
@@ -11,6 +12,7 @@ import { useRouter } from "@/i18n/routing";
 import StarIcon from "@/icons/star.svg";
 
 import type { SellingPlanGroupType } from "./types";
+import { STEP_VARIANTS } from "./config";
 import { StepOne } from "./StepOne";
 import { StepTwo } from "./StepTwo";
 import { fetchInitialData } from "./fetchInitialData";
@@ -138,26 +140,43 @@ export const SelectProduct: FC<Props> = ({ products, gifts }) => {
         <div className={styles.back}>
           <BackButton />
         </div>
-        <h2 className={styles.h2}>
-          {step === "2" ? t("title-2") : t("title-1")}
-        </h2>
-        {step === "2" ? (
-          <StepTwo
-            mainProduct={mainVariant}
-            selectedVariant={selectedVariant || mainVariant}
-            sellingPlans={sellingPlans}
-            gifts={giftsData}
-            locale={locale}
-          />
-        ) : (
-          <StepOne
-            products={products}
-            gifts={giftsData}
-            setSelectedVariant={(data) => setSelectedVariant(data)}
-            selectedVariant={selectedVariant}
-            nextStep={nextStep}
-          />
-        )}
+        <AnimatePresence initial={false}>
+          {step === "2" ? (
+            <motion.div
+              key="step-2"
+              variants={STEP_VARIANTS}
+              animate="visible"
+              exit="hidden"
+              initial="hidden"
+            >
+              <h2 className={styles.h2}>{t("title-2")}</h2>
+              <StepTwo
+                mainProduct={mainVariant}
+                selectedVariant={selectedVariant || mainVariant}
+                sellingPlans={sellingPlans}
+                gifts={giftsData}
+                locale={locale}
+              />
+            </motion.div>
+          ) : (
+            <motion.div
+              key="step-1"
+              variants={STEP_VARIANTS}
+              animate="visible"
+              exit="hidden"
+              initial="hidden"
+            >
+              <h2 className={styles.h2}>{t("title-1")}</h2>
+              <StepOne
+                products={products}
+                gifts={giftsData}
+                setSelectedVariant={(data) => setSelectedVariant(data)}
+                selectedVariant={selectedVariant}
+                nextStep={nextStep}
+              />
+            </motion.div>
+          )}
+        </AnimatePresence>
       </div>
     </div>
   );

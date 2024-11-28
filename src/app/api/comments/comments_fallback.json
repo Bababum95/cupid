@@ -1,0 +1,37 @@
+{
+  "comments": [
+    {
+      "_id": "67480d48cb20b581444aefac",
+      "name": "Lisa M.",
+      "message": "Absolut begeistert! Die Verpackung ist wunderschön und die Schokolade schmeckt fantastisch. Werde definitiv wieder bestellen!",
+      "rating": 5,
+      "verified": true,
+      "createdAt": "2024-11-02T00:00:00.000Z"
+    },
+    {
+      "_id": "67480dc6cb20b581444aefb0",
+      "name": "Daniel W.",
+      "message": "War zuerst skeptisch, aber es hat wirklich etwas Besonderes zu unserem Abend beigetragen. Sehr empfehlenswert!",
+      "rating": 5,
+      "verified": true,
+      "createdAt": "2024-11-01T00:00:00.000Z"
+    },
+    {
+      "_id": "67480ecacb20b581444aefb4",
+      "name": "Sophie K.",
+      "message": "Das perfekte Geschenk für meinen Partner. Wir haben es beide sehr genossen. Werde auf jeden Fall wieder kaufen!",
+      "rating": 5,
+      "verified": true,
+      "createdAt": "2024-10-31T00:00:00.000Z"
+    },
+    {
+      "_id": "67480f02cb20b581444aefb8",
+      "name": "Alex H.",
+      "message": "Toller Geschmack und spürbare Wirkung. Kam schnell und diskret an. Danke!",
+      "rating": 5,
+      "verified": true,
+      "createdAt": "2024-10-30T00:00:00.000Z"
+    }
+  ],
+  "total": 4
+}
