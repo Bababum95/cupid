@@ -279,7 +279,8 @@
           "title": "Invalid Email Address",
           "description": "Please provide a valid email and try again."
         }
-      }
+      },
+      "load-more": "Load more"
     }
   },
   "Advantages": {

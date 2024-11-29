@@ -136,4 +136,21 @@ export const dataUtils = {
     // Return the resulting array
     return result;
   },
+
+  /**
+   * Formats a given ISO 8601 date string into the format `DD/MM/YYYY`.
+   *
+   * @param isoDate - A valid ISO 8601 date string (e.g., "2024-11-01T00:00:00.000Z").
+   * @returns A string representing the date in the format `DD/MM/YYYY` (e.g., "01/11/2024").
+   *
+   * @example
+   * ```typescript
+   * const formattedDate = formatDateIntl("2024-11-01T00:00:00.000Z");
+   * console.log(formattedDate); // Output: "01/11/2024"
+   * ```
+   */
+  formatDateIntl: (isoDate: string): string => {
+    const date = new Date(isoDate);
+    return new Intl.DateTimeFormat("en-GB").format(date);
+  },
 };

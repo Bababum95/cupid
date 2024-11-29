@@ -279,7 +279,8 @@
           "title": "Ungültige E-Mail-Adresse",
           "description": "Bitte prüfen Sie Ihre E-Mail."
         }
-      }
+      },
+      "load-more": "Mehr laden"
     }
   },
   "Advantages": {

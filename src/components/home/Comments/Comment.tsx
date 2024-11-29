@@ -1,7 +1,7 @@
 import { FC } from "react";
 import { useTranslations } from "next-intl";
 
-import { getInitialsLetters } from "@/utils";
+import { getInitialsLetters, dataUtils } from "@/utils";
 import StarIcon from "@/icons/star.svg";
 import VerifiedIcon from "@/icons/approval.svg";
 
@@ -49,7 +49,11 @@ export const Comment: FC<Props> = ({ name, rating, review, date }) => {
             content={rating.toString()}
           >
             {Array.from({ length: 5 }).map((_, i) => (
-              <StarIcon key={i} fill={i < rating ? "#520C11" : "#1a1a1a"} />
+              <StarIcon
+                key={i}
+                fill={i < rating ? "#520C11" : "#1a1a1a"}
+                viewBox="0 0 24 24"
+              />
             ))}
           </span>
           <meta itemProp="bestRating" content="5" />
@@ -66,7 +70,7 @@ export const Comment: FC<Props> = ({ name, rating, review, date }) => {
         </button>
         <span>/</span>
         <time itemProp="datePublished" dateTime={date}>
-          {date}
+          {dataUtils.formatDateIntl(date)}
         </time>
       </div>
     </li>

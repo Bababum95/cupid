@@ -15,3 +15,8 @@ export type {
   VariantProductType,
   UnitPriceMeasurementType,
 } from "./product";
+export type {
+  CommentType,
+  GetCommentsResponse,
+  GetCommentsParams,
+} from "./comment";

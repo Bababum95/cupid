@@ -1,5 +1,7 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 
+import type { GetCommentsParams, GetCommentsResponse } from "@/types";
+
 const CUPID_PUBLIC_TOKEN = process.env.CUPID_PUBLIC_TOKEN;
 
 export const apiSlice = createApi({
@@ -21,14 +23,27 @@ export const apiSlice = createApi({
         body,
       }),
     }),
-    comments: builder.mutation({
+    addComment: builder.mutation({
       query: (body) => ({
         url: "comments",
         method: "POST",
         body,
       }),
     }),
+    getComments: builder.query<GetCommentsResponse, GetCommentsParams>({
+      query: (params) => {
+        const queryParams = new URLSearchParams(params).toString();
+        return {
+          url: `comments?${queryParams}`,
+          method: "GET",
+        };
+      },
+    }),
   }),
 });
 
-export const { useSubscribeMutation, useCommentsMutation } = apiSlice;
+export const {
+  useAddCommentMutation,
+  useGetCommentsQuery,
+  useSubscribeMutation,
+} = apiSlice;

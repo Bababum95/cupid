@@ -8,7 +8,7 @@ import TextareaAutosize from "react-textarea-autosize";
 import type { Notice as NoticeType } from "@/types";
 import { Button, Input, SubmitButton, Notice } from "@/components";
 import { useScrollbarWidth } from "@/hooks";
-import { useCommentsMutation } from "@/lib/slices/api";
+import { useAddCommentMutation } from "@/lib/slices/api";
 import StarIcon from "@/icons/star.svg";
 
 import { COMMENT_DEFAULTS } from "./config";
@@ -25,14 +25,14 @@ export const NewComment: FC = () => {
   const [notice, setNotice] = useState<NoticeType | null>(null);
   const [values, setValues] =
     useState<typeof COMMENT_DEFAULTS>(COMMENT_DEFAULTS);
-  const [createComment, { isLoading, isSuccess, isError, error }] =
-    useCommentsMutation();
+  const [addComment, { isLoading, isSuccess, isError, error }] =
+    useAddCommentMutation();
   const formRef = useRef<HTMLFormElement>(null);
   useScrollbarWidth();
 
   const handleSubmit = async (evt: React.FormEvent) => {
     evt.preventDefault();
-    createComment({ ...values, pageId: "home" });
+    addComment({ ...values, pageId: "home" });
   };
 
   const handleChange = (
