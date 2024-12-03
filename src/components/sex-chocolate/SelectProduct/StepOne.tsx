@@ -1,6 +1,6 @@
 "use client";
 
-import { FC, useRef } from "react";
+import { FC, useRef, useState } from "react";
 import { useTranslations } from "next-intl";
 
 import { dataUtils } from "@/utils";
@@ -16,7 +16,7 @@ type Props = {
   gifts: GiftType[];
   setSelectedVariant: (data: VariantProductType) => void;
   selectedVariant: VariantProductType | null;
-  nextStep: (evt: React.FormEvent) => void;
+  nextStep: () => Promise<boolean>;
 };
 
 export const StepOne: FC<Props> = ({
@@ -26,6 +26,7 @@ export const StepOne: FC<Props> = ({
   selectedVariant,
   nextStep,
 }) => {
+  const [isLoading, setIsLoading] = useState(false);
   const buttonRef = useRef<HTMLButtonElement>(null);
   const t = useTranslations("SexChocolate");
 
@@ -54,8 +55,16 @@ export const StepOne: FC<Props> = ({
     }
   };
 
+  const handleSubmit = async (evt: React.FormEvent) => {
+    evt.preventDefault();
+    setIsLoading(true);
+    const result = await nextStep();
+
+    if (!result) setIsLoading(false);
+  };
+
   return (
-    <form onSubmit={nextStep}>
+    <form onSubmit={handleSubmit}>
       <ul className={styles.list}>
         {products.map((product) => {
           const quantity: number = product.variants[0].components.length
@@ -106,6 +115,7 @@ export const StepOne: FC<Props> = ({
       <SubmitButton
         label={t("next")}
         isActive={!!selectedVariant}
+        isLoading={isLoading}
         ref={buttonRef}
         total={
           selectedVariant ? dataUtils.formatPrice(selectedVariant.price) : null

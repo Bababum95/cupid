@@ -6,10 +6,17 @@ import { useSearchParams } from "next/navigation";
 import { motion, AnimatePresence } from "motion/react";
 import Image from "next/image";
 
-import type { ProductType, VariantProductType, GiftType } from "@/types";
+import type {
+  ProductType,
+  VariantProductType,
+  GiftType,
+  CreateCartInput,
+} from "@/types";
 import { BackButton, Bage } from "@/components";
+import { useAppDispatch } from "@/hooks";
 import { useRouter } from "@/i18n/routing";
 import StarIcon from "@/icons/star.svg";
+import { create as createCart } from "@/lib/slices/cart";
 
 import type { SellingPlanGroupType } from "./types";
 import { STEP_VARIANTS } from "./config";
@@ -26,6 +33,7 @@ type Props = {
 export const SelectProduct: FC<Props> = ({ products, gifts }) => {
   const searchParams = useSearchParams();
   const router = useRouter();
+  const dispatch = useAppDispatch();
   const locale = useLocale();
   const t = useTranslations("SexChocolate");
   const [selectedVariant, setSelectedVariant] =
@@ -72,22 +80,41 @@ export const SelectProduct: FC<Props> = ({ products, gifts }) => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [searchParams]);
 
-  const nextStep = (evt: React.FormEvent) => {
-    evt.preventDefault();
-    if (!selectedVariant) return;
-    setStep("2");
-    const params = new URLSearchParams();
-    params.set("step", "2");
+  const nextStep = async () => {
+    if (!selectedVariant) return false;
+    // setStep("2");
+    // const params = new URLSearchParams();
+    // params.set("step", "2");
+    // if (selectedVariant.components.length) {
+    //   params.set(
+    //     "quantity",
+    //     selectedVariant.components[0].quantity!.toString()
+    //   );
+    // }
+
+    // router.push(`/sex-chocolate?${params.toString()}`, {
+    //   scroll: false,
+    // });
+
+    const input: CreateCartInput = {
+      lines: [{ merchandiseId: selectedVariant.id, quantity: 1 }],
+      discountCodes: [],
+    };
+
     if (selectedVariant.components.length) {
-      params.set(
-        "quantity",
-        selectedVariant.components[0].quantity!.toString()
-      );
+      input.lines.push({ merchandiseId: giftsData[0].id, quantity: 1 });
+      if (giftsData[0].code) input.discountCodes.push(giftsData[0].code);
     }
 
-    router.push(`/sex-chocolate?${params.toString()}`, {
-      scroll: false,
-    });
+    const res = await dispatch(createCart({ input, locale }));
+
+    if (res.meta.requestStatus === "fulfilled") {
+      router.push("/cart");
+      return true;
+    } else {
+      console.log(res);
+      return false;
+    }
   };
 
   return (
