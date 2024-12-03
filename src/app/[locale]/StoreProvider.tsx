@@ -5,10 +5,7 @@ import { Provider } from "react-redux";
 import { usePathname, useSearchParams } from "next/navigation";
 import { useShopifyCookies } from "@shopify/hydrogen-react";
 import * as CookieConsent from "vanilla-cookieconsent";
-import {
-  Intercom,
-  shutdown as IntercomShutdown,
-} from "@intercom/messenger-js-sdk";
+import { Intercom } from "@intercom/messenger-js-sdk";
 
 import "vanilla-cookieconsent/dist/cookieconsent.css";
 
@@ -41,11 +38,17 @@ export default function StoreProvider({
     if (PUBLIC_GA_ID) {
       window.gtag("config", PUBLIC_GA_ID, { page_path: pathname });
     }
+
+    // Intercom
     if (INTERCOM_APP_ID) {
-      if (HIDE_INTERCOM_PATHS.includes(pathname)) {
-        IntercomShutdown();
-      } else {
-        window.Intercom?.("boot", { app_id: INTERCOM_APP_ID });
+      try {
+        if (HIDE_INTERCOM_PATHS.includes(pathname)) {
+          window.Intercom?.("shutdown");
+        } else if (!window.Intercom?.("getVisitorId")) {
+          window.Intercom?.("boot", { app_id: INTERCOM_APP_ID });
+        }
+      } catch (error) {
+        console.error("Intercom error:", error);
       }
     }
     sendPageView();
