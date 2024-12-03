@@ -181,6 +181,11 @@ const cartSlice = createSlice({
   extraReducers: (builder) => {
     const setCart = (state: CartState, data: CartResponse) => {
       let showExtraBox = false;
+      const cupidChocolateHandles = [
+        "cupid-chocolate-x-2",
+        "cupid-chocolate-x-3",
+        "cupid-chocolate",
+      ];
 
       state.id = data.id;
       state.checkoutUrl = data.checkoutUrl;
@@ -189,7 +194,7 @@ const cartSlice = createSlice({
       state.lines = data.lines.nodes
         .map((line) => {
           if (
-            line.merchandise.product.handle === "cupid-chocolate" &&
+            cupidChocolateHandles.includes(line.merchandise.product.handle) &&
             !line.sellingPlanAllocation &&
             !line.discountAllocations.find(({ title }) => title === "Extra box")
           ) {

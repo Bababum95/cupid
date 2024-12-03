@@ -16,7 +16,7 @@ type Props = {
   gifts: GiftType[];
   setSelectedVariant: (data: VariantProductType) => void;
   selectedVariant: VariantProductType | null;
-  nextStep: () => Promise<boolean>;
+  nextStep: () => Promise<void>;
 };
 
 export const StepOne: FC<Props> = ({
@@ -58,9 +58,8 @@ export const StepOne: FC<Props> = ({
   const handleSubmit = async (evt: React.FormEvent) => {
     evt.preventDefault();
     setIsLoading(true);
-    const result = await nextStep();
-
-    if (!result) setIsLoading(false);
+    await nextStep();
+    setIsLoading(false);
   };
 
   return (

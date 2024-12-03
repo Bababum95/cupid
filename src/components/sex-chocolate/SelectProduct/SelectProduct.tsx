@@ -81,7 +81,7 @@ export const SelectProduct: FC<Props> = ({ products, gifts }) => {
   }, [searchParams]);
 
   const nextStep = async () => {
-    if (!selectedVariant) return false;
+    if (!selectedVariant) return;
     // setStep("2");
     // const params = new URLSearchParams();
     // params.set("step", "2");
@@ -110,10 +110,8 @@ export const SelectProduct: FC<Props> = ({ products, gifts }) => {
 
     if (res.meta.requestStatus === "fulfilled") {
       router.push("/cart");
-      return true;
     } else {
       console.log(res);
-      return false;
     }
   };
 
