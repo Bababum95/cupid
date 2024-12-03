@@ -34,6 +34,7 @@ export default function StoreProvider({
   useEffect(() => {
     document.documentElement.classList.add("cc--elegant-black");
     CookieConsent.run(COOKIE_CONSENT_CONFIG);
+    if (INTERCOM_APP_ID) Intercom({ app_id: INTERCOM_APP_ID });
   }, []);
 
   useEffect(() => {
@@ -44,7 +45,7 @@ export default function StoreProvider({
       if (HIDE_INTERCOM_PATHS.includes(pathname)) {
         IntercomShutdown();
       } else {
-        Intercom({ app_id: INTERCOM_APP_ID });
+        window.Intercom?.("boot", { app_id: INTERCOM_APP_ID });
       }
     }
     sendPageView();
