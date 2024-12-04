@@ -153,4 +153,63 @@ export const dataUtils = {
     const date = new Date(isoDate);
     return new Intl.DateTimeFormat("en-GB").format(date);
   },
+
+  getShippingDate: (): {
+    date: Date;
+    hours: number;
+    minutes: number;
+    day: number;
+  } => {
+    const now = new Date();
+    const currentTime = new Date(
+      new Intl.DateTimeFormat("en-US", {
+        timeZone: "Europe/Berlin",
+        year: "numeric",
+        month: "numeric",
+        day: "numeric",
+        hour: "numeric",
+        minute: "numeric",
+        second: "numeric",
+      }).format(now)
+    );
+
+    const targetTime = new Date(
+      currentTime.getFullYear(),
+      currentTime.getMonth(),
+      currentTime.getDate(),
+      15,
+      0,
+      0
+    );
+
+    if (currentTime.getDay() === 0) {
+      targetTime.setDate(targetTime.getDate() + 1);
+    }
+
+    const currentTimeMs = currentTime.getTime();
+    const targetTimeMs = targetTime.getTime();
+    let timeDifference = targetTimeMs - currentTimeMs;
+
+    if (timeDifference < 0) {
+      if (currentTime.getDay() === 6) {
+        targetTime.setDate(targetTime.getDate() + 2);
+      } else {
+        targetTime.setDate(targetTime.getDate() + 1);
+      }
+      timeDifference = targetTime.getTime() - currentTimeMs;
+    }
+
+    const day = targetTime.getDay() - currentTime.getDay();
+    const hours = Math.floor(timeDifference / (1000 * 60 * 60));
+    const minutes = Math.floor(
+      (timeDifference % (1000 * 60 * 60)) / (1000 * 60)
+    );
+
+    return {
+      date: targetTime,
+      day,
+      hours,
+      minutes,
+    };
+  },
 };

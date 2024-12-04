@@ -25,8 +25,12 @@ export const Comments = () => {
 
   useEffect(() => {
     if (data?.comments.length) {
-      setComments((prev) => [...prev, ...data.comments]);
+      setComments((prevComments) => {
+        const newComments = new Set([...prevComments, ...data.comments]);
+        return Array.from(newComments);
+      });
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [data]);
 
   return (

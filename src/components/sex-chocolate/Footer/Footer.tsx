@@ -5,10 +5,9 @@ import { useTranslations } from "next-intl";
 import dynamic from "next/dynamic";
 
 import { useScrollbarWidth } from "@/hooks";
-import { NutritionalDrawerContent } from "@/components";
+import { NutritionalDrawerContent, BenefitsDrawerContent } from "@/components";
 
 import { details } from "./config";
-import { BenefitsDrawerContent } from "./BenefitsDrawerContent";
 import styles from "./Footer.module.scss";
 
 const SideDrawer = dynamic(() => import("@/components/dynamic/SideDrawer"), {

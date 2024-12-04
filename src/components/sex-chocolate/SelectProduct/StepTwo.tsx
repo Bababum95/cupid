@@ -7,14 +7,13 @@ import { AnimatePresence, motion } from "motion/react";
 import classNames from "classnames";
 
 import type { CreateCartInput, VariantProductType, GiftType } from "@/types";
-import { SubmitButton, Price } from "@/components";
+import { SubmitButton, Price, RadioVariant } from "@/components";
 import { dataUtils } from "@/utils";
 import { useAppDispatch } from "@/hooks";
 import { create as createCart } from "@/lib/slices/cart";
 import { default as CheckMarkIcon } from "@/icons/checkmark.svg";
 
 import type { SellingPlanGroupType } from "./types";
-import { Variant } from "./Variant";
 import styles from "./StepTwo.module.scss";
 
 type Props = {
@@ -113,7 +112,7 @@ export const StepTwo: FC<Props> = ({
   return (
     <form className={styles.form} onSubmit={handleSubmit}>
       <ul className={styles.list}>
-        <Variant
+        <RadioVariant
           active={selected === "subscribe"}
           onSelect={() => setSelected("subscribe")}
           top={
@@ -157,7 +156,7 @@ export const StepTwo: FC<Props> = ({
                 <CheckMarkIcon />
                 <p>
                   <strong>
-                    {t("free-gift")}: {gifts[1]?.title} (
+                    {t("free-gift", { count: 1 })}: {gifts[1]?.title} (
                     {t("limited-time-offer")})
                   </strong>
                 </p>
@@ -215,8 +214,8 @@ export const StepTwo: FC<Props> = ({
               )}
             </AnimatePresence>
           </div>
-        </Variant>
-        <Variant
+        </RadioVariant>
+        <RadioVariant
           active={selected === "one-time"}
           onSelect={() => setSelected("one-time")}
           top={

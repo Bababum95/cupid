@@ -1,17 +1,23 @@
+import { FC } from "react";
 import { useTranslations } from "next-intl";
 import Image from "next/image";
 
-import { TAGS } from "./config";
 import styles from "./Marquee.module.scss";
 
-export const Marquee = () => {
-  const t = useTranslations("HomePage.Marquee");
+type Props = {
+  list: string[];
+};
+
+export const Marquee: FC<Props> = ({ list }) => {
+  const t = useTranslations("HomePage.features");
+
+  if (!list || !list.length) return null;
 
   return (
     <div className={styles.wrapper}>
       <ul className={styles.list}>
-        {TAGS.map((tag) => (
-          <li className={styles.item} key={tag}>
+        {list.map((tag, index) => (
+          <li className={styles.item} key={`${tag}-${index}`}>
             <Image
               src={`/images/marquee/${tag}.png`}
               alt={t(tag)}
@@ -23,8 +29,8 @@ export const Marquee = () => {
         ))}
       </ul>
       <ul className={styles.list}>
-        {TAGS.map((tag) => (
-          <li className={styles.item} key={tag}>
+        {list.map((tag, index) => (
+          <li className={styles.item} key={`${tag}-${index}-duplicate`}>
             <Image
               src={`/images/marquee/${tag}.png`}
               alt={t(tag)}
