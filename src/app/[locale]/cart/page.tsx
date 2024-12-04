@@ -4,7 +4,7 @@ import { useTranslations } from "next-intl";
 import { useEffect, useState } from "react";
 
 import { useAppDispatch, useAppSelector } from "@/hooks";
-import { BackButton, SubmitButton } from "@/components";
+import { BackButton, Disclaimer, SubmitButton } from "@/components";
 import { dataUtils } from "@/utils";
 import { relatedProductsQuery, giftFragment } from "@/graphql";
 import { GiftType, ProductNode, ProductType } from "@/types";
@@ -178,6 +178,9 @@ export default function Page({
             )}
 
           {/* <DiscountCode gifts={gifts} /> */}
+          <div className={styles.disclaimer}>
+            <Disclaimer />
+          </div>
         </ul>
         <form className={styles.footer} onSubmit={handleSubmit}>
           <SubmitButton

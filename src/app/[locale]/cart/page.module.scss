@@ -44,11 +44,17 @@
 }
 
 .list {
+  @include flex-column;
   @include scrollbar;
   flex-grow: 1;
   overflow-y: auto;
   overflow-x: hidden;
   margin-bottom: -2px;
+}
+
+.disclaimer {
+  margin-top: auto;
+  padding: 24px 28px;
 }
 
 .footer {
