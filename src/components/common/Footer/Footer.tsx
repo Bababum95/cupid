@@ -2,6 +2,7 @@ import { useTranslations } from "next-intl";
 import Image from "next/image";
 import dynamic from "next/dynamic";
 
+import { Disclaimer } from "@/components";
 import LogoIcon from "@/icons/footer-logo.svg";
 
 import { SOCIAL_LINKS, PAYMENT_METHODS } from "./config";
@@ -54,6 +55,9 @@ export const Footer = () => {
           ))}
         </div>
         <p className={styles.copyright}>2024 Cupid®</p>
+      </div>
+      <div className={styles.wrapper}>
+        <Disclaimer />
       </div>
     </footer>
   );

@@ -5,7 +5,7 @@ import { useTranslations } from "next-intl";
 import dynamic from "next/dynamic";
 
 import { useScrollbarWidth } from "@/hooks";
-import { NutritionalDrawerContent, BenefitsDrawerContent } from "@/components";
+import { NutritionalDrawerContent, BenefitsDrawerContent, Disclaimer } from "@/components";
 
 import { details } from "./config";
 import styles from "./Footer.module.scss";
@@ -62,6 +62,7 @@ export const Footer: FC = () => {
             </li>
           ))}
         </ul>
+        <Disclaimer />
       </div>
       <SideDrawer
         isOpen={!!drawer}
