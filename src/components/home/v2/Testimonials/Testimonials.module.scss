@@ -1,0 +1,48 @@
+.wrapper {
+  max-width: $home-mw;
+  margin: 120px auto;
+}
+
+.heading {
+  align-self: stretch;
+  width: 100%;
+  gap: 12px;
+  color: rgba(233, 233, 233, 1);
+  padding: 0 20px;
+  font: 700 44px Vela Sans, sans-serif;
+}
+
+.testimonialGrid {
+  display: flex;
+  margin-top: 44px;
+  width: 100%;
+  align-items: center;
+  gap: 20px;
+  overflow: hidden;
+  justify-content: center;
+}
+
+.image {
+  border-radius: 25px;
+  background-color: rgba(48, 48, 48, 1);
+  align-self: stretch;
+  display: flex;
+  width: 240px;
+  height: 240px;
+  aspect-ratio: 1;
+  margin: auto 0;
+  flex-shrink: 0;
+}
+
+@media (max-width: 991px) {
+  .container {
+    max-width: 100%;
+  }
+  .heading {
+    max-width: 100%;
+    padding: 0 20px;
+  }
+  .testimonialGrid {
+    margin-top: 40px;
+  }
+}

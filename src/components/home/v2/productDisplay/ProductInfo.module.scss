@@ -1,0 +1,15 @@
+.item {
+  @include flex-layout(space-between, center);
+  padding: 20px 0;
+  border-bottom: $grey-line;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 12px;
+
+  &:first-child {
+    border-top: $grey-line;
+  }
+}

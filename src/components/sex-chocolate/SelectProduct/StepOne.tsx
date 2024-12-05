@@ -4,11 +4,10 @@ import { FC, useRef, useState } from "react";
 import { useTranslations } from "next-intl";
 
 import { dataUtils } from "@/utils";
-import { SubmitButton } from "@/components";
+import { SubmitButton, RadioVariant } from "@/components";
 import type { ProductType, VariantProductType, GiftType } from "@/types";
 
 import { Gift } from "./Gift";
-import { Variant } from "./Variant";
 import styles from "./StepOne.module.scss";
 
 type Props = {
@@ -71,7 +70,7 @@ export const StepOne: FC<Props> = ({
             : 1;
 
           return (
-            <Variant
+            <RadioVariant
               key={product.variants[0].id}
               active={selectedVariant?.id === product.variants[0].id}
               onSelect={() => handleSelectVariant(product.variants[0])}
@@ -82,7 +81,9 @@ export const StepOne: FC<Props> = ({
               }
             >
               {quantity === 2 && (
-                <span className={styles.bage}>{t("free-gift")}</span>
+                <span className={styles.bage}>
+                  {t("free-gift", { count: 1 })}
+                </span>
               )}
               {quantity === 3 && (
                 <span className={styles.bage}>
@@ -106,7 +107,7 @@ export const StepOne: FC<Props> = ({
                 })}
                 /{t("box")}
               </span>
-            </Variant>
+            </RadioVariant>
           );
         })}
       </ul>

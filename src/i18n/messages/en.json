@@ -127,7 +127,7 @@
     "orders": "My Orders",
     "born-from-love": "Born from Love, Made for Connection",
     "born-from-love-text": "Cupid was created to help couples reconnect in today's fast-paced world. Inspired by love and personal experience, our founder Nico, with a background in natural health, developed Cupid's unique blend to reignite intimacy and bring passion back into relationships.",
-    "Marquee": {
+    "features": {
       "30min": "Works in 30 Minutes",
       "delivery": "Free Delivery",
       "discreet": "Discreet Packaging",
@@ -136,7 +136,9 @@
       "quality": "Quality Ingredients",
       "superfood": "With Superfoods",
       "support": "Fast Support",
-      "vegan": "100% Vegan"
+      "vegan": "100% Vegan",
+      "limited-time-sale": "Limited Time Sale",
+      "works-for-men-and-women": "Works for Men and Women"
     },
     "Ingredients": {
       "title": "Why These Ingredients Work",
@@ -281,6 +283,14 @@
         }
       },
       "load-more": "Load more"
+    },
+    "V2": {
+      "rating": "More than {amount}+ Happy Customers",
+      "shipping": "Ships {day, plural, =0 {today} =1 {tomorrow} =2 {the day after tomorrow} other {in # days}}, <strong>{shippingDate, date, ::MMMMd}</strong> if ordered within <strong>{hours}hr {minutes}min</strong>",
+      "product-benefits": "Product Benefits",
+      "nutritional-information": "Nutrition & Ingredients",
+      "how-it-works": "How it works",
+      "how-to-use": "How to use"
     }
   },
   "Advantages": {
@@ -330,7 +340,7 @@
     "next": "Nexts step",
     "bage-1": "New Formula",
     "bage-2": "Free Shipping",
-    "free-gift": "Free gift",
+    "free-gift": "{count, plural, =1 {Free gift} other {# Free gifts}}",
     "save": "Save {amount}",
     "why-cupid": "Why Cupid?",
     "product-benefits": "Product benefits",

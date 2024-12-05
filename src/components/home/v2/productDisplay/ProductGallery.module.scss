@@ -1,0 +1,30 @@
+.wrapper {
+  @include flex-column;
+  flex: 1;
+  max-width: 758px;
+  gap: 20px;
+}
+
+.mainImage {
+  border-radius: 25px;
+  background-color: #303030;
+  width: 100%;
+
+  aspect-ratio: 758 / 558;
+}
+
+.thumbnails {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: repeat(2, 322px);
+  gap: 20px;
+}
+
+.thumbnail {
+  border-radius: 25px;
+  background-color: #303030;
+
+  &:first-child {
+    grid-column: span 2;
+  }
+}

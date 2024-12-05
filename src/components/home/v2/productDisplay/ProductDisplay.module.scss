@@ -1,0 +1,88 @@
+.wrapper {
+  @include flex-layout(space-between);
+  gap: 40px;
+  padding: 0 20px;
+  max-width: $home-mw;
+  margin: 60px auto;
+}
+
+.info {
+  flex: 1;
+  min-width: 240px;
+  max-width: 434px;
+}
+
+.rating {
+  @include flex-layout(flex-start, center);
+  gap: 8px;
+  margin-bottom: 24px;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+
+.stars {
+  display: flex;
+  gap: 2px;
+}
+
+h1.title {
+  color: $text;
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  letter-spacing: -1.2px;
+  margin: 0 0 24px 0;
+}
+
+.features {
+  @include flex-layout;
+  flex-wrap: wrap;
+  gap: 8px 20px;
+  margin-bottom: 46px;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+
+  span {
+    flex: 1;
+    min-width: 160px;
+  }
+}
+
+@media (max-width: 991px) {
+  .wrapper {
+    flex-direction: column;
+    padding: 20px;
+  }
+
+  .productGallery,
+  .productInfo {
+    max-width: 100%;
+  }
+
+  .features {
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 0;
+    margin-bottom: 40px;
+  }
+
+  .iconTextContainer {
+    flex: 1;
+    min-width: 120px;
+  }
+}
+
+@media (max-width: 480px) {
+  .productFeatures span {
+    min-width: 140px;
+  }
+
+  .buyButton {
+    padding: 18px 20px;
+  }
+}
