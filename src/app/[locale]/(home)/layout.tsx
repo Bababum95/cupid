@@ -1,10 +1,6 @@
 import type { Metadata } from "next";
 import { getTranslations } from "next-intl/server";
 import { useTranslations } from "next-intl";
-import { cookies } from "next/headers";
-
-import { Header, Footer, InitialLangSwitcher } from "@/components";
-import { DEFAULLT_LOCALE } from "@/i18n/config";
 
 const BASE_URL = process.env.BASE_URL as string;
 
@@ -54,7 +50,6 @@ export default function HomeLayout({
   children: React.ReactNode;
   params: { locale: string };
 }) {
-  const cookieStore = cookies();
   const metadata = useTranslations("Metadata.main");
   const commonMetadata = useTranslations("Metadata.common");
   const chocolateMetadata = useTranslations("Metadata.chocolate");
@@ -63,12 +58,7 @@ export default function HomeLayout({
 
   return (
     <>
-      {!cookieStore.has("LS") && locale === DEFAULLT_LOCALE && (
-        <InitialLangSwitcher />
-      )}
-      <Header />
       {children}
-      <Footer />
       {/* JSON-LD Schema Data */}
       <script
         type="application/ld+json"

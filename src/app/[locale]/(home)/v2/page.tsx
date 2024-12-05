@@ -1,16 +1,14 @@
 import { useTranslations } from "next-intl";
 
+import { Comments, Marquee, Slider, Video } from "@/components/home";
 import {
-  Comments,
-  Marquee,
-  Slider,
-  Video,
+  Ingredients,
   ProductDisplay,
-  Testimonials,
   Supergreens,
-} from "@/components/home";
+  Testimonials,
+} from "@/components/home/v2";
 
-import { VIDEOS, MARQUEE_V2 } from "../config";
+import { VIDEOS, MARQUEE_V2, LIST_OF_INGREDIENTS } from "../config";
 import styles from "./page.module.scss";
 
 export default function Page() {
@@ -39,6 +37,7 @@ export default function Page() {
           </Video>
         ))}
       </Slider>
+      <Ingredients list={LIST_OF_INGREDIENTS} />
       <Comments />
     </main>
   );
