@@ -2,10 +2,13 @@ import { useTranslations } from "next-intl";
 
 import { Comments, Marquee, Slider, Video } from "@/components/home";
 import {
+  HappyCouples,
+  HowToUse,
   Ingredients,
   ProductDisplay,
   Supergreens,
   Testimonials,
+  FAQ,
 } from "@/components/home/v2";
 
 import { VIDEOS, MARQUEE_V2, LIST_OF_INGREDIENTS } from "../config";
@@ -18,7 +21,7 @@ export default function Page() {
     <main className={styles.page}>
       <Marquee list={MARQUEE_V2} />
       <ProductDisplay />
-      <Testimonials />
+      <HappyCouples />
       <Supergreens />
       <Slider title={t("what-our-customers-say")}>
         {VIDEOS.map((video, i) => (
@@ -38,7 +41,10 @@ export default function Page() {
         ))}
       </Slider>
       <Ingredients list={LIST_OF_INGREDIENTS} />
+      <HowToUse />
+      <Testimonials />
       <Comments />
+      <FAQ />
     </main>
   );
 }

@@ -1,48 +1,54 @@
 .wrapper {
+  @include flex-layout(space-between, center);
+  gap: 40px;
+  padding: 0 20px;
   max-width: $home-mw;
   margin: 120px auto;
 }
 
-.heading {
-  align-self: stretch;
+.info {
   width: 100%;
-  gap: 12px;
-  color: rgba(233, 233, 233, 1);
-  padding: 0 20px;
-  font: 700 44px Vela Sans, sans-serif;
+  max-width: 460px;
 }
 
-.testimonialGrid {
-  display: flex;
-  margin-top: 44px;
-  width: 100%;
-  align-items: center;
-  gap: 20px;
-  overflow: hidden;
-  justify-content: center;
+.title {
+  font-size: clamp(2rem, 1.6286rem + 1.5238vw, 3rem);
+  font-style: normal;
+  font-weight: 700;
+  line-height: 110%;
+  margin: 12px 0 24px;
+}
+
+.subtitle {
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 18.268px;
 }
 
 .image {
+  object-fit: cover;
   border-radius: 25px;
-  background-color: rgba(48, 48, 48, 1);
-  align-self: stretch;
-  display: flex;
-  width: 240px;
-  height: 240px;
-  aspect-ratio: 1;
-  margin: auto 0;
-  flex-shrink: 0;
 }
 
-@media (max-width: 991px) {
-  .container {
-    max-width: 100%;
+.preview {
+  @include flex-center;
+  position: relative;
+  width: 100%;
+  max-width: 740px;
+  height: 340px;
+}
+
+.review {
+  position: absolute;
+
+  &:first-child {
+    bottom: 0;
+    left: 0;
   }
-  .heading {
-    max-width: 100%;
-    padding: 0 20px;
-  }
-  .testimonialGrid {
-    margin-top: 40px;
+
+  &:last-child {
+    top: 0;
+    right: 0;
   }
 }

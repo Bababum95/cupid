@@ -12,21 +12,6 @@
   max-width: 434px;
 }
 
-.rating {
-  @include flex-layout(flex-start, center);
-  gap: 8px;
-  margin-bottom: 24px;
-  font-size: 14px;
-  font-style: normal;
-  font-weight: 500;
-  line-height: normal;
-}
-
-.stars {
-  display: flex;
-  gap: 2px;
-}
-
 h1.title {
   color: $text;
   font-size: 40px;
@@ -34,7 +19,7 @@ h1.title {
   font-weight: 700;
   line-height: normal;
   letter-spacing: -1.2px;
-  margin: 0 0 24px 0;
+  margin: 24px 0;
 }
 
 .features {

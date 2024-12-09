@@ -3,8 +3,7 @@
 import { type FC, useState } from "react";
 import { useTranslations } from "next-intl";
 
-import StarIcon from "@/icons/star.svg";
-
+import { Rating } from "../Rating/Rating";
 import { PRODUCT_FEATURES } from "./config";
 import { ShippingInfo } from "./ShippingInfo";
 import { ProductGallery } from "./ProductGallery";
@@ -22,20 +21,7 @@ export const ProductDisplay: FC = () => {
     <div className={styles.wrapper}>
       <ProductGallery />
       <div className={styles.info}>
-        <div className={styles.rating}>
-          <div className={styles.stars} aria-label="5 out of 5 stars rating">
-            {Array.from({ length: 5 }).map((_, i) => (
-              <StarIcon
-                key={i}
-                fill="#DBAD3A"
-                width={19}
-                height={19}
-                viewBox="0 0 24 24"
-              />
-            ))}
-          </div>
-          <p>{t("V2.rating", { amount: 1000 })}</p>
-        </div>
+        <Rating text={t("V2.rating", { amount: 1000 })} />
         <h1 className={styles.title}>Cupid Chocolate</h1>
         <div className={styles.features}>
           {PRODUCT_FEATURES.map((feature, index) => (

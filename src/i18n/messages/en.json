@@ -290,7 +290,36 @@
       "product-benefits": "Product Benefits",
       "nutritional-information": "Nutrition & Ingredients",
       "how-it-works": "How it works",
-      "how-to-use": "How to use"
+      "how-to-use": "How to use",
+      "HowToUse": {
+        "title": "How to use Cupid Chocolate",
+        "steps": {
+          "0": {
+            "title": "Step 1:  Set the Mood",
+            "description": "Create the right atmosphere—dim the lights, relax, and get comfortable."
+          },
+          "1": {
+            "title": "Step 2: Break & Share",
+            "description": "Break a piece in half. Enjoy it alone or with your partner."
+          },
+          "2": {
+            "title": "Step 3:  Wait 30 Minutes",
+            "description": "Allow the natural ingredients to work their magic."
+          },
+          "3": {
+            "title": "Step 4",
+            "description": "Allow the natural ingredients to work their magic."
+          }
+        }
+      },
+      "Testimonials": {
+        "title": "Häufig gestellte Fragen",
+        "subtitle": "Why Customers Recommend Cupid:"
+      },
+      "FAQ": {
+        "title": "Häufig gestellte Fragen",
+        "subtitle": "Our Experts are ready to answer your questions and help"
+      }
     }
   },
   "Advantages": {
