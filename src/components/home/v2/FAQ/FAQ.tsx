@@ -11,8 +11,7 @@ import styles from "./FAQ.module.scss";
 import { EXPERTS } from "./config";
 
 export const FAQ: FC = () => {
-  const t = useTranslations("HomePage.V2.FAQ");
-  const faq = useTranslations("HomePage.FAQ");
+  const t = useTranslations("HomePage.FAQ");
 
   return (
     <section id="faq" className={styles.section}>
@@ -34,7 +33,7 @@ export const FAQ: FC = () => {
       </div>
       <div className={styles.accordion}>
         <Accordion
-          t={faq}
+          t={t}
           Icon={PlusIcon}
           data={Array.from({ length: 6 }, (_, i) => `list.${i}`.toString())}
         />

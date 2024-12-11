@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { FC, useState } from "react";
 import { useTranslations } from "next-intl";
 import dynamic from "next/dynamic";
 
@@ -14,7 +14,11 @@ const SideDrawer = dynamic(() => import("@/components/dynamic/SideDrawer"), {
 });
 const WHATSAPP_URI = process.env.WHATSAPP_URI;
 
-export const Menu = () => {
+type Props = {
+  byLink?: string;
+};
+
+export const Menu: FC<Props> = ({ byLink = "/sex-chocolate" }) => {
   const [isOpen, setIsOpen] = useState(false);
   const t = useTranslations("HomePage");
 
@@ -30,7 +34,7 @@ export const Menu = () => {
 
       <SideDrawer isOpen={isOpen} onClose={close} side="left">
         <nav className={styles.nav}>
-          <Link className={styles.link} href="/sex-chocolate">
+          <Link className={styles.link} href={byLink} onClick={close}>
             {t("by-now")}
           </Link>
           <span className={styles.divider} />

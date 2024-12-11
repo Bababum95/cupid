@@ -1,21 +1,31 @@
+export const PRODUCT_GALLERY = [
+  "/images/home/v2/main/1.png",
+  "/images/home/v2/main/2.png",
+  "/images/home/v2/main/3.png",
+  "/images/home/v2/main/4.png",
+];
+
 export const PRODUCT_VARIANTS = [
   {
     quantity: 1,
-    experiences: "3x Paar Erlebnisse",
     price: "29,99€",
     savings: { percentage: "19%" },
+    id: "gid://shopify/ProductVariant/49588357693764",
+    image: 1,
   },
   {
     quantity: 2,
-    experiences: "6x Paar Erlebnisse",
     price: "27,79€",
     savings: { percentage: "25%", gifts: 1 },
+    id: "gid://shopify/ProductVariant/49444215423300",
+    image: 2,
   },
   {
     quantity: 3,
-    experiences: "9x Paar Erlebnisse",
     price: "24,99€",
     savings: { percentage: "33%", gifts: 2 },
+    id: "gid://shopify/ProductVariant/49588801634628",
+    image: 3,
   },
 ];
 

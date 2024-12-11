@@ -1,10 +1,12 @@
 import { cookies } from "next/headers";
 
-import { Header, Footer, InitialLangSwitcher } from "@/components";
+import { Footer, InitialLangSwitcher } from "@/components";
 import { DEFAULLT_LOCALE } from "@/i18n/config";
 
 import PageV1 from "./v1/page";
 import PageV2 from "./v2/page";
+
+import "swiper/css";
 
 export default function Page({
   params: { locale },
@@ -18,8 +20,11 @@ export default function Page({
       {!cookieStore.has("LS") && locale === DEFAULLT_LOCALE && (
         <InitialLangSwitcher />
       )}
-      <Header />
-      {cookieStore.get("variant")?.value === "2" ? <PageV2 /> : <PageV1 />}
+      {cookieStore.get("variant")?.value === "2" ? (
+        <PageV2 locale={locale} />
+      ) : (
+        <PageV1 />
+      )}
       <Footer />
     </>
   );

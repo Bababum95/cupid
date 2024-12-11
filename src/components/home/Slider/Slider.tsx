@@ -5,8 +5,6 @@ import { Swiper, SwiperSlide } from "swiper/react";
 
 import { Controller } from "./Controller";
 
-import "swiper/css";
-
 import styles from "./Slider.module.scss";
 
 type Props = {

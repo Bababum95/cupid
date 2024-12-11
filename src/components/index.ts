@@ -11,6 +11,7 @@ export { LangSwitcher } from "./common/LangSwitcher/LangSwitcher";
 export { Menu } from "./common/Menu/Menu";
 export { Notice } from "./common/Notice/Notice";
 export { Price } from "./common/Price/Price";
+export { ProductPopup } from "./common/ProductPopup/ProductPopup";
 export { RadioVariant } from "./common/RadioVariant/RadioVariant";
 export { SubmitButton } from "./common/SubmitButton/SubmitButton";
 export { Subscribe } from "./common/Subscribe/Subscribe";

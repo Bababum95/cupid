@@ -9,6 +9,7 @@
 .info {
   width: 100%;
   max-width: 460px;
+  flex-basis: 460px;
 }
 
 .title {
@@ -29,6 +30,8 @@
 .image {
   object-fit: cover;
   border-radius: 25px;
+  max-width: 408px;
+  width: 60%;
 }
 
 .preview {
@@ -37,18 +40,61 @@
   width: 100%;
   max-width: 740px;
   height: 340px;
+  flex-basis: 740px;
 }
 
 .review {
   position: absolute;
 
   &:first-child {
-    bottom: 0;
-    left: 0;
+    top: 0;
+    right: 0;
   }
 
   &:last-child {
-    top: 0;
-    right: 0;
+    bottom: 0;
+    left: 0;
+  }
+}
+
+@media (max-width: 990px) {
+  .wrapper {
+    flex-direction: column;
+    margin: 80px auto;
+  }
+
+  .info {
+    max-width: 100%;
+    flex-basis: 0;
+  }
+
+  .preview {
+    flex-basis: 500px;
+  }
+}
+
+@include media("phone") {
+  .preview {
+    flex-basis: 580px;
+  }
+
+  .image {
+    width: 100%;
+    max-width: 298px;
+    height: 314px;
+    object-position: 60%;
+  }
+
+  .review {
+    &:first-child {
+      right: auto;
+      left: 0;
+    }
+
+    &:last-child {
+      left: auto;
+      right: 0;
+      bottom: -30px;
+    }
   }
 }

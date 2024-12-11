@@ -3,6 +3,7 @@
   max-width: $home-mw;
   margin: 270px auto;
   padding: 0 20px;
+  gap: 48px 40px;
 }
 
 .title {
@@ -10,7 +11,7 @@
   font-style: normal;
   font-weight: 700;
   line-height: 110%;
-  max-width: 520px;
+  max-width: 450px;
 }
 
 .experts {
@@ -62,6 +63,20 @@
 @include media("tablet") {
   .section {
     margin: 144px 0;
+    flex-direction: column;
+  }
+
+  .experts {
+    margin: 48px 0 16px;
+  }
+
+  .expert {
+    &:nth-child(2) {
+      transform: translateX(-10px);
+    }
+    &:nth-child(3) {
+      transform: translateX(-20px);
+    }
   }
 
   .accordion {

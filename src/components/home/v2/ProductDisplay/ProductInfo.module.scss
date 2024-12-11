@@ -13,3 +13,37 @@
     border-top: $grey-line;
   }
 }
+
+.content {
+  margin-top: 40px;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 150%;
+
+  strong {
+    font-weight: 700;
+    color: $text;
+  }
+
+  ul,
+  p:not(:last-child) {
+    margin-bottom: 15px;
+  }
+
+  p {
+    color: $secondary-text;
+  }
+
+  ul {
+    list-style: disc;
+    padding-left: 20px;
+    color: $text;
+  }
+
+  li {
+    &:not(:last-child) {
+      margin-bottom: 4px;
+    }
+  }
+}

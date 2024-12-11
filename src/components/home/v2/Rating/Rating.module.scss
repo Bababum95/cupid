@@ -1,10 +1,12 @@
 .rating {
   @include flex-layout(flex-start, center);
   gap: 8px;
-  font-size: 14px;
+  font-size: clamp(0.75rem, 0.7036rem + 0.1905vw, 0.875rem);
   font-style: normal;
   font-weight: 500;
   line-height: normal;
+  white-space: nowrap;
+  flex-wrap: wrap;
 }
 
 .stars {

@@ -131,13 +131,14 @@
       "30min": "Wirkung in 30 Minuten",
       "delivery": "Kostenloser Versand",
       "discreet": "Diskrete Verpackung",
-      "germany": "Hergestellt in Deutschland",
-      "natural": "100% natürliche Zutaten",
+      "germany": "Made in Germany",
+      "natural": "Natürliche Zutaten",
       "quality": "Hochwertige Inhaltsstoffe",
-      "superfood": "Mit Superfoods",
+      "superfood": "Enthält Superfoods",
       "support": "Schneller Support",
       "vegan": "100% vegan",
-      "limited-time-sale": "Limited Time Sale"
+      "limited-time-sale": "Limited Time Sale",
+      "works-for-men-and-women": "Wirksam für Männer und Frauen"
     },
     "Ingredients": {
       "title": "Warum diese Zutaten so gut funktionieren",
@@ -179,6 +180,7 @@
     },
     "FAQ": {
       "title": "Häufig gestellte Fragen",
+      "subtitle": "Unsere Fachleute sind bereit, dir bei deinen Fragen zu helfen",
       "show-more": "Weitere Fragen",
       "list": {
         "0": {
@@ -284,30 +286,31 @@
       "load-more": "Mehr laden"
     },
     "V2": {
-      "rating": "More than {amount}+ Happy Customers",
-      "shipping": "Ships {day, plural, =0 {today} =1 {tomorrow} =2 {the day after tomorrow} other {in # days}}, <strong>{shippingDate, date, ::MMMMd}</strong> if ordered within <strong>{hours}hr {minutes}min</strong>",
-      "product-benefits": "Product Benefits",
-      "nutritional-information": "Nutrition & Ingredients",
-      "how-it-works": "How it works",
-      "how-to-use": "How to use",
+      "rating": "Mehr als {amount}+ zufriedene Kunden",
+      "shipping": "Versand {day, plural, =0 {Heute} =1 {Morgen} =2 {Übermorgen} other {in # days}}, <strong>{shippingDate, date, ::MMMMd}</strong> bei Bestellungen innerhalb von <strong>{hours}hr {minutes}min</strong>",
+      "shiping-returns": "Lieferung & Rückgabe",
+      "nutritional-information": "Nährwerte & Inhaltsstoffe",
+      "how-it-works": "Wie es funktioniert",
+      "how-to-use": "Gebrauchsanweisung",
+      "happy-couples": "Über {amount}+ glückliche Paare",
       "HowToUse": {
-        "title": "How to use Cupid Chocolate",
+        "title": "Anwendung von Cupid Choco",
         "steps": {
           "0": {
-            "title": "Step 1:  Set the Mood",
-            "description": "Create the right atmosphere—dim the lights, relax, and get comfortable."
+            "title": "Schritt 1: Schaffe die richtige Stimmung",
+            "description": "Schalte das Licht herunter, entspannt euch und macht es euch bequem"
           },
           "1": {
-            "title": "Step 2: Break & Share",
-            "description": "Break a piece in half. Enjoy it alone or with your partner."
+            "title": "Schritt 2: Break & Share",
+            "description": "Brecht ein Stück in der Mitte. Genießt es alleine oder zu zweit."
           },
           "2": {
-            "title": "Step 3:  Wait 30 Minutes",
-            "description": "Allow the natural ingredients to work their magic."
+            "title": "Schritt 3: 30 Minuten warten",
+            "description": "Nimmt euch Zeit, um euch gegenseitig zu verwöhnen. Kuschelt, spielt und genießt die Nähe miteinander."
           },
           "3": {
-            "title": "Step 4",
-            "description": "Allow the natural ingredients to work their magic."
+            "title": "Schritt 4: Erlebt eine tiefere Intimität",
+            "description": "Erhöht die Nähe und geht immer weiter, während ihr neue Grenzen entdeckt. Dein Partner ist genauso bereit."
           }
         }
       },
@@ -315,9 +318,27 @@
         "title": "Häufig gestellte Fragen",
         "subtitle": "Why Customers Recommend Cupid:"
       },
-      "FAQ": {
-        "title": "Häufig gestellte Fragen",
-        "subtitle": "Our Experts are ready to answer your questions and help"
+      "Supergreens": {
+        "title": "Die ultimative aphrodisierende Rezeptur.",
+        "list": {
+          "heightens-pleasure": {
+            "title": "Steigert das gegenseitige Verlangen",
+            "description": "Stimuliert die Sinne und hilft, das innere Verlangen zu entfachen"
+          },
+          "boosts-performance": {
+            "title": "Verbessert Ausdauer im Bett",
+            "description": "Steigert die körperliche Energie und verbessert dadurch spürbar die Ausdauer"
+          },
+          "science-backed": {
+            "title": "Natürliche Zutaten",
+            "description": "Wissenschaftlich fundierte Formel, ganz ohne künstliche Zusätze"
+          }
+        }
+      },
+      "DrawerContents": {
+        "how-it-works": "<p>Cupid-Schokolade vereint natürliche Zutaten wie <strong>Maca-Wurzel, Panax-Ginseng, Zartbitterschokolade und Guarana</strong> für ein außergewöhnliches Erlebnis. Diese wissenschaftlich fundierte Formel steigert das sexuelle Verlangen und fördert das innere Verlangen. Sie hilft, die Stimmung zu verbessern, die Ausdauer zu steigern und sorgt für intensivere körperliche Erlebnisse.</p><span>Was du erwarten kannst:</span><ul><li><strong>Gesteigertes Verlangen und Erregung</strong></li><li><strong>Verbesserte Empfindungen</strong></li><li><strong>Erhöhtes Vergnügen</strong></li><li><strong>Mehr Energie und Ausdauer</strong></li><li><strong>Intensivere Intimität</strong></li></ul><p>Lass Cupid deine Verbindung stärken und unvergessliche Momente schaffen.</p>",
+        "how-to-use": "<p>Jede Packung enthält <strong>3 Schokoladenstücke</strong>, mit einem halben Stück pro Person als idealer Dosis.</p><ul><li><strong>Schritt 1: Schaffe die richtige Stimmung</strong><p>Schalte das Licht herunter, entspannt euch und macht es euch bequem.</p></li><li><strong>Schritt 2: Break & Share</strong><p>Brecht ein Stück in der Mitte. Genießt es alleine oder zu zweit.</p></li><li><strong>Schritt 3: 30 Minuten warten</strong><p>Nimmt euch Zeit, um euch gegenseitig zu verwöhnen. Kuschelt, spielt und genießt die Nähe miteinander.</p></li><li><strong>Schritt 4: Erlebt eine tiefere Intimität</strong><p>Erhöht die Nähe und geht immer weiter, während ihr neue Grenzen entdeckt. Dein Partner ist genauso bereit.</p></li></ul><p>Maximal 1 Stück pro Person pro Tag. Nicht geeignet für Schwangere, stillende Mütter.</p>",
+        "shiping-returns": "<p>Wir liefern innerhalb Deutschlands und in ausgewählte Länder wie Österreich, die Niederlande, die Schweiz und Italien. Die Lieferzeit beträgt in Deutschland <strong>1-2 Werktage</strong> und in die genannten Länder normalerweise 2-4 Werktage.</p><p>Wenn du Fragen hast, schreib uns gerne über WhatsApp unter <strong>+4915226740425</strong> oder per E-Mail an <strong>info@cupidchoco.com</strong>.</p><p>Wir helfen dir gerne weiter!</p>"
       }
     }
   },
@@ -394,6 +415,8 @@
     "deliver-every": "Lieferung alle",
     "weeks": "Wochen",
     "nutritional-information": "Nährwertinformationen",
+    "experiences": "{count}x Paar Erlebnisse",
+    "buy-now": "Jetzt kaufen",
     "BenefitsDrawerContent": {
       "text": "<strong>Entfache Leidenschaft & Leistung:</strong> Erhebe deine intimen Momente mit unserer exklusiven Mischung aus sechs klinisch untersuchten natürlichen Inhaltsstoffen. Diese potente Formel steigert die Libido, verstärkt das Vergnügen, erhöht die Energie und hebt die Stimmung, um ein befriedigenderes und verbundenes Erlebnis zu unterstützen.",
       "list": {

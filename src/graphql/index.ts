@@ -8,6 +8,7 @@ export { productFragment } from "./fragments/productFragment";
 export { cartQuery } from "./queries/cartQuery";
 export { collectionQuery } from "./queries/collectionQuery";
 export { getCustomersQuery } from "./queries/getCustomersQuery";
+export { productQuery } from "./queries/productQuery";
 export { relatedProductsQuery } from "./queries/relatedProductsQuery";
 export { sellingPlansQuery } from "./queries/sellingPlansQuery";
 

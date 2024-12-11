@@ -13,25 +13,75 @@
   line-height: normal;
 }
 
-.row {
-  display: flex;
-  margin-top: 44px;
-  width: 100%;
-  align-items: center;
-  gap: 20px;
+.images {
+  @include flex-layout;
   overflow: hidden;
-  justify-content: center;
+  width: 100%;
+  margin-top: 44px;
+
+  &.mobile {
+    display: none;
+  }
+}
+
+.row {
+  @include flex-layout;
+  animation: marquee 40s linear infinite;
+  gap: 20px;
+  min-width: 100vw;
+  padding-inline: 10px;
+  flex-shrink: 0;
+  transform: translateX(0%);
+  animation-play-state: running;
+  will-change: transform;
 }
 
 .image {
   border-radius: 25px;
   background-color: rgba(48, 48, 48, 1);
-  align-self: stretch;
-  display: flex;
   width: 240px;
-  height: 240px;
   aspect-ratio: 1;
-  margin: auto 0;
   flex-shrink: 0;
 }
 
+@include media("phone") {
+  .wrapper {
+    margin-bottom: 80px;
+  }
+
+  .heading {
+    text-align: center;
+  }
+
+  .images {
+    margin-top: 28px;
+
+    &.mobile {
+      display: flex;
+      margin-top: 8px;
+
+      .row {
+        animation: marquee 40s linear infinite reverse;
+      }
+    }
+  }
+
+  .row {
+    gap: 8px;
+    padding-inline: 4px;
+  }
+
+  .image {
+    width: 155px;
+  }
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-100%);
+  }
+}

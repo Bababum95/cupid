@@ -42,3 +42,9 @@
 .date {
   margin-left: auto;
 }
+
+@include media("phone") {
+  .wrapper {
+    max-width: 264px;
+  }
+}

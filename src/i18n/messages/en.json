@@ -180,6 +180,7 @@
     },
     "FAQ": {
       "title": "Frequently Asked Questions",
+      "subtitle": "Our Experts are ready to answer your questions and help",
       "show-more": "More Questions",
       "list": {
         "0": {
@@ -287,10 +288,11 @@
     "V2": {
       "rating": "More than {amount}+ Happy Customers",
       "shipping": "Ships {day, plural, =0 {today} =1 {tomorrow} =2 {the day after tomorrow} other {in # days}}, <strong>{shippingDate, date, ::MMMMd}</strong> if ordered within <strong>{hours}hr {minutes}min</strong>",
-      "product-benefits": "Product Benefits",
+      "shiping-returns": "Shipping & Returns",
       "nutritional-information": "Nutrition & Ingredients",
       "how-it-works": "How it works",
       "how-to-use": "How to use",
+      "happy-couples": "Over {amount}+ Happy Couples",
       "HowToUse": {
         "title": "How to use Cupid Chocolate",
         "steps": {
@@ -316,9 +318,27 @@
         "title": "Häufig gestellte Fragen",
         "subtitle": "Why Customers Recommend Cupid:"
       },
-      "FAQ": {
-        "title": "Häufig gestellte Fragen",
-        "subtitle": "Our Experts are ready to answer your questions and help"
+      "Supergreens": {
+        "title": "Das ultimative Supergreens Pulver.",
+        "list": {
+          "heightens-pleasure": {
+            "title": "Heightens Pleasure",
+            "description": "Amplifies sensual drive and emotional connection"
+          },
+          "boosts-performance": {
+            "title": "Boosts Performance",
+            "description": "Clinically-studied ingredients for increased drive"
+          },
+          "science-backed": {
+            "title": "Science-Backed Formula",
+            "description": "Natural aphrodisiacs that actually work"
+          }
+        }
+      },
+      "DrawerContents": {
+        "how-it-works": "<p>Cupid Chocolate combines natural ingredients like <strong>Maca Root, Panax Ginseng, Dark Chocolate, and Guarana</strong> to deliver a unique experience. This carefully crafted blend is designed to enhance sexual arousal for both women and men. It helps uplift mood, improve focus, and heighten sensitivity, turning ordinary moments into unforgettable experiences.</p><span>What to expect:</span><ul><li><strong>Increased Desire</strong></li><li><strong>Enhanced Sensations</strong></li><li><strong>Heightened Pleasure</strong></li><li><strong>Deeper Intimacy</strong></li><li><strong>Improved Energy</strong></li></ul><p>Let Cupid redefine how you connect and elevate every shared moment.</p>",
+        "how-to-use": "<p>Each box contains <strong>3 chocolate pieces</strong>, with <strong>half a piece per person</strong> as the ideal dose.</p><ul><li><strong>Step 1: Set the Mood</strong><p>Create the right atmosphere—dim the lights, relax, and get comfortable.</p></li><li><strong>Step 2: Break & Share</strong><p>Break a piece in half. Enjoy it alone or with your partner.</p></li><li><strong>Step 3: Wait 30 Minutes</strong><p>Allow the natural ingredients to work their magic.</p></li><li><strong>Step 4: Enjoy the Moment</strong><p>Feel the effects and enjoy the experience.</p></li></ul><p>Limit to 1 piece per person per day. Not recommended for those who are pregnant, nursing, or have underlying health conditions.</p>",
+        "shiping-returns": "<p>We deliver within Germany and to selected countries like Austria, the Netherlands, Switzerland, and Italy. Delivery times in Germany are <strong>1-2 working days</strong>, and to the mentioned countries, usually 2-4 working days.</p><p>If you have any questions, feel free to write to us via WhatsApp at <strong>+4915226740425</strong> or by email at <strong>info@cupidchoco.com</strong>.</p><p>We're here to help!</p>"
       }
     }
   },
@@ -395,6 +415,8 @@
     "deliver-every": "Deliver every",
     "weeks": "weeks",
     "nutritional-information": "Nutritional Information",
+    "experiences": "{count}x Paar Erlebnisse",
+    "buy-now": "Buy now",
     "BenefitsDrawerContent": {
       "text": "<strong>Ignite Passion & Performance:</strong> Elevate your intimate moments with our exclusive blend of six clinically-studied natural ingredients. This potent formula boosts libido, enhances pleasure, increases energy, and uplifts mood to support a more satisfying and connected experience.",
       "list": {

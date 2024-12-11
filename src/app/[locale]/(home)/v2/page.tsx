@@ -1,6 +1,8 @@
-import { useTranslations } from "next-intl";
-
-import { Comments, Marquee, Slider, Video } from "@/components/home";
+import { dataUtils } from "@/utils";
+import { Header } from "@/components";
+import { productQuery } from "@/graphql";
+import { fetchShopify } from "@/lib/shopify";
+import { Comments, Marquee, CupidCommunity } from "@/components/home";
 import {
   HappyCouples,
   HowToUse,
@@ -11,40 +13,33 @@ import {
   FAQ,
 } from "@/components/home/v2";
 
-import { VIDEOS, MARQUEE_V2, LIST_OF_INGREDIENTS } from "../config";
+import { MARQUEE_V2, LIST_OF_INGREDIENTS } from "../config";
 import styles from "./page.module.scss";
 
-export default function Page() {
-  const t = useTranslations("HomePage");
+export default async function Page({ locale }: { locale: string }) {
+  const response = await fetchShopify({
+    query: productQuery,
+    variables: { handle: "cupid-scented-candle" },
+    locale,
+  });
 
   return (
-    <main className={styles.page}>
-      <Marquee list={MARQUEE_V2} />
-      <ProductDisplay />
-      <HappyCouples />
-      <Supergreens />
-      <Slider title={t("what-our-customers-say")}>
-        {VIDEOS.map((video, i) => (
-          <Video
-            description={video.description}
-            key={i}
-            poster={`/images/posters/${video.name}.webp`}
-          >
-            {["webm", "mp4"].map((ext, i) => (
-              <source
-                key={ext + i}
-                src={`/videos/${video.name}.${ext}`}
-                type={`video/${ext}`}
-              />
-            ))}
-          </Video>
-        ))}
-      </Slider>
-      <Ingredients list={LIST_OF_INGREDIENTS} />
-      <HowToUse />
-      <Testimonials />
-      <Comments />
-      <FAQ />
-    </main>
+    <>
+      <Header byLink="/#product" />
+      <main className={styles.page}>
+        <Marquee list={MARQUEE_V2} />
+        <ProductDisplay
+          upsell={dataUtils.normalizeProduct(response?.product)}
+        />
+        <HappyCouples />
+        <Supergreens />
+        <CupidCommunity />
+        <Ingredients list={LIST_OF_INGREDIENTS} />
+        <HowToUse />
+        <Testimonials />
+        <Comments accentColor="#DBAD3A" />
+        <FAQ />
+      </main>
+    </>
   );
 }

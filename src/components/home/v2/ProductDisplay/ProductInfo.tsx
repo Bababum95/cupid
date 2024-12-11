@@ -1,10 +1,10 @@
 "use client";
 
-import { useState } from "react";
+import { FC, useState } from "react";
 import { useTranslations } from "next-intl";
 import dynamic from "next/dynamic";
 
-import { BenefitsDrawerContent, NutritionalDrawerContent } from "@/components";
+import { NutritionalDrawerContent } from "@/components";
 import PlusIcon from "@/icons/plus.svg";
 
 import styles from "./ProductInfo.module.scss";
@@ -13,16 +13,35 @@ const SideDrawer = dynamic(() => import("@/components/dynamic/SideDrawer"), {
   ssr: false,
 });
 
+type DrawerContentProps = {
+  name: string;
+};
+
+const DrawerContent: FC<DrawerContentProps> = ({ name }) => {
+  const t = useTranslations("HomePage.V2.DrawerContents");
+
+  return (
+    <div className={styles.content}>
+      {t.rich(name, {
+        p: (chunks) => <p>{chunks}</p>,
+        ul: (chunks) => <ul>{chunks}</ul>,
+        li: (chunks) => <li>{chunks}</li>,
+        span: (chunks) => <span>{chunks}</span>,
+        strong: (chunks) => <strong>{chunks}</strong>,
+      })}
+    </div>
+  );
+};
+
+const PRODUCT_INFO_ITEMS = {
+  "how-it-works": <DrawerContent name="how-it-works" />,
+  "nutritional-information": <NutritionalDrawerContent />,
+  "how-to-use": <DrawerContent name="how-to-use" />,
+  "shiping-returns": <DrawerContent name="shiping-returns" />,
+} as const;
+
 export const ProductInfo = () => {
   const t = useTranslations("HomePage.V2");
-
-  const PRODUCT_INFO_ITEMS = {
-      "how-it-works": <div>How it works</div>,
-      "nutritional-information": <NutritionalDrawerContent />,
-      "how-to-use": <div>How to use</div>,
-      "product-benefits": <BenefitsDrawerContent />,
-  } as const;
-
   const [drawer, setDrawer] = useState<keyof typeof PRODUCT_INFO_ITEMS | null>(
     null
   );

@@ -1,5 +1,10 @@
+.section {
+  padding-top: 10px;
+  margin-top: -280px;
+}
+
 .item {
-  max-width: 394px;
+  width: 394px;
 }
 
 .subtitle {
@@ -37,5 +42,15 @@
 
   span {
     color: $text;
+  }
+}
+
+@include media("phone") {
+  .item {
+    width: 305px;
+  }
+
+  .section {
+    margin-top: -160px;
   }
 }

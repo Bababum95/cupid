@@ -1,5 +1,6 @@
 export { Advantages } from "./Advantages/Advantages";
 export { Comments } from "./Comments/Comments";
+export { CupidCommunity } from "./CupidCommunity/CupidCommunity";
 export { FAQ } from "./FAQ/FAQ";
 export { Gallery } from "./Gallery/Gallery";
 export { Ingredients } from "./Ingredients/Ingredients";

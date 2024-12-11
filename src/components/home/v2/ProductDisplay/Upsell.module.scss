@@ -1,0 +1,39 @@
+.title {
+  padding: 20px 0;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 12px;
+}
+
+.product {
+  @include flex-layout;
+  gap: 16px;
+}
+
+.image {
+  border-radius: 12px;
+  object-fit: cover;
+}
+
+.name {
+  color: $text;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  margin: 6px 0 8px;
+}
+
+.button {
+  color: $text;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 12px;
+  border-radius: 60px;
+  border: 2px solid $accent;
+  background-color: transparent;
+  padding: 10px 14px;
+  margin: 8px 0 0 auto;
+}
