@@ -10,9 +10,10 @@ import styles from "./Upsell.module.scss";
 
 type Props = {
   product: ProductType;
+  addToCart: (id: string, price: number) => void;
 };
 
-export const Upsell: FC<Props> = ({ product }) => {
+export const Upsell: FC<Props> = ({ product, addToCart }) => {
   const [popupProduct, setPopupProduct] = useState<ProductType | null>(null);
 
   return (
@@ -45,7 +46,9 @@ export const Upsell: FC<Props> = ({ product }) => {
       <ProductPopup
         product={popupProduct}
         handleClose={() => setPopupProduct(null)}
-        handleAddToCart={() => {}}
+        handleAddToCart={(id) =>
+          addToCart(id, product.variants[0].price.amount)
+        }
       />
     </div>
   );

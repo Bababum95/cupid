@@ -30,6 +30,7 @@ export default async function Page({ locale }: { locale: string }) {
         <Marquee list={MARQUEE_V2} />
         <ProductDisplay
           upsell={dataUtils.normalizeProduct(response?.product)}
+          locale={locale}
         />
         <HappyCouples />
         <Supergreens />

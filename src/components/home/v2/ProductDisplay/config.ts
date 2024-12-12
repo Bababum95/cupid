@@ -1,31 +1,112 @@
 export const PRODUCT_GALLERY = [
-  "/images/home/v2/main/1.png",
-  "/images/home/v2/main/2.png",
-  "/images/home/v2/main/3.png",
-  "/images/home/v2/main/4.png",
-];
+  {
+    type: "image",
+    src: {
+      en: "/images/home/v2/main/en/main.jpg",
+      de: "/images/home/v2/main/de/main.jpg",
+    },
+  },
+  {
+    type: "image",
+    src: {
+      en: "/images/home/v2/main/en/ingredients.jpg",
+      de: "/images/home/v2/main/de/ingredients.jpg",
+    },
+  },
+  {
+    type: "image",
+    src: {
+      en: "/images/home/v2/main/en/why.jpg",
+      de: "/images/home/v2/main/de/why.jpg",
+    },
+  },
+  {
+    type: "image",
+    src: {
+      en: "/images/home/v2/main/en/why-2.jpg",
+      de: "/images/home/v2/main/de/why-2.jpg",
+    },
+  },
+  {
+    type: "image",
+    src: {
+      en: "/images/home/v2/main/en/why-3.jpg",
+      de: "/images/home/v2/main/de/why-3.jpg",
+    },
+  },
+  {
+    type: "image",
+    src: {
+      en: "/images/home/v2/main/en/how-it-work.jpg",
+      de: "/images/home/v2/main/de/how-it-work.jpg",
+    },
+  },
+  {
+    type: "image",
+    src: {
+      en: "/images/home/v2/main/en/indide.jpg",
+      de: "/images/home/v2/main/de/indide.jpg",
+    },
+  },
+  {
+    type: "image",
+    src: {
+      en: "/images/home/v2/main/en/formula.jpg",
+      de: "/images/home/v2/main/de/formula.jpg",
+    },
+  },
+  {
+    type: "image",
+    src: {
+      en: "/images/home/v2/main/jan-b.jpg",
+      de: "/images/home/v2/main/jan-b.jpg",
+    },
+  },
+  {
+    type: "image",
+    src: {
+      en: "/images/home/v2/main/3.jpg",
+      de: "/images/home/v2/main/3.jpg",
+    },
+  },
+  {
+    type: "image",
+    src: {
+      en: "/images/home/v2/main/2.jpg",
+      de: "/images/home/v2/main/2.jpg",
+    },
+  },
+  {
+    type: "image",
+    src: {
+      en: "/images/home/v2/main/1.jpg",
+      de: "/images/home/v2/main/1.jpg",
+    },
+  },
+] as const;
 
+export const REGULAR_PRICE = 37;
 export const PRODUCT_VARIANTS = [
   {
     quantity: 1,
-    price: "29,99€",
+    price: 29.99,
     savings: { percentage: "19%" },
     id: "gid://shopify/ProductVariant/49588357693764",
-    image: 1,
+    image: "11",
   },
   {
     quantity: 2,
-    price: "27,79€",
+    price: 27.79,
     savings: { percentage: "25%", gifts: 1 },
     id: "gid://shopify/ProductVariant/49444215423300",
-    image: 2,
+    image: "10",
   },
   {
     quantity: 3,
-    price: "24,99€",
+    price: 24.99,
     savings: { percentage: "33%", gifts: 2 },
     id: "gid://shopify/ProductVariant/49588801634628",
-    image: 3,
+    image: "9",
   },
 ];
 

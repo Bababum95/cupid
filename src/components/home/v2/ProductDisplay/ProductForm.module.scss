@@ -54,4 +54,32 @@
 
 .button {
   @include primary-button;
+  justify-content: flex-start;
+  gap: 8px;
+}
+
+.total {
+  @include flex-layout(flex-end, center);
+  margin-left: auto;
+  gap: 10px;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+
+.regular {
+  color: $secondary-text;
+  position: relative;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: $text;
+    rotate: -10deg;
+  }
 }

@@ -11,9 +11,10 @@ import "swiper/css/pagination";
 
 type Props = {
   currentImage: number | null;
+  locale: "en" | "de";
 };
 
-const Controller: FC<Props> = ({ currentImage }) => {
+const Controller: FC<{ currentImage: number | null }> = ({ currentImage }) => {
   const swiper = useSwiper();
 
   useEffect(() => {
@@ -34,7 +35,10 @@ const Controller: FC<Props> = ({ currentImage }) => {
  * @param {number | null} props.currentImage - The index of the currently selected image.
  * @returns {JSX.Element}                    - The rendered ProductGallery component.
  */
-export const ProductGallery: FC<Props> = ({ currentImage }): JSX.Element => {
+export const ProductGallery: FC<Props> = ({
+  currentImage,
+  locale,
+}): JSX.Element => {
   return (
     <div className={styles.wrapper} role="region" aria-label="Product images">
       <Swiper
@@ -44,15 +48,17 @@ export const ProductGallery: FC<Props> = ({ currentImage }): JSX.Element => {
         loop
       >
         <Controller currentImage={currentImage} />
-        {PRODUCT_GALLERY.map((image, index) => (
+        {PRODUCT_GALLERY.map((slide, index) => (
           <SwiperSlide key={index}>
-            <Image
-              src={image}
-              alt="Product image"
-              fill
-              quality={80}
-              className={styles.image}
-            />
+            {slide.type === "image" && (
+              <Image
+                src={slide.src[locale]}
+                alt="Product image"
+                fill
+                quality={95}
+                className={styles.image}
+              />
+            )}
           </SwiperSlide>
         ))}
       </Swiper>

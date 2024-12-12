@@ -2,6 +2,7 @@ import { FC } from "react";
 import { useTranslations } from "next-intl";
 
 import { RadioVariant } from "@/components";
+import ProtectIcon from "@/icons/protect.svg";
 
 import { PRODUCT_VARIANTS } from "./config";
 import styles from "./ProductForm.module.scss";
@@ -10,12 +11,24 @@ type Props = {
   selectedBox: string | null;
   handleChange: (id: string) => void;
   handleBuyClick: () => void;
+  total?: {
+    regular: number;
+    discount: number;
+  };
+};
+
+const formatPrice = (price: number) => {
+  return new Intl.NumberFormat("de-DE", {
+    style: "currency",
+    currency: "EUR",
+  }).format(price);
 };
 
 export const ProductForm: FC<Props> = ({
   selectedBox,
   handleChange,
   handleBuyClick,
+  total,
 }) => {
   const t = useTranslations("SexChocolate");
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
@@ -63,14 +76,23 @@ export const ProductForm: FC<Props> = ({
                 {t("experiences", { count: quantity * 3 })}
               </span>
               <span className={styles.price}>
-                {price}/{t("box")}
+                {formatPrice(price)}/{t("box")}
               </span>
             </div>
           </RadioVariant>
         ))}
       </ul>
       <button className={styles.button} disabled={!selectedBox}>
+        <ProtectIcon />
         {t("buy-now")}
+        {selectedBox && total && (
+          <div className={styles.total} aria-label="Total price">
+            <span className={styles.discount}>
+              {formatPrice(total.discount)}
+            </span>
+            <span className={styles.regular}>{formatPrice(total.regular)}</span>
+          </div>
+        )}
       </button>
     </form>
   );
