@@ -1,4 +1,3 @@
-export { HappyCouples } from "./HappyCouples/HappyCouples";
 export { HowToUse } from "./HowToUse/HowToUse";
 export { FAQ } from "./FAQ/FAQ";
 export { Ingredients } from "./Ingredients/Ingredients";

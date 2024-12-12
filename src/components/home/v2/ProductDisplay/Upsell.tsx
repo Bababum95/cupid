@@ -1,5 +1,6 @@
 import { FC, useState } from "react";
 import { motion } from "motion/react";
+import { useTranslations } from "next-intl";
 import Image from "next/image";
 
 import type { ProductType } from "@/types";
@@ -15,10 +16,11 @@ type Props = {
 
 export const Upsell: FC<Props> = ({ product, addToCart }) => {
   const [popupProduct, setPopupProduct] = useState<ProductType | null>(null);
+  const t = useTranslations("HomePage.V2.Upsell");
 
   return (
     <div className={styles.wrapper}>
-      <p className={styles.title}>Complete Your Experience</p>
+      <p className={styles.title}>{t("title")}</p>
       <motion.div
         className={styles.product}
         onClick={() => setPopupProduct(product)}
@@ -40,7 +42,7 @@ export const Upsell: FC<Props> = ({ product, addToCart }) => {
           />
         </div>
         <button className={styles.button} type="button">
-          + Add
+          {t("add")}
         </button>
       </motion.div>
       <ProductPopup

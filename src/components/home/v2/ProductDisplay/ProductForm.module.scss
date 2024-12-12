@@ -56,6 +56,14 @@
   @include primary-button;
   justify-content: flex-start;
   gap: 8px;
+
+  &.loading {
+    @include button-loading;
+
+    .total {
+      display: none;
+    }
+  }
 }
 
 .total {

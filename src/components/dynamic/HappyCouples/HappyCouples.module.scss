@@ -26,7 +26,7 @@
 
 .row {
   @include flex-layout;
-  animation: marquee 40s linear infinite;
+  animation: marquee 80s linear infinite;
   gap: 20px;
   min-width: 100vw;
   padding-inline: 10px;
@@ -42,6 +42,7 @@
   width: 240px;
   aspect-ratio: 1;
   flex-shrink: 0;
+  object-fit: cover;
 }
 
 @include media("phone") {
@@ -61,7 +62,7 @@
       margin-top: 8px;
 
       .row {
-        animation: marquee 40s linear infinite reverse;
+        animation: marquee 60s linear infinite reverse;
       }
     }
   }
@@ -73,6 +74,7 @@
 
   .image {
     width: 155px;
+    height: 155px;
   }
 }
 

@@ -4,6 +4,7 @@ import { useTranslations } from "next-intl";
 import { Slider } from "@/components/home";
 
 import styles from "./Ingredients.module.scss";
+import Image from "next/image";
 
 type Props = {
   list: number[];
@@ -18,7 +19,14 @@ export const Ingredients: FC<Props> = ({ list }) => {
         {list.map((item) => (
           <div key={item} className={styles.item}>
             <h3 className={styles.subtitle}>{t(`list.${item}.name`)}</h3>
-            <div className={styles.image} />
+            <Image
+              src={`/images/home/v2/ingredients/${item}.jpg`}
+              width={394}
+              height={240}
+              alt={t(`list.${item}.name`)}
+              className={styles.image}
+              quality={80}
+            />
             <p className={styles.property}>{t(`list.${item}.property`)}</p>
             <p className={styles.description}>
               {t.rich(`list.${item}.description`, {

@@ -53,7 +53,7 @@ export const ShippingInfo = () => {
               alt={`${text} icon`}
               className={styles.icon}
             />
-            <span>{text}</span>
+            <span>{t(`V2.${text}`)}</span>
           </li>
         ))}
       </ul>

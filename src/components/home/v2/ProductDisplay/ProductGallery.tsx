@@ -64,9 +64,30 @@ export const ProductGallery: FC<Props> = ({
       </Swiper>
 
       <div className={styles.thumbnails}>
-        <div className={styles.thumbnail} />
-        <div className={styles.thumbnail} />
-        <div className={styles.thumbnail} />
+        <Image
+          className={styles.thumbnail}
+          src="/images/home/v2/1.jpg"
+          alt="Girl with a chocolate"
+          width={758}
+          height={322}
+          quality={90}
+        />
+        <Image
+          className={styles.thumbnail}
+          src="/images/home/v2/ingredients/1.jpg"
+          alt="Chocolate"
+          width={369}
+          height={322}
+          quality={80}
+        />
+        <Image
+          className={styles.thumbnail}
+          src="/images/home/v2/2.jpg"
+          alt="Girl eating a chocolate"
+          width={369}
+          height={322}
+          quality={80}
+        />
       </div>
     </div>
   );

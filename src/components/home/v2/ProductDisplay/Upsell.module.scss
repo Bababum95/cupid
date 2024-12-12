@@ -38,3 +38,10 @@
   margin: 8px 0 0 auto;
   white-space: nowrap;
 }
+
+@include media("phone") {
+  .name {
+    margin-top: 0;
+    font-size: 16px;
+  }
+}

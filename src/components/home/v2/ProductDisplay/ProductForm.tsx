@@ -6,11 +6,13 @@ import ProtectIcon from "@/icons/protect.svg";
 
 import { PRODUCT_VARIANTS } from "./config";
 import styles from "./ProductForm.module.scss";
+import classNames from "classnames";
 
 type Props = {
   selectedBox: string | null;
   handleChange: (id: string) => void;
   handleBuyClick: () => void;
+  loading?: boolean;
   total?: {
     regular: number;
     discount: number;
@@ -29,6 +31,7 @@ export const ProductForm: FC<Props> = ({
   handleChange,
   handleBuyClick,
   total,
+  loading = false,
 }) => {
   const t = useTranslations("SexChocolate");
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
@@ -82,7 +85,10 @@ export const ProductForm: FC<Props> = ({
           </RadioVariant>
         ))}
       </ul>
-      <button className={styles.button} disabled={!selectedBox}>
+      <button
+        className={classNames(styles.button, { [styles.loading]: loading })}
+        disabled={!selectedBox}
+      >
         <ProtectIcon />
         {t("buy-now")}
         {selectedBox && total && (

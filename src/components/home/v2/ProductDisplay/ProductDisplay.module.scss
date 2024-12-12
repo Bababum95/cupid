@@ -34,7 +34,9 @@ h1.title {
   font-weight: 500;
   line-height: normal;
 
-  span {
+  div {
+    @include flex-layout(flex-start, center);
+    gap: 12px;
     flex: 1;
     min-width: 160px;
   }

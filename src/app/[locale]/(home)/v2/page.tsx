@@ -1,10 +1,11 @@
+import dynamic from "next/dynamic";
+
 import { dataUtils } from "@/utils";
 import { Header } from "@/components";
 import { productQuery } from "@/graphql";
 import { fetchShopify } from "@/lib/shopify";
 import { Comments, Marquee, CupidCommunity } from "@/components/home";
 import {
-  HappyCouples,
   HowToUse,
   Ingredients,
   ProductDisplay,
@@ -15,6 +16,11 @@ import {
 
 import { MARQUEE_V2, LIST_OF_INGREDIENTS } from "../config";
 import styles from "./page.module.scss";
+
+const HappyCouples = dynamic(
+  () => import("@/components/dynamic/HappyCouples"),
+  { ssr: false }
+);
 
 export default async function Page({ locale }: { locale: string }) {
   const response = await fetchShopify({

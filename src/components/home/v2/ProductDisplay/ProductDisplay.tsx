@@ -3,7 +3,8 @@
 import { type FC, useState, useRef } from "react";
 import { useTranslations } from "next-intl";
 
-import type { ProductType } from "@/types";
+import type { ProductType, CreateCartInput } from "@/types";
+import CupidHeartIcon from "@/icons/cupid-heart.svg";
 
 import { Rating } from "../Rating/Rating";
 import { PRODUCT_FEATURES, PRODUCT_VARIANTS, REGULAR_PRICE } from "./config";
@@ -16,6 +17,7 @@ import styles from "./ProductDisplay.module.scss";
 
 type CartState = {
   main: string | null;
+  loading?: boolean;
   upsell?: {
     id: string;
     price: number;
@@ -81,7 +83,20 @@ export const ProductDisplay: FC<Props> = ({ upsell, locale }) => {
   };
 
   const handleBuyClick = async () => {
-    console.log(upsell);
+    if (!cart.main) return;
+
+    setCart((prev) => ({ ...prev, loading: true }));
+
+    const selectedProduct = PRODUCT_VARIANTS.find(
+      (variant) => variant.id === cart.main
+    );
+    if (!selectedProduct) return;
+    const input: CreateCartInput = {
+      lines: [{ merchandiseId: selectedProduct.id, quantity: 1 }],
+      discountCodes: [],
+    };
+
+    console.log(input);
   };
 
   return (
@@ -95,7 +110,10 @@ export const ProductDisplay: FC<Props> = ({ upsell, locale }) => {
         <h1 className={styles.title}>Cupid Chocolate</h1>
         <div className={styles.features}>
           {PRODUCT_FEATURES.map((feature, index) => (
-            <span key={index}>{t(`features.${feature}`)}</span>
+            <div key={index}>
+              <CupidHeartIcon />
+              <span>{t(`features.${feature}`)}</span>
+            </div>
           ))}
         </div>
         <ProductForm
@@ -103,6 +121,7 @@ export const ProductDisplay: FC<Props> = ({ upsell, locale }) => {
           handleChange={handleChangeBox}
           handleBuyClick={handleBuyClick}
           total={cart.total}
+          loading={cart.loading}
         />
         <ShippingInfo />
         <ProductInfo />
