@@ -17,6 +17,8 @@ import {
 import { MARQUEE_V2, LIST_OF_INGREDIENTS } from "../config";
 import styles from "./page.module.scss";
 
+const VERSION = "V2";
+
 const HappyCouples = dynamic(
   () => import("@/components/dynamic/HappyCouples"),
   { ssr: false }
@@ -40,7 +42,7 @@ export default async function Page({ locale }: { locale: string }) {
         />
         <HappyCouples />
         <Supergreens />
-        <CupidCommunity />
+        <CupidCommunity version={VERSION} />
         <Ingredients list={LIST_OF_INGREDIENTS} />
         <HowToUse />
         <Testimonials />

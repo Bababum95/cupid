@@ -2,7 +2,7 @@
 
 import { FC, useEffect } from "react";
 import { Swiper, SwiperSlide, useSwiper } from "swiper/react";
-import { Pagination } from "swiper/modules";
+import { Pagination, Autoplay } from "swiper/modules";
 import Image from "next/image";
 
 import { PRODUCT_GALLERY } from "./config";
@@ -43,8 +43,13 @@ export const ProductGallery: FC<Props> = ({
     <div className={styles.wrapper} role="region" aria-label="Product images">
       <Swiper
         className={styles.slider}
-        modules={[Pagination]}
+        modules={[Pagination, Autoplay]}
         pagination={{ clickable: true }}
+        autoplay={{
+          delay: 5000,
+          disableOnInteraction: false,
+          pauseOnMouseEnter: true,
+        }}
         loop
       >
         <Controller currentImage={currentImage} />
@@ -55,8 +60,8 @@ export const ProductGallery: FC<Props> = ({
                 src={slide.src[locale]}
                 alt="Product image"
                 fill
-                quality={95}
                 className={styles.image}
+                priority
               />
             )}
           </SwiperSlide>

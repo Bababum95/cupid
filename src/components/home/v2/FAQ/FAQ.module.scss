@@ -1,7 +1,7 @@
 .section {
   @include flex-layout(space-between);
   max-width: $home-mw;
-  margin: 270px auto;
+  margin: 120px auto;
   padding: 0 20px;
   gap: 48px 40px;
 }

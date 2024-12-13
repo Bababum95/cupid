@@ -18,6 +18,8 @@ import {
 import { MARQUEE_V1 } from "../config";
 import styles from "./page.module.scss";
 
+const VERSION = "V1";
+
 export default function Page() {
   const t = useTranslations("HomePage");
 
@@ -56,8 +58,10 @@ export default function Page() {
         <Advantages />
         <Recommendations />
         <Ingredients />
-        <CupidCommunity />
+        <div className={styles.divider} />
+        <CupidCommunity version={VERSION} />
         <Gallery />
+        <div className={styles.divider} />
         <Comments />
         <FAQ />
         <Subscribe />

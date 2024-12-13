@@ -107,7 +107,7 @@ export const ProductDisplay: FC<Props> = ({ upsell, locale }) => {
       />
       <div className={styles.info} id="product">
         <Rating text={t("V2.rating", { amount: 1000 })} />
-        <h1 className={styles.title}>Cupid Chocolate</h1>
+        <h1 className={styles.title}>{t("V2.name")}</h1>
         <div className={styles.features}>
           {PRODUCT_FEATURES.map((feature, index) => (
             <div key={index}>

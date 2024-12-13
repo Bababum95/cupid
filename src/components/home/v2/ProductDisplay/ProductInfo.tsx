@@ -28,6 +28,7 @@ const DrawerContent: FC<DrawerContentProps> = ({ name }) => {
         li: (chunks) => <li>{chunks}</li>,
         span: (chunks) => <span>{chunks}</span>,
         strong: (chunks) => <strong>{chunks}</strong>,
+        br: () => <br />,
       })}
     </div>
   );

@@ -3,7 +3,7 @@ export const PRODUCT_GALLERY = [
     type: "image",
     src: {
       en: "/images/home/v2/main/en/main.jpg",
-      de: "/images/home/v2/main/de/main.jpg",
+      de: "/images/home/v2/main/de/main.webp",
     },
   },
   {

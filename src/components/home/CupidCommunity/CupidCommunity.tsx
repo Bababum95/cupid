@@ -1,13 +1,18 @@
+import type { FC } from "react";
 import { useTranslations } from "next-intl";
 
 import { Slider, Video } from "@/components/home";
 
 import { VIDEOS } from "./config";
 
-export const CupidCommunity = () => {
-  const t = useTranslations("HomePage");
+type Props = {
+  version: "V1" | "V2";
+};
+
+export const CupidCommunity: FC<Props> = ({ version }) => {
+  const t = useTranslations("HomePage.CupidCommunity");
   return (
-    <Slider title={t("what-our-customers-say")}>
+    <Slider title={t(version)}>
       {VIDEOS.map((video, i) => (
         <Video
           description={video.description}

@@ -1,6 +1,6 @@
 .section {
-  padding-top: 10px;
-  margin-top: -280px;
+  padding-top: calc(var(--header-height) + 20px);
+  margin: calc(120px - var(--header-height)) auto 120px;
 }
 
 .item {
@@ -9,7 +9,7 @@
 
 .subtitle {
   color: $text;
-  font-size: 32px;
+  font-size: clamp(1.5rem, 1.3143rem + 0.7619vw, 2rem);
   font-style: normal;
   font-weight: 700;
   line-height: 110%;
@@ -26,7 +26,7 @@
 
 .property {
   color: $text;
-  font-size: 21px;
+  font-size: clamp(1.1875rem, 1.1411rem + 0.1905vw, 1.3125rem);
   font-style: normal;
   font-weight: 700;
   line-height: normal;
@@ -51,6 +51,6 @@
   }
 
   .section {
-    margin-top: -160px;
+    margin: calc(80px - var(--header-height)) auto 80px;
   }
 }

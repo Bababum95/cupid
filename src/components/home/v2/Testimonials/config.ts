@@ -4,16 +4,16 @@ export const REVIEWS = [
   {
     title: "Cupid Choco",
     content:
-      "Unser Liebesleben war am Boden, bis uns die Sexualtherapeutin Cupid Choco empfahl. Seitdem hat sich alles verändert – die Verbindung zwischen uns ist intensiver, und wir genießen die gemeinsamen Momente viel mehr. Jetzt läuft’s wieder richtig gut! Danke Cupid!",
+      "Unser Liebesleben war am Boden, bis die Sexualtherapeutin Cupid empfahl. Jetzt läuft's wieder! Danke Cupid!",
     author: "Marie",
-    date: "13. November 2024",
+    date: "9. Dezember 2024",
   },
   {
     title: "Cupid Choco",
     content:
-      "Ich bin begeistert von Cupid Choco! Die Schokolade schmeckt nicht nur großartig, sondern hat auch eine spürbare Wirkung auf die Intimität in meiner Beziehung. Seitdem ich sie regelmäßig genieße, fühlt sich alles viel intensiver an. Sehr empfehlenswert!",
+      "Anfangs war ich skeptisch, aber die Wirkung war echt spürbar. Meine Partnerin war total begeistert und auch ich habe mich lebendiger gefühlt. Ehrlich gesagt, der ganze Abend fühlte sich intensiver an und ist definitiv in Erinnerung geblieben. Top Sache, würde ich echt weiterempfehlen.",
     author: "Jan",
-    date: "13. November 2024",
+    date: "11. November 2024",
   },
 ];
 

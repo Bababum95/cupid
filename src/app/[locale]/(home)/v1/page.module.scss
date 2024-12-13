@@ -67,6 +67,10 @@
   }
 }
 
+.divider {
+  height: 270px;
+}
+
 @include media("tablet") {
   .content {
     position: static;
@@ -74,6 +78,10 @@
     left: 0;
     transform: none;
     margin-top: 28px;
+  }
+
+  .hero {
+    margin-bottom: 120px;
   }
 }
 
@@ -102,5 +110,9 @@
     width: 100%;
     margin-top: 24px;
     border-radius: 15px;
+  }
+
+  .divider {
+    height: 120px;
   }
 }
