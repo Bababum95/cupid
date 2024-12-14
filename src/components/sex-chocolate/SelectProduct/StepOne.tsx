@@ -58,7 +58,7 @@ export const StepOne: FC<Props> = ({
     evt.preventDefault();
     setIsLoading(true);
     await nextStep();
-    setIsLoading(false);
+    // setIsLoading(false);
   };
 
   return (
