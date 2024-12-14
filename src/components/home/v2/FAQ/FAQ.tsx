@@ -11,7 +11,7 @@ import styles from "./FAQ.module.scss";
 import { EXPERTS, LIST_OF_QUESTIONS } from "./config";
 
 export const FAQ: FC = () => {
-  const t = useTranslations("HomePage.FAQ");
+  const t = useTranslations("FAQ");
   const listTranslations = useTranslations("FAQ.list");
 
   return (
