@@ -5,9 +5,9 @@ import { useMediaQuery } from "react-responsive";
 
 import type { ProductType } from "@/types";
 import { useAppDispatch } from "@/hooks";
+import { ProductPopup } from "@/components";
 import { addLine } from "@/lib/slices/cart";
 
-import { ProductPopup } from "./ProductPopup";
 import { Product } from "./Product";
 import { ProductLoader } from "./ProductLoader";
 import styles from "./Catalog.module.scss";

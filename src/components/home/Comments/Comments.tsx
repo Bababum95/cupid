@@ -1,7 +1,7 @@
 "use client";
 
+import { useState, useEffect, type FC } from "react";
 import { useTranslations } from "next-intl";
-import { useState, useEffect } from "react";
 
 import type { CommentType } from "@/types";
 import { Button } from "@/components";
@@ -14,7 +14,11 @@ import styles from "./Comments.module.scss";
 
 const BASE_URL = process.env.BASE_URL;
 
-export const Comments = () => {
+type Props = {
+  accentColor?: string;
+};
+
+export const Comments: FC<Props> = ({ accentColor = "#520C11" }) => {
   const t = useTranslations("HomePage.Comments");
   const [offset, setOffset] = useState<string>("0");
   const [comments, setComments] = useState<CommentType[]>([]);
@@ -25,8 +29,12 @@ export const Comments = () => {
 
   useEffect(() => {
     if (data?.comments.length) {
-      setComments((prev) => [...prev, ...data.comments]);
+      setComments((prevComments) => {
+        const newComments = new Set([...prevComments, ...data.comments]);
+        return Array.from(newComments);
+      });
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [data]);
 
   return (
@@ -40,7 +48,7 @@ export const Comments = () => {
               {Array.from({ length: 5 }).map((_, i) => (
                 <StarIcon
                   key={i}
-                  fill={"#520C11"}
+                  fill={accentColor}
                   width={15}
                   height={15}
                   viewBox="0 0 24 24"
@@ -55,12 +63,15 @@ export const Comments = () => {
                 <span>{5 - i}</span>
                 <span
                   className={styles.percentage}
-                  style={{ backgroundSize: `${percentage}% 100%` }}
+                  style={{
+                    backgroundSize: `${percentage}% 100%`,
+                    backgroundImage: `linear-gradient(${accentColor}, ${accentColor})`,
+                  }}
                 />
               </li>
             ))}
           </ul>
-          <NewComment />
+          <NewComment accentColor={accentColor} />
         </div>
       </div>
       <ul
@@ -85,6 +96,7 @@ export const Comments = () => {
             review={message}
             rating={rating}
             date={createdAt}
+            accentColor={accentColor}
           />
         ))}
         {data && data.total > comments.length && (

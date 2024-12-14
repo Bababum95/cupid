@@ -1,0 +1,63 @@
+.container {
+  @include flex-layout(space-between, center);
+  width: 100%;
+  gap: 28px 60px;
+  flex-wrap: wrap;
+  padding: 0 20px;
+  max-width: $home-mw;
+  margin: 120px auto;
+}
+
+.content {
+  max-width: 558px;
+  width: 100%;
+}
+
+.title {
+  font-size: clamp(1.75rem, 1.3786rem + 1.5238vw, 2.75rem);
+  font-weight: 700;
+  line-height: 120%;
+  margin-bottom: 52px;
+}
+
+.item:not(:last-child) {
+  margin-bottom: 24px;
+}
+
+.subtitle {
+  color: $text;
+  font-size: clamp(1.3125rem, 1.0571rem + 1.0476vw, 2rem);
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  margin-bottom: 4px;
+}
+
+.description {
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+
+.image {
+  aspect-ratio: 1.58;
+  object-position: center;
+  object-fit: contain;
+  width: 100%;
+  align-self: stretch;
+  min-width: 240px;
+  flex: 1;
+  flex-basis: 0%;
+  margin: auto 0;
+}
+
+@include media("phone") {
+  .container {
+    margin: 80px auto;
+  }
+
+  .content {
+    order: 2;
+  }
+}

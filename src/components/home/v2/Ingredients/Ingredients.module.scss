@@ -1,0 +1,56 @@
+.section {
+  padding-top: calc(var(--header-height) + 20px);
+  margin: calc(120px - var(--header-height)) auto 120px;
+}
+
+.item {
+  width: 394px;
+}
+
+.subtitle {
+  color: $text;
+  font-size: clamp(1.5rem, 1.3143rem + 0.7619vw, 2rem);
+  font-style: normal;
+  font-weight: 700;
+  line-height: 110%;
+}
+
+.image {
+  border-radius: 25px;
+  display: flex;
+  margin: 28px 0;
+  width: 100%;
+  height: 240px;
+  object-fit: cover;
+}
+
+.property {
+  color: $text;
+  font-size: clamp(1.1875rem, 1.1411rem + 0.1905vw, 1.3125rem);
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  margin-bottom: 20px;
+}
+
+.description {
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 150%;
+  letter-spacing: -0.16px;
+
+  span {
+    color: $text;
+  }
+}
+
+@include media("phone") {
+  .item {
+    width: 305px;
+  }
+
+  .section {
+    margin: calc(80px - var(--header-height)) auto 80px;
+  }
+}

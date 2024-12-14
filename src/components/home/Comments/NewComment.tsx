@@ -18,7 +18,11 @@ const Popup = dynamic(() => import("@/components/dynamic/Popup"), {
   ssr: false,
 });
 
-export const NewComment: FC = () => {
+type Props = {
+  accentColor: string;
+};
+
+export const NewComment: FC<Props> = ({ accentColor }) => {
   const t = useTranslations("HomePage.Comments");
 
   const [isOpen, setIsOpen] = useState(false);
@@ -104,8 +108,8 @@ export const NewComment: FC = () => {
             {Array.from({ length: 5 }).map((_, i) => (
               <StarIcon
                 key={i}
-                fill={i < values.rating ? "#520C11" : "none"}
-                stroke={i < values.rating ? "#520C11" : "#333333"}
+                fill={i < values.rating ? accentColor : "none"}
+                stroke={i < values.rating ? accentColor : "#333333"}
                 onClick={() => setValues({ ...values, rating: i + 1 })}
                 width={42}
                 height={42}

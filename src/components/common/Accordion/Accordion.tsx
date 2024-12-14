@@ -11,9 +11,10 @@ import styles from "./Accordion.module.scss";
 type Props = {
   data: string[];
   t: (key: string) => string;
+  Icon?: React.ReactNode;
 };
 
-export const Accordion: FC<Props> = ({ data, t }) => {
+export const Accordion: FC<Props> = ({ data, t, Icon = ArrowIcon }) => {
   const [expanded, setExpanded] = useState<false | number>(false);
   const stagerStart = useRef<number>(data.length);
 
@@ -45,7 +46,7 @@ export const Accordion: FC<Props> = ({ data, t }) => {
                 role="button"
               >
                 <p className={styles.label}>{t(`${name}.label`)}</p>
-                <ArrowIcon />
+                <Icon />
               </div>
               <AnimatePresence initial={false}>
                 {isOpen && (

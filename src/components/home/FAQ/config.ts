@@ -1,0 +1,22 @@
+export const DEFAULT_LENGTH = 6;
+export const LIST_OF_QUESTIONS = [
+  "how-should-i-consume-cupid-for-the-best-results",
+  "what-active-ingredients-are-used-in-cupid-chocolate",
+  "can-you-explain-the-benefits-of-these-active-ingredients",
+  "is-there-a-recommended-daily-dose-for-cupid-chocolate",
+  "is-cupid-suitable-for-both-women-and-men",
+  "who-should-not-consume-cupid-chocolate",
+  "are-there-any-side-effects",
+  "how-long-does-cupid-chocolate-stay-fresh",
+  "can-i-consume-cupid-chocolate-if-im-taking-medications",
+  "can-i-enjoy-cupid-chocolate-with-alcohol",
+  "what-should-i-do-if-i-consume-more-than-the-recommended-amount",
+  "can-i-enjoy-cupid-chocolate-alone",
+  "where-is-cupid-chocolate-manufactured",
+  "is-cupid-chocolate-vegan-or-vegetarian",
+  "does-cupid-chocolate-contain-allergens",
+  "how-should-i-store-cupid-chocolate",
+  "how-long-do-the-effects-of-cupid-chocolate-last",
+  "do-you-ship-cupid-chocolate-internationally",
+  "is-cupid-chocolate-safe-to-consume",
+];

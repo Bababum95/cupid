@@ -1,0 +1,68 @@
+.wrapper {
+  @include flex-layout(space-between);
+  gap: 40px;
+  padding: 0 20px;
+  max-width: $home-mw;
+  margin: 60px auto;
+}
+
+.info {
+  flex: 1;
+  min-width: 350px;
+  max-width: 434px;
+  padding-top: calc(var(--header-height) + 20px);
+  margin-top: calc((var(--header-height) + 20px) * -1);
+}
+
+h1.title {
+  color: $text;
+  font-size: clamp(1.75rem, 1.4714rem + 1.1429vw, 2.5rem);
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  letter-spacing: -1.2px;
+  margin: 24px 0;
+}
+
+.features {
+  @include flex-layout;
+  flex-wrap: wrap;
+  gap: 8px 20px;
+  margin-bottom: 46px;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+
+  div {
+    @include flex-layout(flex-start, center);
+    gap: 12px;
+    flex: 1;
+    min-width: 160px;
+  }
+}
+
+@include media("tablet") {
+  .wrapper {
+    flex-direction: column;
+    margin-top: 0;
+    gap: 20px;
+  }
+
+  .info {
+    max-width: 100%;
+    min-width: auto;
+    width: 100%;
+  }
+
+  .features {
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 0;
+    margin-bottom: 40px;
+  }
+
+  h1.title {
+    margin: 20px 0;
+  }
+}

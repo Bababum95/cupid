@@ -5,8 +5,6 @@ import { Swiper, SwiperSlide } from "swiper/react";
 
 import { Controller } from "./Controller";
 
-import "swiper/css";
-
 import styles from "./Slider.module.scss";
 
 type Props = {
@@ -20,6 +18,16 @@ type Props = {
    * @default 20
    */
   gap?: number;
+  /**
+   * Whether to show the controller.
+   * @default true
+   */
+  controller?: boolean;
+  /**
+   * Whether to loop the slider.
+   * @default true
+   */
+  loop?: boolean;
 };
 
 // Default gap constants
@@ -36,6 +44,8 @@ const DEFAULT_GAP = 20;
  * @param {string} props.title - The title text displayed above the slider.
  * @param {React.ReactNode[]} props.children - An array of slides as React nodes.
  * @param {number} [props.gap=20] - The gap between slides on larger screens. Defaults to 20.
+ * @param {boolean} [props.controller=true] - Whether to show the controller. Defaults to true.
+ * @param {boolean} [props.loop=true] - Whether to loop the slider. Defaults to true.
  *
  * @example
  * <Slider title="Featured Products" gap={30}>
@@ -43,13 +53,19 @@ const DEFAULT_GAP = 20;
  *   <ProductCard product={product2} />
  * </Slider>
  */
-export const Slider: FC<Props> = ({ title, children, gap = DEFAULT_GAP }) => {
+export const Slider: FC<Props> = ({
+  title,
+  children,
+  gap = DEFAULT_GAP,
+  controller = true,
+  loop = true,
+}) => {
   return (
     <Swiper
       className={styles.section}
       spaceBetween={gap}
       slidesPerView="auto"
-      loop={true}
+      loop={loop}
       breakpoints={{
         0: {
           spaceBetween: MOBILE_GAP,
@@ -61,7 +77,7 @@ export const Slider: FC<Props> = ({ title, children, gap = DEFAULT_GAP }) => {
     >
       <div className={styles.header} slot="container-start">
         <h2 className={styles.title}>{title}</h2>
-        <Controller />
+        {controller && <Controller />}
       </div>
       {children.map((child, i) => (
         <SwiperSlide key={i} className={styles.slide}>

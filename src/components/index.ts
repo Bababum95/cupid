@@ -10,9 +10,13 @@ export { Input } from "./common/Input/Input";
 export { LangSwitcher } from "./common/LangSwitcher/LangSwitcher";
 export { Menu } from "./common/Menu/Menu";
 export { Notice } from "./common/Notice/Notice";
-export { NutritionalDrawerContent } from "./common/NutritionalDrawerContent/NutritionalDrawerContent";
 export { Price } from "./common/Price/Price";
+export { ProductPopup } from "./common/ProductPopup/ProductPopup";
+export { RadioVariant } from "./common/RadioVariant/RadioVariant";
 export { SubmitButton } from "./common/SubmitButton/SubmitButton";
 export { Subscribe } from "./common/Subscribe/Subscribe";
+
+export { BenefitsDrawerContent } from "./common/side-drawer-contents/BenefitsDrawerContent/BenefitsDrawerContent";
+export { NutritionalDrawerContent } from "./common/side-drawer-contents/NutritionalDrawerContent/NutritionalDrawerContent";
 
 // export { Intercom } from "./Intercom";

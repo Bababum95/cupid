@@ -1,0 +1,50 @@
+.wrapper {
+  border-radius: 20px;
+  background: #fff;
+  padding: 17px;
+  max-width: 300px;
+  font-size: 11px;
+  font-style: normal;
+  line-height: normal;
+}
+
+.title {
+  color: #000;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 15px;
+}
+
+.content {
+  margin: 12px 0;
+  font-weight: 500;
+}
+
+.footer {
+  @include flex-layout(flex-start, center);
+  gap: 4px;
+  color: #6e6e6e;
+}
+
+.author {
+  font-weight: 700;
+  color: #4b4b4b;
+}
+
+.divider {
+  width: 1px;
+  height: 12px;
+  background: $secondary-text;
+  margin-inline: 4px;
+}
+
+.date {
+  margin-left: auto;
+}
+
+@include media("phone") {
+  .wrapper {
+    max-width: 264px;
+  }
+}

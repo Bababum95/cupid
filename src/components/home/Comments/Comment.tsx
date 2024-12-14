@@ -12,9 +12,10 @@ type Props = {
   rating: number;
   review: string;
   date: string;
+  accentColor: string;
 };
 
-export const Comment: FC<Props> = ({ name, rating, review, date }) => {
+export const Comment: FC<Props> = ({ name, rating, review, date, accentColor }) => {
   const t = useTranslations("HomePage.Comments");
 
   return (
@@ -51,7 +52,7 @@ export const Comment: FC<Props> = ({ name, rating, review, date }) => {
             {Array.from({ length: 5 }).map((_, i) => (
               <StarIcon
                 key={i}
-                fill={i < rating ? "#520C11" : "#1a1a1a"}
+                fill={i < rating ? accentColor : "#1a1a1a"}
                 viewBox="0 0 24 24"
               />
             ))}

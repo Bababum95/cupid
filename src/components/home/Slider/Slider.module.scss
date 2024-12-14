@@ -1,7 +1,6 @@
 .section {
   position: relative;
   max-width: $home-mw;
-  margin: 270px auto;
   padding: 0 20px !important;
   position: relative;
 
@@ -47,10 +46,6 @@
 }
 
 @include media("tablet") {
-  .section {
-    margin: 144px 0;
-  }
-
   .header {
     margin-bottom: 32px;
   }

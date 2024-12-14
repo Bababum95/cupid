@@ -1,0 +1,89 @@
+.wrapper {
+  margin: 120px auto;
+}
+
+.heading {
+  width: 100%;
+  padding: 0 20px;
+  max-width: $home-mw;
+  margin: 0 auto;
+  font-size: clamp(1.75rem, 1.3786rem + 1.5238vw, 2.75rem);
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+
+.images {
+  @include flex-layout;
+  overflow: hidden;
+  width: 100%;
+  margin-top: 44px;
+
+  &.mobile {
+    display: none;
+  }
+}
+
+.row {
+  @include flex-layout;
+  animation: marquee 80s linear infinite;
+  gap: 20px;
+  min-width: 100vw;
+  padding-inline: 10px;
+  flex-shrink: 0;
+  transform: translateX(0%);
+  animation-play-state: running;
+  will-change: transform;
+}
+
+.image {
+  border-radius: 25px;
+  background-color: rgba(48, 48, 48, 1);
+  width: 240px;
+  aspect-ratio: 1;
+  flex-shrink: 0;
+  object-fit: cover;
+}
+
+@include media("phone") {
+  .wrapper {
+    margin-bottom: 80px;
+  }
+
+  .heading {
+    text-align: center;
+  }
+
+  .images {
+    margin-top: 28px;
+
+    &.mobile {
+      display: flex;
+      margin-top: 8px;
+
+      .row {
+        animation: marquee 60s linear infinite reverse;
+      }
+    }
+  }
+
+  .row {
+    gap: 8px;
+    padding-inline: 4px;
+  }
+
+  .image {
+    width: 155px;
+    height: 155px;
+  }
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-100%);
+  }
+}

@@ -2,7 +2,7 @@
   @include flex-layout(space-between);
   position: relative;
   max-width: $home-mw;
-  margin: 270px auto;
+  margin: 0 auto;
   padding: var(--header-height, 0) 20px 0;
   gap: 20px;
 }
@@ -96,7 +96,6 @@
 @include media("tablet") {
   .section {
     flex-direction: column;
-    margin: 144px 0;
   }
 
   .list {

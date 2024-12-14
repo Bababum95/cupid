@@ -1,4 +1,4 @@
-import React, { FC } from "react";
+import { FC, type ReactNode } from "react";
 import { motion } from "motion/react";
 
 import {
@@ -8,16 +8,21 @@ import {
   ITEM_INITIAL,
   ITEM_ACTIVE,
 } from "./config";
-import styles from "./Variant.module.scss";
+import styles from "./RadioVariant.module.scss";
 
 type Props = {
   active: boolean;
   onSelect: () => void;
-  top?: React.ReactNode;
-  children?: React.ReactNode;
+  top?: ReactNode;
+  children?: ReactNode;
 };
 
-export const Variant: FC<Props> = ({ active, onSelect, top, children }) => {
+export const RadioVariant: FC<Props> = ({
+  active,
+  onSelect,
+  top,
+  children,
+}) => {
   return (
     <motion.li
       className={styles.item}
@@ -27,6 +32,9 @@ export const Variant: FC<Props> = ({ active, onSelect, top, children }) => {
       animate={active ? ITEM_ACTIVE : ITEM_INITIAL}
       transition={{ duration: 0.25 }}
       key="item"
+      role="radio"
+      aria-checked={active}
+      tabIndex={0}
     >
       <div className={styles.top}>
         <svg

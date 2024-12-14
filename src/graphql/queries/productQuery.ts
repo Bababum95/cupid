@@ -1,25 +1,10 @@
+import { productFragment } from "@/graphql";
+
 export const productQuery = `
-query ProductQuery($handle: String) {
+query ProductQuery($handle: String, $withMetafields: Boolean = true) {
   product(handle: $handle) {
-    id
-    title
-    handle
-    variants(first: 3) {
-      edges {
-        node {
-          id
-          title
-          image {
-            url
-          }
-          price {
-            amount
-            currencyCode
-          }
-        }
-      }
-    }
+    ...ProductFragment
   }
 }
+${productFragment}
 `;
-

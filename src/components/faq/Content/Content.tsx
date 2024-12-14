@@ -11,12 +11,13 @@ import styles from "./Content.module.scss";
 
 export const Content: FC = () => {
   const t = useTranslations("FAQ");
+  const listTranslations = useTranslations("FAQ.list");
 
   return (
     <div>
       <div className={styles.hero}>
         <div className={styles.wrapper}>
-          <h1 className={styles.title}>{t("title")}</h1>
+          <h1 className={styles.title}>{t("page-title")}</h1>
         </div>
         <Image
           src="/images/chocolate.jpg"
@@ -28,16 +29,11 @@ export const Content: FC = () => {
           quality={90}
         />
       </div>
-      {FAQ_DATA.map(({ category, count }) => (
+      {FAQ_DATA.map(({ category, list }) => (
         <section key={category} className={styles.section}>
-          <h2 className={styles.title}>{t(`list.${category}.title`)}</h2>
+          <h2 className={styles.title}>{t(category)}</h2>
           <div className={styles.accordion}>
-            <Accordion
-              t={t}
-              data={Array.from({ length: count }, (_, i) =>
-                `list.${category}.${i}`.toString()
-              )}
-            />
+            <Accordion t={listTranslations} data={list} />
           </div>
         </section>
       ))}

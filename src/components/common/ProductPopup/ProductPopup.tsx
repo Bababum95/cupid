@@ -1,3 +1,5 @@
+"use client";
+
 import { FC, useState } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import { useTranslations } from "next-intl";
@@ -113,7 +115,7 @@ const Product: FC<ProductProps> = ({
                 height={12}
                 viewBox="0 0 24 24"
               />
-              {t('complete')}
+              {t("complete")}
             </Bage>
           </div>
         </div>
