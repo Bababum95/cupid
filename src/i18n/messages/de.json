@@ -181,89 +181,6 @@
       "V1": "Was unsere Kunden sagen",
       "V2": "Aus unserer Cupid-Community"
     },
-    "FAQ": {
-      "title": "Häufig gestellte Fragen",
-      "subtitle": "Unsere Cupidonen sind bereit, all deine sinnlichen Fragen zu beantworten",
-      "show-more": "Weitere Fragen",
-      "list": {
-        "0": {
-          "label": "Wie sollte ich Cupid für die besten Ergebnisse konsumieren?",
-          "content": "Wir empfehlen, Cupid-Schokolade mit deinem Partner zu genießen, indem ihr jeweils ein Stück (ca. 14,5 g pro Person) teilt. Konsumiere es etwa 30 Minuten bevor du die Wirkung spüren möchtest. Dies ermöglicht es den natürlichen Inhaltsstoffen, während deiner intimen Momente effektiv zu wirken."
-        },
-        "1": {
-          "label": "Welche aktiven Inhaltsstoffe werden in der Cupid-Schokolade verwendet?",
-          "content": "Cupid-Schokolade ist angereichert mit natürlichen Inhaltsstoffen wie Schwarzer Maca, Panax Ginseng, L-Arginin, Guarana-Extrakt und Taurin. Diese Komponenten sind bekannt für ihre energiespendenden und stimmungsaufhellenden Eigenschaften."
-        },
-        "2": {
-          "label": "Kannst du die Vorteile dieser aktiven Inhaltsstoffe erklären?",
-          "content": "Schwarzer Maca: Traditionell verwendet zur Steigerung der Libido, des Energieniveaus und des hormonellen Gleichgewichts. Panax Ginseng: Bekannt für die Verbesserung der sexuellen Erregung und der allgemeinen Leistung. L-Arginin: Eine Aminosäure, die einen gesunden Blutfluss unterstützen und die körperliche Reaktion verbessern kann. Guarana-Extrakt: Ein natürliches Stimulans, das die Energie erhöht und die Müdigkeit reduziert. Taurin: Hilft, das Energieniveau zu unterstützen und die Entspannung zu fördern."
-        },
-        "3": {
-          "label": "Gibt es eine empfohlene Tagesdosis für die Cupid-Schokolade?",
-          "content": "Ja, wir empfehlen, nicht mehr als ein halbes Täfelchen (ca. 14,5 g) pro Tag zu konsumieren. So erhältst du die optimale Menge an aktiven Inhaltsstoffen, ohne die empfohlene Aufnahme zu überschreiten."
-        },
-        "4": {
-          "label": "Ist Cupid für Frauen und Männer geeignet?",
-          "content": "Absolut! Cupid-Schokolade wurde entwickelt, um das Erlebnis für alle Erwachsenen, unabhängig vom Geschlecht, zu verbessern. Die natürlichen Inhaltsstoffe unterstützen Energie, Stimmung und Intimität für alle."
-        },
-        "5": {
-          "label": "Wer sollte Cupid-Schokolade nicht konsumieren?",
-          "content": "Cupid-Schokolade ist für Erwachsene ab 18 Jahren bestimmt. Es wird nicht empfohlen für Kinder, schwangere oder stillende Frauen oder Personen mit Herzproblemen. Wenn du Medikamente einnimmst, eine Krankheit hast oder Bedenken zu den Inhaltsstoffen hast, konsultiere bitte vor der Verwendung deinen Arzt."
-        },
-        "6": {
-          "label": "Gibt es Nebenwirkungen?",
-          "content": "Bei bestimmungsgemäßer Anwendung wird Cupid-Schokolade im Allgemeinen gut vertragen. Wenn du jedoch empfindlich auf Koffein oder einen der aktiven Inhaltsstoffe reagierst, könnten leichte Nebenwirkungen wie Unruhe oder Schlafstörungen auftreten. Wenn du irgendwelche unerwünschten Reaktionen feststellst, beende die Einnahme und konsultiere einen Arzt."
-        },
-        "7": {
-          "label": "Wie lange ist Cupid-Schokolade haltbar?",
-          "content": "Cupid-Schokolade hat eine Haltbarkeit von bis zu 12 Monaten ab Produktionsdatum. Das genaue Verfallsdatum ist auf der Rückseite der Verpackung aufgedruckt. Um die Frische zu erhalten, lagere die Schokolade an einem kühlen, trockenen Ort ohne direkte Sonneneinstrahlung."
-        },
-        "8": {
-          "label": "Kann ich Cupid-Schokolade konsumieren, wenn ich Medikamente nehme?",
-          "content": "Wenn du Medikamente einnimmst oder gesundheitliche Bedenken hast, empfehlen wir, vor dem Verzehr der Cupid-Schokolade deinen Arzt zu konsultieren, um sicherzustellen, dass es keine potenziellen Wechselwirkungen gibt."
-        },
-        "9": {
-          "label": "Kann ich Cupid-Schokolade mit Alkohol genießen?",
-          "content": "Es sind keine schädlichen Wechselwirkungen zwischen Cupid-Schokolade und mäßigem Alkoholkonsum bekannt, jedoch können einige Effekte dadurch verstärkt werden. Wir empfehlen, Alkohol verantwortungsvoll zu konsumieren und darauf zu achten, wie dein Körper reagiert."
-        },
-        "10": {
-          "label": "Was soll ich tun, wenn ich mehr als die empfohlene Menge konsumiert habe?",
-          "content": "Wenn du versehentlich mehr als die empfohlene Dosis eingenommen hast, könntest du aufgrund des Koffeingehalts einen erhöhten Herzschlag oder Unruhe verspüren. Bleibe hydriert und vermeide weitere Stimulanzien. Wenn du dich unwohl fühlst, suche bitte umgehend ärztlichen Rat."
-        },
-        "11": {
-          "label": "Kann ich Cupid-Schokolade alleine genießen?",
-          "content": "Ja, du kannst Cupid-Schokolade auch alleine genießen. Egal ob du deine Stimmung heben, Energie steigern oder einfach nur dunkle Schokolade genießen möchtest – sie ist perfekt für den Solo-Genuss genauso wie für das Teilen mit einem Partner."
-        },
-        "12": {
-          "label": "Wo wird Cupid-Schokolade hergestellt?",
-          "content": "Cupid-Schokolade wird stolz in Deutschland hergestellt und hält sich an strenge Qualitätsstandards. Unsere Schokoladen werden aus ethisch bezogenen, hochwertigen Zutaten gefertigt, um unseren Kunden das beste Erlebnis zu bieten."
-        },
-        "13": {
-          "label": "Ist Cupid-Schokolade vegan oder vegetarisch?",
-          "content": "Cupid-Schokolade ist für Vegetarier geeignet. Bitte beachte jedoch, dass sie Soja enthält und Spuren von Nüssen, Milch und Gluten enthalten kann, da die Herstellung auf gemeinsamen Anlagen erfolgt."
-        },
-        "14": {
-          "label": "Enthält Cupid-Schokolade Allergene?",
-          "content": "Ja, Cupid-Schokolade enthält Soja. Sie kann auch Spuren von Nüssen, Milch und Gluten enthalten. Wenn du Lebensmittelallergien oder Unverträglichkeiten hast, lies bitte die Zutatenliste sorgfältig vor dem Verzehr."
-        },
-        "15": {
-          "label": "Wie sollte ich Cupid-Schokolade lagern?",
-          "content": "Lagere deine Cupid-Schokolade an einem kühlen, trockenen Ort ohne direkte Sonneneinstrahlung und starke Gerüche."
-        },
-        "16": {
-          "label": "Wie lange halten die Effekte der Cupid-Schokolade an?",
-          "content": "Die Effekte können je nach individuellen Faktoren wie Stoffwechsel und Körperchemie variieren. Im Allgemeinen berichten Kunden, dass sie die Vorteile 1 bis 3 Stunden nach dem Konsum spüren."
-        },
-        "17": {
-          "label": "Versendet ihr Cupid-Schokolade international?",
-          "content": "Derzeit versenden wir innerhalb Deutschlands und in ausgewählte europäische Länder. Bitte überprüfe unsere Versandrichtlinien oder kontaktiere den Kundenservice für weitere Informationen zu internationalen Versandoptionen."
-        },
-        "18": {
-          "label": "Ist Cupid-Schokolade sicher zu konsumieren?",
-          "content": "Ja, Cupid-Schokolade ist sicher, wenn sie wie angegeben konsumiert wird. Sie enthält keine verbotenen Substanzen oder schädliche Zusätze. Alle Inhaltsstoffe sind professionell dosiert und unterliegen strengen Qualitätskontrollen."
-        }
-      }
-    },
     "Comments": {
       "reviews": "Bewertungen",
       "verified": "Verifiziert",
@@ -547,119 +464,214 @@
     "2-content": "<strong>1. Identität des Verkäufers</strong><ul><li>SM MIR GmbH</li><li>Mühlenstr. 8a</li><li>14167 Berlin</li><li>Deutschland</li><li>Telephone: 01726531286</li><li>E-Mail: info@cupidchoco.com</li></ul><strong>Alternative Streitbeilegung:</strong><p>Die Europäische Kommission stellt eine Plattform für die außergerichtliche Online-Streitbeilegung (OS-Plattform) bereit, aufrufbar unter <a>https://ec.europa.eu/odr</a>.</p><p>Wir sind nicht bereit und nicht verpflichtet, an Streitbeilegungsverfahren vor Verbraucherschlichtungsstellen teilzunehmen.</p><strong>2. Informationen zum Zustandekommen des Vertrages</strong><p>Die technischen Schritte zum Vertragsschluss, der Vertragsschluss selbst und die Korrekturmöglichkeiten erfolgen nach Maßgabe der Regelungen \"Zustandekommen des Vertrages\" unserer Allgemeinen Geschäftsbedingungen (Teil I.).</p><strong>3. Vertragssprache, Vertragstextspeicherung</strong><p>3.1. Vertragssprache ist deutsch.</p><p>3.2. Der vollständige Vertragstext wird von uns nicht gespeichert. Vor Absenden der Bestellung über das Online - Warenkorbsystem können die Vertragsdaten über die Druckfunktion des Browsers ausgedruckt oder elektronisch gesichert werden. Nach Zugang der Bestellung bei uns werden die Bestelldaten, die gesetzlich vorgeschriebenen Informationen bei Fernabsatzverträgen und die Allgemeinen Geschäftsbedingungen nochmals per E-Mail an Sie übersandt.</p><p>3.3. Bei Angebotsanfragen außerhalb des Online-Warenkorbsystems erhalten Sie alle Vertragsdaten im Rahmen eines verbindlichen Angebotes in Textform übersandt, z.B. per E-Mail, welche Sie ausdrucken oder elektronisch sichern können.</p><p>3.4. Wenn der Kunde vor Absenden seiner Bestellung ein Nutzerkonto im Online-Shop von cupidchoco.com eingerichtet hat, wird der Vertragstext nach Vertragsschluss archiviert und kann vom Kunden über dessen passwortgeschütztes Nutzerkonto abgerufen werden.</p><strong>4. Wesentliche Merkmale der Ware oder Dienstleistung</strong><p>Die wesentlichen Merkmale der Ware und/oder Dienstleistung finden sich im jeweiligen Angebot.</p><strong>5. Preise und Zahlungsmodalitäten</strong><p>5.1. Die in den jeweiligen Angeboten angeführten Preise sowie die Versandkosten stellen Gesamtpreise dar. Sie beinhalten alle Preisbestandteile einschließlich aller anfallenden Steuern.</p><p>5.2. Die anfallenden Versandkosten sind nicht im Kaufpreis enthalten. Sie sind über eine entsprechend bezeichnete Schaltfläche auf unserer Internetpräsenz oder im jeweiligen Angebot aufrufbar, werden im Laufe des Bestellvorganges gesondert ausgewiesen und sind von Ihnen zusätzlich zu tragen, soweit nicht die versandkostenfreie Lieferung zugesagt ist.</p><p>5.3. Erfolgt die Lieferung in Länder außerhalb der Europäischen Union können von uns nicht zu vertretende weitere Kosten anfallen, wie z.B. Zölle, Steuern oder Geldübermittlungsgebühren (Überweisungs- oder Wechselkursgebühren der Kreditinstitute), die von Ihnen zu tragen sind.</p><p>5.4. Entstandene Kosten der Geldübermittlung (Überweisungs- oder Wechselkursgebühren der Kreditinstitute) sind von Ihnen in den Fällen zu tragen, in denen die Lieferung in einen EU-Mitgliedsstaat erfolgt, die Zahlung aber außerhalb der Europäischen Union veranlasst wurde.</p><p>5.5. Die Ihnen zur Verfügung stehenden Zahlungsarten sind unter einer entsprechend bezeichneten Schaltfläche auf unserer Internetpräsenz oder im jeweiligen Angebot ausgewiesen.</p><p>5.6. Soweit bei den einzelnen Zahlungsarten nicht anders angegeben, sind die Zahlungsansprüche aus dem geschlossenen Vertrag sofort zur Zahlung fällig.</p><strong>6. Lieferbedingungen</strong><p>6.1. Die Lieferbedingungen, der Liefertermin sowie gegebenenfalls bestehende Lieferbeschränkungen finden sich unter einer entsprechend bezeichneten Schaltfläche auf unserer Internetpräsenz oder im jeweiligen Angebot.</p><p>6.2. Soweit Sie Verbraucher sind, ist gesetzlich geregelt, dass die Gefahr des zufälligen Untergangs und der zufälligen Verschlechterung der verkauften Sache während der Versendung erst mit der Übergabe der Ware an Sie übergeht, unabhängig davon, ob die Versendung versichert oder unversichert erfolgt. Dies gilt nicht, wenn Sie eigenständig ein nicht vom Unternehmer benanntes Transportunternehmen oder eine sonst zur Ausführung der Versendung bestimmte Person beauftragt haben.</p><strong>7. Gesetzliches Mängelhaftungsrecht</strong><p>Die Mängelhaftung richtet sich nach der Regelung \"Gewährleistung\" in unseren Allgemeinen Geschäftsbedingungen (Teil I).</p><strong>8. Vertragslaufzeit / Kündigung</strong><p>Informationen zur Laufzeit des Vertrages sowie den Kündigungsbedingungen finden Sie in der Regelung \"Vertragslaufzeit / Kündigung bei Abonnement-Verträgen\" in unseren Allgemeinen Geschäftsbedingungen (Teil I) sowie im jeweiligen Angebot.</p><p>Diese AGB und Kundeninformationen wurden von den auf IT-Recht spezialisierten Juristen des Händlerbundes erstellt und werden permanent auf Rechtskonformität geprüft. Die Händlerbund Management AG garantiert für die Rechtssicherheit der Texte und haftet im Falle von Abmahnungen. Nähere Informationen dazu finden Sie unter: <a>https://www.haendlerbund.de/de/leistungen/rechtssicherheit/agb-service</a>.</p><strong>letzte Aktualisierung: 22.10.2024</strong>"
   },
   "FAQ": {
-    "title": "All About Cupid's Sex Chocolate",
+    "page-title": "All About Cupid's Sex Chocolate",
+    "title": "Häufig gestellte Fragen",
+    "subtitle": "Unsere Cupidonen sind bereit, all deine sinnlichen Fragen zu beantworten",
+    "show-more": "Weitere Fragen",
     "list": {
-      "about_the_sex_chocolate": {
-        "0": {
-          "label": "Aus welchen Zutaten wird Cupid Schokolade hergestellt?",
-          "content": "Cupid-Schokolade wird aus hochwertigen Zutaten hergestellt, darunter 65 % Kakao aus Ghana, aphrodisierende Zusätze wie, Schwarze Maca, Panax Ginseng, L-Arginin, Guarana, Taurin. Alle Zutaten sind geprüft, zugelassen und weit verbreitet in der Lebensmittelindustrie. Unsere Schokolade wird mit Sorgfalt in Süddeutschland produziert, um eine gleichbleibend hohe Qualität zu gewährleisten.\n\n\nZutaten:\nKakaomasse, Zucker, Kakaobutter, Aphrodisiakum-Mischung (L-Arginin, Schwarze Maca-Extrakt (20:1), Guarana-Extrakt (6:1), Panax Ginseng-Extrakt (35:1), Taurin), enthält Koffein aus Guarana, Emulgator: SOJALECITHIN, Vanilleextrakt, natürliche Aromastoffe."
-        },
-        "1": {
-          "label": "Was sind die Nährwerte von Cupid-Schokolade?",
-          "content": "Jede Tafel unserer veganen Cupid-Schokolade enthält eine besondere Mischung aus 65 % Kakao und aphrodisierenden Extrakten, die den Genuss verstärken. Die Schokolade ist nicht nur lecker, sondern auch ein natürliches Mittel, um die Intimität zwischen Partnern zu fördern.\n\n\nNährwertinformationen  Pro 100 g\nEnergie  2535 kJ / 611 kcal\nFett  46 g\nGesättigte Fettsäuren  29 g\nKohlenhydrate  39 g\nZucker  31 g\nBallaststoffe  12 g\nEiweiß  6.3 g\nSalz  0 g\n\n\nNährwertinformationen  Pro Portion (14,5g)\nEnergie  380 kJ / 92 kcal\nFett  6.9 g\nGesättigte Fettsäuren  4.4 g\nKohlenhydrate  5.9 g\nZucker  4.7 g\nBallaststoffe  1.8 g\nEiweiß  1 g\nSalz  0 g\n\n\n\n"
-        },
-        "2": {
-          "label": "Wie lange ist Cupid-Schokolade haltbar?",
-          "content": "Unsere Cupid Aphrodisierende Schokolade hat eine Haltbarkeit von einem Jahr. "
-        },
-        "3": {
-          "label": "Wie wirkt Sex Schokolade von Cupid?",
-          "content": "Die Sex-Schokolade von Cupid entfaltet ihre Wirkung durch eine Kombination aus natürlichen aphrodisierenden Inhaltsstoffen wie Maca, Panax Ginseng die das Verlangen steigern, und L-Arginin, das die Durchblutung fördert. Diese Zusammensetzung kann dazu beitragen, das sexuelle Verlangen auf natürliche Weise zu intensivieren und die körperliche Erregung zu unterstützen. Die Wirkung setzt normalerweise innerhalb von 30 bis 60 Minuten ein und kann das Gefühl der Intimität und Nähe zwischen Paaren verstärken."
-        },
-        "4": {
-          "label": "Wie lange dauert es, bis die Sex Schokolade wirkt?",
-          "content": "Die Wirkung von der Sex Schokolade kann individuell unterschiedlich sein, aber die meisten Paare spüren eine verstärkte Verbindung und Intimität innerhalb von 30 bis 60 Minuten nach dem Verzehr."
-        },
-        "title": "Über die Sex Schokolade"
+      "how-should-i-consume-cupid-for-the-best-results": {
+        "label": "Wie sollte ich Cupid für die besten Ergebnisse konsumieren?",
+        "content": "Wir empfehlen, Cupid-Schokolade mit deinem Partner zu genießen, indem ihr jeweils ein Stück (ca. 14,5 g pro Person) teilt. Konsumiere es etwa 30 Minuten bevor du die Wirkung spüren möchtest. Dies ermöglicht es den natürlichen Inhaltsstoffen, während deiner intimen Momente effektiv zu wirken."
       },
-      "effects_of_sex_chocolate": {
-        "0": {
-          "label": "Welche Vorteile bietet die Sex Schokolade von Cupid?",
-          "content": "Die Sex Schokolade von Cupid ist speziell dafür entwickelt worden, eine Reihe von intimitätssteigernden Vorteilen zu bieten, einschließlich:\n\n- Stärkung des sinnlichen Verlangens und der emotionalen Bindung\n- Verschönerung und Intensivierung intimer Momente\n- Intensiviertes Vergnügen und gesteigerte Empfindsamkeit\n- Ein mutigeres, abenteuerlicheres Gefühl und eine starke Verbindung zum eigenen Körper\n\nEinige unserer Kunden berichten, dass sie die Wirkung bereits vor der Intimität spüren, während andere eine erhöhte Sensibilität und verbesserte Leistung während des Geschlechtsverkehrs erfahren."
-        },
-        "1": {
-          "label": "Wie verwendet man Sex Schokolade richtig?",
-          "content": "Um die Sex Schokolade von Cupid optimal zu nutzen, empfehlen wir, etwa eine halbe Stunde vor dem intimen Zusammensein ein halbes Täfelchen zu genießen. Dies gibt den natürlichen aphrodisierendenInhaltsstoffen Zeit, ihre Wirkung zu entfalten und die Sinne zu schärfen. Genießen Sie die Schokolade in einer entspannten Atmosphäre, um die vollen Vorteile der aphrodisierenden Effekte zu erleben."
-        },
-        "2": {
-          "label": "Wie kann man die Wirkung der Sex Schokolade maximieren?\n",
-          "content": "Um die Wirkung Sex Schokolade zu maximieren, empfehlen wir, ein komplettes sinnliches Erlebnis zu schaffen, das alle Sinne anspricht und die Partnerschaft in den Mittelpunkt stellt. Hier sind einige Tipps, wie Sie die Wirkung verstärken können:\n\n1. Schokolade eine halbe Stunde vorher genießen: Nehmen Sie die Cupid Schokolade etwa eine halbe Stunde vor dem intimen Moment zu sich. So haben die Inhaltsstoffe genug Zeit, um ihre Wirkung zu entfalten und das Verlangen zu steigern.\n\n2. Aroma- und Massagekerzen verwenden: Zünden Sie hochwertige Duftkerzen mit aphrodisierenden Aromen an, um die richtige Atmosphäre zu schaffen und eine sinnliche Stimmung zu erzeugen. Die Aromen helfen dabei, sich zu entspannen und den Moment intensiver zu genießen. Massagekerzen können zusätzlich verwendet werden, um eine entspannende Massage durchzuführen – der perfekte Einstieg in eine intime Zeit miteinander.\n\n3. Weiches Licht und Musik: Schaffen Sie eine stimmungsvolle Umgebung mit gedimmtem Licht und einer der romantischen Spotify-Playlists von Cupid. Die sanfte Beleuchtung und passende Musik tragen dazu bei, die Stimmung zu heben und die Sinne zu stimulieren.\n\n4. Augenbinde von Cupid nutzen: Verwenden Sie die Augenbinde von Cupid, die Sie entweder auf unserer Website kaufen oder kostenlos erhalten können, um einen der Sinne temporär auszuschalten. Das verstärkt die Wahrnehmung der anderen Sinne und steigert die Spannung. Der Partner, der die Augen verbunden hat, fühlt die Berührungen intensiver und ist ganz auf die momentanen Empfindungen fokussiert.\n\n5. Erotische Würfel von Cupid einsetzen: Die Würfel mit erotischen Aufgaben, die von unserem Team entwickelt wurden, bringen ein spielerisches Element ins Liebesspiel. Die Würfel enthalten einfache, aber wirkungsvolle Aufgaben wie 'Küsse', 'Lecke', 'Umarmung' oder 'Streicheln'. Diese Aufgaben sind speziell darauf ausgelegt, Hemmungen abzubauen, Spaß in den Moment zu bringen und Spontaneität zu fördern. Sie ermöglichen es den Partnern, auf spielerische Weise Nähe zu schaffen und das Liebesspiel aufregender zu gestalten. Sie tragen dazu bei, neue, aufregende Wege zu entdecken, die Leidenschaft zu entfachen.\n\n6. Das Kartenspiel 'Beherzt Nackt' von unseren Partnern: Das Kartenspiel 'Beherzt Nackt' bietet Fragen und Aufgaben, die dazu gedacht sind, eine tiefere Verbindung zwischen den Partnern herzustellen. Es fördert offene Gespräche über Wünsche und Bedürfnisse, was dabei hilft, sich einander näher zu kommen – nicht nur körperlich, sondern auch emotional. Diese Verbindung ist ein zentraler Bestandteil, um die Wirkung der Schokolade voll auszuschöpfen.\n\n7. Zeit für Aftercare nehmen: Nach dem intimen Abenteuer sollten Sie sich Zeit nehmen, um zu kuscheln und die gemeinsam genossenen Momente zu teilen. Diese Nachsorge ist ein wichtiger Bestandteil der Erfahrung, da sie Vertrauen schafft und die emotionale Bindung zwischen den Partnern vertieft.\n\nDurch die Kombination der Cupid Sex Schokolade mit diesen sinnlichen Accessoires und Spielen wird die Erfahrung für beide Partner intensiviert. Das Zusammenspiel von Geschmacks-, Duft- und Berührungserlebnissen schafft eine Atmosphäre, in der Nähe, Vertrauen und Leidenschaft auf natürliche Weise gefördert werden."
-        },
-        "3": {
-          "label": "Wie viel von der Sex Schokolade sollte man maximal konsumieren?",
-          "content": "Es wird empfohlen, nicht mehr als eine halbe Tafel der Cupid Sex Schokolade pro Tag zu konsumieren. Diese Menge enthält die optimale Dosis der aphrodisierenden Inhaltsstoffe, um die gewünschte Wirkung zu erzielen. "
-        },
-        "4": {
-          "category": "Die Wirkung der Sex Schokolade",
-          "label": "Was passiert, wenn ich mehr als eine Portion der Sex Schokolade genommen habe?",
-          "content": "Wenn Sie mehr als eine Portion der Cupid Sex Schokolade konsumiert haben, ist das in der Regel unbedenklich. Die Schokolade enthält natürliche Inhaltsstoffe, die keine bedenklichen Nebenwirkungen verursachen sollten. Allerdings könnten Sie möglicherweise Nebenwirkungen wie Unruhe, Herzklopfen oder Verdauungsbeschwerden bemerken, da die aphrodisierenden Wirkstoffe stärker wirken können.\n\nWir empfehlen, die doppelte Dosis pro Tag (eine Tafel) nicht zu überschreiten, um ein angenehmes Erlebnis zu gewährleisten und mögliche Unannehmlichkeiten zu vermeiden."
-        },
-        "title": "Die Wirkung der Sex Schokolade"
+      "what-active-ingredients-are-used-in-cupid-chocolate": {
+        "label": "Welche aktiven Inhaltsstoffe werden in der Cupid-Schokolade verwendet?",
+        "content": "Cupid-Schokolade ist angereichert mit natürlichen Inhaltsstoffen wie Schwarzer Maca, Panax Ginseng, L-Arginin, Guarana-Extrakt und Taurin. Diese Komponenten sind bekannt für ihre energiespendenden und stimmungsaufhellenden Eigenschaften."
       },
-      "safety_and_compatibility_of_sex_chocolate": {
-        "0": {
-          "label": "Welche Nebenwirkungen hat die Sex Schokolade?",
-          "content": "Die in unserer Cupid Sex Schokolade verwendeten pflanzlichen Inhaltsstoffe sind sicher und wurden sorgfältig formuliert. Sie enthalten klinisch erprobte natürliche Wirkstoffe, die durch umfangreiche Forschung und klinische Studien belegt sind.\n\nSollten Sie jedoch mehr als die empfohlene Dosis einnehmen, könnten folgende Nebenwirkungen auftreten:\n\n- Herzklopfen oder eine erhöhte Herzfrequenz, verursacht durch Inhaltsstoffe wie Guarana.\n- Unruhe oder Nervosität, die durch die stimulierenden Wirkstoffe entstehen kann.\n- Verdauungsbeschwerden wie Bauchschmerzen oder Blähungen.\n- Schlafprobleme, wenn die Schokolade spät am Abend eingenommen wird, da einige Inhaltsstoffe eine anregende Wirkung haben.\n\nWir empfehlen, die Dosierung von maximal einer Tafel pro Tag nicht zu überschreiten, um mögliche Nebenwirkungen zu vermeiden und ein angenehmes Erlebnis zu gewährleisten."
-        },
-        "1": {
-          "label": "Wer sollte den Konsum der Sex Schokolade vermeiden?",
-          "content": "Personen, die schwanger sind, stillen, Medikamente einnehmen oder gesundheitliche Bedenken haben, sollten den Konsum der Sex Schokolade vorher mit ihrem Arzt absprechen. Sicherheit und Wohlbefinden stehen an erster Stelle, und es ist wichtig sicherzustellen, dass die Inhaltsstoffe der Schokolade für jede individuelle Situation geeignet sind."
-        },
-        "2": {
-          "label": "Welche Allergene enthält Sex Schokolade von Cupid?",
-          "content": "Unsere Sex Schokolade enthält keine Nüsse und kein Soja. Allerdings wird sie in einer Produktionsstätte hergestellt, in der auch Milch, Haselnüsse und Mandeln verarbeitet werden. Daher besteht die Möglichkeit einer Kreuzkontamination. Für Menschen mit schweren Allergien empfehlen wir deshalb, Vorsicht walten zu lassen."
-        },
-        "3": {
-          "label": "Ist die Sex Schokolade von Cupid Vegan?",
-          "content": "Ja, die Sex Schokolade von Cupid ist 100 % vegan und enthält ausschließlich pflanzliche Zutaten."
-        },
-        "4": {
-          "label": "Kann man die Sex Schokolade mit Alkohol kombinieren?",
-          "content": "Natürlich, das Kombinieren der Sex Schokolade mit einem Glas Ihres Lieblingsgetränks kann das Erlebnis noch bereichern. Aber hier ist ein Vorschlag – probieren Sie die Schokolade beim ersten Mal ganz ohne alkoholische Begleitung. So können Sie die einzigartige Verbindung und die gesteigerte Intimität, die die Schokolade in Ihre gemeinsamen Momente bringt, in voller Intensität genießen."
-        },
-        "title": "Sicherheit und Verträglichkeit der Sex Schokolade"
+      "can-you-explain-the-benefits-of-these-active-ingredients": {
+        "label": "Kannst du die Vorteile dieser aktiven Inhaltsstoffe erklären?",
+        "content": "Schwarzer Maca: Traditionell verwendet zur Steigerung der Libido, des Energieniveaus und des hormonellen Gleichgewichts. Panax Ginseng: Bekannt für die Verbesserung der sexuellen Erregung und der allgemeinen Leistung. L-Arginin: Eine Aminosäure, die einen gesunden Blutfluss unterstützen und die körperliche Reaktion verbessern kann. Guarana-Extrakt: Ein natürliches Stimulans, das die Energie erhöht und die Müdigkeit reduziert. Taurin: Hilft, das Energieniveau zu unterstützen und die Entspannung zu fördern."
       },
-      "ordering_process_and_support": {
-        "0": {
-          "label": "Wie bestelle ich die Sex Schokolade von Cupid?",
-          "content": "Legen Sie einfach die gewünschte Menge in den Warenkorb und gehen Sie zur Kasse, um Ihren Einkauf abzuschließen.\n\nFalls Sie auf ein Problem stoßen oder einfach nur Fragen haben, schreiben Sie uns auf WhatsApp unter +4915226740425 – wir sind immer online, um sicherzustellen, dass Ihre Bestellung reibungslos abläuft."
-        },
-        "1": {
-          "label": "Welche Zahlungsmöglichkeiten habe ich?",
-          "content": "Wir bieten Ihnen eine Vielzahl an Zahlungsmöglichkeiten, um Ihnen ein bequemes und sicheres Einkaufserlebnis zu gewährleisten:\n\n- Kreditkarte (Visa, Mastercard, American Express, UnionPay)\n- PayPal\n- Klarna (Rechnung mit Klarna)\n- Banküberweisung\n\nIhre Zahlung ist bei uns in sicheren Händen, dank Shopify Payments – unserem vertrauenswürdigen und sicheren Zahlungsanbieter. Shopify Payments erfüllt die höchsten Branchenstandards, um Ihre Zahlungsinformationen zu schützen und eine sichere Transaktion zu gewährleisten."
-        },
-        "2": {
-          "label": "Wo ist meine Bestellung?\n",
-          "content": "Sobald Sie Ihre Bestellung aufgegeben haben, erhalten Sie eine Bestätigungs-E-Mail. Sobald wir Ihre Bestellung an DHL übergeben, wird Ihnen automatisch eine Sendungsnummer per E-Mail zugeschickt.\n\nBitte beachten Sie, dass unsere Pakete täglich um 15:00 Uhr von DHL abgeholt werden. Alle Bestellungen, die bis 14:30 Uhr eingehen, werden noch am selben Tag versendet (Ausnahme: Samstag bis 12:00 Uhr und Sonntag – an diesen Tagen erfolgt keine Abholung).\n\nDie Lieferzeit innerhalb Deutschlands beträgt in der Regel 1-2 Werktage.\nDie Lieferzeit in andere Länder (Österreich, Niederlande, Schweiz, Italien) beträgt in der Regel 2-4 Werktage.\n\nFalls Sie weitere Fragen haben, können Sie uns jederzeit über WhatsApp unter +4915226740425 oder per E-Mail an info@cupidchoco.com kontaktieren. Wir helfen Ihnen gerne weiter und stellen Ihnen alle notwendigen Informationen zur Verfügung."
-        },
-        "3": {
-          "label": "Es gibt ein Problem mit meiner Bestellung – was soll ich tun?\n",
-          "content": "Wenn etwas mit Ihrer Bestellung nicht stimmt, zögern Sie nicht, uns über WhatsApp unter +4915226740425 oder per E-Mail an info@cupidchoco.com zu kontaktieren. Wir setzen alles daran, bedeutungsvolle Verbindungen zu schaffen, und Ihre Zufriedenheit ist für uns mehr als nur eine Priorität – sie ist ein Versprechen."
-        },
-        "title": "Bestellprozess und Unterziehung"
+      "is-there-a-recommended-daily-dose-for-cupid-chocolate": {
+        "label": "Gibt es eine empfohlene Tagesdosis für die Cupid-Schokolade?",
+        "content": "Ja, wir empfehlen, nicht mehr als ein halbes Täfelchen (ca. 14,5 g) pro Tag zu konsumieren. So erhältst du die optimale Menge an aktiven Inhaltsstoffen, ohne die empfohlene Aufnahme zu überschreiten."
       },
-      "delivery_and_return_information": {
-        "0": {
-          "label": "In welche Länder liefern Sie?",
-          "content": "Wir liefern innerhalb Deutschlands sowie in ausgewählte andere Länder, darunter Österreich, die Niederlande, die Schweiz und Italien. Die Lieferzeit innerhalb Deutschlands beträgt in der Regel 1-2 Werktage, und für Lieferungen in die genannten Länder normalerweise 2-4 Werktage.\n\nFalls Sie weitere Fragen haben, können Sie uns jederzeit über WhatsApp unter +4915226740425 oder per E-Mail an info@cupidchoco.com kontaktieren. Wir helfen Ihnen gerne weiter und stellen Ihnen alle notwendigen Informationen zur Verfügung."
-        },
-        "1": {
-          "label": "Wie schnell erhalte ich meine Bestellung?\n",
-          "content": "Nachdem wir Ihre Bestellung an DHL übergeben haben, wird Ihnen automatisch eine Sendungsnummer per E-Mail zugeschickt.\n\nBitte beachten Sie, dass unsere Pakete täglich um 15:00 Uhr von DHL abgeholt werden. Alle Bestellungen, die bis 14:30 Uhr eingehen, werden noch am selben Tag versendet (Ausnahme: Samstag bis 12:00 Uhr und Sonntag – an diesen Tagen erfolgt keine Abholung).\n\nDie Lieferzeit innerhalb Deutschlands beträgt in der Regel 1-2 Werktage. Für andere Länder (Österreich, Niederlande, Schweiz, Italien) dauert die Lieferung in der Regel 2-4 Werktage.\n\nFalls Sie weitere Fragen haben, können Sie uns jederzeit über WhatsApp unter +4915226740425 oder per E-Mail an info@cupidchoco.com kontaktieren. Wir helfen Ihnen gerne weiter und stellen Ihnen alle notwendigen Informationen zur Verfügung."
-        },
-        "2": {
-          "label": "Wird meine Bestellung diskret verpackt geliefert?\n",
-          "content": "Unsere Pakete sind absolut unauffällig – stilvoll, neutral und ohne jegliche Markenaufdrucke. Sie passen unbemerkt in Ihren Briefkasten und verraten nichts über den Inhalt."
-        },
-        "3": {
-          "label": "Kann ich die Bestellung zurückschicken?\n",
-          "content": "Möchten Sie etwas zurücksenden? Schreiben Sie uns einfach eine E-Mail an info@cupidchoco.com oder kontaktieren Sie uns über WhatsApp unter +4915226740425. "
-        },
-        "4": {
-          "label": "Wann kann ich mit meiner Rückerstattung rechnen?\n",
-          "content": "Sobald wir Ihre Rücksendung erhalten haben, bearbeiten wir Ihre Rückerstattung. Innerhalb von 72 Stunden erhalten Sie eine Bestätigungs-E-Mail, und die Rückerstattung wird innerhalb von 3 Tagen auf Ihrem Konto sein."
-        },
-        "title": "Liefer-und Rückgabeinformationen"
+      "is-cupid-suitable-for-both-women-and-men": {
+        "label": "Ist Cupid für Frauen und Männer geeignet?",
+        "content": "Absolut! Cupid-Schokolade wurde entwickelt, um das Erlebnis für alle Erwachsenen, unabhängig vom Geschlecht, zu verbessern. Die natürlichen Inhaltsstoffe unterstützen Energie, Stimmung und Intimität für alle."
+      },
+      "who-should-not-consume-cupid-chocolate": {
+        "label": "Wer sollte Cupid-Schokolade nicht konsumieren?",
+        "content": "Cupid-Schokolade ist für Erwachsene ab 18 Jahren bestimmt. Es wird nicht empfohlen für Kinder, schwangere oder stillende Frauen oder Personen mit Herzproblemen. Wenn du Medikamente einnimmst, eine Krankheit hast oder Bedenken zu den Inhaltsstoffen hast, konsultiere bitte vor der Verwendung deinen Arzt."
+      },
+      "are-there-any-side-effects": {
+        "label": "Gibt es Nebenwirkungen?",
+        "content": "Bei bestimmungsgemäßer Anwendung wird Cupid-Schokolade im Allgemeinen gut vertragen. Wenn du jedoch empfindlich auf Koffein oder einen der aktiven Inhaltsstoffe reagierst, könnten leichte Nebenwirkungen wie Unruhe oder Schlafstörungen auftreten. Wenn du irgendwelche unerwünschten Reaktionen feststellst, beende die Einnahme und konsultiere einen Arzt."
+      },
+      "how-long-does-cupid-chocolate-stay-fresh": {
+        "label": "Wie lange ist Cupid-Schokolade haltbar?",
+        "content": "Cupid-Schokolade hat eine Haltbarkeit von bis zu 12 Monaten ab Produktionsdatum. Das genaue Verfallsdatum ist auf der Rückseite der Verpackung aufgedruckt. Um die Frische zu erhalten, lagere die Schokolade an einem kühlen, trockenen Ort ohne direkte Sonneneinstrahlung."
+      },
+      "can-i-consume-cupid-chocolate-if-im-taking-medications": {
+        "label": "Kann ich Cupid-Schokolade konsumieren, wenn ich Medikamente nehme?",
+        "content": "Wenn du Medikamente einnimmst oder gesundheitliche Bedenken hast, empfehlen wir, vor dem Verzehr der Cupid-Schokolade deinen Arzt zu konsultieren, um sicherzustellen, dass es keine potenziellen Wechselwirkungen gibt."
+      },
+      "can-i-enjoy-cupid-chocolate-with-alcohol": {
+        "label": "Kann ich Cupid-Schokolade mit Alkohol genießen?",
+        "content": "Es sind keine schädlichen Wechselwirkungen zwischen Cupid-Schokolade und mäßigem Alkoholkonsum bekannt, jedoch können einige Effekte dadurch verstärkt werden. Wir empfehlen, Alkohol verantwortungsvoll zu konsumieren und darauf zu achten, wie dein Körper reagiert."
+      },
+      "what-should-i-do-if-i-consume-more-than-the-recommended-amount": {
+        "label": "Was soll ich tun, wenn ich mehr als die empfohlene Menge konsumiert habe?",
+        "content": "Wenn du versehentlich mehr als die empfohlene Dosis eingenommen hast, könntest du aufgrund des Koffeingehalts einen erhöhten Herzschlag oder Unruhe verspüren. Bleibe hydriert und vermeide weitere Stimulanzien. Wenn du dich unwohl fühlst, suche bitte umgehend ärztlichen Rat."
+      },
+      "can-i-enjoy-cupid-chocolate-alone": {
+        "label": "Kann ich Cupid-Schokolade alleine genießen?",
+        "content": "Ja, du kannst Cupid-Schokolade auch alleine genießen. Egal ob du deine Stimmung heben, Energie steigern oder einfach nur dunkle Schokolade genießen möchtest – sie ist perfekt für den Solo-Genuss genauso wie für das Teilen mit einem Partner."
+      },
+      "where-is-cupid-chocolate-manufactured": {
+        "label": "Wo wird Cupid-Schokolade hergestellt?",
+        "content": "Cupid-Schokolade wird stolz in Deutschland hergestellt und hält sich an strenge Qualitätsstandards. Unsere Schokoladen werden aus ethisch bezogenen, hochwertigen Zutaten gefertigt, um unseren Kunden das beste Erlebnis zu bieten."
+      },
+      "is-cupid-chocolate-vegan-or-vegetarian": {
+        "label": "Ist Cupid-Schokolade vegan oder vegetarisch?",
+        "content": "Cupid-Schokolade ist für Vegetarier geeignet. Bitte beachte jedoch, dass sie Soja enthält und Spuren von Nüssen, Milch und Gluten enthalten kann, da die Herstellung auf gemeinsamen Anlagen erfolgt."
+      },
+      "does-cupid-chocolate-contain-allergens": {
+        "label": "Enthält Cupid-Schokolade Allergene?",
+        "content": "Ja, Cupid-Schokolade enthält Soja. Sie kann auch Spuren von Nüssen, Milch und Gluten enthalten. Wenn du Lebensmittelallergien oder Unverträglichkeiten hast, lies bitte die Zutatenliste sorgfältig vor dem Verzehr."
+      },
+      "how-should-i-store-cupid-chocolate": {
+        "label": "Wie sollte ich Cupid-Schokolade lagern?",
+        "content": "Lagere deine Cupid-Schokolade an einem kühlen, trockenen Ort ohne direkte Sonneneinstrahlung und starke Gerüche."
+      },
+      "how-long-do-the-effects-of-cupid-chocolate-last": {
+        "label": "Wie lange halten die Effekte der Cupid-Schokolade an?",
+        "content": "Die Effekte können je nach individuellen Faktoren wie Stoffwechsel und Körperchemie variieren. Im Allgemeinen berichten Kunden, dass sie die Vorteile 1 bis 3 Stunden nach dem Konsum spüren."
+      },
+      "do-you-ship-cupid-chocolate-internationally": {
+        "label": "Versendet ihr Cupid-Schokolade international?",
+        "content": "Derzeit versenden wir innerhalb Deutschlands und in ausgewählte europäische Länder. Bitte überprüfe unsere Versandrichtlinien oder kontaktiere den Kundenservice für weitere Informationen zu internationalen Versandoptionen."
+      },
+      "is-cupid-chocolate-safe-to-consume": {
+        "label": "Ist Cupid-Schokolade sicher zu konsumieren?",
+        "content": "Ja, Cupid-Schokolade ist sicher, wenn sie wie angegeben konsumiert wird. Sie enthält keine verbotenen Substanzen oder schädliche Zusätze. Alle Inhaltsstoffe sind professionell dosiert und unterliegen strengen Qualitätskontrollen."
+      },
+      "what-ingredients-is-cupid-chocolate-made-of": {
+        "label": "What ingredients is Cupid Chocolate made of?",
+        "content": "Cupid Chocolate is made from high-quality ingredients, including 65% cocoa from Ghana, aphrodisiac additives such as Black Maca, Panax Ginseng, L-Arginine, Guarana, Taurine. All ingredients are tested, approved, and widely used in the food industry. Our chocolate is carefully produced in southern Germany to ensure consistently high quality.\n\nIngredients:\nCocoa mass, sugar, cocoa butter, aphrodisiac blend (L-Arginine, Black Maca Extract (20:1), Guarana Extract (6:1), Panax Ginseng Extract (35:1), Taurine), contains caffeine from Guarana, Emulsifier: SOYA LECITHIN, vanilla extract, natural flavoring."
+      },
+      "what-are-the-nutritional-values-of-cupid-chocolate": {
+        "label": "What are the nutritional values of Cupid Chocolate?",
+        "content": "Each bar of our vegan Cupid Chocolate contains a special blend of 65% cocoa and aphrodisiac extracts that enhance enjoyment. The chocolate is not only delicious but also a natural way to enhance intimacy between partners.\n\nNutritional Information Per 100 g\nEnergy 2535 kJ / 611 kcal\nFat 46g\nSaturated Fat 29g\nCarbohydrates 39g \nSugar 31g\nFiber 12g\nProtein 6.3g\nSalt 0g\n\n\nNutritional Information Per Serving (14.5g): \nEnergy 380 kJ / 92 kcal\nFat 6.9g\nSaturated Fat 4.4g\nCarbohydrates 5.9g\nSugar 4.7g\nFiber 1.8g\nProtein 1g\nSalt 0g"
+      },
+      "how-long-does-cupid-chocolate-last": {
+        "label": "How long does Cupid Chocolate last?",
+        "content": "Our Cupid Aphrodisiac Chocolate has a shelf life of one year."
+      },
+      "how-does-cupids-sex-chocolate-work": {
+        "label": "How does Cupid's Sex Chocolate work?",
+        "content": "Cupid's Sex Chocolate works through a combination of natural aphrodisiac ingredients such as Maca and Panax Ginseng, which increase desire, and L-Arginine, which promotes blood circulation. This composition can help intensify sexual desire naturally and support physical arousal. The effect usually begins within 30 to 60 minutes and can enhance the feeling of intimacy and closeness between partners."
+      },
+      "how-long-does-it-take-for-sex-chocolate-to-work": {
+        "label": "How long does it take for Sex Chocolate to work?",
+        "content": "The effect of Sex Chocolate can vary individually, but most couples feel an enhanced connection and intimacy within 30 to 60 minutes after consumption."
+      },
+      "what-benefits-does-cupids-sex-chocolate-offer": {
+        "label": "What benefits does Cupid's Sex Chocolate offer?",
+        "content": "Cupid's Sex Chocolate is specifically designed to offer a range of intimacy-enhancing benefits, including:\n\n- Strengthening of sensual desire and emotional connection\n- Beautification and intensification of intimate moments\n- Intensified pleasure and heightened sensitivity\n- A bolder, more adventurous feeling and a strong connection to one’s own body\n\nSome customers report feeling the effect even before intimacy, while others experience increased sensitivity and improved performance during intercourse."
+      },
+      "how-to-use-sex-chocolate-correctly": {
+        "label": "How to use Sex Chocolate correctly?",
+        "content": "To make the most of Cupid's Sex Chocolate, we recommend enjoying half a bar about half an hour before intimate togetherness. This gives the natural aphrodisiac ingredients time to take effect and sharpen the senses. Enjoy the chocolate in a relaxed atmosphere to experience the full benefits of the aphrodisiac effects."
+      },
+      "how-can-the-effect-of-sex-chocolate-be-maximized": {
+        "label": "How can the effect of Sex Chocolate be maximized?",
+        "content": "To maximize the effect of Sex Chocolate, we recommend creating a complete sensual experience that engages all senses and puts the partnership in focus. Here are some tips to enhance the effect:\n\n1. Enjoy Chocolate half an hour before: Take Cupid Chocolate about half an hour before the intimate moment. This gives the ingredients enough time to take effect and increase desire.\n\n2. Use aroma and massage candles: Light high-quality scented candles with aphrodisiac aromas to create the right atmosphere and generate a sensual mood. Aromas help relax and enjoy the moment more intensely. Massage candles can also be used to perform a relaxing massage – the perfect start to intimate time together.\n\n3. Soft lighting and music: Create a moodful environment with dimmed lights and one of Cupid’s romantic Spotify playlists. Gentle lighting and matching music contribute to lifting the mood and stimulating the senses.\n\n4. Use Cupid’s blindfold: Use the blindfold from Cupid, which you can either buy on our website or receive for free, to temporarily block one of the senses. This intensifies the perception of the other senses and increases tension. The partner with the blindfold feels touches more intensely and is focused solely on the current sensations.\n\n5. Use Cupid’s erotic dice: The dice with erotic tasks developed by our team bring a playful element into lovemaking. The dice contain simple but effective tasks such as 'Kiss,' 'Lick,' 'Hug,' or 'Stroke.' These tasks are specifically designed to break down inhibitions, add fun to the moment, and encourage spontaneity. They allow partners to create closeness in a playful way and make the lovemaking more exciting. They help discover new, exciting ways to ignite passion.\n\n6. The 'Heartfelt Naked' card game by our partners: The 'Heartfelt Naked' card game offers questions and tasks designed to create a deeper connection between partners. It encourages open conversations about desires and needs, helping partners get closer not only physically but also emotionally. This connection is a central component to fully enjoying the effect of the chocolate.\n\n7. Take time for aftercare: After the intimate adventure, take time to cuddle and share the moments enjoyed together. This aftercare is an important part of the experience, as it builds trust and deepens the emotional connection between partners.\n\nBy combining Cupid Sex Chocolate with these sensual accessories and games, the experience is intensified for both partners. The combination of taste, aroma, and touch experiences creates an atmosphere where closeness, trust, and passion are naturally promoted."
+      },
+      "how-much-of-the-sex-chocolate-should-be-consumed-at-most": {
+        "label": "How much of the Sex Chocolate should be consumed at most?",
+        "content": "It is recommended not to consume more than half a bar of Cupid Sex Chocolate per day. This amount contains the optimal dose of aphrodisiac ingredients to achieve the desired effect."
+      },
+      "what-happens-if-i-take-more-than-one-serving-of-sex-chocolate": {
+        "label": "What happens if I take more than one serving of Sex Chocolate?",
+        "content": "If you have consumed more than one serving of Cupid Sex Chocolate, it is generally safe. The chocolate contains natural ingredients that should not cause any harmful side effects. However, you may notice side effects like restlessness, heart palpitations, or digestive discomfort, as the aphrodisiac ingredients can act more strongly. We recommend not exceeding double the dose per day (one bar) to ensure a pleasant experience and avoid potential discomfort."
+      },
+      "what-side-effects-does-sex-chocolate-have": {
+        "label": "What side effects does Sex Chocolate have?",
+        "content": "The plant-based ingredients used in our Cupid Sex Chocolate are safe and carefully formulated. They contain clinically tested natural active ingredients backed by extensive research and clinical studies.\n\nHowever, if you take more than the recommended dose, the following side effects may occur:\n\n- Palpitations or an increased heart rate, caused by ingredients such as Guarana.\n- Restlessness or nervousness, which can be caused by stimulating ingredients.\n- Digestive issues such as stomach aches or bloating.\n- Sleep disturbances if taken late at night, due to the stimulating effects of some ingredients.\n\nWe recommend not exceeding a maximum of one bar per day to avoid potential side effects and ensure a pleasant experience."
+      },
+      "who-should-avoid-consuming-sex-chocolate": {
+        "label": "Who should avoid consuming Sex Chocolate?",
+        "content": "People who are pregnant, breastfeeding, taking medication, or have health concerns should consult their doctor before consuming Sex Chocolate. Safety and well-being are a priority, and it is important to ensure that the ingredients in the chocolate are suitable for each individual's situation."
+      },
+      "what-allergens-does-cupids-sex-chocolate-contain": {
+        "label": "What allergens does Cupid's Sex Chocolate contain?",
+        "content": "Our Sex Chocolate does not contain nuts or soy. However, it is made in a facility where milk, hazelnuts, and almonds are also processed. Therefore, there is a possibility of cross-contamination. We recommend caution for people with severe allergies."
+      },
+      "is-cupids-sex-chocolate-vegan": {
+        "label": "Is Cupid's Sex Chocolate vegan?",
+        "content": "Yes, Cupid's Sex Chocolate is 100% vegan and contains only plant-based ingredients."
+      },
+      "can-sex-chocolate-be-combined-with-alcohol": {
+        "label": "Can Sex Chocolate be combined with alcohol?",
+        "content": "Of course, combining Sex Chocolate with a glass of your favorite drink can enrich the experience. But here's a suggestion – try the chocolate for the first time without any alcoholic accompaniment. This way, you can fully enjoy the unique connection and increased intimacy that the chocolate brings to your shared moments."
+      },
+      "how-do-i-order-cupids-sex-chocolate": {
+        "label": "How do I order Cupid's Sex Chocolate?",
+        "content": "Simply add the desired quantity to the cart and proceed to checkout to complete your purchase.\n\nIf you encounter any issues or have questions, feel free to message us on WhatsApp at +4915226740425 – we’re online to ensure your order goes smoothly."
+      },
+      "what-payment-options-do-i-have": {
+        "label": "What payment options do I have?",
+        "content": "We offer a variety of payment options to provide a convenient and secure shopping experience:\n\n- Credit Card (Visa, Mastercard, American Express, UnionPay)\n- PayPal\n- Klarna (Invoice with Klarna)\n- Bank Transfer\n\nYour payment is in safe hands with Shopify Payments – our trusted and secure payment provider. Shopify Payments meets industry standards to protect your payment information and ensure a safe transaction."
+      },
+      "where-is-my-order": {
+        "label": "Where is my order?",
+        "content": "Once you place your order, you’ll receive a confirmation email. When we hand your order over to DHL, you’ll automatically receive a tracking number via email.\n\nPlease note that our packages are picked up by DHL daily at 3:00 PM. All orders placed by 2:30 PM will be shipped on the same day (exceptions: Saturday until 12:00 PM, and no pickup on Sunday).\n\nDelivery time within Germany is usually 1-2 business days. For other countries (Austria, Netherlands, Switzerland, Italy), delivery is typically 2-4 business days."
+      },
+      "there-is-an-issue-with-my-order-what-should-i-do": {
+        "label": "There is an issue with my order – what should I do?",
+        "content": "If something is wrong with your order, don’t hesitate to contact us via WhatsApp at +4915226740425 or by email at info@cupidchoco.com. Creating meaningful connections is our priority, and your satisfaction is more than a priority – it’s a promise."
+      },
+      "which-countries-do-you-deliver-to": {
+        "label": "Which countries do you deliver to?",
+        "content": "We deliver within Germany and to selected other countries, including Austria, the Netherlands, Switzerland, and Italy. Delivery time within Germany is usually 1-2 business days, and for the mentioned countries, it typically takes 2-4 business days.\n\nIf you have further questions, feel free to contact us anytime via WhatsApp at +4915226740425 or email info@cupidchoco.com. We are happy to help and provide you with all necessary information."
+      },
+      "how-soon-will-i-receive-my-order": {
+        "label": "How soon will I receive my order?",
+        "content": "Once we hand your order over to DHL, a tracking number is automatically sent via email.\n\nOur packages are picked up by DHL daily at 3:00 PM. All orders placed by 2:30 PM are shipped the same day (Saturday orders are shipped until 12:00 PM; no pickup on Sundays).\n\nDelivery within Germany typically takes 1-2 business days. Delivery to other countries (Austria, Netherlands, Switzerland, Italy) usually takes 2-4 business days."
+      },
+      "will-my-order-be-delivered-discreetly": {
+        "label": "Will my order be delivered discreetly?",
+        "content": "Our packages are absolutely inconspicuous – stylish, neutral, and without any branding. They fit unnoticed in your mailbox and reveal nothing about the contents."
+      },
+      "can-i-return-the-order": {
+        "label": "Can I return the order?",
+        "content": "Want to return something? Simply email us at info@cupidchoco.com or contact us via WhatsApp at +4915226740425."
+      },
+      "when-can-i-expect-my-refund": {
+        "label": "When can I expect my refund?",
+        "content": "Once we have received your return, we process your refund. You will receive a confirmation email within 72 hours, and the refund will be in your account within 3 days."
+      },
+      "what-ingredients-is-cupid-chocolate-made-from": {
+        "label": "Aus welchen Zutaten wird Cupid Schokolade hergestellt?",
+        "content": "Cupid-Schokolade wird aus hochwertigen Zutaten hergestellt, darunter 65 % Kakao aus Ghana, aphrodisierende Zusätze wie Schwarze Maca, Panax Ginseng, L-Arginin, Guarana und Taurin. Alle Zutaten sind geprüft, zugelassen und weit verbreitet in der Lebensmittelindustrie. Unsere Schokolade wird mit Sorgfalt in Süddeutschland produziert, um eine gleichbleibend hohe Qualität zu gewährleisten."
+      },
+      "how-long-does-it-take-for-the-sex-chocolate-to-work": {
+        "label": "Wie lange dauert es, bis die Sex Schokolade wirkt?",
+        "content": "Die Wirkung von der Sex Schokolade kann individuell unterschiedlich sein, aber die meisten Paare spüren eine verstärkte Verbindung und Intimität innerhalb von 30 Minuten nach dem Verzehr."
+      },
+      "how-do-you-properly-use-sex-chocolate": {
+        "label": "Wie verwendet man Sex Schokolade richtig?",
+        "content": "Um die Sex Schokolade von Cupid optimal zu nutzen, empfehlen wir, etwa eine halbe Stunde vor dem intimen Zusammensein ein halbes Täfelchen zu genießen. Dies gibt den natürlichen aphrodisierenden Inhaltsstoffen Zeit, ihre Wirkung zu entfalten und die Sinne zu schärfen. Genießen Sie die Schokolade in einer entspannten Atmosphäre, um die vollen Vorteile der aphrodisierenden Effekte zu erleben."
+      },
+      "what-is-the-maximum-amount-of-sex-chocolate-one-should-consume": {
+        "label": "Wie viel von der Sex Schokolade sollte man maximal konsumieren?",
+        "content": "Es wird empfohlen, nicht mehr als eine halbe Tafel der Cupid Sex Schokolade pro Tag zu konsumieren. Diese Menge enthält die optimale Dosis der aphrodisierenden Inhaltsstoffe, um die gewünschte Wirkung zu erzielen."
+      },
+      "what-are-the-side-effects-of-the-sex-chocolate": {
+        "label": "Welche Nebenwirkungen hat die Sex Schokolade?",
+        "content": "Die in unserer Cupid Sex Schokolade verwendeten pflanzlichen Inhaltsstoffe sind sicher und wurden sorgfältig formuliert. Sie enthalten klinisch erprobte natürliche Wirkstoffe, die durch umfangreiche Forschung und klinische Studien belegt sind. Sollten Sie jedoch mehr als die empfohlene Dosis einnehmen, könnten folgende Nebenwirkungen auftreten: Herzklopfen, Unruhe, Verdauungsbeschwerden oder Schlafprobleme. Maximal eine Tafel pro Tag empfohlen."
+      },
+      "can-you-combine-sex-chocolate-with-alcohol": {
+        "label": "Kann man die Sex Schokolade mit Alkohol kombinieren?",
+        "content": "Natürlich, das Kombinieren der Sex Schokolade mit einem Glas Ihres Lieblingsgetränks kann das Erlebnis noch bereichern. Aber hier ist ein Vorschlag – probieren Sie die Schokolade beim ersten Mal ganz ohne alkoholische Begleitung. So können Sie die einzigartige Verbindung und die gesteigerte Intimität, die die Schokolade in Ihre gemeinsamen Momente bringt, in voller Intensität genießen."
+      },
+      "will-my-order-be-delivered-in-discreet-packaging": {
+        "label": "Wird meine Bestellung diskret verpackt geliefert?",
+        "content": "Unsere Pakete sind absolut unauffällig – stilvoll, neutral und ohne jegliche Markenaufdrucke. Sie passen unbemerkt in Ihren Briefkasten und verraten nichts über den Inhalt."
+      },
+      "can-i-return-my-order": {
+        "label": "Kann ich die Bestellung zurückschicken?",
+        "content": "Möchtest du etwas zurücksenden? Schreib uns einfach eine E-Mail an info@cupidchoco.com oder kontaktiere uns über WhatsApp unter +4915226740425. Sobald wir deine Rücksendung erhalten haben, bearbeiten wir deine Rückerstattung. Innerhalb von 72 Stunden bekommst du eine Bestätigungs-E-Mail, und das Geld wird innerhalb von 3 Tagen auf deinem Konto sein."
       }
     }
   },

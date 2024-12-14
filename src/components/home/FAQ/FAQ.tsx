@@ -7,11 +7,15 @@ import Image from "next/image";
 import { Accordion } from "@/components";
 import EyeIcon from "@/icons/eye.svg";
 
+import { DEFAULT_LENGTH, LIST_OF_QUESTIONS } from "./config";
 import styles from "./FAQ.module.scss";
 
+const maxLength = LIST_OF_QUESTIONS.length;
+
 export const FAQ: FC = () => {
-  const [length, setLength] = useState(6);
-  const t = useTranslations("HomePage.FAQ");
+  const [length, setLength] = useState(DEFAULT_LENGTH);
+  const t = useTranslations("FAQ");
+  const listTranslations = useTranslations("FAQ.list");
 
   return (
     <section id="faq" className={styles.section}>
@@ -19,11 +23,14 @@ export const FAQ: FC = () => {
       <div className={styles.wrapper}>
         <div className={styles.accordion}>
           <Accordion
-            t={t}
-            data={Array.from({ length }, (_, i) => (`list.${i}`).toString())}
+            t={listTranslations}
+            data={LIST_OF_QUESTIONS.slice(0, length)}
           />
-          {length < 19 && (
-            <button className={styles.button} onClick={() => setLength(19)}>
+          {length < maxLength && (
+            <button
+              className={styles.button}
+              onClick={() => setLength(maxLength)}
+            >
               <span>{t("show-more")}</span>
               <span className={styles.icon}>
                 <span className={styles.dots} />

@@ -8,10 +8,11 @@ import { Accordion } from "@/components";
 import PlusIcon from "@/icons/plus.svg";
 
 import styles from "./FAQ.module.scss";
-import { EXPERTS } from "./config";
+import { EXPERTS, LIST_OF_QUESTIONS } from "./config";
 
 export const FAQ: FC = () => {
   const t = useTranslations("HomePage.FAQ");
+  const listTranslations = useTranslations("FAQ.list");
 
   return (
     <section id="faq" className={styles.section}>
@@ -32,11 +33,7 @@ export const FAQ: FC = () => {
         <p className={styles.subtitle}>{t("subtitle")}</p>
       </div>
       <div className={styles.accordion}>
-        <Accordion
-          t={t}
-          Icon={PlusIcon}
-          data={Array.from({ length: 6 }, (_, i) => `list.${i}`.toString())}
-        />
+        <Accordion t={listTranslations} Icon={PlusIcon} data={LIST_OF_QUESTIONS} />
       </div>
     </section>
   );
