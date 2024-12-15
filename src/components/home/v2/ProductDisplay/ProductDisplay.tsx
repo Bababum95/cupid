@@ -4,6 +4,9 @@ import { type FC, useState, useRef } from "react";
 import { useTranslations } from "next-intl";
 
 import type { ProductType, CreateCartInput } from "@/types";
+import { useAppDispatch } from "@/hooks";
+import { useRouter } from "@/i18n/routing";
+import { create as createCart } from "@/lib/slices/cart";
 import CupidHeartIcon from "@/icons/cupid-heart.svg";
 
 import { Rating } from "../Rating/Rating";
@@ -36,17 +39,13 @@ type Props = {
 export const ProductDisplay: FC<Props> = ({ upsell, locale }) => {
   const t = useTranslations("HomePage");
   const wrapperRef = useRef<HTMLDivElement | null>(null);
+  const dispatch = useAppDispatch();
+  const router = useRouter();
   const [currentImage, setCurrentImage] = useState<number | null>(null);
   const [cart, setCart] = useState<CartState>({ main: null });
 
   const addUpsellToCart = (id: string, price: number) => {
-    setCart((prev) => ({
-      ...prev,
-      upsell: {
-        id,
-        price,
-      },
-    }));
+    setCart((prev) => ({ ...prev, upsell: { id, price } }));
   };
 
   const handleChangeBox = (id: string) => {
@@ -96,7 +95,26 @@ export const ProductDisplay: FC<Props> = ({ upsell, locale }) => {
       discountCodes: [],
     };
 
-    console.log(input);
+    if (cart.upsell) {
+      input.lines.push({ merchandiseId: cart.upsell.id, quantity: 1 });
+    }
+
+    if (selectedProduct.gifts) {
+      input.lines = [...input.lines, ...selectedProduct.gifts];
+    }
+
+    if (selectedProduct.discountCodes) {
+      input.discountCodes = selectedProduct.discountCodes;
+    }
+
+    const res = await dispatch(createCart({ input, locale }));
+
+    if (res.meta.requestStatus === "fulfilled") {
+      router.push("/cart");
+    } else {
+      console.log(res);
+      setCart((prev) => ({ ...prev, loading: false }));
+    }
   };
 
   return (

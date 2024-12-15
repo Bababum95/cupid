@@ -99,6 +99,13 @@ export const PRODUCT_VARIANTS = [
     price: 27.79,
     savings: { percentage: "25%", gifts: 1 },
     id: "gid://shopify/ProductVariant/49444215423300",
+    discountCodes: ["H3PKCHWNE2WY"],
+    gifts: [
+      {
+        merchandiseId: "gid://shopify/ProductVariant/49590020079940",
+        quantity: 1,
+      },
+    ],
     image: "10",
   },
   {
@@ -106,6 +113,17 @@ export const PRODUCT_VARIANTS = [
     price: 24.99,
     savings: { percentage: "33%", gifts: 2 },
     id: "gid://shopify/ProductVariant/49588801634628",
+    discountCodes: ["H3PKCHWNE2WY", "7EN4E2DCBDVB"],
+    gifts: [
+      {
+        merchandiseId: "gid://shopify/ProductVariant/49590020079940",
+        quantity: 1,
+      },
+      {
+        merchandiseId: "gid://shopify/ProductVariant/49570263957828",
+        quantity: 1,
+      },
+    ],
     image: "9",
   },
 ];

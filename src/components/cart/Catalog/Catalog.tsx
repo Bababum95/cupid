@@ -31,10 +31,10 @@ export const Catalog: FC<Props> = ({ products, isLoading }) => {
   useEffect(() => {
     if (!isDesktop) return;
 
-    document.body.classList.add("no-scroll");
+    document.body.style.overflow = "hidden";
 
     return () => {
-      document.body.classList.remove("no-scroll");
+      document.body.style.overflow = "auto";
     };
   }, [isDesktop]);
 
