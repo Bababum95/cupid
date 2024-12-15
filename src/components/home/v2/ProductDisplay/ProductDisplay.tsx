@@ -109,10 +109,8 @@ export const ProductDisplay: FC<Props> = ({ upsell, locale }) => {
 
     const res = await dispatch(createCart({ input, locale })).unwrap();
 
-    console.log(res);
-
-    if (res.meta.requestStatus === "fulfilled") {
-      if (false) router.push("/cart");
+    if (res.meta.requestStatus === "fulfilled" && "checkoutUrl" in res) {
+      router.push(res.checkoutUrl);
     } else {
       console.log(res);
       setCart((prev) => ({ ...prev, loading: false }));
