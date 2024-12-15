@@ -120,7 +120,7 @@ export const PRODUCT_VARIANTS = [
         quantity: 1,
       },
       {
-        merchandiseId: "gid://shopify/ProductVariant/49570263957828",
+        merchandiseId: "gid://shopify/ProductVariant/49590023422276",
         quantity: 1,
       },
     ],

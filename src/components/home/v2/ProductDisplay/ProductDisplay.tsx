@@ -109,8 +109,6 @@ export const ProductDisplay: FC<Props> = ({ upsell, locale }) => {
 
     const res = await dispatch(createCart({ input, locale })).unwrap();
 
-    console.log(res);
-
     if (res.checkoutUrl) {
       router.push(res.checkoutUrl);
     } else {
