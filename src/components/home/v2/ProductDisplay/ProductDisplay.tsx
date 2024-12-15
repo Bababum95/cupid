@@ -107,10 +107,12 @@ export const ProductDisplay: FC<Props> = ({ upsell, locale }) => {
       input.discountCodes = selectedProduct.discountCodes;
     }
 
-    const res = await dispatch(createCart({ input, locale }));
+    const res = await dispatch(createCart({ input, locale })).unwrap();
+
+    console.log(res);
 
     if (res.meta.requestStatus === "fulfilled") {
-      router.push("/cart");
+      if (false) router.push("/cart");
     } else {
       console.log(res);
       setCart((prev) => ({ ...prev, loading: false }));

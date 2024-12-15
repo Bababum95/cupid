@@ -31,7 +31,10 @@ export const create = createAsyncThunk(
         locale,
       });
 
-      return ressponse.cartCreate.cart;
+      if (ressponse.cartCreate.cart) {
+        return ressponse.cartCreate.cart;
+      }
+      return rejectWithValue(ressponse.cartCreate);
     } catch (error) {
       return rejectWithValue(error);
     }
