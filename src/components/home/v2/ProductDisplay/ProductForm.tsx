@@ -91,14 +91,20 @@ export const ProductForm: FC<Props> = ({
       >
         <ProtectIcon />
         {t("buy-now")}
-        {selectedBox && total && (
-          <div className={styles.total} aria-label="Total price">
-            <span className={styles.discount}>
-              {formatPrice(total.discount)}
-            </span>
-            <span className={styles.regular}>{formatPrice(total.regular)}</span>
-          </div>
-        )}
+        <div className={styles.total} aria-label="Total price">
+          {selectedBox && total ? (
+            <>
+              <span className={styles.discount}>
+                {formatPrice(total.discount)}
+              </span>
+              <span className={styles.regular}>
+                {formatPrice(total.regular)}
+              </span>
+            </>
+          ) : (
+            <span className={styles.discount}>ab 24,99€/Box</span>
+          )}
+        </div>
       </button>
     </form>
   );
