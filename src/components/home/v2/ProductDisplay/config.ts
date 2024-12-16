@@ -16,13 +16,6 @@ export const PRODUCT_GALLERY = [
   {
     type: "image",
     src: {
-      en: "/images/home/v2/main/en/why.jpg",
-      de: "/images/home/v2/main/de/why.jpg",
-    },
-  },
-  {
-    type: "image",
-    src: {
       en: "/images/home/v2/main/en/why-2.jpg",
       de: "/images/home/v2/main/de/why-2.jpg",
     },
@@ -30,22 +23,15 @@ export const PRODUCT_GALLERY = [
   {
     type: "image",
     src: {
+      en: "/images/home/v2/main/en/why.jpg",
+      de: "/images/home/v2/main/de/why.jpg",
+    },
+  },
+  {
+    type: "image",
+    src: {
       en: "/images/home/v2/main/en/why-3.jpg",
       de: "/images/home/v2/main/de/why-3.jpg",
-    },
-  },
-  {
-    type: "image",
-    src: {
-      en: "/images/home/v2/main/en/how-it-work.jpg",
-      de: "/images/home/v2/main/de/how-it-work.jpg",
-    },
-  },
-  {
-    type: "image",
-    src: {
-      en: "/images/home/v2/main/en/indide.jpg",
-      de: "/images/home/v2/main/de/indide.jpg",
     },
   },
   {
@@ -65,8 +51,22 @@ export const PRODUCT_GALLERY = [
   {
     type: "image",
     src: {
-      en: "/images/home/v2/main/3.jpg",
-      de: "/images/home/v2/main/3.jpg",
+      en: "/images/home/v2/main/en/how-it-work.jpg",
+      de: "/images/home/v2/main/de/how-it-work.jpg",
+    },
+  },
+  {
+    type: "image",
+    src: {
+      en: "/images/home/v2/main/en/inside.jpg",
+      de: "/images/home/v2/main/de/inside.jpg",
+    },
+  },
+  {
+    type: "image",
+    src: {
+      en: "/images/home/v2/main/1.jpg",
+      de: "/images/home/v2/main/1.jpg",
     },
   },
   {
@@ -79,8 +79,8 @@ export const PRODUCT_GALLERY = [
   {
     type: "image",
     src: {
-      en: "/images/home/v2/main/1.jpg",
-      de: "/images/home/v2/main/1.jpg",
+      en: "/images/home/v2/main/3.jpg",
+      de: "/images/home/v2/main/3.jpg",
     },
   },
 ] as const;
@@ -92,7 +92,7 @@ export const PRODUCT_VARIANTS = [
     price: 29.99,
     savings: { percentage: "19%" },
     id: "gid://shopify/ProductVariant/49588357693764",
-    image: "11",
+    image: "9",
   },
   {
     quantity: 2,
@@ -124,7 +124,7 @@ export const PRODUCT_VARIANTS = [
         quantity: 1,
       },
     ],
-    image: "9",
+    image: "11",
   },
 ];
 

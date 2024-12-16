@@ -62,6 +62,7 @@ export const ProductGallery: FC<Props> = ({
                 fill
                 className={styles.image}
                 priority
+                quality={90}
               />
             )}
           </SwiperSlide>
