@@ -12,7 +12,7 @@ type Props = {
 export const CupidCommunity: FC<Props> = ({ version }) => {
   const t = useTranslations("HomePage.CupidCommunity");
   return (
-    <Slider title={t(version)}>
+    <Slider title={t(version)} controller={false}>
       {VIDEOS.map((video, i) => (
         <Video
           description={video.description}

@@ -26,6 +26,12 @@
       border-radius: 24px;
     }
   }
+
+  @include hover {
+    .controller {
+      opacity: 1;
+    }
+  }
 }
 
 .thumbnails {
@@ -43,8 +49,50 @@
   }
 }
 
-.image {
+.media {
   border-radius: 25px;
+}
+
+video.media {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+}
+
+.controller {
+  @include flex-layout(space-between, center);
+  width: 100%;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translate(0, -50%);
+  z-index: 5;
+  padding-inline: 28px;
+  opacity: 0;
+  transition: $transition;
+}
+
+.button {
+  @include flex-center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background-color: #4d4d4d;
+  color: $page-bg;
+  transition: $transition;
+
+  &:first-child svg {
+    translate: -1px 0;
+  }
+
+  &:last-child svg {
+    rotate: 180deg;
+    translate: 1px 0;
+  }
+
+  @include hover {
+    background-color: $text;
+  }
 }
 
 @include media("tablet") {
@@ -53,11 +101,12 @@
     margin-left: -20px;
   }
 
-  .image {
+  .media {
     border-radius: 0;
   }
 
-  .thumbnails {
+  .thumbnails,
+  .controller {
     display: none;
   }
 }

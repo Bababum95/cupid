@@ -3,8 +3,15 @@ export const PRODUCT_GALLERY = [
     type: "image",
     src: {
       en: "/images/home/v2/main/en/main.jpg",
-      de: "/images/home/v2/main/de/main.webp",
+      de: "/images/home/v2/main/de/main.jpg",
     },
+  },
+  {
+    type: "video",
+    files: [
+      { src: "/videos/v2/cupid-chocolate.webm", type: "video/webm" },
+      { src: "/videos/v2/cupid-chocolate.mp4", type: "video/mp4" },
+    ],
   },
   {
     type: "image",
