@@ -24,10 +24,11 @@ export const Supergreens = () => {
       </div>
       <Image
         className={styles.image}
-        src="/images/advantages.png"
+        src="/images/home/v2/chocolate.png"
         alt="Supergreens product showcase"
-        width={500}
-        height={400}
+        width={662}
+        height={419}
+        quality={90}
       />
     </div>
   );

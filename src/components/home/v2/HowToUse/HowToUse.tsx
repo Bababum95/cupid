@@ -20,6 +20,7 @@ export const HowToUse = () => {
             className={styles.image}
             quality={80}
           />
+          <p className={styles.step}>{t(`step`, { step: i + 1 })}</p>
           <h3 className={styles.subtitle}>{t(`steps.${i}.title`)}</h3>
           <p className={styles.description}>{t(`steps.${i}.description`)}</p>
         </div>

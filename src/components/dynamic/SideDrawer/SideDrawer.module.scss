@@ -15,7 +15,7 @@
   top: 0;
   bottom: 0;
   width: 480px;
-  max-width: 100%;
+  max-width: calc(100% - 40px);
   background-color: $page-bg;
   z-index: 11;
   overflow-y: auto;

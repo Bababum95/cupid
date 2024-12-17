@@ -137,7 +137,10 @@
       "support": "Fast Support",
       "vegan": "100% Vegan",
       "limited-time-sale": "Limited Time Sale",
-      "works-for-men-and-women": "Works for Men and Women"
+      "works-for-men-and-women": "Works for Men and Women",
+      "free-ship": "Free Shipping",
+      "protect": "100% Satisfaction Guarantee",
+      "x-mas-sale": "Xmas Sale!"
     },
     "Ingredients": {
       "title": "Why These Ingredients Work",
@@ -216,24 +219,25 @@
       "free-shipping": "Free Shipping",
       "satisfaction-guarantee": "100% Satisfaction Guarantee",
       "discrete-packaging": "Discrete Packaging",
-      "happy-couples": "Over {amount}+ Happy Couples",
+      "happy-couples": "Over <span>{amount}+</span> Happy Couples",
       "HowToUse": {
         "title": "How to use Cupid Chocolate",
+        "step": "Step {step}",
         "steps": {
           "0": {
-            "title": "Step 1:  Set the Mood",
+            "title": "Set the Mood",
             "description": "Create the right atmosphere—dim the lights, relax, and get comfortable."
           },
           "1": {
-            "title": "Step 2: Break & Share",
+            "title": "Break & Share",
             "description": "Break a piece in half. Enjoy it alone or with your partner."
           },
           "2": {
-            "title": "Step 3:  Wait 30 Minutes",
+            "title": "Wait 30 Minutes",
             "description": "Allow the natural ingredients to work their magic."
           },
           "3": {
-            "title": "Step 4",
+            "title": "Enjoy the Moment",
             "description": "Allow the natural ingredients to work their magic."
           }
         }

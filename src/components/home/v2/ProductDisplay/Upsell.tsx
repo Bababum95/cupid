@@ -20,7 +20,7 @@ export const Upsell: FC<Props> = ({ product, addToCart }) => {
 
   return (
     <div className={styles.wrapper}>
-      <p className={styles.title}>{t("title")}</p>
+      {/* <p className={styles.title}>{t("title")}</p> */}
       <motion.div
         className={styles.product}
         onClick={() => setPopupProduct(product)}

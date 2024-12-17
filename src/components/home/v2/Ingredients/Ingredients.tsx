@@ -18,7 +18,6 @@ export const Ingredients: FC<Props> = ({ list }) => {
       <Slider title={t("title")}>
         {list.map((item) => (
           <div key={item} className={styles.item}>
-            <h3 className={styles.subtitle}>{t(`list.${item}.name`)}</h3>
             <Image
               src={`/images/home/v2/ingredients/${item}.jpg`}
               width={394}
@@ -27,6 +26,7 @@ export const Ingredients: FC<Props> = ({ list }) => {
               className={styles.image}
               quality={80}
             />
+            <h3 className={styles.subtitle}>{t(`list.${item}.name`)}</h3>
             <p className={styles.property}>{t(`list.${item}.property`)}</p>
             <p className={styles.description}>
               {t.rich(`list.${item}.description`, {

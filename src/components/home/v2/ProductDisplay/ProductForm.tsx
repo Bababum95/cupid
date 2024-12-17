@@ -46,44 +46,52 @@ export const ProductForm: FC<Props> = ({
         role="radiogroup"
         aria-label="Product options"
       >
-        {PRODUCT_VARIANTS.map(({ quantity, savings, price, id }, index) => (
-          <RadioVariant
-            key={index}
-            active={selectedBox === id}
-            onSelect={() => handleChange(id)}
-            top={
-              <span>
-                {quantity} {quantity > 1 ? t("boxes") : t("box")}
-              </span>
-            }
-          >
-            {savings && (
-              <div className={styles.bages}>
-                <span className={styles.save}>
-                  {t("save", {
-                    amount: savings.percentage,
-                  })}
-                </span>
-                {savings.gifts && (
-                  <span className={styles.gift}>
-                    +{" "}
-                    {t("free-gift", {
-                      count: savings.gifts,
+        {PRODUCT_VARIANTS.map(
+          ({ quantity, savings, price, id, recommended }, index) => (
+            <RadioVariant
+              key={index}
+              recommended={recommended && !selectedBox}
+              active={selectedBox === id}
+              onSelect={() => handleChange(id)}
+              top={
+                <div className={styles.wrapper}>
+                  <div className={styles.info}>
+                    <span className={styles.quantity}>
+                      {quantity} {quantity > 1 ? t("boxes") : t("box")}
+                    </span>
+                    <span className={styles.experiences}>
+                      {t("experiences", { count: quantity * 3 })}
+                    </span>
+                  </div>
+                  <div className={styles.price}>
+                    <span className={styles.regular}>37,00€/Box</span>
+                    <span className={styles.sale}>
+                      {formatPrice(price)}/{t("box")}
+                    </span>
+                  </div>
+                </div>
+              }
+            >
+              {savings && (
+                <div className={styles.bages}>
+                  <span className={styles.save}>
+                    {t("save", {
+                      amount: savings.percentage,
                     })}
                   </span>
-                )}
-              </div>
-            )}
-            <div className={styles.info}>
-              <span className={styles.experiences}>
-                {t("experiences", { count: quantity * 3 })}
-              </span>
-              <span className={styles.price}>
-                {formatPrice(price)}/{t("box")}
-              </span>
-            </div>
-          </RadioVariant>
-        ))}
+                  {savings.gifts && (
+                    <span className={styles.gift}>
+                      +{" "}
+                      {t("free-gift", {
+                        count: savings.gifts,
+                      })}
+                    </span>
+                  )}
+                </div>
+              )}
+            </RadioVariant>
+          )
+        )}
       </ul>
       <button
         className={classNames(styles.button, { [styles.loading]: loading })}

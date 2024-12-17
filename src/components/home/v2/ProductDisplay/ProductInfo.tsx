@@ -5,7 +5,7 @@ import { useTranslations } from "next-intl";
 import dynamic from "next/dynamic";
 
 import { NutritionalDrawerContent } from "@/components";
-import PlusIcon from "@/icons/plus.svg";
+import ArrowIcon from "@/icons/arrow.svg";
 
 import styles from "./ProductInfo.module.scss";
 
@@ -67,7 +67,9 @@ export const ProductInfo = () => {
             onClick={() => openDrawer(item as keyof typeof PRODUCT_INFO_ITEMS)}
           >
             {t(item)}
-            <PlusIcon />
+            <span className={styles.arrow}>
+              <ArrowIcon />
+            </span>
           </li>
         ))}
       </ul>

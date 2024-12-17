@@ -107,6 +107,7 @@ export const PRODUCT_VARIANTS = [
       },
     ],
     image: "10",
+    recommended: true,
   },
   {
     quantity: 3,
@@ -145,8 +146,8 @@ export const SHIPPING_FEATURES = [
 ];
 
 export const PRODUCT_FEATURES = [
-  "natural",
-  "germany",
-  "superfood",
   "works-for-men-and-women",
+  "natural",
+  "superfood",
+  "germany",
 ];

@@ -137,7 +137,10 @@
       "support": "Schneller Support",
       "vegan": "100% vegan",
       "limited-time-sale": "Limited Time Sale",
-      "works-for-men-and-women": "Wirksam für Männer und Frauen"
+      "works-for-men-and-women": "Wirksam für Männer und Frauen",
+      "free-ship": "Kostenloser Versand",
+      "protect": "100% Zufriedenheitsgarantie",
+      "x-mas-sale": "Weihnachtsverkauf!"
     },
     "Ingredients": {
       "title": "Warum diese Zutaten so gut funktionieren",
@@ -216,24 +219,25 @@
       "free-shipping": "Kostenloser Versand",
       "satisfaction-guarantee": "100% Zufriedenheitsgarantie",
       "discrete-packaging": "Diskrete Verpackung",
-      "happy-couples": "Über {amount}+ glückliche Paare",
+      "happy-couples": "Über <span>{amount}+</span> glückliche Paare",
       "HowToUse": {
         "title": "Schritt für Schritt Anleitung",
+        "step": "Step {Schritt}",
         "steps": {
           "0": {
-            "title": "Schritt 1: Schaffe die richtige Stimmung",
+            "title": "Schaffe die richtige Stimmung",
             "description": "Schalte das Licht herunter, entspannt euch und macht es euch bequem"
           },
           "1": {
-            "title": "Schritt 2: Break & Share",
+            "title": "Break & Share",
             "description": "Brecht ein Stück in der Mitte. Genießt es alleine oder zu zweit."
           },
           "2": {
-            "title": "Schritt 3: 30 Minuten warten",
+            "title": "30 Minuten warten",
             "description": "Nimmt euch Zeit, um euch gegenseitig zu verwöhnen. Kuschelt, spielt und genießt die Nähe miteinander."
           },
           "3": {
-            "title": "Schritt 4: Erlebt eine tiefere Intimität",
+            "title": "Erlebt eine tiefere Intimität",
             "description": "Erhöht die Nähe und geht immer weiter, während ihr neue Grenzen entdeckt. Dein Partner ist genauso bereit."
           }
         }

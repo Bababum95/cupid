@@ -20,10 +20,13 @@ const HappyCouples = () => {
   return (
     <div className={styles.wrapper}>
       <h2 className={styles.heading}>
-        {t("happy-couples", { amount: "1,000" })}
+        {t.rich("happy-couples", {
+          amount: "1,000",
+          span: (chunks) => <span>{chunks}</span>,
+        })}
       </h2>
       <div className={styles.images}>
-        <div className={styles.row}>
+        <div className={styles.row}>s
           {images.map((src, index) => (
             <Image
               className={styles.image}

@@ -15,6 +15,7 @@ type Props = {
   onSelect: () => void;
   top?: ReactNode;
   children?: ReactNode;
+  recommended?: boolean;
 };
 
 export const RadioVariant: FC<Props> = ({
@@ -22,6 +23,7 @@ export const RadioVariant: FC<Props> = ({
   onSelect,
   top,
   children,
+  recommended,
 }) => {
   return (
     <motion.li
@@ -36,6 +38,12 @@ export const RadioVariant: FC<Props> = ({
       aria-checked={active}
       tabIndex={0}
     >
+      {recommended && (
+        <div className={styles.border}>
+          <span />
+          <span />
+        </div>
+      )}
       <div className={styles.top}>
         <svg
           className="progress-icon"

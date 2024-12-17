@@ -8,6 +8,52 @@
   position: relative;
 }
 
+.border {
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  z-index: -1;
+  border-radius: inherit;
+  overflow: hidden;
+
+  &:after {
+    content: "";
+    background-color: $page-bg;
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    right: 2px;
+    bottom: 2px;
+    z-index: -1;
+    display: block;
+    border-radius: inherit;
+  }
+
+  span {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50%;
+    height: 120%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    background: radial-gradient($accent, transparent);
+    background-position: left top;
+    background-repeat: no-repeat;
+    transition: all 0.1s ease;
+    z-index: -2;
+    animation: border-move 8s linear infinite;
+
+    &:nth-child(2) {
+      left: 100%;
+      top: 100%;
+      animation: border-move-2 8s linear infinite;
+    }
+  }
+}
+
 .top {
   @include flex-layout(flex-start, center);
   gap: 6px;
@@ -28,5 +74,47 @@
       width: 16px;
       height: 16px;
     }
+  }
+}
+
+@keyframes border-move {
+  0% {
+    top: 0;
+    left: 0;
+  }
+
+  40% {
+    top: 0;
+    left: 100%;
+  }
+  50% {
+    left: 100%;
+    top: 100%;
+  }
+
+  90% {
+    left: 0;
+    top: 100%;
+  }
+}
+
+@keyframes border-move-2 {
+  0% {
+    left: 100%;
+    top: 100%;
+  }
+
+  40% {
+    left: 0;
+    top: 100%;
+  }
+  50% {
+    top: 0;
+    left: 0;
+  }
+
+  90% {
+    top: 0;
+    left: 100%;
   }
 }
