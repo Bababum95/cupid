@@ -18,6 +18,8 @@ export const Upsell: FC<Props> = ({ product, addToCart }) => {
   const [popupProduct, setPopupProduct] = useState<ProductType | null>(null);
   const t = useTranslations("HomePage.V2.Upsell");
 
+  return null;
+
   return (
     <div className={styles.wrapper}>
       {/* <p className={styles.title}>{t("title")}</p> */}
