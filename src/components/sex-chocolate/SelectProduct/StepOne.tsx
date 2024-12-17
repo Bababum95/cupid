@@ -74,6 +74,7 @@ export const StepOne: FC<Props> = ({
               key={product.variants[0].id}
               active={selectedVariant?.id === product.variants[0].id}
               onSelect={() => handleSelectVariant(product.variants[0])}
+              recommended={quantity === 2 && !selectedVariant}
               top={
                 <span>
                   {quantity} {quantity > 1 ? t("boxes") : t("box")}
