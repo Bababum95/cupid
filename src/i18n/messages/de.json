@@ -222,7 +222,7 @@
       "happy-couples": "Über <span>{amount}+</span> glückliche Paare",
       "HowToUse": {
         "title": "Schritt für Schritt Anleitung",
-        "step": "Step {Schritt}",
+        "step": "Schritt {step}",
         "steps": {
           "0": {
             "title": "Schaffe die richtige Stimmung",
