@@ -99,6 +99,7 @@ export const PRODUCT_VARIANTS = [
     price: 29.99,
     savings: { percentage: "19%" },
     id: "gid://shopify/ProductVariant/49588357693764",
+    // id: "gid://shopify/ProductVariant/54142759469405", //dev
     image: "10",
   },
   {
