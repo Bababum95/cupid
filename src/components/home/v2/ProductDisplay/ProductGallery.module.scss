@@ -25,6 +25,10 @@
       width: 18px;
       border-radius: 24px;
     }
+
+    .swiper-slide {
+      aspect-ratio: 1;
+    }
   }
 
   @include hover {
@@ -51,6 +55,7 @@
 
 .media {
   border-radius: 25px;
+  object-fit: cover;
 }
 
 video.media {
