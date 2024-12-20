@@ -14,6 +14,7 @@ import type {
 } from "@/types";
 import { BackButton, Bage } from "@/components";
 import { useAppDispatch } from "@/hooks";
+import { getCookie } from "@/utils";
 import { useRouter } from "@/i18n/routing";
 import StarIcon from "@/icons/star.svg";
 import { create as createCart } from "@/lib/slices/cart";
@@ -99,7 +100,15 @@ export const SelectProduct: FC<Props> = ({ products, gifts }) => {
     const input: CreateCartInput = {
       lines: [{ merchandiseId: selectedVariant.id, quantity: 1 }],
       discountCodes: [],
+      attributes: [{ key: "Site version", value: "1" }],
+      note: 'Site version: "1"',
     };
+
+    const referrer = getCookie("referrer");
+    if (referrer) {
+      input.attributes?.push({ key: "Referrer", value: referrer });
+      input.note += `\nReferrer: ${referrer}`;
+    }
 
     if (selectedVariant.components.length) {
       input.lines.push({ merchandiseId: giftsData[0].id, quantity: 1 });

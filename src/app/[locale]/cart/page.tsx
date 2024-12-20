@@ -132,7 +132,7 @@ export default function Page({
       // window.location.href = `${cart.checkoutUrl}&locale=${locale}`;
 
       const url = `${cart.checkoutUrl}&locale=${locale}`;
-      window.open(url, "_self", "noopener,noreferrer");
+      window.open(url, "_self");
     }
   };
 

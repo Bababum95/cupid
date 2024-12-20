@@ -5,6 +5,7 @@ import { useTranslations } from "next-intl";
 
 import type { ProductType, CreateCartInput } from "@/types";
 import { useAppDispatch } from "@/hooks";
+import { getCookie } from "@/utils";
 import { useRouter } from "@/i18n/routing";
 import { create as createCart } from "@/lib/slices/cart";
 import CupidHeartIcon from "@/icons/cupid-heart.svg";
@@ -92,8 +93,16 @@ export const ProductDisplay: FC<Props> = ({ upsell, locale }) => {
     if (!selectedProduct) return;
     const input: CreateCartInput = {
       lines: [{ merchandiseId: selectedProduct.id, quantity: 1 }],
+      attributes: [{ key: "Site version", value: "2" }],
+      note: 'Site version: "2"',
       discountCodes: [],
     };
+
+    const referrer = getCookie("referrer");
+    if (referrer) {
+      input.attributes?.push({ key: "Referrer", value: referrer });
+      input.note += `\nReferrer: ${referrer}`;
+    }
 
     if (cart.upsell) {
       input.lines.push({ merchandiseId: cart.upsell.id, quantity: 1 });

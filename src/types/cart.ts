@@ -10,6 +10,11 @@ export type CartLine = {
 export type CreateCartInput = {
   lines: CartLine[];
   discountCodes: string[];
+  note?: string;
+  attributes?: {
+    key: string;
+    value: string;
+  }[];
 };
 
 export type CartLineType = {
