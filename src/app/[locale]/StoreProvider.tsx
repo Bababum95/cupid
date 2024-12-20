@@ -32,6 +32,7 @@ export default function StoreProvider({
     document.documentElement.classList.add("cc--elegant-black");
     CookieConsent.run(COOKIE_CONSENT_CONFIG);
     if (INTERCOM_APP_ID) Intercom({ app_id: INTERCOM_APP_ID });
+    console.log("Referrer:", document?.referrer);
   }, []);
 
   useEffect(() => {
