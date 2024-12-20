@@ -1,0 +1,29 @@
+.page {
+  @include flex-center;
+  height: 100dvh;
+  width: 100%;
+  background-color: rgba(11, 11, 11, 0.5);
+  backdrop-filter: blur(10px);
+  background-size: cover;
+  padding: 20px;
+
+  &.v1 {
+    // background-image: url("/images/marketing/v1/background.png");
+    background-image: url("/images/marketing/v2/background.png");
+  }
+  &.v2 {
+    background-image: url("/images/marketing/v2/background.png");
+  }
+}
+
+@include media("phone") {
+  .page {
+    &.v1 {
+      //   background-image: url("/images/marketing/v1/background-mobile.png");
+      background-image: url("/images/marketing/v2/background-mobile.png");
+    }
+    &.v2 {
+      background-image: url("/images/marketing/v2/background-mobile.png");
+    }
+  }
+}

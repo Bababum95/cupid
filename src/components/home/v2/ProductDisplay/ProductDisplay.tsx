@@ -94,14 +94,12 @@ export const ProductDisplay: FC<Props> = ({ upsell, locale }) => {
     const input: CreateCartInput = {
       lines: [{ merchandiseId: selectedProduct.id, quantity: 1 }],
       attributes: [{ key: "Site version", value: "2" }],
-      note: 'Site version: "2"',
       discountCodes: [],
     };
 
     const referrer = getCookie("referrer");
     if (referrer) {
       input.attributes?.push({ key: "Referrer", value: referrer });
-      input.note += `\nReferrer: ${referrer}`;
     }
 
     if (cart.upsell) {

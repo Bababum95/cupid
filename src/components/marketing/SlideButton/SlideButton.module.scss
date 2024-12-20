@@ -1,0 +1,55 @@
+.wrapper {
+  @include flex-layout(flex-end, center);
+  height: 60px;
+  padding: 16px 24px;
+  gap: 16px;
+  border-radius: 76px;
+  border: $grey-line;
+  position: relative;
+}
+
+.text {
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  letter-spacing: -0.15px;
+  color: $text;
+}
+
+.slider {
+  position: absolute;
+  width: calc(100% - 8px);
+  height: calc(100% - 8px);
+  left: 4px;
+  top: 4px;
+  border-radius: 120px;
+  overflow: hidden;
+}
+
+.progress {
+  @include flex-layout(flex-end, center);
+  background: #330b0e;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  right: calc(100% - 48px);
+  border-radius: 120px;
+
+  &.complete {
+    transform: translateX(calc(100% - 48px)) !important;
+  }
+}
+
+.button {
+  @include flex-center;
+  height: 100%;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background-color: $accent;
+
+  svg {
+    rotate: 180deg;
+  }
+}

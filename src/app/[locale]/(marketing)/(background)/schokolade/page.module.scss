@@ -1,0 +1,74 @@
+.content {
+  border-radius: 35px;
+  border: 1px solid #1a1a1a;
+  background: $page-bg;
+  padding: 40px;
+  max-width: 424px;
+  width: 100%;
+}
+
+.header {
+  @include flex-layout(space-between, center);
+  margin-bottom: 40px;
+}
+
+.close {
+  @include flex-center;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: #1a1a1a;
+}
+
+.title {
+  color: $text;
+  font-size: 36px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 99%;
+  margin-bottom: 12px;
+}
+
+.text {
+  font-size: clamp(0.9375rem, 0.9143rem + 0.0952vw, 1rem);
+  font-style: normal;
+  font-weight: 300;
+  line-height: 140%;
+  margin-bottom: 40px;
+  max-width: 300px;
+}
+
+.input {
+  @include flex-layout(space-between, center);
+  width: 100%;
+  border-radius: 16px;
+  border: $grey-line;
+  height: 60px;
+  padding: 16px 20px;
+  margin-bottom: 8px;
+
+  span {
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+  }
+}
+
+.button {
+  @include primary-button;
+}
+
+@include media("phone") {
+  .content {
+    padding: 20px;
+  }
+
+  .header {
+    margin-bottom: 24px;
+  }
+
+  .text {
+    margin-bottom: 24px;
+  }
+}

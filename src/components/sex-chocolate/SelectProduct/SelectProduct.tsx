@@ -101,13 +101,11 @@ export const SelectProduct: FC<Props> = ({ products, gifts }) => {
       lines: [{ merchandiseId: selectedVariant.id, quantity: 1 }],
       discountCodes: [],
       attributes: [{ key: "Site version", value: "1" }],
-      note: 'Site version: "1"',
     };
 
     const referrer = getCookie("referrer");
     if (referrer) {
       input.attributes?.push({ key: "Referrer", value: referrer });
-      input.note += `\nReferrer: ${referrer}`;
     }
 
     if (selectedVariant.components.length) {
