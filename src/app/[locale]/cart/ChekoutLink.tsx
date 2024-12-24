@@ -6,6 +6,7 @@ import styles from "./CheckoutLink.module.scss";
 
 type Props = {
   url: string;
+  children?: React.ReactNode;
 };
 
 const CheckoutLink = forwardRef<HTMLAnchorElement, Props>(({ url }, ref) => (
