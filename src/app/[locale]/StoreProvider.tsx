@@ -51,9 +51,7 @@ export default function StoreProvider({
         linker: { domains: [BASE_DOMAIN, CHECKOUT_DOMAIN] },
       });
 
-      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-      // @ts-ignore
-      console.log(window.gtag?.get("linkerParam"));
+      // console.log(window.gtag?.get("linkerParam"));
     }
 
     // Intercom
