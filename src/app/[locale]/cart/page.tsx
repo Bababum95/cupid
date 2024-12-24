@@ -195,7 +195,7 @@ export default function Page({
             isActive
             total={dataUtils.formatPrice(cart.total)}
           />
-          <Link href={CHECKOUT_DOMAIN as string} />
+          <Link href={`https://${CHECKOUT_DOMAIN}`} />
         </form>
       </div>
       <div className={styles.content}>
