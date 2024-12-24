@@ -198,10 +198,7 @@ export default function Page({
             total={dataUtils.formatPrice(cart.total)}
           />
           {cart?.checkoutUrl && (
-            <ChekoutLink
-              url={`${cart.checkoutUrl}&locale=${locale}`}
-              ref={linkRef}
-            />
+            <ChekoutLink url={`${cart.checkoutUrl}`} ref={linkRef} />
           )}
         </form>
       </div>
