@@ -5,7 +5,7 @@ import { useTranslations } from "next-intl";
 
 import type { ProductType, CreateCartInput } from "@/types";
 import { useAppDispatch } from "@/hooks";
-import { getCookie } from "@/utils";
+import { getCookie, prepearCheckoutURL } from "@/utils";
 import { useRouter } from "@/i18n/routing";
 import { create as createCart } from "@/lib/slices/cart";
 import CupidHeartIcon from "@/icons/cupid-heart.svg";
@@ -82,7 +82,7 @@ export const ProductDisplay: FC<Props> = ({ upsell, locale }) => {
     setCurrentImage(slideIndex);
   };
 
-  const handleBuyClick = async () => {
+  const handleBuyClick = async (sourceUrl: string) => {
     if (!cart.main) return;
 
     setCart((prev) => ({ ...prev, loading: true }));
@@ -117,7 +117,12 @@ export const ProductDisplay: FC<Props> = ({ upsell, locale }) => {
     const res = await dispatch(createCart({ input, locale })).unwrap();
 
     if (res.checkoutUrl) {
-      router.push(res.checkoutUrl);
+      const url = prepearCheckoutURL({
+        sourceUrl,
+        targetUrl: res.checkoutUrl,
+        locale,
+      });
+      router.push(url);
     } else {
       console.log(res);
       setCart((prev) => ({ ...prev, loading: false }));

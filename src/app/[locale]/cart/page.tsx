@@ -5,7 +5,7 @@ import { useEffect, useState, useRef } from "react";
 
 import { useAppDispatch, useAppSelector } from "@/hooks";
 import { BackButton, Disclaimer, SubmitButton } from "@/components";
-import { dataUtils } from "@/utils";
+import { dataUtils, prepearCheckoutURL } from "@/utils";
 import { relatedProductsQuery, giftFragment } from "@/graphql";
 import { GiftType, ProductNode, ProductType } from "@/types";
 import {
@@ -19,6 +19,8 @@ import { useRouter } from "@/i18n/routing";
 import { get as getCart } from "@/lib/slices/cart";
 
 import styles from "./page.module.scss";
+
+const CHECKOUT_DOMAIN = process.env.CHECKOUT_DOMAIN;
 
 export default function Page({
   params: { locale },
@@ -131,11 +133,18 @@ export default function Page({
 
   const handleSubmit = (evt: React.FormEvent) => {
     evt.preventDefault();
+
+    if (!cart.checkoutUrl) return;
+
     if (linkRef.current) {
-      const url = new URL(linkRef.current.href);
-      url.searchParams.set("locale", locale);
-      router.push(url.toString());
-    } else if (cart.checkoutUrl) {
+      const url = prepearCheckoutURL({
+        sourceUrl: linkRef.current.href,
+        targetUrl: cart.checkoutUrl,
+        locale,
+      });
+
+      router.push(url);
+    } else {
       router.push(`${cart.checkoutUrl}&locale=${locale}`);
     }
   };
@@ -196,7 +205,7 @@ export default function Page({
             isActive
             total={dataUtils.formatPrice(cart.total)}
             Element="a"
-            href={cart.checkoutUrl}
+            href={`https://${CHECKOUT_DOMAIN}/`}
             ref={linkRef}
           />
         </form>

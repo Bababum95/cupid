@@ -1,17 +1,19 @@
-import { FC } from "react";
+import { FC, useRef } from "react";
 import { useTranslations } from "next-intl";
+import classNames from "classnames";
 
 import { RadioVariant } from "@/components";
 import ProtectIcon from "@/icons/protect.svg";
 
 import { PRODUCT_VARIANTS } from "./config";
 import styles from "./ProductForm.module.scss";
-import classNames from "classnames";
+
+const CHECKOUT_DOMAIN = process.env.CHECKOUT_DOMAIN;
 
 type Props = {
   selectedBox: string | null;
   handleChange: (id: string) => void;
-  handleBuyClick: () => void;
+  handleBuyClick: (url: string) => void;
   loading?: boolean;
   total?: {
     regular: number;
@@ -34,9 +36,16 @@ export const ProductForm: FC<Props> = ({
   loading = false,
 }) => {
   const t = useTranslations("SexChocolate");
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const linkRef = useRef<HTMLAnchorElement>(null);
+
+  const handleSubmit = (
+    e: React.FormEvent<HTMLFormElement> | React.MouseEvent
+  ) => {
     e.preventDefault();
-    handleBuyClick();
+    if (!selectedBox) return;
+    const url = linkRef.current?.href || `https://${CHECKOUT_DOMAIN}/`;
+
+    handleBuyClick(url);
   };
 
   return (
@@ -98,9 +107,11 @@ export const ProductForm: FC<Props> = ({
           )
         )}
       </ul>
-      <button
+      <a
         className={classNames(styles.button, { [styles.loading]: loading })}
-        disabled={!selectedBox}
+        href={`https://${CHECKOUT_DOMAIN}/`}
+        onClick={handleSubmit}
+        ref={linkRef}
       >
         <ProtectIcon />
         {t("buy-now")}
@@ -118,7 +129,7 @@ export const ProductForm: FC<Props> = ({
             <span className={styles.discount}>ab 24,99€/Box</span>
           )}
         </div>
-      </button>
+      </a>
     </form>
   );
 };
