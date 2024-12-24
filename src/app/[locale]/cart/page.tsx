@@ -15,7 +15,7 @@ import {
   // DiscountCode,
 } from "@/components/cart";
 import { fetchShopify } from "@/lib/shopify";
-import { useRouter, Link } from "@/i18n/routing";
+import { useRouter } from "@/i18n/routing";
 import { get as getCart } from "@/lib/slices/cart";
 
 import styles from "./page.module.scss";
@@ -188,14 +188,14 @@ export default function Page({
           className={styles.footer}
           onSubmit={handleSubmit}
           data-event="go_to_checkout"
-          action={`https://${CHECKOUT_DOMAIN}`}
+          action={`https://${CHECKOUT_DOMAIN}/`}
         >
           <SubmitButton
             label={t("checkout")}
             isActive
             total={dataUtils.formatPrice(cart.total)}
           />
-          <Link href={`https://${CHECKOUT_DOMAIN}`} hidden />
+          <a href={`https://${CHECKOUT_DOMAIN}/`} />
         </form>
       </div>
       <div className={styles.content}>

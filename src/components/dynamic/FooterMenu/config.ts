@@ -8,7 +8,7 @@ export const LINKS = [
       { label: "contact-us", href: WHATSAPP_URI },
       { label: "faq", href: "/faq" },
       { label: "shiping", href: "/refund-policy" },
-      { label: "order", href: "https://my.cupidchoco.com/" },
+      { label: "order", href: "https://pay.cupidchoco.com/" },
     ],
   },
   {
