@@ -2,6 +2,7 @@
 
 import { useTranslations } from "next-intl";
 import { useEffect, useState } from "react";
+import dynamic from "next/dynamic";
 
 import { useAppDispatch, useAppSelector } from "@/hooks";
 import { BackButton, Disclaimer, SubmitButton } from "@/components";
@@ -19,6 +20,8 @@ import { useRouter } from "@/i18n/routing";
 import { get as getCart } from "@/lib/slices/cart";
 
 import styles from "./page.module.scss";
+
+const ChekoutLink = dynamic(() => import("./ChekoutLink"), { ssr: false });
 
 const CHECKOUT_DOMAIN = process.env.CHECKOUT_DOMAIN;
 
@@ -195,7 +198,7 @@ export default function Page({
             isActive
             total={dataUtils.formatPrice(cart.total)}
           />
-          <a href={`https://${CHECKOUT_DOMAIN}/`} />
+          <ChekoutLink />
         </form>
       </div>
       <div className={styles.content}>
