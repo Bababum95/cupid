@@ -50,6 +50,8 @@ export default function StoreProvider({
         page_path: pathname,
         linker: { domains: [BASE_DOMAIN, CHECKOUT_DOMAIN] },
       });
+
+      console.log(window);
     }
 
     // Intercom

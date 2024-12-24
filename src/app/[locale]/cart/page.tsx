@@ -15,9 +15,12 @@ import {
   // DiscountCode,
 } from "@/components/cart";
 import { fetchShopify } from "@/lib/shopify";
+import { useRouter } from "@/i18n/routing";
 import { get as getCart } from "@/lib/slices/cart";
 
 import styles from "./page.module.scss";
+
+const CHECKOUT_DOMAIN = process.env.CHECKOUT_DOMAIN;
 
 export default function Page({
   params: { locale },
@@ -31,6 +34,7 @@ export default function Page({
   const cart = useAppSelector((state) => state.cart);
   const dispatch = useAppDispatch();
   const t = useTranslations("Cart");
+  const router = useRouter();
 
   const fetchCrossSells = async () => {
     let cupidChocolate: ProductType | null = null;
@@ -129,10 +133,8 @@ export default function Page({
   const handleSubmit = (evt: React.FormEvent) => {
     evt.preventDefault();
     if (cart.checkoutUrl) {
-      // window.location.href = `${cart.checkoutUrl}&locale=${locale}`;
-
       const url = `${cart.checkoutUrl}&locale=${locale}`;
-      window.open(url, "_self");
+      router.push(url);
     }
   };
 
@@ -182,12 +184,18 @@ export default function Page({
             <Disclaimer />
           </div>
         </ul>
-        <form className={styles.footer} onSubmit={handleSubmit}>
+        <form
+          className={styles.footer}
+          onSubmit={handleSubmit}
+          data-event="go_to_checkout"
+          action={CHECKOUT_DOMAIN}
+        >
           <SubmitButton
             label={t("checkout")}
             isActive
             total={dataUtils.formatPrice(cart.total)}
           />
+          <a href={CHECKOUT_DOMAIN} hidden />
         </form>
       </div>
       <div className={styles.content}>

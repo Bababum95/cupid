@@ -40,7 +40,12 @@ export const ProductForm: FC<Props> = ({
   };
 
   return (
-    <form className={styles.form} onSubmit={handleSubmit}>
+    <form
+      className={styles.form}
+      onSubmit={handleSubmit}
+      data-event="add_to_cart"
+      data-next-step="go_to_checkout"
+    >
       <ul
         className={styles.list}
         role="radiogroup"
