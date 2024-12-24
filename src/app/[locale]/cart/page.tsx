@@ -23,8 +23,6 @@ import styles from "./page.module.scss";
 
 const ChekoutLink = dynamic(() => import("./ChekoutLink"), { ssr: false });
 
-const CHECKOUT_DOMAIN = process.env.CHECKOUT_DOMAIN;
-
 export default function Page({
   params: { locale },
 }: {
@@ -191,7 +189,6 @@ export default function Page({
           className={styles.footer}
           onSubmit={handleSubmit}
           data-event="go_to_checkout"
-          action={`https://${CHECKOUT_DOMAIN}/`}
         >
           <SubmitButton
             label={t("checkout")}

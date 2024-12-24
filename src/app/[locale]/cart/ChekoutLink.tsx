@@ -1,19 +1,13 @@
 "use client";
 
-import { useEffect } from "react";
+const CHECKOUT_DOMAIN = process.env.CHECKOUT_DOMAIN;
 
 const ChekoutLink = () => {
-  useEffect(() => {
-    try {
-      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-      // @ts-ignore
-      console.log(window.gtag?.get("linkerParam"));
-    } catch (error) {
-      console.log(error);
-    }
-  }, []);
-
-  return <a href="https://pay.cupidchoco.com/">checkout</a>;
+  return (
+    <a id="checkout-link" href={`https://${CHECKOUT_DOMAIN}/`} hidden>
+      checkout
+    </a>
+  );
 };
 
 export default ChekoutLink;

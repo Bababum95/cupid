@@ -16,8 +16,6 @@ import { COOKIE_CONSENT_CONFIG, HIDE_INTERCOM_PATHS } from "./config";
 
 const PUBLIC_GA_ID = process.env.PUBLIC_GA_ID;
 const INTERCOM_APP_ID = process.env.INTERCOM_APP_ID;
-const BASE_DOMAIN = process.env.BASE_DOMAIN;
-const CHECKOUT_DOMAIN = process.env.CHECKOUT_DOMAIN;
 
 export default function StoreProvider({
   children,
@@ -48,10 +46,7 @@ export default function StoreProvider({
     if (PUBLIC_GA_ID) {
       window.gtag("config", PUBLIC_GA_ID, {
         page_path: pathname,
-        linker: { domains: [BASE_DOMAIN, CHECKOUT_DOMAIN] },
       });
-
-      // console.log(window.gtag?.get("linkerParam"));
     }
 
     // Intercom

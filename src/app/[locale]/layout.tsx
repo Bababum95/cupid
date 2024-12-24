@@ -8,6 +8,8 @@ import StoreProvider from "./StoreProvider";
 
 const PUBLIC_GA_ID = process.env.PUBLIC_GA_ID;
 const PUBLIC_GTM_ID = process.env.PUBLIC_GTM_ID;
+const BASE_DOMAIN = process.env.BASE_DOMAIN;
+const CHECKOUT_DOMAIN = process.env.CHECKOUT_DOMAIN;
 
 export default async function RootLayout({
   children,
@@ -41,7 +43,9 @@ export default async function RootLayout({
                 window.dataLayer = window.dataLayer || [];
                 function gtag(){dataLayer.push(arguments);}
                 gtag('js', new Date());
-                gtag('config', '${PUBLIC_GA_ID}');
+                gtag('config', '${PUBLIC_GA_ID}', {
+                  linker: { domains: [${BASE_DOMAIN}, ${CHECKOUT_DOMAIN}] }
+                });
               `,
             }}
           />
