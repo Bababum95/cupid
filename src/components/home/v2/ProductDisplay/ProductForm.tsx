@@ -38,9 +38,7 @@ export const ProductForm: FC<Props> = ({
   const t = useTranslations("SexChocolate");
   const linkRef = useRef<HTMLAnchorElement>(null);
 
-  const handleSubmit = (
-    e: React.FormEvent<HTMLFormElement> | React.MouseEvent
-  ) => {
+  const handleSubmit = (e: React.FormEvent | React.MouseEvent) => {
     e.preventDefault();
     if (!selectedBox) return;
     const url = linkRef.current?.href || `https://${CHECKOUT_DOMAIN}/`;

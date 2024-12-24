@@ -131,7 +131,7 @@ export default function Page({
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [cart.showExtraBox, chocolate]);
 
-  const handleSubmit = (evt: React.FormEvent) => {
+  const handleSubmit = (evt: React.FormEvent | React.MouseEvent) => {
     evt.preventDefault();
 
     if (!cart.checkoutUrl) return;
@@ -207,6 +207,7 @@ export default function Page({
             Element="a"
             href={`https://${CHECKOUT_DOMAIN}/`}
             ref={linkRef}
+            onClick={handleSubmit}
           />
         </form>
       </div>
