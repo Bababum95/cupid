@@ -15,7 +15,7 @@ import {
   // DiscountCode,
 } from "@/components/cart";
 import { fetchShopify } from "@/lib/shopify";
-import { useRouter } from "@/i18n/routing";
+import { useRouter, Link } from "@/i18n/routing";
 import { get as getCart } from "@/lib/slices/cart";
 
 import styles from "./page.module.scss";
@@ -195,7 +195,7 @@ export default function Page({
             isActive
             total={dataUtils.formatPrice(cart.total)}
           />
-          <a href={CHECKOUT_DOMAIN} hidden />
+          <Link href={CHECKOUT_DOMAIN as string} />
         </form>
       </div>
       <div className={styles.content}>
