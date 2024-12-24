@@ -9,7 +9,9 @@ type Props = {
 };
 
 const CheckoutLink = forwardRef<HTMLAnchorElement, Props>(({ url }, ref) => (
-  <a id="checkout-link" className={styles.link} href={url} ref={ref} />
+  <a id="checkout-link" className={styles.link} href={url} ref={ref}>
+    Checkout
+  </a>
 ));
 
 CheckoutLink.displayName = "CheckoutLink";
