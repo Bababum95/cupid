@@ -1,7 +1,7 @@
 "use client";
 
 import { useTranslations } from "next-intl";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import dynamic from "next/dynamic";
 
 import { useAppDispatch, useAppSelector } from "@/hooks";
@@ -34,6 +34,7 @@ export default function Page({
   const [isLoading, setIsLoading] = useState({ crossSells: true });
   const cart = useAppSelector((state) => state.cart);
   const dispatch = useAppDispatch();
+  const linkRef = useRef<HTMLAnchorElement>(null);
   const t = useTranslations("Cart");
   const router = useRouter();
 
@@ -133,9 +134,10 @@ export default function Page({
 
   const handleSubmit = (evt: React.FormEvent) => {
     evt.preventDefault();
-    if (cart.checkoutUrl) {
-      const url = `${cart.checkoutUrl}&locale=${locale}`;
-      router.push(url);
+    if (linkRef.current) {
+      linkRef.current.click();
+    } else if (cart.checkoutUrl) {
+      router.push(`${cart.checkoutUrl}&locale=${locale}`);
     }
   };
 
@@ -195,7 +197,12 @@ export default function Page({
             isActive
             total={dataUtils.formatPrice(cart.total)}
           />
-          {cart?.checkoutUrl && <ChekoutLink url={cart.checkoutUrl} />}
+          {cart?.checkoutUrl && (
+            <ChekoutLink
+              url={`${cart.checkoutUrl}&locale=${locale}`}
+              ref={linkRef}
+            />
+          )}
         </form>
       </div>
       <div className={styles.content}>

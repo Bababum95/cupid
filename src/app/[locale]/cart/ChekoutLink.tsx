@@ -1,17 +1,15 @@
 "use client";
 
-// const CHECKOUT_DOMAIN = process.env.CHECKOUT_DOMAIN;
+import { forwardRef } from "react";
 
 type Props = {
   url: string;
 };
 
-const ChekoutLink = ({ url }: Props) => {
-  return (
-    <a id="checkout-link" href={url}>
-      checkout
-    </a>
-  );
-};
+const CheckoutLink = forwardRef<HTMLAnchorElement, Props>(({ url }, ref) => {
+  return <a id="checkout-link" href={url} ref={ref}></a>;
+});
 
-export default ChekoutLink;
+CheckoutLink.displayName = "CheckoutLink";
+
+export default CheckoutLink;
