@@ -2,7 +2,6 @@
 
 import { useTranslations } from "next-intl";
 import { useEffect, useState, useRef } from "react";
-import dynamic from "next/dynamic";
 
 import { useAppDispatch, useAppSelector } from "@/hooks";
 import { BackButton, Disclaimer, SubmitButton } from "@/components";
@@ -20,8 +19,6 @@ import { useRouter } from "@/i18n/routing";
 import { get as getCart } from "@/lib/slices/cart";
 
 import styles from "./page.module.scss";
-
-const ChekoutLink = dynamic(() => import("./ChekoutLink"), { ssr: false });
 
 export default function Page({
   params: { locale },
@@ -135,7 +132,9 @@ export default function Page({
   const handleSubmit = (evt: React.FormEvent) => {
     evt.preventDefault();
     if (linkRef.current) {
-      linkRef.current.click();
+      const url = new URL(linkRef.current.href);
+      url.searchParams.set("locale", locale);
+      router.push(url.toString());
     } else if (cart.checkoutUrl) {
       router.push(`${cart.checkoutUrl}&locale=${locale}`);
     }
@@ -185,12 +184,6 @@ export default function Page({
           {/* <DiscountCode gifts={gifts} /> */}
           <div className={styles.disclaimer}>
             <Disclaimer />
-            {cart?.checkoutUrl && (
-              <ChekoutLink
-                url={`${cart.checkoutUrl}&locale=${locale}`}
-                ref={linkRef}
-              />
-            )}
           </div>
         </ul>
         <form
@@ -202,6 +195,9 @@ export default function Page({
             label={t("checkout")}
             isActive
             total={dataUtils.formatPrice(cart.total)}
+            Element="a"
+            href={cart.checkoutUrl}
+            ref={linkRef}
           />
         </form>
       </div>

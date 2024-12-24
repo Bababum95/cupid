@@ -9,15 +9,20 @@ type Props = {
   total?: string | null;
   isActive: boolean;
   isLoading?: boolean;
+  Element?: React.ElementType;
+  href?: string;
 } & React.DetailedHTMLProps<
-  React.ButtonHTMLAttributes<HTMLButtonElement>,
-  HTMLButtonElement
+  React.HtmlHTMLAttributes<HTMLElement>,
+  HTMLElement
 >;
 
-export const SubmitButton = forwardRef<HTMLButtonElement, Props>(
-  ({ label, total, isActive, isLoading, ...props }, ref) => {
+export const SubmitButton = forwardRef<HTMLElement, Props>(
+  (
+    { label, total, isActive, isLoading, Element = "button", ...props },
+    ref
+  ) => {
     return (
-      <button
+      <Element
         className={classNames(styles.button, { [styles.loading]: isLoading })}
         disabled={!isActive}
         ref={ref}
@@ -25,7 +30,7 @@ export const SubmitButton = forwardRef<HTMLButtonElement, Props>(
       >
         <motion.span layout>{label}</motion.span>
         {total && <span className={styles.total}>{total}</span>}
-      </button>
+      </Element>
     );
   }
 );
