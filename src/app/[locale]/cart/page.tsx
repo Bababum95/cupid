@@ -195,7 +195,7 @@ export default function Page({
             isActive
             total={dataUtils.formatPrice(cart.total)}
           />
-          <ChekoutLink />
+          {cart?.checkoutUrl && <ChekoutLink url={cart.checkoutUrl} />}
         </form>
       </div>
       <div className={styles.content}>

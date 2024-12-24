@@ -1,10 +1,14 @@
 "use client";
 
-const CHECKOUT_DOMAIN = process.env.CHECKOUT_DOMAIN;
+// const CHECKOUT_DOMAIN = process.env.CHECKOUT_DOMAIN;
 
-const ChekoutLink = () => {
+type Props = {
+  url: string;
+};
+
+const ChekoutLink = ({ url }: Props) => {
   return (
-    <a id="checkout-link" href={`https://${CHECKOUT_DOMAIN}/`} hidden>
+    <a id="checkout-link" href={url}>
       checkout
     </a>
   );
