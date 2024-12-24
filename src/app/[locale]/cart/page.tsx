@@ -188,14 +188,14 @@ export default function Page({
           className={styles.footer}
           onSubmit={handleSubmit}
           data-event="go_to_checkout"
-          action={CHECKOUT_DOMAIN}
+          action={`https://${CHECKOUT_DOMAIN}`}
         >
           <SubmitButton
             label={t("checkout")}
             isActive
             total={dataUtils.formatPrice(cart.total)}
           />
-          <Link href={`https://${CHECKOUT_DOMAIN}`} />
+          <Link href={`https://${CHECKOUT_DOMAIN}`} hidden />
         </form>
       </div>
       <div className={styles.content}>
