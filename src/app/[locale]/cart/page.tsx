@@ -185,6 +185,12 @@ export default function Page({
           {/* <DiscountCode gifts={gifts} /> */}
           <div className={styles.disclaimer}>
             <Disclaimer />
+            {cart?.checkoutUrl && (
+              <ChekoutLink
+                url={`${cart.checkoutUrl}&locale=${locale}`}
+                ref={linkRef}
+              />
+            )}
           </div>
         </ul>
         <form
@@ -197,12 +203,6 @@ export default function Page({
             isActive
             total={dataUtils.formatPrice(cart.total)}
           />
-          {cart?.checkoutUrl && (
-            <ChekoutLink
-              url={`${cart.checkoutUrl}&locale=${locale}`}
-              ref={linkRef}
-            />
-          )}
         </form>
       </div>
       <div className={styles.content}>
