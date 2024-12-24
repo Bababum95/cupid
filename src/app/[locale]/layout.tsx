@@ -42,9 +42,9 @@ export default async function RootLayout({
               __html: `
                 window.dataLayer = window.dataLayer || [];
                 function gtag(){dataLayer.push(arguments);}
-                gtag('js', new Date());
-                gtag('config', '${PUBLIC_GA_ID}', {
-                  linker: { domains: [${BASE_DOMAIN}, ${CHECKOUT_DOMAIN}] }
+                gtag("js", new Date());
+                gtag("config", "${PUBLIC_GA_ID}", {
+                  linker: { domains: ["${BASE_DOMAIN}", "${CHECKOUT_DOMAIN}"] }
                 });
               `,
             }}
