@@ -1,10 +1,10 @@
 import { NextResponse } from "next/server";
 import validator from "validator";
 
+import { checkToken } from "@/utils";
+import { logger } from "@/lib/logger";
 import dbConnect from "@/lib/mongodb";
 import Comment from "@/models/Comment";
-import { logger } from "@/lib/logger";
-import { checkToken } from "@/utils";
 
 export async function POST(request: Request) {
   const authHeader = request.headers.get("Authorization");
@@ -18,62 +18,53 @@ export async function POST(request: Request) {
 
   try {
     const data = await request.json();
+    const commentsArray = Array.isArray(data) ? data : [data];
 
-    const {
-      name,
-      email,
-      message,
-      rating,
-      pageId,
-      verified = true,
-      photos = [],
-      createdAt = new Date(),
-    } = data;
+    const preparedComments = commentsArray.map((commentData, index) => {
+      const {
+        name,
+        email,
+        message,
+        rating,
+        pageId,
+        verified = true,
+        photos = [],
+        createdAt = new Date(),
+      } = commentData;
 
-    if (!pageId) {
-      return NextResponse.json(
-        { message: { title: "Request is not valid" } },
-        { status: 400 }
-      );
-    }
+      if (!pageId || !email || !name || !message || !rating) {
+        throw new Error(`Validation failed for comment at index ${index}`, {
+          cause: commentData,
+        });
+      }
 
-    if (!email || !validator.isEmail(email)) {
-      return NextResponse.json(
-        {
-          message: {
-            title: "notices.invalid-email.title",
-            description: "notices.invalid-email.description",
-          },
-        },
-        { status: 400 }
-      );
-    }
+      if (!validator.isEmail(email)) {
+        throw new Error(`Invalid email: ${email}. Comment at index ${index}`, {
+          cause: commentData,
+        });
+      }
 
-    if (!name || !message || !rating || !email) {
-      return NextResponse.json(
-        { message: { title: "Name, message, and rating are required." } },
-        { status: 400 }
-      );
-    }
+      return {
+        name,
+        email,
+        message,
+        rating,
+        pageId,
+        verified,
+        photos,
+        createdAt,
+      };
+    });
 
     await dbConnect();
 
-    const comment = await Comment.create({
-      name,
-      email,
-      message,
-      rating,
-      pageId,
-      verified,
-      photos,
-      createdAt,
-    });
+    const createdComments = await Comment.insertMany(preparedComments);
 
-    return NextResponse.json({ comment }, { status: 201 });
+    return NextResponse.json({ comments: createdComments }, { status: 201 });
   } catch (error) {
-    logger.error("Error creating comment", error);
+    logger.error("Error creating comments", error);
     return NextResponse.json(
-      { error: "Internal server error" },
+      { message: "Error creating comments", error },
       { status: 500 }
     );
   }
