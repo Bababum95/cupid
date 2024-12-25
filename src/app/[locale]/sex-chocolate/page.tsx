@@ -5,6 +5,7 @@ import { SelectProduct } from "@/components/sex-chocolate";
 
 import { getCollection } from "./getCollection";
 import styles from "./page.module.scss";
+import "swiper/css";
 
 export const dynamic = "force-dynamic";
 

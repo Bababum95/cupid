@@ -1,3 +1,6 @@
+export { BenefitsDrawerContent } from "./common/side-drawer-contents/BenefitsDrawerContent/BenefitsDrawerContent";
+export { NutritionalDrawerContent } from "./common/side-drawer-contents/NutritionalDrawerContent/NutritionalDrawerContent";
+
 export { Accordion } from "./common/Accordion/Accordion";
 export { BackButton } from "./common/BackButton/BackButton";
 export { Bage } from "./common/Bage/Bage";
@@ -11,12 +14,11 @@ export { LangSwitcher } from "./common/LangSwitcher/LangSwitcher";
 export { Menu } from "./common/Menu/Menu";
 export { Notice } from "./common/Notice/Notice";
 export { Price } from "./common/Price/Price";
+export { ProductGallery } from "./common/ProductGallery/ProductGallery";
+export { ProductInfo } from "./common/ProductInfo/ProductInfo";
 export { ProductPopup } from "./common/ProductPopup/ProductPopup";
 export { RadioVariant } from "./common/RadioVariant/RadioVariant";
 export { SubmitButton } from "./common/SubmitButton/SubmitButton";
 export { Subscribe } from "./common/Subscribe/Subscribe";
-
-export { BenefitsDrawerContent } from "./common/side-drawer-contents/BenefitsDrawerContent/BenefitsDrawerContent";
-export { NutritionalDrawerContent } from "./common/side-drawer-contents/NutritionalDrawerContent/NutritionalDrawerContent";
 
 // export { Intercom } from "./Intercom";

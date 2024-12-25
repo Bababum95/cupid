@@ -3,7 +3,6 @@ import {
   sendShopifyAnalytics,
   getClientBrowserParameters,
   AnalyticsEventName,
-  ShopifySalesChannel,
   type ShopifyPageViewPayload,
 } from "@shopify/hydrogen-react";
 
@@ -43,7 +42,6 @@ export function sendPageView() {
     shopId: process.env.SHOPIFY_SHOP_ID as string,
     currency: "USD",
     hasUserConsent: true,
-    shopifySalesChannel: ShopifySalesChannel.headless,
     ...getClientBrowserParameters(),
   };
 

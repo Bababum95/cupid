@@ -60,10 +60,14 @@ const CommentSchema = new Schema(
      * Default: false
      */
     verified: { type: Boolean, default: false },
+
+    /**
+     * Photos associated with the comment.
+     * Array of strings representing photo URLs.
+     */
+    photos: { type: [String], required: false },
   },
-  {
-    timestamps: true, // Automatically manage createdAt and updatedAt fields
-  }
+  { timestamps: true }
 );
 
 /**

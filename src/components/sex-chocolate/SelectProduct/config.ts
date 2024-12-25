@@ -27,6 +27,7 @@ export const VISIBLE_STEP: Variant = {
   display: "block",
   transition: { duration: 0.25, type: "tween", delay: 0.25 },
 };
+
 export const STEP_VARIANTS = {
   hidden: HIDDEN_STEP,
   visible: VISIBLE_STEP,

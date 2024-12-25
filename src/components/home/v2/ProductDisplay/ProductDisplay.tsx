@@ -2,10 +2,12 @@
 
 import { type FC, useState, useRef } from "react";
 import { useTranslations } from "next-intl";
+import Image from "next/image";
 
 import type { ProductType, CreateCartInput } from "@/types";
 import { useAppDispatch } from "@/hooks";
 import { getCookie, prepearCheckoutURL } from "@/utils";
+import { ProductGallery, ProductInfo } from "@/components";
 import { useRouter } from "@/i18n/routing";
 import { create as createCart } from "@/lib/slices/cart";
 import CupidHeartIcon from "@/icons/cupid-heart.svg";
@@ -13,8 +15,6 @@ import CupidHeartIcon from "@/icons/cupid-heart.svg";
 import { Rating } from "../Rating/Rating";
 import { PRODUCT_FEATURES, PRODUCT_VARIANTS, REGULAR_PRICE } from "./config";
 import { ProductForm } from "./ProductForm";
-import { ProductGallery } from "./ProductGallery";
-import { ProductInfo } from "./ProductInfo";
 import { ShippingInfo } from "./ShippingInfo";
 import { Upsell } from "./Upsell";
 import styles from "./ProductDisplay.module.scss";
@@ -131,10 +131,38 @@ export const ProductDisplay: FC<Props> = ({ upsell, locale }) => {
 
   return (
     <div className={styles.wrapper} ref={wrapperRef}>
-      <ProductGallery
-        currentImage={currentImage}
-        locale={locale === "en" ? "en" : "de"}
-      />
+      <div className={styles.gallery} aria-label="Product images">
+        <ProductGallery
+          currentImage={currentImage}
+          locale={locale === "en" ? "en" : "de"}
+        />
+        <div className={styles.thumbnails}>
+          <Image
+            className={styles.thumbnail}
+            src="/images/home/v2/1.jpg"
+            alt="Girl with a chocolate"
+            width={758}
+            height={322}
+            quality={90}
+          />
+          <Image
+            className={styles.thumbnail}
+            src="/images/home/v2/ingredients/1.jpg"
+            alt="Chocolate"
+            width={369}
+            height={322}
+            quality={80}
+          />
+          <Image
+            className={styles.thumbnail}
+            src="/images/home/v2/2.jpg"
+            alt="Girl eating a chocolate"
+            width={369}
+            height={322}
+            quality={80}
+          />
+        </div>
+      </div>
       <div className={styles.info} id="product">
         <Rating text={t("V2.rating", { amount: 1000 })} />
         <h1 className={styles.title}>{t("V2.name")}</h1>

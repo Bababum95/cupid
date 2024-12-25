@@ -2,14 +2,14 @@ import type { Variants } from "framer-motion";
 
 export const REVIEWS = [
   {
-    title: "Cupid Choco",
+    title: "Mehr als nur Schokolade",
     content:
       "Unser Liebesleben war am Boden, bis die Sexualtherapeutin Cupid empfahl. Jetzt läuft's wieder! Danke Cupid!",
     author: "Marie",
     date: "9. Dezember 2024",
   },
   {
-    title: "Cupid Choco",
+    title: "Mehr als nur Schokolade",
     content:
       "Anfangs war ich skeptisch, aber die Wirkung war echt spürbar. Meine Partnerin war total begeistert und auch ich habe mich lebendiger gefühlt. Ehrlich gesagt, der ganze Abend fühlte sich intensiver an und ist definitiv in Erinnerung geblieben. Top Sache, würde ich echt weiterempfehlen.",
     author: "Jan",

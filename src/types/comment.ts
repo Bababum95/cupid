@@ -5,6 +5,7 @@ export type CommentType = {
   rating: number;
   verified: boolean;
   createdAt: string;
+  photos?: string[];
 };
 
 export type GetCommentsResponse = {

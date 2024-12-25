@@ -1,5 +1,6 @@
 import { FC } from "react";
 import { useTranslations } from "next-intl";
+import Image from "next/image";
 
 import { getInitialsLetters, dataUtils } from "@/utils";
 import StarIcon from "@/icons/star.svg";
@@ -12,10 +13,18 @@ type Props = {
   rating: number;
   review: string;
   date: string;
+  photos?: string[];
   accentColor: string;
 };
 
-export const Comment: FC<Props> = ({ name, rating, review, date, accentColor }) => {
+export const Comment: FC<Props> = ({
+  name,
+  rating,
+  review,
+  date,
+  photos,
+  accentColor,
+}) => {
   const t = useTranslations("HomePage.Comments");
 
   return (
@@ -60,6 +69,20 @@ export const Comment: FC<Props> = ({ name, rating, review, date, accentColor }) 
           <meta itemProp="bestRating" content="5" />
         </div>
       </div>
+      {!!photos?.length && (
+        <div className={styles.photos}>
+          {photos.map((photo, i) => (
+            <Image
+              key={i}
+              src={photo}
+              width={275}
+              height={352}
+              alt={name}
+              className={styles.image}
+            />
+          ))}
+        </div>
+      )}
       <p className={styles.review} itemProp="reviewBody">
         {review}
       </p>

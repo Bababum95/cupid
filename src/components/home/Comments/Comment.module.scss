@@ -38,6 +38,17 @@
   gap: 3px;
 }
 
+.photos {
+  @include flex-layout;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.image {
+  border-radius: 16px;
+  object-fit: cover;
+}
+
 .review {
   font-size: clamp(1rem, 0.9768rem + 0.0952vw, 1.0625rem);
   font-style: normal;

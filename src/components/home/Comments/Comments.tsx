@@ -89,13 +89,14 @@ export const Comments: FC<Props> = ({ accentColor = "#520C11" }) => {
           <meta itemProp="brand" content="Cupid" />
           <link itemProp="url" href={`${BASE_URL}/sex-chocolate`} />
         </div>
-        {comments.map(({ name, message, rating, createdAt, _id }) => (
+        {comments.map(({ name, message, rating, createdAt, _id, photos }) => (
           <Comment
             key={_id}
             name={name}
             review={message}
             rating={rating}
             date={createdAt}
+            photos={photos}
             accentColor={accentColor}
           />
         ))}

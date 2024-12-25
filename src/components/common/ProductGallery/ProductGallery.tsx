@@ -118,62 +118,33 @@ export const ProductGallery: FC<Props> = ({
   locale,
 }): JSX.Element => {
   return (
-    <div className={styles.wrapper} role="region" aria-label="Product images">
-      <Swiper
-        className={styles.slider}
-        modules={[Pagination, Autoplay]}
-        pagination={{ clickable: true }}
-        autoplay={{
-          delay: 5000,
-          disableOnInteraction: false,
-          pauseOnMouseEnter: true,
-        }}
-        loop
-      >
-        <Controller currentImage={currentImage} />
-        {PRODUCT_GALLERY.map((slide, index) => (
-          <SwiperSlide key={index}>
-            {slide.type === "image" && (
-              <Image
-                src={slide.src[locale]}
-                alt="Product image"
-                fill
-                className={styles.media}
-                priority
-                quality={90}
-              />
-            )}
-            {slide.type === "video" && <Video files={slide.files} />}
-          </SwiperSlide>
-        ))}
-      </Swiper>
-
-      <div className={styles.thumbnails}>
-        <Image
-          className={styles.thumbnail}
-          src="/images/home/v2/1.jpg"
-          alt="Girl with a chocolate"
-          width={758}
-          height={322}
-          quality={90}
-        />
-        <Image
-          className={styles.thumbnail}
-          src="/images/home/v2/ingredients/1.jpg"
-          alt="Chocolate"
-          width={369}
-          height={322}
-          quality={80}
-        />
-        <Image
-          className={styles.thumbnail}
-          src="/images/home/v2/2.jpg"
-          alt="Girl eating a chocolate"
-          width={369}
-          height={322}
-          quality={80}
-        />
-      </div>
-    </div>
+    <Swiper
+      className={styles.slider}
+      modules={[Pagination, Autoplay]}
+      pagination={{ clickable: true }}
+      autoplay={{
+        delay: 5000,
+        disableOnInteraction: false,
+        pauseOnMouseEnter: true,
+      }}
+      loop
+    >
+      <Controller currentImage={currentImage} />
+      {PRODUCT_GALLERY.map((slide, index) => (
+        <SwiperSlide key={index}>
+          {slide.type === "image" && (
+            <Image
+              src={slide.src[locale]}
+              alt="Product image"
+              fill
+              className={styles.media}
+              priority
+              quality={90}
+            />
+          )}
+          {slide.type === "video" && <Video files={slide.files} />}
+        </SwiperSlide>
+      ))}
+    </Swiper>
   );
 };

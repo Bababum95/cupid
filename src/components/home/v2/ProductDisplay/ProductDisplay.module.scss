@@ -6,6 +6,29 @@
   margin: 60px auto;
 }
 
+.gallery {
+  @include flex-column;
+  max-width: 758px;
+  width: calc(100% - 400px);
+  flex: 1;
+  gap: 20px;
+}
+
+.thumbnails {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: repeat(2, 322px);
+  gap: 20px;
+}
+
+.thumbnail {
+  border-radius: 25px;
+
+  &:first-child {
+    grid-column: span 2;
+  }
+}
+
 .info {
   flex: 1;
   min-width: 350px;
@@ -47,6 +70,15 @@ h1.title {
     flex-direction: column;
     margin-top: 0;
     gap: 20px;
+  }
+
+  .gallery {
+    width: calc(100% + 40px);
+    margin-left: -20px;
+  }
+
+  .thumbnails {
+    display: none;
   }
 
   .info {

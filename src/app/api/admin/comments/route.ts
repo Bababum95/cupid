@@ -26,6 +26,7 @@ export async function POST(request: Request) {
       rating,
       pageId,
       verified = true,
+      photos = [],
       createdAt = new Date(),
     } = data;
 
@@ -64,12 +65,58 @@ export async function POST(request: Request) {
       rating,
       pageId,
       verified,
+      photos,
       createdAt,
     });
 
     return NextResponse.json({ comment }, { status: 201 });
   } catch (error) {
     logger.error("Error creating comment", error);
+    return NextResponse.json(
+      { error: "Internal server error" },
+      { status: 500 }
+    );
+  }
+}
+
+export async function DELETE(request: Request) {
+  const authHeader = request.headers.get("Authorization");
+
+  if (checkToken(authHeader) !== "admin") {
+    return NextResponse.json(
+      { message: { title: "Forbidden" } },
+      { status: 403 }
+    );
+  }
+
+  try {
+    const url = new URL(request.url);
+    const commentId = url.searchParams.get("id");
+
+    if (!commentId) {
+      return NextResponse.json(
+        { message: { title: "Comment ID is required" } },
+        { status: 400 }
+      );
+    }
+
+    await dbConnect();
+
+    const deletedComment = await Comment.findByIdAndDelete(commentId);
+
+    if (!deletedComment) {
+      return NextResponse.json(
+        { message: { title: "Comment not found" } },
+        { status: 404 }
+      );
+    }
+
+    return NextResponse.json(
+      { message: { title: "Comment deleted successfully" } },
+      { status: 200 }
+    );
+  } catch (error) {
+    logger.error("Error deleting comment", error);
     return NextResponse.json(
       { error: "Internal server error" },
       { status: 500 }
