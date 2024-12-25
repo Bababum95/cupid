@@ -1,6 +1,6 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 
-import type { GetCommentsParams, GetCommentsResponse } from "@/types";
+import type { GetCommentsParams, GetCommentsResponse, Rating } from "@/types";
 
 const CUPID_PUBLIC_TOKEN = process.env.CUPID_PUBLIC_TOKEN;
 
@@ -39,6 +39,12 @@ export const apiSlice = createApi({
         };
       },
     }),
+    rating: builder.query<Rating, string>({
+      query: (pageId) => ({
+        url: `rating?pageId=${pageId}`,
+        method: "GET",
+      }),
+    }),
   }),
 });
 
@@ -46,4 +52,5 @@ export const {
   useAddCommentMutation,
   useGetCommentsQuery,
   useSubscribeMutation,
+  useRatingQuery,
 } = apiSlice;

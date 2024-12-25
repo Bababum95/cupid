@@ -13,6 +13,11 @@ export type GetCommentsResponse = {
   total: number;
 };
 
+export type Rating = {
+  [key: number]: number;
+  total: number;
+};
+
 export type GetCommentsParams = {
   pageId?: string;
   offset?: string;

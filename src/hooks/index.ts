@@ -7,3 +7,4 @@ export const useAppSelector = useSelector.withTypes<RootState>();
 export const useAppStore = useStore.withTypes<AppStore>();
 
 export { useScrollbarWidth } from "./useScrollbarWidth";
+export { useComments } from "./useComments";

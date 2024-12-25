@@ -19,4 +19,5 @@ export type {
   CommentType,
   GetCommentsResponse,
   GetCommentsParams,
+  Rating,
 } from "./comment";

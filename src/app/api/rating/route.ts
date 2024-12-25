@@ -44,7 +44,7 @@ export async function GET(request: Request) {
       }
     }
 
-    return NextResponse.json({ ratings }, { status: 200 });
+    return NextResponse.json(ratings, { status: 200 });
   } catch (error) {
     logger.error("Error fetching ratings", error);
     return NextResponse.json({}, { status: 500 });

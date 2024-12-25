@@ -87,6 +87,7 @@ export async function GET(request: Request) {
     const pageId = url.searchParams.get("pageId");
     const limit = parseInt(url.searchParams.get("limit") || "4", 10);
     const offset = parseInt(url.searchParams.get("offset") || "0", 10);
+    const rating = parseInt(url.searchParams.get("rating") || "0", 10);
     const verified = !(url.searchParams.get("verified") === "false");
 
     let skipFields = "-__v -updatedAt -pageId";
@@ -102,13 +103,18 @@ export async function GET(request: Request) {
       );
     }
 
-    const comments = await Comment.find({ pageId, verified })
+    const filter: Record<string, unknown> = { pageId, verified };
+    if (rating >= 1 && rating <= 5) {
+      filter.rating = rating;
+    }
+
+    const comments = await Comment.find(filter)
       .select(skipFields)
-      .sort({ createdAt: -1 })
+      .sort({ createdAt: -1, _id: -1 })
       .skip(offset)
       .limit(limit);
 
-    const totalComments = await Comment.countDocuments({ pageId, verified });
+    const totalComments = await Comment.countDocuments(filter);
 
     return NextResponse.json(
       { comments, total: totalComments },

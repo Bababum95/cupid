@@ -15,6 +15,7 @@ type Props = {
   date: string;
   photos?: string[];
   accentColor: string;
+  onClickVerified: () => void;
 };
 
 export const Comment: FC<Props> = ({
@@ -24,6 +25,7 @@ export const Comment: FC<Props> = ({
   date,
   photos,
   accentColor,
+  onClickVerified,
 }) => {
   const t = useTranslations("HomePage.Comments");
 
@@ -88,7 +90,7 @@ export const Comment: FC<Props> = ({
       </p>
 
       <div className={styles.footer}>
-        <button className={styles.button}>
+        <button className={styles.button} onClick={onClickVerified}>
           <VerifiedIcon width={24} height={24} />
           {t("verified")}
         </button>
