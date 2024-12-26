@@ -21,4 +21,5 @@ export type Rating = {
 export type GetCommentsParams = {
   pageId?: string;
   offset?: string;
+  rating?: string;
 };

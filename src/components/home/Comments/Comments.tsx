@@ -12,6 +12,7 @@ import { AverageRating } from "./AverageRating";
 import { VerifiedPopup } from "./VerifiedPopup";
 import { calculatePercentage, getAverageRating } from "./utils";
 import styles from "./Comments.module.scss";
+import classNames from "classnames";
 
 const BASE_URL = process.env.BASE_URL;
 
@@ -22,8 +23,14 @@ type Props = {
 export const Comments: FC<Props> = ({ accentColor = "#520C11" }) => {
   const t = useTranslations("HomePage.Comments");
   const [popupIsOpen, setPopupIsOpen] = useState(false);
-  const { comments, rating, setOffset, isFetching, totalComments } =
-    useComments("home");
+  const {
+    comments,
+    rating,
+    loadMore,
+    isFetching,
+    totalComments,
+    filterByRating,
+  } = useComments("home");
 
   return (
     <section id="reviews" className={styles.section}>
@@ -39,7 +46,13 @@ export const Comments: FC<Props> = ({ accentColor = "#520C11" }) => {
           <ul className={styles.bar}>
             {rating &&
               Array.from({ length: 5 }).map((_, i) => (
-                <li key={i} className={styles.item}>
+                <li
+                  key={i}
+                  className={classNames(styles.item, {
+                    [styles.empty]: !rating[5 - i],
+                  })}
+                  onClick={() => filterByRating(5 - i)}
+                >
                   <span>{5 - i}</span>
                   <span
                     className={styles.percentage}
@@ -87,7 +100,7 @@ export const Comments: FC<Props> = ({ accentColor = "#520C11" }) => {
         {totalComments > comments.length && (
           <Button
             variant="secondary"
-            onClick={() => setOffset(comments.length.toString())}
+            onClick={loadMore}
             className={styles.button}
             loading={isFetching}
           >

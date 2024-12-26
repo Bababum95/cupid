@@ -73,6 +73,10 @@
   height: 24px;
   gap: 8px;
 
+  &:not(.empty) {
+    cursor: pointer;
+  }
+
   &:not(:last-child) {
     margin-bottom: 4px;
   }

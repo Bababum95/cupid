@@ -1,13 +1,13 @@
 import { useEffect, useState } from "react";
 
-import type { CommentType } from "@/types";
+import type { CommentType, GetCommentsParams } from "@/types";
 import { useGetCommentsQuery, useRatingQuery } from "@/lib/slices/api";
 
 export function useComments(pageId: string) {
-  const [offset, setOffset] = useState<string>("0");
+  const [params, setParams] = useState<GetCommentsParams>({ pageId });
   const [comments, setComments] = useState<CommentType[]>([]);
   const { data: rating } = useRatingQuery(pageId);
-  const { data, isFetching } = useGetCommentsQuery({ pageId, offset });
+  const { data, isFetching } = useGetCommentsQuery(params);
 
   useEffect(() => {
     if (data?.comments.length) {
@@ -18,11 +18,32 @@ export function useComments(pageId: string) {
     }
   }, [data]);
 
+  const loadMore = () => {
+    if (!comments.length) return;
+
+    setParams((prev) => ({
+      ...prev,
+      offset: comments.length.toString(),
+    }));
+  };
+
+  const filterByRating = (n: number) => {
+    const s = n.toString();
+    if (!rating || !rating[n] || s === params.rating) return;
+
+    setComments([]);
+    setParams({
+      offset: "0",
+      rating: s,
+      pageId,
+    });
+  };
+
   return {
     comments,
     rating,
-    offset,
-    setOffset,
+    loadMore,
+    filterByRating,
     isFetching,
     totalComments: data?.total || 0,
   };
