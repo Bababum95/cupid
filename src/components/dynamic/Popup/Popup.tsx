@@ -12,7 +12,8 @@ type Props = {
   isOpen: boolean;
   onClose: () => void;
   children?: React.ReactNode;
-  size?: "small" | "medium" | "large";
+  size?: "small" | "medium" | "large" | "full";
+  className?: string;
 };
 
 export default function Popup({
@@ -20,6 +21,7 @@ export default function Popup({
   onClose,
   children,
   size = "medium",
+  className,
 }: Props) {
   return ReactDOM.createPortal(
     <AnimatePresence initial={false}>
@@ -36,7 +38,7 @@ export default function Popup({
           exit="closed"
         >
           <motion.div
-            className={classNames(styles.container, styles[size])}
+            className={classNames(styles.container, styles[size], className)}
             onClick={(e) => e.stopPropagation()}
             variants={{ open: { y: 0 }, closed: { y: 100 } }}
             initial="closed"
@@ -44,7 +46,11 @@ export default function Popup({
             exit="closed"
             transition={{ duration: 0.25, type: "tween" }}
           >
-            <button className={styles.close} onClick={onClose}>
+            <button
+              className={classNames("close", styles.close)}
+              onClick={onClose}
+              aria-label="close popup"
+            >
               <CloseIcon />
             </button>
             {children}

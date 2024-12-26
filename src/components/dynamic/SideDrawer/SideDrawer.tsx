@@ -1,6 +1,6 @@
 "use client";
 
-import { FC } from "react";
+import type { FC } from "react";
 import { AnimatePresence, motion, type PanInfo } from "motion/react";
 import ReactDOM from "react-dom";
 import classNames from "classnames";

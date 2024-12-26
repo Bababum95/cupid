@@ -1,0 +1,144 @@
+div.popup {
+  max-width: 873px;
+  padding: 40px;
+
+  :global {
+    .close {
+      top: 40px;
+      right: 40px;
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background: #1a1a1a;
+    }
+  }
+}
+
+.wrapper {
+  @include flex-layout(flex-start, stretch);
+  gap: 40px;
+}
+
+.image {
+  object-fit: cover;
+  border-radius: 20px;
+}
+
+.content {
+  @include flex-column;
+  max-width: 344px;
+}
+
+.form {
+  @include flex-column;
+  flex: 1;
+}
+
+.title {
+  color: $text;
+  font-size: 36px;
+  font-style: normal;
+  font-weight: 700;
+  margin: 40px 0 12px;
+}
+
+.text {
+  font-size: clamp(0.9375rem, 0.9143rem + 0.0952vw, 1rem);
+  font-style: normal;
+  font-weight: 400;
+  line-height: 140%;
+  margin-bottom: 24px;
+}
+
+.input {
+  margin: auto 0 16px;
+  max-height: 60px;
+
+  &.error {
+    border-color: $accent;
+    margin-bottom: 12px;
+  }
+}
+
+.error-message {
+  color: #b21a24;
+  font-size: clamp(0.875rem, 0.8982rem + -0.0952vw, 0.8125rem);
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  margin-bottom: 20px;
+}
+
+.description {
+  font-size: clamp(0.6875rem, 0.6643rem + 0.0952vw, 0.75rem);
+  font-style: normal;
+  font-weight: 400;
+  line-height: 140%;
+  margin-top: 16px;
+
+  a {
+    color: $text;
+    text-decoration: underline;
+  }
+
+  span {
+    color: $text;
+  }
+}
+
+.success {
+  @include flex-column;
+  align-items: center;
+  flex: 1;
+
+  p {
+    text-align: center;
+  }
+
+  .title {
+    margin: 12px 0;
+  }
+
+  svg {
+    margin-top: auto;
+  }
+}
+
+.button {
+  @include flex-center;
+  width: 100%;
+  border-radius: 16px;
+  background: #1a1a1a;
+  padding: 16px;
+  margin-top: auto;
+}
+
+@include media("tablet") {
+  div.popup {
+    max-width: 384px;
+    padding: 20px;
+
+    :global {
+      .close {
+        top: 20px;
+        right: 20px;
+      }
+    }
+  }
+
+  .image {
+    display: none;
+  }
+
+  .title {
+    margin-top: 24px;
+  }
+
+  .input {
+    margin-bottom: 12px;
+  }
+
+  .description {
+    margin-top: 12px;
+  }
+}

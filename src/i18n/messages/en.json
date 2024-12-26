@@ -293,9 +293,17 @@
   },
   "Subscribe": {
     "title": "Unlock 10% Off Your Next Order!",
-    "placeholder": "E-Mail eingeben",
+    "placeholder": "Enter email address",
     "button": "Sign Up and Save",
-    "description": "You can unsubscribe from the newsletter at any time. For more information, please refer to our <a>Privacy Policy.</a>"
+    "description": "You can unsubscribe from the newsletter at any time. For more information, please refer to our <a>Privacy Policy.</a>",
+    "popup": {
+      "title": "Want 10% off?",
+      "description": "Subscribe to our newsletter and enjoy 10% off your first order!",
+      "button": "Subscribe & Save",
+      "success": "Successful!",
+      "success-description": "Check {email} mailbox, we <span>sent you a 10% coupon</span> for it",
+      "success-button": "To shopping"
+    }
   },
   "Footer": {
     "description": "At Cupid, we believe in the power of shared experiences. Our premium aphrodisiac chocolates are crafted to bring couples closer, igniting passion and creating unforgettable moments. Made with love in Germany, using only the finest natural ingredients to ensure every bite is a delight.",

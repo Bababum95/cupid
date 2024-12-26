@@ -293,9 +293,17 @@
   },
   "Subscribe": {
     "title": "Sichere dir 10% Rabatt auf deine nächste Bestellung!",
-    "placeholder": "E-Mail eingeben",
+    "placeholder": "E-Mail-Adresse eingeben",
     "button": "Anmelden und Sparen",
-    "description": "Du kannst dich jederzeit vom Newsletter abmelden. Weitere Informationen findest du in unserer <a>Datenschutzerklärung.</a>"
+    "description": "Du kannst dich jederzeit vom Newsletter abmelden. Weitere Informationen findest du in unserer <a>Datenschutzerklärung.</a>",
+    "popup": {
+      "title": "Spare 10%",
+      "description": "Abonniere unseren Newsletter und sicher dir 10% Rabatt auf deine erste Bestellung!",
+      "button": "Abonnieren & Sparen",
+      "success": "Super, du bist dabei 🙌",
+      "success-description": "Behalte dein E-Mail-Postfach im Auge – dein Rabattcode ist auf dem Weg zu dir!",
+      "success-button": "Schließen"
+    }
   },
   "Footer": {
     "description": "Bei Cupid glauben wir an die Kraft gemeinsamer Erlebnisse. Unsere Premium Aphrodisierende Schokolade wird hergestellt, um Paare einander näherzubringen, Leidenschaft zu entfachen und unvergessliche Momente zu schaffen. Mit Liebe in Deutschland hergestellt, nur mit den feinsten natürlichen Zutaten, um sicherzustellen, dass jeder Bissen ein Genuss ist.",

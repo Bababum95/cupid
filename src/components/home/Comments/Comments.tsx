@@ -70,44 +70,46 @@ export const Comments: FC<Props> = ({ accentColor = "#520C11" }) => {
           <NewComment accentColor={accentColor} />
         </div>
       </div>
-      <ul
-        itemScope
-        itemType="https://schema.org/ItemList"
-        itemProp="review"
-        className={styles.list}
-      >
-        <div
-          itemProp="itemReviewed"
+      {comments.length && (
+        <ul
           itemScope
-          itemType="https://schema.org/Product"
+          itemType="https://schema.org/ItemList"
+          itemProp="review"
+          className={styles.list}
         >
-          <meta itemProp="name" content="Cupid Chocolate" />
-          <meta itemProp="brand" content="Cupid" />
-          <link itemProp="url" href={`${BASE_URL}/sex-chocolate`} />
-        </div>
-        {comments.map(({ name, message, rating, createdAt, _id, photos }) => (
-          <Comment
-            key={_id}
-            name={name}
-            review={message}
-            rating={rating}
-            date={createdAt}
-            photos={photos}
-            accentColor={accentColor}
-            onClickVerified={() => setPopupIsOpen(true)}
-          />
-        ))}
-        {totalComments > comments.length && (
-          <Button
-            variant="secondary"
-            onClick={loadMore}
-            className={styles.button}
-            loading={isFetching}
+          <div
+            itemProp="itemReviewed"
+            itemScope
+            itemType="https://schema.org/Product"
           >
-            {t("load-more")}
-          </Button>
-        )}
-      </ul>
+            <meta itemProp="name" content="Cupid Chocolate" />
+            <meta itemProp="brand" content="Cupid" />
+            <link itemProp="url" href={`${BASE_URL}/sex-chocolate`} />
+          </div>
+          {comments.map(({ name, message, rating, createdAt, _id, photos }) => (
+            <Comment
+              key={_id}
+              name={name}
+              review={message}
+              rating={rating}
+              date={createdAt}
+              photos={photos}
+              accentColor={accentColor}
+              onClickVerified={() => setPopupIsOpen(true)}
+            />
+          ))}
+          {totalComments > comments.length && (
+            <Button
+              variant="secondary"
+              onClick={loadMore}
+              className={styles.button}
+              loading={isFetching}
+            >
+              {t("load-more")}
+            </Button>
+          )}
+        </ul>
+      )}
       <VerifiedPopup
         isOpen={popupIsOpen}
         onClose={() => setPopupIsOpen(false)}

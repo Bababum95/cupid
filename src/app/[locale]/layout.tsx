@@ -1,10 +1,16 @@
 import { NextIntlClientProvider } from "next-intl";
 import { getMessages } from "next-intl/server";
 import Script from "next/script";
+import dynamic from "next/dynamic";
 
 import "@/styles/globals.scss";
 
 import StoreProvider from "./StoreProvider";
+
+const SubscribePopup = dynamic(
+  () => import("@/components/dynamic/SubscribePopup"),
+  { ssr: false }
+);
 
 const PUBLIC_GA_ID = process.env.PUBLIC_GA_ID;
 const PUBLIC_GTM_ID = process.env.PUBLIC_GTM_ID;
@@ -83,7 +89,10 @@ export default async function RootLayout({
           </noscript>
         )}
         <NextIntlClientProvider messages={messages} locale={locale}>
-          <StoreProvider>{children}</StoreProvider>
+          <StoreProvider>
+            {children}
+            <SubscribePopup />
+          </StoreProvider>
         </NextIntlClientProvider>
       </body>
     </html>

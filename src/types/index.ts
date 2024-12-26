@@ -21,3 +21,4 @@ export type {
   GetCommentsParams,
   Rating,
 } from "./comment";
+export type { SubscribeResponse } from "./subscribe";

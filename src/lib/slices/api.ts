@@ -1,6 +1,11 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 
-import type { GetCommentsParams, GetCommentsResponse, Rating } from "@/types";
+import type {
+  GetCommentsParams,
+  GetCommentsResponse,
+  Rating,
+  SubscribeResponse,
+} from "@/types";
 
 const CUPID_PUBLIC_TOKEN = process.env.CUPID_PUBLIC_TOKEN;
 
@@ -16,7 +21,7 @@ export const apiSlice = createApi({
     },
   }),
   endpoints: (builder) => ({
-    subscribe: builder.mutation({
+    subscribe: builder.mutation<SubscribeResponse, { email: string }>({
       query: (body) => ({
         url: "subscribe",
         method: "POST",
