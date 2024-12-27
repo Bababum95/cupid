@@ -30,7 +30,7 @@ export default function middleware(request: NextRequest) {
 
       response.cookies.set("variant", currentVariant, {
         path: "/",
-        httpOnly: true,
+        httpOnly: false,
         secure: true,
       });
 
