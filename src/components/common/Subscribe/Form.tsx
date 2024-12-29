@@ -44,6 +44,7 @@ export const Form: FC = () => {
       <input
         placeholder={t("placeholder")}
         type="email"
+        name="email"
         value={value}
         onChange={(e) => setValue(e.target.value)}
         className={styles.input}

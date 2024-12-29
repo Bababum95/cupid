@@ -300,9 +300,9 @@
       "title": "Want 10% off?",
       "description": "Subscribe to our newsletter and enjoy 10% off your first order!",
       "button": "Subscribe & Save",
-      "success": "Successful!",
-      "success-description": "Check {email} mailbox, we <span>sent you a 10% coupon</span> for it",
-      "success-button": "To shopping"
+      "success": "You're In!",
+      "success-description": "Check your email for the discount code. (Pss... don’t forget to check your spam folder, just in case!)",
+      "success-button": "Buy Now"
     }
   },
   "Footer": {

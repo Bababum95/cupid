@@ -81,6 +81,7 @@ const SubscribePopup = () => {
                 placeholder={t("placeholder")}
                 type="email"
                 value={value}
+                name="email"
                 onChange={(e) => setValue(e.target.value)}
                 className={classNames(styles.input, {
                   [styles.error]: error,
