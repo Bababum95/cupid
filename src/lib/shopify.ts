@@ -37,12 +37,17 @@ export async function fetchShopify({
   return response.data;
 }
 
-export function sendPageView() {
+export function sendPageView(lang: "EN" | "DE") {
   const payload: ShopifyPageViewPayload = {
-    shopId: process.env.SHOPIFY_SHOP_ID as string,
-    currency: "USD",
-    hasUserConsent: true,
     ...getClientBrowserParameters(),
+    shopId: process.env.SHOPIFY_SHOP_ID as string,
+    currency: "EUR",
+    hasUserConsent: true,
+    acceptedLanguage: lang,
+    shopifySalesChannel: "headless",
+    analyticsAllowed: true,
+    marketingAllowed: true,
+    ccpaEnforced: false,
   };
 
   sendShopifyAnalytics({

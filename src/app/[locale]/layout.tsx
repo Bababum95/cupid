@@ -89,7 +89,7 @@ export default async function RootLayout({
           </noscript>
         )}
         <NextIntlClientProvider messages={messages} locale={locale}>
-          <StoreProvider>
+          <StoreProvider locale={locale}>
             {children}
             <SubscribePopup />
           </StoreProvider>

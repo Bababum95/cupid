@@ -19,8 +19,10 @@ const INTERCOM_APP_ID = process.env.INTERCOM_APP_ID;
 
 export default function StoreProvider({
   children,
+  locale,
 }: {
   children: React.ReactNode;
+  locale: string;
 }) {
   const storeRef = useRef<AppStore>();
   const pathname = usePathname();
@@ -43,6 +45,8 @@ export default function StoreProvider({
   }, []);
 
   useEffect(() => {
+    const lang = locale === "en" ? "EN" : "DE";
+
     if (PUBLIC_GA_ID) {
       window.gtag("config", PUBLIC_GA_ID, {
         page_path: pathname,
@@ -61,8 +65,8 @@ export default function StoreProvider({
         console.error("Intercom error:", error);
       }
     }
-    sendPageView();
-  }, [pathname, searchParams]);
+    sendPageView(lang);
+  }, [pathname, searchParams, locale]);
 
   useShopifyCookies({ hasUserConsent: true });
 
